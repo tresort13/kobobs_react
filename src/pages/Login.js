@@ -99,7 +99,7 @@ yn
 
 <>
 
-{isDesktop && <Container className='justify-content-center text-center pt-2 bordure' style={{marginTop:100,backgroundColor:'grey',width:650}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center pt-2 bordure' style={{marginTop:100,backgroundColor:'grey',width:650}} >
 
     <Row className='justify-content-center mb-5 pt-3' >
         <Col>
@@ -149,7 +149,7 @@ yn
 </Form>
 </Container> }
 
-{isMobileOrTablet && <Container className='my-auto mx-auto text-start bordure' style={{backgroundColor:'grey'}} >
+{isMobileOrTablet && <Container className='bg-dark my-auto mx-auto text-start bordure' style={{backgroundColor:'grey'}} >
     
 
 

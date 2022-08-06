@@ -103,7 +103,7 @@ function FormEnvoiClient(props)
     <Row className='justify-content-center pb-2' >
         <Col xs={6}>
             <Link to="/tracer_baggages">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:100}}></Image>
             </Link>
         
         </Col>
@@ -143,9 +143,16 @@ function FormEnvoiClient(props)
          </Form.Group>
         </Col>
 
-        <Col xs = {4}>
-        <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
+        <Col xs ={4}>
+        <Form.Group className="mb-3" >
+        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+         <option>Selectionnez votre position</option>
+         <option value="ok_bagage_debarquement_arrivee">debarquement (arrivée)</option>
+         <option value="ok_bagage_en_tapis_livraison">tapis livraison</option>
+         <option value="ok_bagage_livrer">livrer bagage</option>
+         <option value="ok_bagage_stocke_arrivee">stocker bagage</option>
+         
+         </Form.Select>
          </Form.Group>
         </Col>
     </Row>
@@ -163,9 +170,50 @@ function FormEnvoiClient(props)
          </Form.Group>
         </Col>
 
+        <Col xs ={4}>
+        <Form.Group className="mb-3" >
+        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+         <option>Selectionnez votre position</option>
+         <option value="ok_bagage_debarquement_arrivee">debarquement (arrivée)</option>
+         <option value="ok_bagage_en_tapis_livraison">tapis livraison</option>
+         <option value="ok_bagage_livrer">livrer bagage</option>
+         <option value="ok_bagage_stocke_arrivee">stocker bagage</option>
+         
+         </Form.Select>
+         </Form.Group>
+        </Col>
+    </Row>
+  
+    <Row className='justify-content-center'>
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
+         </Form.Group>
+        </Col>
+
+        <Col xs ={4}>
+        <Form.Group className="mb-3" >
+        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+         <option>Selectionnez votre position</option>
+         <option value="ok_bagage_debarquement_arrivee">debarquement (arrivée)</option>
+         <option value="ok_bagage_en_tapis_livraison">tapis livraison</option>
+         <option value="ok_bagage_livrer">livrer bagage</option>
+         <option value="ok_bagage_stocke_arrivee">stocker bagage</option>
+         
+         </Form.Select>
+         </Form.Group>
+        </Col>
+
+        <Col xs ={4}>
+        <Form.Group className="mb-3" >
+        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+         <option>Selectionnez votre position</option>
+         <option value="ok_bagage_debarquement_arrivee">debarquement (arrivée)</option>
+         <option value="ok_bagage_en_tapis_livraison">tapis livraison</option>
+         <option value="ok_bagage_livrer">livrer bagage</option>
+         <option value="ok_bagage_stocke_arrivee">stocker bagage</option>
+         
+         </Form.Select>
          </Form.Group>
         </Col>
     </Row>
@@ -198,57 +246,124 @@ function FormEnvoiClient(props)
     <Row className='justify-content-center pb-2' >
         <Col xs={"auto"}>
             <Link to="/tracer_baggages">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:100}}></Image>
             </Link>
         
         </Col>
     </Row>
     
 <Form>
-    <Row className='justify-content-center'>
-        <Col xs={4}>
+<Row className='justify-content-center'>
+        <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
          </Form.Group>
         </Col>
 
-        <Col xs={4}>
+        <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
          </Form.Group>
         </Col>
 
-        <Col xs={4}>
+        <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
          </Form.Group>
         </Col>
     </Row>
 
+    <Row className='justify-content-center'>
+        <Col xs = {4}>
+        <Form.Group className="mb-3" controlId="formBasicText" >
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
+         </Form.Group>
+        </Col>
+
+        <Col xs = {4}>
+        <Form.Group className="mb-3" controlId="formBasicText" >
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
+         </Form.Group>
+        </Col>
+
+        <Col xs ={4}>
+        <Form.Group className="mb-3" >
+        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+         <option>Selectionnez votre position</option>
+         <option value="ok_bagage_debarquement_arrivee">debarquement (arrivée)</option>
+         <option value="ok_bagage_en_tapis_livraison">tapis livraison</option>
+         <option value="ok_bagage_livrer">livrer bagage</option>
+         <option value="ok_bagage_stocke_arrivee">stocker bagage</option>
+         
+         </Form.Select>
+         </Form.Group>
+        </Col>
+    </Row>
 
     <Row className='justify-content-center'>
-        <Col xs={4}>
+        <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
          </Form.Group>
         </Col>
 
-        <Col xs={4}>
+        <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
          </Form.Group>
         </Col>
 
-        <Col xs={4}>
+        <Col xs ={4}>
+        <Form.Group className="mb-3" >
+        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+         <option>Selectionnez votre position</option>
+         <option value="ok_bagage_debarquement_arrivee">debarquement (arrivée)</option>
+         <option value="ok_bagage_en_tapis_livraison">tapis livraison</option>
+         <option value="ok_bagage_livrer">livrer bagage</option>
+         <option value="ok_bagage_stocke_arrivee">stocker bagage</option>
+         
+         </Form.Select>
+         </Form.Group>
+        </Col>
+    </Row>
+  
+    <Row className='justify-content-center'>
+        <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
+         </Form.Group>
+        </Col>
+
+        <Col xs ={4}>
+        <Form.Group className="mb-3" >
+        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+         <option>Selectionnez votre position</option>
+         <option value="ok_bagage_debarquement_arrivee">debarquement (arrivée)</option>
+         <option value="ok_bagage_en_tapis_livraison">tapis livraison</option>
+         <option value="ok_bagage_livrer">livrer bagage</option>
+         <option value="ok_bagage_stocke_arrivee">stocker bagage</option>
+         
+         </Form.Select>
+         </Form.Group>
+        </Col>
+
+        <Col xs ={4}>
+        <Form.Group className="mb-3" >
+        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+         <option>Selectionnez votre position</option>
+         <option value="ok_bagage_debarquement_arrivee">debarquement (arrivée)</option>
+         <option value="ok_bagage_en_tapis_livraison">tapis livraison</option>
+         <option value="ok_bagage_livrer">livrer bagage</option>
+         <option value="ok_bagage_stocke_arrivee">stocker bagage</option>
+         
+         </Form.Select>
          </Form.Group>
         </Col>
     </Row>
   
   
     <Row className='justify-content-center pb-3'>
-        <Col xs={"auto"}>
+        <Col xs ={4}>
         
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit" onClick={e=>submitBarcode(e)}>
@@ -259,6 +374,7 @@ function FormEnvoiClient(props)
         </Col>
     </Row>
   
+
 
 
 </Form>

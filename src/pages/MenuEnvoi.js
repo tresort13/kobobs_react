@@ -28,7 +28,7 @@ function MenuEnvoi(props)
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:100}}></Image>
             </Link>
         </Col>
     </Row>
@@ -61,7 +61,7 @@ function MenuEnvoi(props)
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:100}}></Image>
             </Link>
         </Col>
     </Row>
