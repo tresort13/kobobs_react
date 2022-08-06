@@ -23,6 +23,9 @@ function FormEnvoiClient(props)
         volInfo:""
     }})
 
+    
+        const[position,setPosition] = useState('')
+
     const [message,setMessage] = useState("veuillez scanner le barcode du bagage ")
     const [couleur,setCouleur] = useState("text-dark")
 
