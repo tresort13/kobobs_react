@@ -25,15 +25,15 @@ function Homepage()
        {isDesktop && <Container className="mt-4 mb-5">
         <Row className="text-center justify-content-center">
             <Col md={4} className="my-auto text-center">
-             <div className="d-grid bg-white text-center justify-content-center rounded zoom bordure" style={{width:300}}>
+             <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure" style={{width:300}}>
               <div>
               <Link to="/menu_envoie">
-              <Image src={require('./envoi.png')}  className='rounded-pill' style={{width:160}}></Image>
+              <Image src={require('./envoi.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>ENVOI ARGENT</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Envoi Argent</i></p>
               </div>
              </div>    
             </Col>
@@ -42,12 +42,12 @@ function Homepage()
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure" style={{width:300}}>
               <div>
               <Link to="/menu_retrait">
-              <Image src={require('./retrait.png')}  className='rounded-pill' style={{width:180}}></Image>
+              <Image src={require('./retrait.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>RETRAIT ARGENT</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Retrait Argent</i></p>
               </div>
              </div>          
             </Col>
@@ -61,7 +61,7 @@ function Homepage()
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>GESTIONS OPERATIONS</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Operations</i></p>
               </div>
              </div>   
             </Col>
@@ -78,7 +78,7 @@ function Homepage()
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>GESTIONS ABONNES</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Abonnes</i></p>
               </div>
              </div>
               
@@ -94,7 +94,7 @@ function Homepage()
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>PARAMETRES </i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Parametres </i></p>
               </div>
              </div>
               
@@ -109,7 +109,7 @@ function Homepage()
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>GESTIONS UTILISATEURS</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Utilisateurs</i></p>
               </div>
              </div>
               
@@ -132,12 +132,12 @@ function Homepage()
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure" style={{width:300}}>
               <div>
               <Link to="/menu_envoie">
-              <Image src={require('./envoi.png')}  className='rounded-pill' style={{width:160}}></Image>
+              <Image src={require('./envoi.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>ENVOI ARGENT</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Envoi Argent</i></p>
               </div>
              </div>    
             </Col>
@@ -153,7 +153,7 @@ function Homepage()
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>RETRAIT ARGENT</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Retrait Argent</i></p>
               </div>
              </div>          
             </Col>
@@ -169,7 +169,7 @@ function Homepage()
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>GESTIONS OPERATIONS</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Operations</i></p>
               </div>
              </div>   
             </Col>
@@ -186,7 +186,7 @@ function Homepage()
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>GESTIONS ABONNES</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Abonnes</i></p>
               </div>
              </div>
               
@@ -204,7 +204,7 @@ function Homepage()
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>PARAMETRES </i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Parametres </i></p>
               </div>
              </div>
               
@@ -221,7 +221,7 @@ function Homepage()
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>GESTIONS UTILISATEURS</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Utilisateurs</i></p>
               </div>
              </div>
               

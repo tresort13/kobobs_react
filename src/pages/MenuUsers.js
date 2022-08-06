@@ -24,7 +24,7 @@ function MenuUsers(props)
     return (
 <>
 <Header username={props.username} />
-{isDesktop && <Container className='justify-content-center text-center bordure' style={{marginTop:30,backgroundColor:'white',width:750}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:30,backgroundColor:'white',width:750}} >
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
             <Link to="/home">
@@ -36,7 +36,7 @@ function MenuUsers(props)
         <Col xs = {6}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
         <Button  style={{width:400,height:80}} className='btn-lg rounded-pill zoom couleur'>
-        <i>Envoie Argent Client</i>
+        <i className='text-dark'>Envoie Argent Client</i>
         </Button>
         </Link>
         </Col>
@@ -48,7 +48,7 @@ function MenuUsers(props)
         <Col xs ={6}>
         <Link to="/form_envoie_abonne" style={{color:'white',textDecorationLine:'none'}}>
         <Button style={{width:400,height:80}} className='btn-lg rounded-pill zoom couleur'>
-        <i>Envoie Argent Client</i>
+        <i className='text-dark'>Envoie Argent Client</i>
         </Button>
         </Link>
         </Col>
@@ -56,7 +56,7 @@ function MenuUsers(props)
 
 </Container>}
 
-{isMobileOrTablet && <Container className='my-auto justify-content-center text-center bordure mb-5' style={{marginTop:30,backgroundColor:'white'}} >
+{isMobileOrTablet && <Container className='bg-dark my-auto justify-content-center text-center bordure mb-5' style={{marginTop:30,backgroundColor:'white'}} >
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
@@ -68,7 +68,7 @@ function MenuUsers(props)
         <Col xs={"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
         <Button  style={{width:300,height:80}} className='btn-lg rounded-pill zoom couleur'>
-        <i>Envoie Argent Client</i>
+        <i className='text-dark'>Envoie Argent Client</i>
         </Button>
         </Link>
         </Col>
@@ -80,7 +80,7 @@ function MenuUsers(props)
         <Col xs={"auto"}>
         <Link to="/form_envoie_abonne" style={{color:'white',textDecorationLine:'none'}}>
         <Button  style={{width:300,height:80}} className='btn-lg rounded-pill zoom couleur'>
-        <i>Envoie Argent Abonné</i>
+        <i className='text-dark'>Envoie Argent Abonné</i>
         </Button>
         </Link>
         </Col>
