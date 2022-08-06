@@ -35,9 +35,9 @@ function MenuAbonne(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {6}>
         <Link to="/form_retrait" style={{color:'white',textDecorationLine:'none'}}>
-        <Button  style={{width:400,height:80}} className='btn-lg rounded-pill zoom couleur'>
+        <button  style={{width:400,height:80}} className='btn-lg rounded-pill zoom couleur'>
         <i className='text-dark'>Retrait Argent</i>
-        </Button>
+        </button>
         </Link>
         </Col>
     </Row>
