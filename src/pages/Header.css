@@ -8,6 +8,10 @@
   .couleur{
     background-color: darkorange;
   }
+
+  .couleur2{
+    color: darkorange;
+  }
  
    .bordure{
        border: 5px solid black;
