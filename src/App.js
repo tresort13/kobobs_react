@@ -10,6 +10,7 @@ import MenuRetrait from './pages/MenuRetrait';
 import MenuGestionOperation from './pages/MenuGestionOperation';
 import MenuParametre from './pages/MenuParametre';
 import MenuUsers from './pages/MenuUsers';
+import MenuAbonne from './pages/MenuAbonne';
 
 
 
@@ -65,7 +66,7 @@ function App() {
         <Route path="/menu_gestion_operation" element={username == "" ? <Navigate to ='/' /> :<MenuGestionOperation username = {username}/>} >
         </Route>
 
-        <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to ='/' /> :<MenuGestionOperation username = {username}/>} >
+        <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to ='/' /> :<MenuAbonne username = {username}/>} >
         </Route>
 
         <Route path="/menu_parametre" element={username == "" ? <Navigate to ='/' /> :<MenuParametre username = {username}/>} >
