@@ -96,7 +96,7 @@ function FormEnvoiClient(props)
         
         <>
         <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:50,width:750}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
         <p className='couleur2'><i><b>{message}</b></i></p>
@@ -250,7 +250,8 @@ function FormEnvoiClient(props)
 
 
 </Form>
-</Container>}
+</Container>
+}
 
 {isMobileOrTablet && <Container className='bg-dark my-auto mx-auto justify-content-center text-center bordure mb-5' style={{marginTop:50,backgroundColor:'white'}} >
 <Row className='justify-content-center mb-3 pt-3' >
@@ -395,6 +396,8 @@ function FormEnvoiClient(props)
 
 </Form>
 </Container>}
+<Row>
+</Row>
 <Footer />
         </>
        
