@@ -10,7 +10,7 @@ import Header from './Header';
 import Footer from './Footer';
 
 
-function Homepage()
+function Homepage(props)
 {
 
     const isDesktop = useMediaQuery({
