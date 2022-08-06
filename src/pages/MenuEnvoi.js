@@ -36,7 +36,7 @@ function MenuEnvoi(props)
         <Col xs = {"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='dark'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Envoie Argent Client</b>
+        <b className='couleur2'><i>Envoie Argent Client</i></b>
         </Button>
         </Link>
         </Col>
@@ -48,7 +48,7 @@ function MenuEnvoi(props)
         <Col xs = {"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='dark'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Envoie Argent Abonné</b>
+        <b className='couleur2'><i>Envoie Argent Abonné</i></b>
         </Button>
         </Link>
         </Col>
