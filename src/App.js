@@ -5,6 +5,11 @@ import {BrowserRouter,Routes,Route} from  'react-router-dom';
 import Homepage from './pages/Homepage';
 import {Navigate} from  'react-router-dom';
 import  './pages/Assets.css';
+import MenuEnvoi from './pages/MenuEnvoi';
+import MenuRetrait from './pages/MenuRetrait';
+import MenuGestionOperation from './pages/MenuGestionOperation';
+import MenuParametre from './pages/MenuParametre';
+import MenuUsers from './pages/MenuUsers';
 
 
 
@@ -51,6 +56,23 @@ function App() {
         <Route path="/home"  element={username == "" ? <Navigate to ='/' /> : <Homepage username = {username} setUsername = {setUsername}/>} >
         </Route>
 
+        <Route path="/menu_envoie" element={username == "" ? <Navigate to ='/' /> :<MenuEnvoi username = {username}/>} >
+        </Route>
+
+        <Route path="/menu_retrait" element={username == "" ? <Navigate to ='/' /> :<MenuRetrait username = {username}/>} >
+        </Route>
+
+        <Route path="/menu_gestion_operation" element={username == "" ? <Navigate to ='/' /> :<MenuGestionOperation username = {username}/>} >
+        </Route>
+
+        <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to ='/' /> :<MenuGestionOperation username = {username}/>} >
+        </Route>
+
+        <Route path="/menu_parametre" element={username == "" ? <Navigate to ='/' /> :<MenuParametre username = {username}/>} >
+        </Route>
+
+        <Route path="/menu_users" element={username == "" ? <Navigate to ='/' /> :<MenuUsers username = {username}/>} >
+        </Route>
         
       </Routes >
     </BrowserRouter>
