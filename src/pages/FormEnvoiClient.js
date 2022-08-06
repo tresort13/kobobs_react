@@ -88,8 +88,9 @@ function FormEnvoiClient(props)
 
    
     return (
+        
         <>
-
+        <Header username={props.username} />
 {isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:50,width:750}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
@@ -100,7 +101,7 @@ function FormEnvoiClient(props)
     <Row className='justify-content-center pb-2' >
         <Col xs={6}>
             <Link to="/tracer_baggages">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:300}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
             </Link>
         
         </Col>
@@ -195,7 +196,7 @@ function FormEnvoiClient(props)
     <Row className='justify-content-center pb-2' >
         <Col xs={"auto"}>
             <Link to="/tracer_baggages">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:300}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
             </Link>
         
         </Col>
@@ -260,7 +261,9 @@ function FormEnvoiClient(props)
 
 </Form>
 </Container>}
+<Footer />
         </>
+       
     )
 }
 
