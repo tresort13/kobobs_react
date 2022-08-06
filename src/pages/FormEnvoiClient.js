@@ -10,6 +10,8 @@ import {Link} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
+import InputGroup from 'react-bootstrap/InputGroup';
+
 
 
 const useState = React.useState
@@ -122,7 +124,7 @@ function FormEnvoiClient(props)
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo (Nom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text"   required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" autoFocus   required/>
          </Form.Group>
         </Col>
 
@@ -145,6 +147,7 @@ function FormEnvoiClient(props)
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>E-mail Adresse</Form.Label>
+        <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
         <Form.Control type="email" name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)}  required/>
          </Form.Group>
         </Col>
@@ -158,6 +161,7 @@ function FormEnvoiClient(props)
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
+        <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
         <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
          <option>Ekolo (Pays)</option>
          <option value="ok_bagage_livrer">Angleterre</option>
@@ -198,7 +202,7 @@ function FormEnvoiClient(props)
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Adresse</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text"  required/>
          </Form.Group>
         </Col>
 
@@ -211,6 +215,7 @@ function FormEnvoiClient(props)
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
+        <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
         <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
          <option>Ekolo (Pays)</option>
          <option value="ok_bagage_livrer">RD Congo</option>
@@ -229,18 +234,18 @@ function FormEnvoiClient(props)
     <Row className='justify-content-center'>
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
+        <Form.Label className='couleur2'>Mbongo (Montant)</Form.Label>
         <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
          </Form.Group>
         </Col>
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
+        <Form.Label className='couleur2'>Device</Form.Label>
         <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
-         <option>Selectionnez votre position</option>
-         <option value="ok_bagage_debarquement_arrivee">debarquement (arrivée)</option>
-         <option value="ok_bagage_en_tapis_livraison">tapis livraison</option>
-         <option value="ok_bagage_livrer">livrer bagage</option>
-         <option value="ok_bagage_stocke_arrivee">stocker bagage</option>
+         <option>GBP (£)</option>
+         <option value="ok_bagage_livrer">GBP (£)</option>
+         <option value="ok_bagage_stocke_arrivee">USD ($)</option>
          
          </Form.Select>
          </Form.Group>
@@ -248,12 +253,10 @@ function FormEnvoiClient(props)
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
+        <Form.Label className='couleur2'>Service</Form.Label>
         <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
-         <option>Selectionnez votre position</option>
-         <option value="ok_bagage_debarquement_arrivee">debarquement (arrivée)</option>
-         <option value="ok_bagage_en_tapis_livraison">tapis livraison</option>
-         <option value="ok_bagage_livrer">livrer bagage</option>
-         <option value="ok_bagage_stocke_arrivee">stocker bagage</option>
+         <option>Kozua na maboko</option>
+         <option value="ok_bagage_debarquement_arrivee">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
          
          </Form.Select>
          </Form.Group>
