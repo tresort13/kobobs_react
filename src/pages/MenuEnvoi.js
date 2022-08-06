@@ -47,7 +47,7 @@ function MenuEnvoi(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='white'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
         <i className='couleur2'>Envoie Argent Abonné</i>
         </Button>
         </Link>
