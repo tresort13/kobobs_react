@@ -59,7 +59,7 @@ function Header(props)
         <Col xs={4} className="my-auto mx-auto text-end ">
          <div>
            <pre className="text-dark display-6" style={{fontSize: 20}}><Image className="navbar-brand rounded-circle" src={require('./login.jpeg')} type="button" alt="profil" style={{width:40}} ></Image><span ><i className="text-white">Bonjour {props.username}</i> </span><span className="separateur text-primary"></span><a href="" style={{textDecoration:"none"}}><span className="text-danger"><i onClick={logout}> Logout </i> </span></a></pre>
-           <i><pre className="text-warning display-6 timing text-center" style={{fontSize: 15}}>{theTime}</pre></i>
+           <i><pre className="couleur2 display-6 timing text-center" style={{fontSize: 15}}>{theTime}</pre></i>
         </div>  
         </Col>
     </Row>

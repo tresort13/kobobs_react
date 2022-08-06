@@ -24,7 +24,7 @@ function MenuEnvoi(props)
     return (
 <>
 <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:30,width:750}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:80,width:750}} >
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
