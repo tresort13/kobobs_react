@@ -60,7 +60,7 @@ function MenuGestionOperation(props)
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
-            <Image src={require('./logo_new.jpg')}  className='rounded-pill ' style={{width:300}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:300}}></Image>
             </Link>
         </Col>
     </Row>
