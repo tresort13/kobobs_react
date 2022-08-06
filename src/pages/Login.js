@@ -99,13 +99,8 @@ yn
 
 <>
 
-{isDesktop && <Container className='justify-content-center text-center pt-2' style={{marginTop:70,backgroundColor:'grey',width:650}} >
+{isDesktop && <Container className='justify-content-center text-center pt-2 bordure' style={{marginTop:100,backgroundColor:'grey',width:650}} >
 
-<Row className='justify-content-center ' >
-        <Col>
-         <p className='display-6 text-dark' ><b>KOBO BUSINESS SERVICES</b></p>
-        </Col>
-    </Row>
     <Row className='justify-content-center mb-5 pt-3' >
         <Col>
         <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:300}}></Image>
@@ -154,7 +149,7 @@ yn
 </Form>
 </Container> }
 
-{isMobileOrTablet && <Container className='my-auto mx-auto text-start ' style={{backgroundColor:'grey'}} >
+{isMobileOrTablet && <Container className='my-auto mx-auto text-start bordure' style={{backgroundColor:'grey'}} >
     
 
 
