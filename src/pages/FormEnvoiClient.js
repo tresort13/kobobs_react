@@ -233,7 +233,9 @@ function FormEnvoiClient(props)
          </Form.Group>
         </Col>
     </Row>
-  
+    <Row>
+      <hr style={{color:"darkorange"}}></hr>
+    </Row>
   
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
@@ -396,8 +398,11 @@ function FormEnvoiClient(props)
 
 </Form>
 </Container>}
-<Row>
-</Row>
+<Row className="mt-5">
+          <Col md={12}>
+            <p></p>
+          </Col>
+        </Row>
 <Footer />
         </>
        
