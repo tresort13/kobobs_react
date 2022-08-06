@@ -24,19 +24,19 @@ function MenuRetrait(props)
     return (
 <>
 <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:30,backgroundColor:'white',width:750}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
     <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={"auto"}>
             <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:300}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
             </Link>
         </Col>
     </Row>
     <Row className='justify-content-center pb-3'>
-        <Col xs = {6}>
-        <Link to="/form_retrait" style={{color:'white',textDecorationLine:'none'}}>
-        <Button  style={{width:400,height:80}} className='btn-lg rounded-pill zoom couleur'>
-        <i className='text-dark'>Retrait Argent</i>
+        <Col xs = {"auto"}>
+        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant='secondary'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'>Envoie Argent Client</b>
         </Button>
         </Link>
         </Col>
@@ -44,15 +44,16 @@ function MenuRetrait(props)
   
 
 
-    <Row className='justify-content-center pb-3 '>
-        <Col xs ={6}>
-        <Link to="/form_retirer" style={{color:'white',textDecorationLine:'none'}}>
-        <Button style={{width:400,height:80}} className='btn-lg rounded-pill zoom couleur'>
-        <i className='text-dark'>Retrait </i>
+    <Row className='justify-content-center pb-3'>
+        <Col xs = {"auto"}>
+        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant='secondary'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'>Envoie Argent Client</b>
         </Button>
         </Link>
         </Col>
     </Row>
+  
 
 </Container>}
 
@@ -60,15 +61,15 @@ function MenuRetrait(props)
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:300}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
             </Link>
         </Col>
     </Row>
     <Row className='justify-content-center pb-3'>
-        <Col xs={"auto"}>
-        <Link to="/form_retrait" style={{color:'white',textDecorationLine:'none'}}>
-        <Button  style={{width:300,height:80}} className='btn-lg rounded-pill zoom couleur'>
-        <i>Retrait Argent </i>
+        <Col xs = {"auto"}>
+        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant='secondary'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'>Envoie Argent Client</b>
         </Button>
         </Link>
         </Col>
@@ -76,11 +77,11 @@ function MenuRetrait(props)
   
 
 
-    <Row className='justify-content-center pb-3 '>
-        <Col xs={"auto"}>
-        <Link to="/form_retirer" style={{color:'white',textDecorationLine:'none'}}>
-        <Button  style={{width:300,height:80}} className='btn-lg rounded-pill zoom couleur'>
-        <i className='text-dark'>Retrait</i>
+    <Row className='justify-content-center pb-3'>
+        <Col xs = {"auto"}>
+        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant='secondary'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'>Envoie Argent Client</b>
         </Button>
         </Link>
         </Col>
