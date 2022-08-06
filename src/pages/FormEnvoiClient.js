@@ -113,6 +113,11 @@ function FormEnvoiClient(props)
     </Row>
     
 <Form>
+    <Row>
+      <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'> Expediditaire Informations</p>
+    </Row>
+
     <Row className='justify-content-center'>
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
@@ -191,6 +196,10 @@ function FormEnvoiClient(props)
         </Col>
     </Row>
   
+    <Row>
+      <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'> Montant Informations</p>
+    </Row>
     <Row className='justify-content-center'>
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >

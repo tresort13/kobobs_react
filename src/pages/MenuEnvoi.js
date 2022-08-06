@@ -28,7 +28,7 @@ function MenuEnvoi(props)
     <Row className='justify-content-center mb-5 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:150}}></Image>
             </Link>
         </Col>
     </Row>
@@ -36,7 +36,7 @@ function MenuEnvoi(props)
         <Col xs = {"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <i className='couleur2'><b>Envoie Argent Client</b></i>
+        <i className='couleur2'><pre>Envoie Argent Client</pre></i>
         </Button>
         </Link>
         </Col>
@@ -48,7 +48,7 @@ function MenuEnvoi(props)
         <Col xs = {"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <i className='couleur2'><b>Envoie Argent Abonné</b></i>
+        <i className='couleur2'><pre>Envoie Argent Abonné</pre></i>
         </Button>
         </Link>
         </Col>
