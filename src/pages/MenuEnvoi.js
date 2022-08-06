@@ -28,14 +28,14 @@ function MenuEnvoi(props)
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
             <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:300}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
             </Link>
         </Col>
     </Row>
     <Row className='justify-content-center pb-3'>
         <Col xs = {6}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
+        <Button variant='secondary'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
         <b className='couleur2'>Envoie Argent Client</b>
         </Button>
         </Link>
