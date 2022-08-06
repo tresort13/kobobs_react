@@ -24,7 +24,7 @@ function MenuEnvoi(props)
     return (
 <>
 <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
+{isDesktop && <Container className=' justify-content-center text-center bordure' style={{marginTop:100,backgroundColor:"grey",width:750}} >
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
@@ -35,7 +35,7 @@ function MenuEnvoi(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <Button variant='dark'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
         <b className='couleur2'>Envoie Argent Client</b>
         </Button>
         </Link>
@@ -47,8 +47,8 @@ function MenuEnvoi(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Envoie Argent Client</b>
+        <Button variant='dark'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'>Envoie Argent Abonné</b>
         </Button>
         </Link>
         </Col>
@@ -57,7 +57,7 @@ function MenuEnvoi(props)
 
 </Container>}
 
-{isMobileOrTablet && <Container className='bg-dark my-auto justify-content-center text-center bordure mb-5' style={{marginTop:30,backgroundColor:'white'}} >
+{isMobileOrTablet && <Container className=' my-auto justify-content-center text-center bordure mb-5' style={{marginTop:30,backgroundColor:"grey"}} >
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
@@ -68,8 +68,8 @@ function MenuEnvoi(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Envoie Argent Client</b>
+        <Button variant='dark'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'><i>Envoie Argent Client</i></b>
         </Button>
         </Link>
         </Col>
@@ -79,9 +79,9 @@ function MenuEnvoi(props)
 
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
-        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Envoie Argent Client</b>
+        <Link to="/form_envoie_abonne" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant='dark'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'><i>Envoie Argent Abonné</i></b>
         </Button>
         </Link>
         </Col>

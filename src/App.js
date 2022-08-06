@@ -11,6 +11,7 @@ import MenuGestionOperation from './pages/MenuGestionOperation';
 import MenuParametre from './pages/MenuParametre';
 import MenuUsers from './pages/MenuUsers';
 import MenuAbonne from './pages/MenuAbonne';
+import FormEnvoiClient from './pages/FormEnvoiClient';
 
 
 
@@ -73,6 +74,9 @@ function App() {
         </Route>
 
         <Route path="/menu_users" element={username == "" ? <Navigate to ='/' /> :<MenuUsers username = {username}/>} >
+        </Route>
+
+        <Route path="/form_envoie_client" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiClient username = {username}/>} >
         </Route>
         
       </Routes >
