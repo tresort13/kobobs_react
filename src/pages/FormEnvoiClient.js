@@ -90,7 +90,7 @@ function FormEnvoiClient(props)
     return (
         <>
 
-{isDesktop && <Container className='justify-content-center text-center bordure' style={{marginTop:50,backgroundColor:'white',width:750}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:50,width:750}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
         <p className={couleur}><i><b>{message}</b></i></p>
@@ -172,8 +172,8 @@ function FormEnvoiClient(props)
         <Col xs ={4}>
         
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="primary" type="submit" onClick={e=>submitBarcode(e)}>
-        tracker bagage
+        <Button variant="outline-warning" type="submit" onClick={e=>submitBarcode(e)}>
+        Valider Informations
         </Button>
         </Link>
 
@@ -185,7 +185,7 @@ function FormEnvoiClient(props)
 </Form>
 </Container>}
 
-{isMobileOrTablet && <Container className='my-auto mx-auto justify-content-center text-center bordure mb-5' style={{marginTop:50,backgroundColor:'white'}} >
+{isMobileOrTablet && <Container className='bg-dark my-auto mx-auto justify-content-center text-center bordure mb-5' style={{marginTop:50,backgroundColor:'white'}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={"auto"}>
         <p className={couleur}><i><b>{message}</b></i></p>
@@ -248,8 +248,8 @@ function FormEnvoiClient(props)
         <Col xs={"auto"}>
         
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="primary" type="submit" onClick={e=>submitBarcode(e)}>
-        tracker bagage
+        <Button variant="outline-warning" type="submit" onClick={e=>submitBarcode(e)}>
+        Valider Informations
         </Button>
         </Link>
 
