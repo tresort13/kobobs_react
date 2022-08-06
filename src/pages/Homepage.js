@@ -27,8 +27,8 @@ function Homepage()
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded zoom bordure" style={{width:300}}>
               <div>
-              <Link to="/menu_bagages">
-              <Image src={require('./envoi.png')}  className='rounded' style={{width:160}}></Image>
+              <Link to="/menu_envoie">
+              <Image src={require('./envoi.png')}  className='rounded-pill' style={{width:160}}></Image>
               </Link>
               </div>
 
@@ -41,8 +41,8 @@ function Homepage()
             <Col mdmd={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded zoom bordure" style={{width:300}}>
               <div>
-              <Link to="/menu_passagers">
-              <Image src={require('./retrait.png')}  className='rounded' style={{width:180}}></Image>
+              <Link to="/menu_retrait">
+              <Image src={require('./retrait.png')}  className='rounded-pill' style={{width:180}}></Image>
               </Link>
               </div>
 
@@ -55,8 +55,8 @@ function Homepage()
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded zoom bordure" style={{width:300}}>
               <div>
-              <Link to="/menu_gestion_vols">
-              <Image src={require('./kobo_audit.jpg')}  className='rounded' style={{width:200}}></Image>
+              <Link to="/menu_gestion_operation">
+              <Image src={require('./kobo_audit.jpg')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
@@ -72,8 +72,8 @@ function Homepage()
         <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded zoom bordure" style={{width:300}}>
               <div>
-              <Link to="/menu_livraison">
-              <Image src={require('./kobo_client.jpg')}  className='rounded' style={{width:200}}></Image>
+              <Link to="/menu_gestion_abonne">
+              <Image src={require('./kobo_client.jpg')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
@@ -88,8 +88,8 @@ function Homepage()
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded zoom pt-1 bordure" style={{width:300}}>
               <div>
-              <Link to="/menu_audit">
-              <Image src={require('./kobo_autres.png')}  className='rounded' style={{width:200}}></Image>
+              <Link to="/menu_parametre">
+              <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
@@ -104,7 +104,7 @@ function Homepage()
              <div className="d-grid bg-white text-center justify-content-center rounded zoom bordure" style={{width:300}}>
               <div>
               <Link to="/menu_users">
-              <Image src={require('./user_kobo.png')}  className='rounded' style={{width:200}}></Image>
+              <Image src={require('./user_kobo.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
@@ -131,8 +131,8 @@ function Homepage()
             <Col xs={"auto"} className="my-auto  mb-5">
              <div className="d-grid bg-white text-center justify-content-center rounded zoom bordure" style={{width:300}}>
               <div>
-              <Link to="/menu_bagages">
-              <Image src={require('./envoi.png')}  className='rounded' style={{width:160}}></Image>
+              <Link to="/menu_envoie">
+              <Image src={require('./envoi.png')}  className='rounded-pill' style={{width:160}}></Image>
               </Link>
               </div>
 
@@ -147,8 +147,8 @@ function Homepage()
             <Col xs={"auto"} className="my-auto text-center justify-content-center mb-5">
              <div className="d-grid bg-white text-center justify-content-center rounded zoom bordure" style={{width:300}}>
               <div>
-              <Link to="/menu_passagers">
-              <Image src={require('./retrait.png')}  className='rounded' style={{width:180}}></Image>
+              <Link to="/menu_retrait">
+              <Image src={require('./retrait.png')}  className='rounded-pill' style={{width:180}}></Image>
               </Link>
               </div>
 
@@ -163,8 +163,8 @@ function Homepage()
             <Col xs={"auto"} className="mb-5">
              <div className="d-grid bg-white text-center justify-content-center rounded zoom bordure" style={{width:300}}>
               <div>
-              <Link to="/menu_gestion_vols">
-              <Image src={require('./kobo_audit.jpg')}  className='rounded' style={{width:200}}></Image>
+              <Link to="/menu_gestion_operation">
+              <Image src={require('./kobo_audit.jpg')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
@@ -180,8 +180,8 @@ function Homepage()
             <Col xs={"auto"} className=" mb-5">
              <div className="d-grid bg-white text-center justify-content-center rounded zoom bordure" style={{width:300}}>
               <div>
-              <Link to="/menu_livraison">
-              <Image src={require('./kobo_client.jpg')}  className='rounded' style={{width:200}}></Image>
+              <Link to="/menu_gestion_abonne">
+              <Image src={require('./kobo_client.jpg')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
@@ -198,8 +198,8 @@ function Homepage()
             <Col xs={"auto"} className="mb-5">
              <div className="d-grid bg-white text-center justify-content-center rounded zoom pt-1 bordure" style={{width:300}}>
               <div>
-              <Link to="/kobo_autres">
-              <Image src={require('./kobo_autres.png')}  className='rounded' style={{width:200}}></Image>
+              <Link to="/menu_parametre">
+              <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
@@ -216,7 +216,7 @@ function Homepage()
              <div className="d-grid bg-white text-center justify-content-center rounded zoom bordure" style={{width:300}}>
               <div>
               <Link to="/menu_users">
-              <Image src={require('./user_kobo.png')}  className='rounded' style={{width:200}}></Image>
+              <Image src={require('./user_kobo.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 

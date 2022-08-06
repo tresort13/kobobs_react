@@ -4,9 +4,13 @@
     height: 15px;
      
    }
+
+  .couleur{
+    color: darkorange;
+  }
  
    .bordure{
-       border: 5px solid rgb(119, 192, 238);
+       border: 5px solid black;
    }
  
    .bordure2{
