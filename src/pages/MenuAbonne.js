@@ -34,11 +34,11 @@ function MenuAbonne(props)
     </Row>
     <Row className='justify-content-center pb-3'>
         <Col xs = {6}>
-        <Link to="/form_retrait" style={{textDecorationLine:'none'}}>
+        <a href='/form_retrait' style={{textDecorationLine:'none'}}>
         <button  style={{width:400,height:80}} className='btn btn-lg rounded-pill zoom couleur'>
         <i className='text-dark'>Retrait Argent</i>
         </button>
-        </Link>
+        </a>
         </Col>
     </Row>
   
