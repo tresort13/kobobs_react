@@ -25,10 +25,10 @@ function MenuEnvoi(props)
 <>
 <Header username={props.username} />
 {isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
-    <Row className='justify-content-center mb-3 pt-3' >
+    <Row className='justify-content-center mb-5 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:100}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
             </Link>
         </Col>
     </Row>
@@ -58,10 +58,10 @@ function MenuEnvoi(props)
 </Container>}
 
 {isMobileOrTablet && <Container className='bg-dark my-auto justify-content-center text-center bordure mb-5' style={{marginTop:30}} >
-    <Row className='justify-content-center mb-3 pt-3' >
+    <Row className='justify-content-center mb-5 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:100}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
             </Link>
         </Col>
     </Row>

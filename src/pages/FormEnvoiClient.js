@@ -26,7 +26,7 @@ function FormEnvoiClient(props)
     
         const[position,setPosition] = useState('')
 
-    const [message,setMessage] = useState("veuillez scanner le barcode du bagage ")
+    const [message,setMessage] = useState("Formulaire d'Envoie Client")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
@@ -99,14 +99,14 @@ function FormEnvoiClient(props)
 {isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:50,width:750}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
-        <p className={couleur}><i><b>{message}</b></i></p>
+        <p className='couleur2'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-2' >
+    <Row className='justify-content-center pb-3' >
         <Col xs={6}>
             <Link to="/tracer_baggages">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:100}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
             </Link>
         
         </Col>
@@ -160,6 +160,10 @@ function FormEnvoiClient(props)
         </Col>
     </Row>
 
+    <Row>
+      <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'> Beneficiare Informations</p>
+    </Row>
     <Row className='justify-content-center'>
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
