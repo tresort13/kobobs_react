@@ -24,7 +24,7 @@ function MenuEnvoi(props)
     return (
 <>
 <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:30,backgroundColor:'white',width:750}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center' style={{marginTop:30,width:750}} >
     <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
             <Link to="/home">
@@ -35,8 +35,8 @@ function MenuEnvoi(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {6}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <i className='couleur2'>Envoie Argent Client</i>
+        <Button variant='secondary'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'>Envoie Argent Client</b>
         </Button>
         </Link>
         </Col>
