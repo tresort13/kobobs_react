@@ -273,7 +273,7 @@ function FormEnvoiClient(props)
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/envoi_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit" >
         Valider Informations
         </Button>
