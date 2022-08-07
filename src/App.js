@@ -14,6 +14,7 @@ import MenuAbonne from './pages/MenuAbonne';
 import FormEnvoiClient from './pages/FormEnvoiClient';
 import FormEnvoiAbonneId from './pages/FormEnvoiAbonneId';
 import FormEnvoiAbonne from './pages/FormEnvoiAbonne';
+import EnvoiInfo from './pages/EnvoiInfo:js';
 
 
 
@@ -86,7 +87,9 @@ function App() {
         <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username}/>} >
         </Route>
         
-
+        <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username}/>} >
+        </Route>
+        
       </Routes >
     </BrowserRouter>
   );
