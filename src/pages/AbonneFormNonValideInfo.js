@@ -28,7 +28,7 @@ function AbonneFormNonValideInfo(props)
     
         const[position,setPosition] = useState('')
 
-    const [message,setMessage] = useState("Liste des formulaire non validé")
+    const [message,setMessage] = useState("Liste des formulaires non validés")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
