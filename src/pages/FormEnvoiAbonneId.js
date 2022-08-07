@@ -143,7 +143,7 @@ function FormEnvoiAbonneId(props)
    <Row className='pb-3'>
        <Col>
         <Link to="/form_envoie_abonne" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitBarcode(e)}>
+        <Button variant="outline-warning" type="submit" >
         Valider Informations
         </Button>
         </Link>
