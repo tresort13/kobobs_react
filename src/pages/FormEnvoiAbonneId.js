@@ -98,7 +98,7 @@ function FormEnvoiAbonneId(props)
         
         <>
         <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:500}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:750}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
         <p className='couleur2'><i><b>{message}</b></i></p>
@@ -118,7 +118,7 @@ function FormEnvoiAbonneId(props)
    
 
     <Row className='justify-content-center'>
-        <Col xs = {4}>
+        <Col xs = {"auto"}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>ID Abonné</Form.Label>
         <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Veuillez entrer ID abonné' autoFocus   required/>
@@ -127,7 +127,7 @@ function FormEnvoiAbonneId(props)
     </Row>
 
     <Row>
-    <Col xs ={4}>
+    <Col xs ={"auto"}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Liste des Beneficiares existants</Form.Label>
         <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
