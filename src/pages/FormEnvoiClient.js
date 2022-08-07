@@ -124,32 +124,36 @@ function FormEnvoiClient(props)
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo (Nom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" autoFocus   required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo' autoFocus   required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label>  
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text"  required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo ya Mukristu (Prénom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text"  required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
     </Row>
 
     <Row className='justify-content-center'>
         <Col xs = {4}>
-        <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>E-mail Adresse</Form.Label>
+        <InputGroup className="mb-3">
+        <Form.Label className='couleur2'>Email</Form.Label>
         <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-        <Form.Control type="email" name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)}  required/>
-         </Form.Group>
+        <Form.Control
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
+      </InputGroup>
         </Col>
 
         <Col xs = {4}>
@@ -180,21 +184,21 @@ function FormEnvoiClient(props)
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo (Nom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text"  required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo' required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label> 
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
          </Form.Group>
         </Col>
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Kombo ya Mukristu (Prénom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text"  required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
     </Row>
@@ -202,14 +206,14 @@ function FormEnvoiClient(props)
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Adresse</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text"  required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Adresse'  required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Numéro ya Tshombo (Numéro Tél)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo ' required/>
          </Form.Group>
         </Col>
 
@@ -229,20 +233,20 @@ function FormEnvoiClient(props)
   
     <Row>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'> Montant Informations</p>
+      <p className='couleur2'><b><u>Montant Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center'>
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Mbongo (Montant)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez scanner le barcode baggage" autoFocus required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
          </Form.Group>
         </Col>
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Device</Form.Label>
-        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} placeholder="Device" required>
          <option>GBP (£)</option>
          <option value="ok_bagage_livrer">GBP (£)</option>
          <option value="ok_bagage_stocke_arrivee">USD ($)</option>
@@ -253,9 +257,9 @@ function FormEnvoiClient(props)
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
-        <Form.Label className='couleur2'>Service</Form.Label>
+        <Form.Label className='couleur2'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
         <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
-         <option>Kozua na maboko</option>
+         <option>Kozua na maboko (kozua na nzela ya agence)</option>
          <option value="ok_bagage_debarquement_arrivee">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
          
          </Form.Select>
