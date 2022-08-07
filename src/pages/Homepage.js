@@ -41,7 +41,7 @@ function Homepage(props)
             <Col mdmd={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
-              <Link to="/menu_retrait">
+              <Link to="/form_retrait">
               <Image src={require('./retrait.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>

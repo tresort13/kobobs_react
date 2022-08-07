@@ -15,6 +15,8 @@ import FormEnvoiClient from './pages/FormEnvoiClient';
 import FormEnvoiAbonneId from './pages/FormEnvoiAbonneId';
 import FormEnvoiAbonne from './pages/FormEnvoiAbonne';
 import EnvoiInfo from './pages/EnvoiInfo';
+import FormRetrait from './pages/FormRetrait';
+import RetraitInfo from './pages/RetraitInfo';
 
 
 
@@ -88,6 +90,12 @@ function App() {
         </Route>
         
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username}/>} >
+        </Route>
+
+        <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username}/>} >
+        </Route>
+
+        <Route path="/retrait_info" element={username == "" ? <Navigate to ='/' /> :<RetraitInfo username = {username}/>} >
         </Route>
         
       </Routes >
