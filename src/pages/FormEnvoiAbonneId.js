@@ -126,7 +126,7 @@ function FormEnvoiAbonneId(props)
         </Col>
     </Row>
 
-    <Row>
+    <Row className='justify-content-center'>
     <Col xs ={6}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Liste des Beneficiares existants</Form.Label>
@@ -142,7 +142,7 @@ function FormEnvoiAbonneId(props)
 
    <Row className='pb-3'>
        <Col>
-        <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/form_envoie_abonne" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit" onClick={e=>submitBarcode(e)}>
         Valider Informations
         </Button>
