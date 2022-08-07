@@ -117,7 +117,7 @@ function FormEnvoiClient(props)
 <Form>
     <Row>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'> Expediditaire Informations</p>
+      <p className='couleur2'><b><u>Expediditaire Informations</u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -146,10 +146,10 @@ function FormEnvoiClient(props)
     <Row className='justify-content-center'>
         <Col xs = {4}>
         <InputGroup className="mb-3">
-        <Form.Label className='couleur2'>Email</Form.Label>
         <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+        <Form.Label className='couleur2'>Email</Form.Label>
         <Form.Control
-          placeholder="Username"
+          placeholder="Email Adresse"
           aria-label="Username"
           aria-describedby="basic-addon1"
         />
@@ -159,7 +159,7 @@ function FormEnvoiClient(props)
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Numéro ya Tshombo (Numéro Tél)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" required/>
+        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo' required/>
          </Form.Group>
         </Col>
 
@@ -178,7 +178,7 @@ function FormEnvoiClient(props)
 
     <Row>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'> Beneficiare Informations</p>
+      <p className='couleur2'><b><u>Beneficiare Informations</u></b></p>
     </Row>
     <Row className='justify-content-center'>
         <Col xs = {4}>
