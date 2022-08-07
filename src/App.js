@@ -17,6 +17,9 @@ import FormEnvoiAbonne from './pages/FormEnvoiAbonne';
 import EnvoiInfo from './pages/EnvoiInfo';
 import FormRetrait from './pages/FormRetrait';
 import RetraitInfo from './pages/RetraitInfo';
+import AbonneFormNonValideInfo from './pages/AbonneFormNonValideInfo';
+import FormRetrouverCodeAbonne from './pages/FormRetrouverCodeAbonne';
+import AbonneCodeInfo from './pages/AbonneCodeInfo';
 
 
 
@@ -98,6 +101,16 @@ function App() {
         <Route path="/retrait_info" element={username == "" ? <Navigate to ='/' /> :<RetraitInfo username = {username}/>} >
         </Route>
         
+        <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to ='/' /> :<AbonneFormNonValideInfo username = {username}/>} >
+        </Route>
+
+        <Route path="/form_retrouver_abonne" element={username == "" ? <Navigate to ='/' /> :<FormRetrouverCodeAbonne username = {username}/>} >
+        </Route>
+
+        <Route path="/abonne_code_info" element={username == "" ? <Navigate to ='/' /> :<AbonneCodeInfo username = {username}/>} >
+        </Route>
+
+
       </Routes >
     </BrowserRouter>
   );

@@ -28,7 +28,7 @@ function RetraitInfo(props)
     
         const[position,setPosition] = useState('')
 
-    const [message,setMessage] = useState("Veuillez Vérifier les informations avant validation")
+    const [message,setMessage] = useState("Veuillez Vérifier les informations avant de servir")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
@@ -115,7 +115,7 @@ function RetraitInfo(props)
     </Row>
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motindi (Expediditaire Informations)</u></b> </p>
+      <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
@@ -155,7 +155,7 @@ function RetraitInfo(props)
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3'>
+    <Row className='justify-content-center pb-1'>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Signature Digitale</u></b> </p>
     </Row>

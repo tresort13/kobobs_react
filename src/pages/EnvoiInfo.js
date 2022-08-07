@@ -115,7 +115,7 @@ function EnvoiInfo(props)
     </Row>
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motindi (Expediditaire Informations)</u></b> </p>
+      <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
