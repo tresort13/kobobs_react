@@ -167,10 +167,10 @@ function FormEnvoiClient(props)
       <p className='couleur2'><b><u>Mozui (Beneficiare Informations)</u></b></p>
     </Row>
     <Row className='justify-content-center'>
-        <Col xs = {4}>
+    <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo (Nom)</Form.Label>
-        <Form.Control name="nom_beneficiare" value={envoie.infoEnvoie.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo' required/>
+        <Form.Label className='couleur2'>Kombo Ya Libota(Nom)</Form.Label>
+        <Form.Control name="nom_expediteur" value={envoie.infoEnvoie.nom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota' autoFocus   required/>
          </Form.Group>
         </Col>
 
@@ -260,7 +260,7 @@ function FormEnvoiClient(props)
         <Col xs ={4}>
         
         <Link to="/envoi_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" >
+        <Button variant="outline-warning" type="submit" onClick={e=>submitBarcode(e)}>
         Valider Informations
         </Button>
         </Link>
