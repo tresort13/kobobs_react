@@ -14,7 +14,7 @@ import MenuAbonne from './pages/MenuAbonne';
 import FormEnvoiClient from './pages/FormEnvoiClient';
 import FormEnvoiAbonneId from './pages/FormEnvoiAbonneId';
 import FormEnvoiAbonne from './pages/FormEnvoiAbonne';
-import EnvoiInfo from './pages/EnvoiInfo:js';
+import EnvoiInfo from './pages/EnvoiInfo';
 
 
 
