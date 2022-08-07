@@ -117,7 +117,7 @@ function FormEnvoiClient(props)
 <Form>
     <Row>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Expediditaire Informations</u></b> </p>
+      <p className='couleur2'><b><u>Motindi (Expediditaire Informations)</u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
@@ -145,9 +145,9 @@ function FormEnvoiClient(props)
 
     <Row className='justify-content-center'>
         <Col xs = {4}>
+        <Form.Label className='couleur2'>Email</Form.Label>
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-        <Form.Label className='couleur2'>Email</Form.Label>
         <Form.Control
           placeholder="Email Adresse"
           aria-label="Username"
@@ -178,7 +178,7 @@ function FormEnvoiClient(props)
 
     <Row>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Beneficiare Informations</u></b></p>
+      <p className='couleur2'><b><u>Mozui (Beneficiare Informations)</u></b></p>
     </Row>
     <Row className='justify-content-center'>
         <Col xs = {4}>
