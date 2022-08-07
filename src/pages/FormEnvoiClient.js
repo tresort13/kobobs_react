@@ -18,11 +18,22 @@ const useState = React.useState
 function FormEnvoiClient(props)
 {
 
-    const[barcode,setBarcode] = useState({infoBarcode :{
-        barcodeBagage:"",
-        operation:"",
-        position:"",
-        volInfo:""
+    const[envoie,setEnvoie] = useState({infoEnvoie :{
+    nom_expediteur : '',
+    postnom_expediteur : '',
+    prenom_expediteur : '',
+    email_expediteur : '',
+    numero_expediteur: '',
+    pays_expediteur : '',
+    nom_beneficiaire : '',
+    postnom_beneficiaire : '',
+    prenom_beneficiaire : '',
+    adresse_beneficiare : '',
+    numero_beneficiaire : '',
+    pays_beneficiaire : '',
+    montant_envoie : '',
+    montant_device : '',
+    type_service : ''
     }})
 
     
@@ -45,53 +56,32 @@ function FormEnvoiClient(props)
     const submitBarcode = (e)=>
     {
         
-        e.preventDefault()
         
-        fetch('https://congoairwaysapi.herokuapp.com/api/updateBagage/', {
-                method: 'PUT',
+        fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
+                method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(barcode.infoBarcode)
+                body: JSON.stringify(envoie.infoEnvoie)
               })
               .then( res => res.json())
               .then(
                 res => {   
-                    if(res =="ok")
-                {
-                    
-                    setMessage("le barcode" +barcode.infoBarcode.barcodeBagage+" est scanné avec succès !!!")
-                    setCouleur("text-success")
-                } 
-                else{
-                    setMessage("echec operation")
-                    setCouleur("text-danger")
-                }
-       
+                    console.log(res)
                 }
               )
               .catch( (error) =>
                 {
-                    
-                    setMessage("echec operation")
-                    setCouleur("text-danger")
-                } )
+                    console.log(error)
+                } )                
 
-                console.log(barcode.infoBarcode.operation +" "+barcode.infoBarcode.position)
-                
-
-                setBarcode({infoBarcode:{barcodeBagage:""}})
+                setEnvoie({infoEnvoie:{}})
     }
 
     const inputChanged = (event)=>
     {
-        const cred = barcode.infoBarcode;
+        const cred = envoie.infoEnvoie;
         cred[event.target.name] = event.target.value;
-        cred['operation'] = props.operationBG
-        cred['position'] = props.positionBG
-        cred['volInfo'] = props.volInfo
-        setBarcode({infoBarcode:cred})
+        setEnvoie({infoEnvoie:cred})
     }
-
-    
 
    
     return (
@@ -123,22 +113,22 @@ function FormEnvoiClient(props)
     <Row className='justify-content-center'>
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo (Nom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo' autoFocus   required/>
+        <Form.Label className='couleur2'>Kombo Ya Libota(Nom)</Form.Label>
+        <Form.Control name="nom_expediteur" value={envoie.infoEnvoie.nom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota' autoFocus   required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label>  
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
+        <Form.Control name="postnom_expediteur" value={envoie.infoEnvoie.postnom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo ya Mukristu (Prénom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
+        <Form.Control name="prenom_expediteur" value={envoie.infoEnvoie.prenom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
     </Row>
@@ -148,25 +138,21 @@ function FormEnvoiClient(props)
         <Form.Label className='couleur2'>Email</Form.Label>
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-        <Form.Control
-          placeholder="Email Adresse"
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-        />
+        <Form.Control name="email_expediteur" value={envoie.infoEnvoie.email_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Email' required/>
       </InputGroup>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Numéro ya Tshombo (Numéro Tél)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo' required/>
+        <Form.Control name="numero_expediteur" value={envoie.infoEnvoie.numero_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo' required/>
          </Form.Group>
         </Col>
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
-        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+        <Form.Select name='pays_expediteur' value={envoie.infoEnvoie.pays_expediteur} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
          <option>Ekolo (Pays)</option>
          <option value="ok_bagage_livrer">Angleterre</option>
          <option value="ok_bagage_stocke_arrivee">RD Congo</option>
@@ -184,21 +170,21 @@ function FormEnvoiClient(props)
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo (Nom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo' required/>
+        <Form.Control name="nom_beneficiare" value={envoie.infoEnvoie.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo' required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label> 
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
+        <Form.Control name="postnom_beneficiare" value={envoie.infoEnvoie.postnom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
          </Form.Group>
         </Col>
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Kombo ya Mukristu (Prénom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
+        <Form.Control name="prenom_beneficiare" value={envoie.infoEnvoie.prenom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
     </Row>
@@ -206,21 +192,21 @@ function FormEnvoiClient(props)
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Adresse</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Adresse'  required/>
+        <Form.Control name="adresse_beneficaire" value={envoie.infoEnvoie.adresse_beneficiare} onChange={e=>inputChanged(e)} type="text" placeholder='Adresse'  required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Numéro ya Tshombo (Numéro Tél)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo ' required/>
+        <Form.Control name="numero_beneficiare" value={envoie.infoEnvoie.numero_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo ' required/>
          </Form.Group>
         </Col>
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
-        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+        <Form.Select name='pays_beneficiare' value={envoie.infoEnvoie.numero_beneficiaire} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
          <option>Ekolo (Pays)</option>
          <option value="ok_bagage_livrer">RD Congo</option>
          <option value="ok_bagage_stocke_arrivee">Angleterre</option>
@@ -239,14 +225,14 @@ function FormEnvoiClient(props)
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Mbongo (Montant)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
+        <Form.Control name="montant_envoie" value={envoie.infoEnvoie.montant_envoie} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
          </Form.Group>
         </Col>
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Device</Form.Label>
-        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} placeholder="Device" required>
+        <Form.Select name="montant_device" value={envoie.infoEnvoie.montant_device} aria-label="Default select example" onChange={e=>inputChanged(e)} placeholder="Device" required>
          <option>GBP (£)</option>
          <option value="ok_bagage_livrer">GBP (£)</option>
          <option value="ok_bagage_stocke_arrivee">USD ($)</option>
@@ -258,7 +244,7 @@ function FormEnvoiClient(props)
         <Col xs ={4}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
-        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+        <Form.Select name="type_service" value={envoie.infoEnvoie.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
          <option>Kozua na maboko (kozua na nzela ya agence)</option>
          <option value="ok_bagage_debarquement_arrivee">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
          

@@ -172,6 +172,16 @@ function RetraitInfo(props)
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'><b><u>Status du Retrait</u></b> </p>
+    </Row>
+    <Row className='justify-content-center pb-3' >
+        <Col xs={12}>
+        <p className='text-light'>Status : </p>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center pb-3'>
+      <hr style={{color:"darkorange"}}></hr>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
