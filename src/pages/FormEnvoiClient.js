@@ -274,7 +274,7 @@ function FormEnvoiClient(props)
         <Col xs ={4}>
         
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitBarcode(e)}>
+        <Button variant="outline-warning" type="submit" >
         Valider Informations
         </Button>
         </Link>
@@ -418,7 +418,7 @@ function FormEnvoiClient(props)
         <Col xs ={4}>
         
         <Link to="/envoi_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitBarcode(e)}>
+        <Button variant="outline-warning" type="submit" >
         Valider Informations
         </Button>
         </Link>
