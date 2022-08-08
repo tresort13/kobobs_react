@@ -54,8 +54,7 @@ function FormEnvoiClient(props)
 
 
     const submitFormulaire = (e)=>
-    {     
-        
+    {          
       props.dataEnvoie(envoie.infoEnvoie)    
       setEnvoie({infoEnvoie:{}})
     }
