@@ -32,7 +32,7 @@ function EnvoiInfo(props)
     
 
 
-    const submitBarcode = (e)=>
+    const submitEnvoie = (e)=>
     {
         
         
@@ -134,7 +134,7 @@ function EnvoiInfo(props)
         
         <Col xs={6}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>RetourEnvoie(e)}>
+        <Button variant="outline-warning" type="submit">
         Modifier Informations
         </Button>
         </Link>
