@@ -164,14 +164,14 @@ function FormEnvoiClient(props)
 
     <Row>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mozui (Expediteur Informations)</u></b> </p>
+      <p className='couleur2'><b><u>Mozui (Beneficiare Informations)</u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
-        <Col xs = {4}>
+    <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo Ya Libota(Nom)</Form.Label>
-        <Form.Control name="nom_Benificiare" value={envoie.infoEnvoie.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota' required/>
+        <Form.Label className='couleur2'>Kombo Ya Libota (Nom)</Form.Label>
+        <Form.Control name="nom_beneficiaire" value={envoie.infoEnvoie.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
          </Form.Group>
         </Col>
 
