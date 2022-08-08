@@ -33,9 +33,7 @@ function EnvoiInfo(props)
 console.log(props.envoie.infoEnvoie)
 
     const submitEnvoie = (e)=>
-    {
-        
-        
+    {      
         fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -84,7 +82,7 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): {props.envoie.infoEnvoie.nom_expediteur} </p>
+        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
         <p className='text-light'>Kombo Ya Authenticité (Postnom): {props.envoie.infoEnvoie.postnom_expediteur} </p>
         <p className='text-light'>Kombo Ya Mukristu (Prénom) : {props.envoie.infoEnvoie.prenom_expediteur}</p>
         <p className='text-light'>Email Adresse : {props.envoie.infoEnvoie.adresse_expediteur}</p>
