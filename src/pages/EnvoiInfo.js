@@ -18,16 +18,6 @@ const useState = React.useState
 function EnvoiInfo(props)
 {
 
-    const[barcode,setBarcode] = useState({infoBarcode :{
-        barcodeBagage:"",
-        operation:"",
-        position:"",
-        volInfo:""
-    }})
-
-    
-        const[position,setPosition] = useState('')
-
     const [message,setMessage] = useState("Veuillez Vérifier les informations avant validation")
     const [couleur,setCouleur] = useState("text-dark")
 
@@ -45,51 +35,26 @@ function EnvoiInfo(props)
     const submitBarcode = (e)=>
     {
         
-        e.preventDefault()
         
-        fetch('https://congoairwaysapi.herokuapp.com/api/updateBagage/', {
-                method: 'PUT',
+        fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
+                method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(barcode.infoBarcode)
+                body: JSON.stringify(props.envoie.infoEnvoie)
               })
               .then( res => res.json())
               .then(
                 res => {   
-                    if(res =="ok")
-                {
-                    
-                    setMessage("le barcode" +barcode.infoBarcode.barcodeBagage+" est scanné avec succès !!!")
-                    setCouleur("text-success")
-                } 
-                else{
-                    setMessage("echec operation")
-                    setCouleur("text-danger")
-                }
-       
+                 console.log(res)
                 }
               )
               .catch( (error) =>
                 {
                     
-                    setMessage("echec operation")
-                    setCouleur("text-danger")
+                   console.log(error)
                 } )
 
-                console.log(barcode.infoBarcode.operation +" "+barcode.infoBarcode.position)
-                
-
-                setBarcode({infoBarcode:{barcodeBagage:""}})
     }
 
-    const inputChanged = (event)=>
-    {
-        const cred = barcode.infoBarcode;
-        cred[event.target.name] = event.target.value;
-        cred['operation'] = props.operationBG
-        cred['position'] = props.positionBG
-        cred['volInfo'] = props.volInfo
-        setBarcode({infoBarcode:cred})
-    }
 
     
 
@@ -119,12 +84,12 @@ function EnvoiInfo(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): </p>
-        <p className='text-light'>Email Adresse : </p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : </p>
-        <p className='text-light'>Ekolo (Pays) : </p>
+        <p className='text-light'>Kombo Ya Libota (Nom): {props.envoie.infoEnvoie.nom_expediteur} </p>
+        <p className='text-light'>Kombo Ya Authenticité (Postnom): {props.envoie.infoEnvoie.postnom_expediteur} </p>
+        <p className='text-light'>Kombo Ya Mukristu (Prénom) : {props.envoie.infoEnvoie.prenom_expediteur}</p>
+        <p className='text-light'>Email Adresse : {props.envoie.infoEnvoie.adresse_expediteur}</p>
+        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : {props.envoie.infoEnvoie.numero_expediteur} </p>
+        <p className='text-light'>Ekolo (Pays) : {props.envoie.infoEnvoie.email_expediteur}</p>
         </Col>
     </Row>
 
@@ -134,12 +99,12 @@ function EnvoiInfo(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): </p>
-        <p className='text-light'>Email Adresse : </p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : </p>
-        <p className='text-light'>Ekolo (Pays) : </p>
+        <p className='text-light'>Kombo Ya Libota (Nom): {props.envoie.infoEnvoie.nom_beneficiaire} </p>
+        <p className='text-light'>Kombo Ya Authenticité (Postnom): {props.envoie.infoEnvoie.postnom_beneficiaire}</p>
+        <p className='text-light'>Kombo Ya Mukristu (Prénom) : {props.envoie.infoEnvoie.prenom_beneficiaire} </p>
+        <p className='text-light'>Email Adresse : {props.envoie.infoEnvoie.adresse_beneficiaire}</p>
+        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : {props.envoie.infoEnvoie.numero_beneficiaire} </p>
+        <p className='text-light'>Ekolo (Pays) : {props.envoie.infoEnvoie.pays_beneficiaire}</p>
         </Col>
     </Row>
 
@@ -149,9 +114,9 @@ function EnvoiInfo(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Mbongo (Montant): </p>
-        <p className='text-light'>Dévice : </p>
-        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): </p>
+        <p className='text-light'>Mbongo (Montant): {props.envoie.infoEnvoie.montant_envoie}</p>
+        <p className='text-light'>Dévice : {props.envoie.infoEnvoie.montant_device}</p>
+        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): {props.envoie.infoEnvoie.type_service}</p>
         </Col>
     </Row>
 
@@ -160,16 +125,16 @@ function EnvoiInfo(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitBarcode(e)}>
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
         Valider Informations
         </Button>
         </Link>
         </Col>
         
         <Col xs={6}>
-        <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitBarcode(e)}>
+        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant="outline-warning" type="submit" onClick={e=>RetourEnvoie(e)}>
         Modifier Informations
         </Button>
         </Link>

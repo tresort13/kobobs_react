@@ -39,7 +39,54 @@ function App() {
     window.localStorage.setItem("username", JSON.stringify(username))
   }, [username])
 
+  const [envoie,setEnvoie] = useState(()=>
+  {
+    const localData = localStorage.getItem('envoie');
+    return localData ? JSON.parse(localData) : {infoEnvoie :{
+      nom_expediteur : '',
+      postnom_expediteur : '',
+      prenom_expediteur : '',
+      email_expediteur : '',
+      numero_expediteur: '',
+      pays_expediteur : '',
+      nom_beneficiaire : '',
+      postnom_beneficiaire : '',
+      prenom_beneficiaire : '',
+      adresse_beneficiaire : '',
+      numero_beneficiaire : '',
+      pays_beneficiaire : '',
+      montant_envoie : '',
+      montant_device : '',
+      type_service : ''
+      }};
+    })
   
+  
+
+  useEffect(() => {
+    window.localStorage.setItem("envoie", JSON.stringify(envoie))
+  }, [envoie])
+
+  const dataEnvoie = (donne)=>
+  {
+    setEnvoie({infoEnvoie :{
+      nom_expediteur : donne.nom_expediteur,
+      postnom_expediteur :donne.postnom_expediteur,
+      prenom_expediteur : donne.prenom_expediteur,
+      email_expediteur : donne.email_expediteur,
+      numero_expediteur: donne.numero_expediteur,
+      pays_expediteur : donne.pays_expediteur,
+      nom_beneficiaire : donne.nom_beneficiaire,
+      postnom_beneficiaire : donne.postnom_beneficiaire,
+      prenom_beneficiaire : donne.prenom_beneficiaire,
+      adresse_beneficiaire :donne.adresse_beneficiaire,
+      numero_beneficiaire : donne.numero_beneficiaire,
+      pays_beneficiaire : donne.pays_beneficiaire,
+      montant_envoie : donne.montant_envoie,
+      montant_device : donne.montant_device,
+      type_service : donne.type_service
+      }})
+  }
   const[temps,setTemps] = useState(()=>
     {
       const localData = localStorage.getItem('temps');
@@ -84,7 +131,7 @@ function App() {
         <Route path="/menu_users" element={username == "" ? <Navigate to ='/' /> :<MenuUsers username = {username}/>} >
         </Route>
 
-        <Route path="/form_envoie_client" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiClient username = {username}/>} >
+        <Route path="/form_envoie_client" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiClient username = {username}/>} dataEnvoie={dataEnvoie}>
         </Route>
 
         <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonneId username = {username}/>} >
@@ -92,7 +139,7 @@ function App() {
         <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username}/>} >
         </Route>
         
-        <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username}/>} >
+        <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} envoie={envoie}/>} >
         </Route>
 
         <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username}/>} >
