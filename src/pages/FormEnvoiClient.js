@@ -53,10 +53,8 @@ function FormEnvoiClient(props)
     
 
 
-    const submitBarcode = (e)=>
-    {
-        
-        e.preventDefault()
+    const submitBarcode = ()=>
+    {     
         fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -261,7 +259,7 @@ function FormEnvoiClient(props)
         <Col xs ={4}>
         
         <Link to="/envoi_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitBarcode(e)}>
+        <Button variant="outline-warning" type="submit" onClick={submitBarcode}>
         Valider Informations
         </Button>
         </Link>
