@@ -30,7 +30,7 @@ function EnvoiInfo(props)
     
   
     
-
+console.log(props.envoie.infoEnvoie)
 
     const submitEnvoie = (e)=>
     {
