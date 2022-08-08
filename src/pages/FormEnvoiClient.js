@@ -56,7 +56,7 @@ function FormEnvoiClient(props)
     const submitBarcode = (e)=>
     {
         
-        
+        e.preventDefault()
         fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
