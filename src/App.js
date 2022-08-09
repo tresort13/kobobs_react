@@ -123,7 +123,7 @@ function App() {
 
   useEffect(() => {
     window.localStorage.setItem("envoie2", JSON.stringify(envoie2))
-  }, [envoie])
+  }, [envoie2])
 
   const dataEnvoie2 = (donne)=>
   {
