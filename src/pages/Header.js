@@ -52,7 +52,7 @@ function Header(props)
           </a>
         </Col>
         <Col xs={5} className="my-auto mx-auto my-auto text-end">
-        <Link to="/menu_principal" style={{textDecoration:"none"}}>
+        <Link to="/home" style={{textDecoration:"none"}}>
           <p className="display-6 text-secondary">KOBO BUSINESS SERVICES</p>
           </Link>
         </Col>
@@ -70,12 +70,12 @@ function Header(props)
         </Offcanvas.Header>
         <Offcanvas.Body>
         <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column">
-        <Nav.Link href="/menu_bagages"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-primary'><i>Tracer Bagages</i></Button></Nav.Link>
-        <Nav.Link href="/menu_passagers"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-primary'><i>Tracer Passagers</i></Button></Nav.Link>
-        <Nav.Link href="/menu_gestion_vols"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-primary'><i>Gestion vols</i></Button></Nav.Link>
-        <Nav.Link href="/menu_livraison"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-primary'><i>Gestion Livraison</i></Button></Nav.Link>
-        <Nav.Link href="/menu_audit"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-primary'><i>Audit</i></Button></Nav.Link>
-        <Nav.Link href="/menu_users"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-primary'><i>Gestion d'utilisateur</i></Button></Nav.Link>
+        <Nav.Link href="/menu_envoie"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Envoi Argent</i></Button></Nav.Link>
+        <Nav.Link href="/menu_retrait"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Retrait Argent</i></Button></Nav.Link>
+        <Nav.Link href="/menu_gestion_abonne"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestions Abonnes</i></Button></Nav.Link>
+        <Nav.Link href=""><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestions Operations</i></Button></Nav.Link>
+        <Nav.Link href=""><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Parametres</i></Button></Nav.Link>
+        <Nav.Link href=""><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion d'utilisateur</i></Button></Nav.Link>
           
                   
                 </Nav>

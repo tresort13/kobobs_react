@@ -34,9 +34,9 @@ console.log(props.envoie.infoEnvoie)
 
     const validerRetrait = (e)=>
     {      
-        fetch('https://kobobsapi.herokuapp.com/api/validerRetrait/', {
-                method:'PUT',
-                headers: {'Content-Type': 'application/json'},
+      fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
+              method:'POST',
+               headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(props.envoie.infoEnvoie)
               })
               .then( res => res.json())
@@ -70,7 +70,7 @@ console.log(props.envoie.infoEnvoie)
 
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-            <Link to="/tracer_baggages">
+            <Link to="">
             <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
             </Link>
         

@@ -75,7 +75,7 @@ function Homepage(props)
         <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
-              <Link to="/menu_gestion_operation">
+              <Link to="">
               <Image src={require('./kobo_audit.jpg')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
@@ -91,7 +91,7 @@ function Homepage(props)
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom pt-1 bordure2" style={{width:300}}>
               <div>
-              <Link to="/menu_parametre">
+              <Link to="">
               <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
@@ -106,7 +106,7 @@ function Homepage(props)
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
-              <Link to="/menu_users">
+              <Link to="">
               <Image src={require('./user_kobo.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>

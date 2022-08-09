@@ -80,7 +80,7 @@ function FormEnvoiClient(props)
 
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-            <Link to="/tracer_baggages">
+            <Link to="">
             <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
             </Link>
         

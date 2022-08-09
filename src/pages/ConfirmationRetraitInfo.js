@@ -45,7 +45,7 @@ function ConfirmationRetraitInfo(props)
 
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-            <Link to="/tracer_baggages">
+            <Link to="">
             <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
             </Link>
         
@@ -65,6 +65,7 @@ function ConfirmationRetraitInfo(props)
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
         <p className='text-light'>opération retrait fait par : <b className='couleur2'> {props.username}</b></p>
         <p className='text-light'>date et heure : <b className='couleur2'> {props.envoie2.infoEnvoie.date_heure_operation}</b></p>
+        
         </Col>
     </Row>
 
