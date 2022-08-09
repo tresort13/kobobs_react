@@ -133,7 +133,7 @@ console.log(props.envoie.infoEnvoie)
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
         <Link to="/confirmation_retrait_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
+        <Button variant="warning" type="submit" onClick={e=>validerRetrait(e)}>
         Valider Retrait pour Servir
         </Button>
         </Link>
@@ -209,7 +209,7 @@ console.log(props.envoie.infoEnvoie)
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
+        <Button variant="warning" type="submit" onClick={e=>validerRetrait(e)}>
         Valider Informations
         </Button>
         </Link>
