@@ -184,7 +184,7 @@ yn
         <Col  xs={"auto"}>    
         <Link to="" style={{color:'white',textDecorationLine:'none'}}> 
         
-        <Button variant="outline-warning" type="submit" onClick={e=>connection(e)}>
+        <Button variant="outline-warning" type="submit" >
         connexion
         </Button>
         </Link>
