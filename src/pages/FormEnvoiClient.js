@@ -137,8 +137,8 @@ function FormEnvoiClient(props)
         <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
         <Form.Select name='pays_expediteur' value={envoie.infoEnvoie.pays_expediteur} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
          <option>Ekolo (Pays)</option>
-         <option value="ok_bagage_livrer">Angleterre</option>
-         <option value="ok_bagage_stocke_arrivee">RD Congo</option>
+         <option value="Angleterre">Angleterre</option>
+         <option value="RD Congo">RD Congo</option>
          
          </Form.Select>
          </Form.Group>
@@ -218,8 +218,8 @@ function FormEnvoiClient(props)
         <Form.Label className='couleur2'>Device</Form.Label>
         <Form.Select name="montant_device" value={envoie.infoEnvoie.montant_device} aria-label="Default select example" onChange={e=>inputChanged(e)} placeholder="Device" required>
          <option>GBP (£)</option>
-         <option value="ok_bagage_livrer">GBP (£)</option>
-         <option value="ok_bagage_stocke_arrivee">USD ($)</option>
+         <option value="£">GBP (£)</option>
+         <option value="$">USD ($)</option>
          
          </Form.Select>
          </Form.Group>
