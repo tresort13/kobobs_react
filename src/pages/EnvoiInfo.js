@@ -42,7 +42,7 @@ console.log(props.envoie.infoEnvoie)
               .then( res => res.json())
               .then(
                 res => {   
-                 dataEnvoie2(res)
+                 props.dataEnvoie2(res)
                 }
               )
               .catch( (error) =>
