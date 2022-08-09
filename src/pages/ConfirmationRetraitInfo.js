@@ -16,10 +16,10 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 const useState = React.useState
 
-function ConfirmationEnvoieInfo(props)
+function ConfirmationRetraitInfo(props)
 {
 
-    const [message,setMessage] = useState("Page de confirmation envoie")
+    const [message,setMessage] = useState("Page de confirmation Retrait")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
@@ -61,12 +61,9 @@ function ConfirmationEnvoieInfo(props)
         <p className='text-light'>Kombo Mobimba ya Mozui (Noms complets Beneficiare): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_beneficiaire} {props.envoie2.infoEnvoie.postnom_beneficiaire} {props.envoie2.infoEnvoie.prenom_beneficiaire}</b> </p>
         <p className='text-light'>Ekolo Motindi (Pays Expediteur) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
         <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_beneficiaire}</b></p>
-        <p className='text-light'>Mbongo (Montant): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie2.infoEnvoie.montant_device}</b> </p>
-        <p className='text-light'>Talo ya lisungi ya mosala na biso : <b className='couleur2'>{Number(props.envoie2.infoEnvoie.frais_envoie ).toFixed(2)} {props.envoie2.infoEnvoie.montant_device }</b> </p>
-        <p className='text-light'>Mbongo Nionso yako futa(Montant Total): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_total).toFixed(2)} {props.envoie2.infoEnvoie.montant_device}</b> </p>
+        <p className='text-light'>Mbongo Bazui (Montant Récuperé): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie2.infoEnvoie.montant_device}</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
-        <p className='text-light'>Code Retrait : <b className='couleur2'> {props.envoie2.infoEnvoie.code_retrait}</b></p>
-        <p className='text-light'>opération envoie fait par : <b className='couleur2'> {props.username}</b></p>
+        <p className='text-light'>opération retrait fait par : <b className='couleur2'> {props.username}</b></p>
         <p className='text-light'>date et heure : <b className='couleur2'> {props.envoie2.infoEnvoie.date_heure_operation}</b></p>
         </Col>
     </Row>
@@ -147,4 +144,4 @@ function ConfirmationEnvoieInfo(props)
     )
 }
 
-export default ConfirmationEnvoieInfo;
+export default ConfirmationRetraitInfo;

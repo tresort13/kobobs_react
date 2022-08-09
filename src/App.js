@@ -209,10 +209,10 @@ function App() {
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie2={dataEnvoie2} envoie={envoie}/>} >
         </Route>
 
-        <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username}/>} >
+        <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username} dataEnvoie2={dataEnvoie2}/>} >
         </Route>
 
-        <Route path="/retrait_info" element={username == "" ? <Navigate to ='/' /> :<RetraitInfo username = {username}/>} >
+        <Route path="/retrait_info" element={username == "" ? <Navigate to ='/' /> :<RetraitInfo username = {username} envoie={envoie}/>} >
         </Route>
         
         <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to ='/' /> :<AbonneFormNonValideInfo username = {username}/>} >
