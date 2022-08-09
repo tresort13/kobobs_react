@@ -193,8 +193,8 @@ function FormEnvoiClient(props)
         <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
         <Form.Select name='pays_beneficiaire' value={envoie.infoEnvoie.pays_beneficiaire} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
          <option>Ekolo (Pays)</option>
-         <option value="ok_bagage_livrer">Angleterre</option>
-         <option value="ok_bagage_stocke_arrivee">RD Congo</option>
+         <option value="Angleterre">Angleterre</option>
+         <option value="RD Congo">RD Congo</option>
          
          </Form.Select>
          </Form.Group>
@@ -229,8 +229,8 @@ function FormEnvoiClient(props)
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
         <Form.Select name="type_service" value={envoie.infoEnvoie.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
-         <option>Kozua na maboko (kozua na nzela ya agence)</option>
-         <option value="ok_bagage_debarquement_arrivee">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
+         <option value= "Kozua na maboko (kozua na nzela ya agence)">Kozua na maboko (kozua na nzela ya agence)</option>
+         <option value="Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
          
          </Form.Select>
          </Form.Group>

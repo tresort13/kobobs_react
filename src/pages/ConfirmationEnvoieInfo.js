@@ -15,7 +15,8 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 
 const useState = React.useState
-function EnvoiInfo(props)
+
+function ConfirmationEnvoieInfo(props)
 {
 
     const [message,setMessage] = useState("Veuillez Vérifier les informations avant validation")
@@ -30,32 +31,6 @@ function EnvoiInfo(props)
     
   
     
-console.log(props.envoie.infoEnvoie)
-
-    const submitEnvoie = (e)=>
-    {      
-        fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(props.envoie.infoEnvoie)
-              })
-              .then( res => res.json())
-              .then(
-                res => {   
-                 dataEnvoie2(res)
-                }
-              )
-              .catch( (error) =>
-                {
-                    
-                   console.log(error)
-                } )
-
-    }
-
-
-    
-
    
     return (
         
@@ -78,68 +53,35 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
+      <p className='couleur2'><b><u>Page de confirmation d'envoie</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie.infoEnvoie.postnom_expediteur}</b>  </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-light'>Email Adresse : <b className='couleur2'>{props.envoie.infoEnvoie.email_expediteur}</b> </p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'> {props.envoie.infoEnvoie.numero_expediteur} </b></p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'> {props.envoie.infoEnvoie.pays_expediteur}</b></p>
+        <p className='text-light'>Kombo Mobimba ya Motindi (Noms complets Expediteur): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_expediteur} {props.envoie.infoEnvoie.postnom_expediteur} {props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-light'>Kombo Mobimba ya MoZUI (Noms complets Beneficiare): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_beneficiaire} {props.envoie.infoEnvoie.postnom_beneficiaire} {props.envoie.infoEnvoie.prenom_beneficiaire}</b> </p>
+        <p className='text-light'>Ekolo Motindi (Pays) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
+        <p className='text-light'>Ekolo Mozui(Pays) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_beneficiaire}</b></p>
+        <p className='text-light'>Mbongo (Montant): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie.infoEnvoie.montant_device}</b> </p>
+        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
+        <p className='text-light'>Code Retrait : <b className='couleur2'> {props.envoie2.infoEnvoie.code_retrait}</b></p>
+        <p className='text-light'>opération fait par : <b className='couleur2'> {props.username}</b></p>
+        <p className='text-light'>date et heure : <b className='couleur2'> {props.envoie2.infoEnvoie.date_heure_operation}</b></p>
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mozui (Bénéficiare Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie.infoEnvoie.postnom_beneficiaire}</b> </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie.infoEnvoie.prenom_beneficiaire} </b> </p>
-        <p className='text-light'>Email Adresse : <b className='couleur2'> {props.envoie.infoEnvoie.adresse_beneficiaire}</b></p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'>{props.envoie.infoEnvoie.numero_beneficiaire}</b>  </p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'>{props.envoie.infoEnvoie.pays_beneficiaire}</b> </p>
-        </Col>
-    </Row>
-
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mbongo (Motant Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Mbongo (Montant): <b className='couleur2'>{Number(props.envoie.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie.infoEnvoie.montant_device}</b> </p>
-        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie.infoEnvoie.type_service}</b> </p>
-        </Col>
-    </Row>
-
+    
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
-        Valider Informations
+        <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant="warning" type="submit">
+        ok
         </Button>
         </Link>
         </Col>
-        
-        <Col xs={6}>
-        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit">
-        Modifier Informations
-        </Button>
-        </Link>
-        </Col>
-    </Row>
-    
-    
-
+    </Row>  
 </Container>
 }
 
@@ -232,4 +174,4 @@ console.log(props.envoie.infoEnvoie)
     )
 }
 
-export default EnvoiInfo;
+export default ConfirmationEnvoieInfo;

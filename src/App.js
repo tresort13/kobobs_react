@@ -87,6 +87,72 @@ function App() {
       type_service : donne.type_service
       }})
   }
+
+
+  const [envoie2,setEnvoie2] = useState(()=>
+  {
+    const localData = localStorage.getItem('envoie2');
+    return localData ? JSON.parse(localData) : {infoEnvoie :{
+      nom_expediteur : '',
+      postnom_expediteur : '',
+      prenom_expediteur : '',
+      email_expediteur : '',
+      numero_expediteur: '',
+      pays_expediteur : '',
+      nom_beneficiaire : '',
+      postnom_beneficiaire : '',
+      prenom_beneficiaire : '',
+      adresse_beneficiaire : '',
+      numero_beneficiaire : '',
+      pays_beneficiaire : '',
+      montant_envoie : '',
+      montant_device : '',
+      type_service : '',
+      frais_envoie : '',
+      montant_total : '',
+      code_retrait : '',
+      data_operation : '',
+      date_heure_operation : '',
+      code_abonne : '',
+      status_retrait : ''
+      }};
+    })
+  
+  
+
+  useEffect(() => {
+    window.localStorage.setItem("envoie2", JSON.stringify(envoie2))
+  }, [envoie])
+
+  const dataEnvoie2 = (donne)=>
+  {
+    setEnvoie2({infoEnvoie :{
+      nom_expediteur : donne.nom_expediteur,
+      postnom_expediteur :donne.postnom_expediteur,
+      prenom_expediteur : donne.prenom_expediteur,
+      email_expediteur : donne.email_expediteur,
+      numero_expediteur: donne.numero_expediteur,
+      pays_expediteur : donne.pays_expediteur,
+      nom_beneficiaire : donne.nom_beneficiaire,
+      postnom_beneficiaire : donne.postnom_beneficiaire,
+      prenom_beneficiaire : donne.prenom_beneficiaire,
+      adresse_beneficiaire :donne.adresse_beneficiaire,
+      numero_beneficiaire : donne.numero_beneficiaire,
+      pays_beneficiaire : donne.pays_beneficiaire,
+      montant_envoie : donne.montant_envoie,
+      montant_device : donne.montant_device,
+      type_service : donne.type_service,
+      frais_envoie : donne.frais_envoie,
+      montant_total : donne.montant_total,
+      code_retrait : donne.code_retrait,
+      data_operation : donne.date_operation,
+      date_heure_operation : donne.date_heure_operation,
+      code_abonne : donne.code_abonne,
+      status_retrait : donne.status_retrait
+      }})
+  }
+
+
   const[temps,setTemps] = useState(()=>
     {
       const localData = localStorage.getItem('temps');
@@ -139,7 +205,7 @@ function App() {
         <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username}/>} >
         </Route>
         
-        <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} envoie={envoie}/>} >
+        <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie2={dataEnvoie2} />} >
         </Route>
 
         <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username}/>} >
@@ -156,6 +222,10 @@ function App() {
 
         <Route path="/abonne_code_info" element={username == "" ? <Navigate to ='/' /> :<AbonneCodeInfo username = {username}/>} >
         </Route>
+
+        <Route path="/confirmation_envoie_info" element={username == "" ? <Navigate to ='/' /> :<AbonneCodeInfo username = {username} envoie2={envoie2}/>} >
+        </Route>
+
 
 
       </Routes >
