@@ -20,6 +20,7 @@ import RetraitInfo from './pages/RetraitInfo';
 import AbonneFormNonValideInfo from './pages/AbonneFormNonValideInfo';
 import FormRetrouverCodeAbonne from './pages/FormRetrouverCodeAbonne';
 import AbonneCodeInfo from './pages/AbonneCodeInfo';
+import ConfirmationEnvoieInfo from './pages/ConfirmationEnvoieInfo';
 
 
 
@@ -223,7 +224,7 @@ function App() {
         <Route path="/abonne_code_info" element={username == "" ? <Navigate to ='/' /> :<AbonneCodeInfo username = {username}/>} >
         </Route>
 
-        <Route path="/confirmation_envoie_info" element={username == "" ? <Navigate to ='/' /> :<AbonneCodeInfo username = {username} envoie2={envoie2}/>} >
+        <Route path="/confirmation_envoie_info" element={username == "" ? <Navigate to ='/' /> :<ConfirmationEnvoieInfo username = {username} envoie2={envoie2}/>} >
         </Route>
 
 
