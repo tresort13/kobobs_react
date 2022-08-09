@@ -57,11 +57,11 @@ function ConfirmationEnvoieInfo(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo Mobimba ya Motindi (Noms complets Expediteur): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_expediteur} {props.envoie.infoEnvoie.postnom_expediteur} {props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-light'>Kombo Mobimba ya MoZUI (Noms complets Beneficiare): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_beneficiaire} {props.envoie.infoEnvoie.postnom_beneficiaire} {props.envoie.infoEnvoie.prenom_beneficiaire}</b> </p>
+        <p className='text-light'>Kombo Mobimba ya Motindi (Noms complets Expediteur): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_expediteur} {props.envoie2.infoEnvoie.postnom_expediteur} {props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-light'>Kombo Mobimba ya MoZUI (Noms complets Beneficiare): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_beneficiaire} {props.envoie2.infoEnvoie.postnom_beneficiaire} {props.envoie2.infoEnvoie.prenom_beneficiaire}</b> </p>
         <p className='text-light'>Ekolo Motindi (Pays) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
         <p className='text-light'>Ekolo Mozui(Pays) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_beneficiaire}</b></p>
-        <p className='text-light'>Mbongo (Montant): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie.infoEnvoie.montant_device}</b> </p>
+        <p className='text-light'>Mbongo (Montant): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie2.infoEnvoie.montant_device}</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
         <p className='text-light'>Code Retrait : <b className='couleur2'> {props.envoie2.infoEnvoie.code_retrait}</b></p>
         <p className='text-light'>opération fait par : <b className='couleur2'> {props.username}</b></p>
@@ -102,66 +102,35 @@ function ConfirmationEnvoieInfo(props)
     </Row>
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
+      <p className='couleur2'><b><u>Page de confirmation d'envoie</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): {props.envoie.infoEnvoie.nom_expediteur} </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): {props.envoie.infoEnvoie.postnom_expediteur} </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : {props.envoie.infoEnvoie.prenom_expediteur}</p>
-        <p className='text-light'>Email Adresse : {props.envoie.infoEnvoie.adresse_expediteur}</p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : {props.envoie.infoEnvoie.numero_expediteur} </p>
-        <p className='text-light'>Ekolo (Pays) : {props.envoie.infoEnvoie.email_expediteur}</p>
+        <p className='text-light'>Kombo Mobimba ya Motindi (Noms complets Expediteur): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_expediteur} {props.envoie2.infoEnvoie.postnom_expediteur} {props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-light'>Kombo Mobimba ya MoZUI (Noms complets Beneficiare): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_beneficiaire} {props.envoie2.infoEnvoie.postnom_beneficiaire} {props.envoie2.infoEnvoie.prenom_beneficiaire}</b> </p>
+        <p className='text-light'>Ekolo Motindi (Pays) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
+        <p className='text-light'>Ekolo Mozui(Pays) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_beneficiaire}</b></p>
+        <p className='text-light'>Mbongo (Montant): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie2.infoEnvoie.montant_device}</b> </p>
+        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
+        <p className='text-light'>Code Retrait : <b className='couleur2'> {props.envoie2.infoEnvoie.code_retrait}</b></p>
+        <p className='text-light'>opération fait par : <b className='couleur2'> {props.username}</b></p>
+        <p className='text-light'>date et heure : <b className='couleur2'> {props.envoie2.infoEnvoie.date_heure_operation}</b></p>
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mozui (Bénéficiare Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): {props.envoie.infoEnvoie.nom_beneficiaire} </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): {props.envoie.infoEnvoie.postnom_beneficiaire}</p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : {props.envoie.infoEnvoie.prenom_beneficiaire} </p>
-        <p className='text-light'>Email Adresse : {props.envoie.infoEnvoie.adresse_beneficiaire}</p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : {props.envoie.infoEnvoie.numero_beneficiaire} </p>
-        <p className='text-light'>Ekolo (Pays) : {props.envoie.infoEnvoie.pays_beneficiaire}</p>
-        </Col>
-    </Row>
-
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mbongo (Motant Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Mbongo (Montant): {props.envoie.infoEnvoie.montant_envoie}</p>
-        <p className='text-light'>Dévice : {props.envoie.infoEnvoie.montant_device}</p>
-        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): {props.envoie.infoEnvoie.type_service}</p>
-        </Col>
-    </Row>
-
+    
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" >
-        Valider Informations
+        <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant="warning" type="submit">
+        ok
         </Button>
         </Link>
         </Col>
-        
-        <Col xs={6}>
-        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit">
-        Modifier Informations
-        </Button>
-        </Link>
-        </Col>
-    </Row>
+    </Row>  
 </Container>}
 <Row className="mt-5">
           <Col md={12}>
