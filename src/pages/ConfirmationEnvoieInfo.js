@@ -148,7 +148,7 @@ function ConfirmationEnvoieInfo(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
+        <Button variant="warning" type="submit" >
         Valider Informations
         </Button>
         </Link>
