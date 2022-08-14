@@ -118,12 +118,14 @@ function FormEnvoiClient(props)
     </Row>
 
     <Row className='justify-content-center'>
-    <Col xs = {4}>
+    
+       <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Esika ovandaka (Adresse)</Form.Label>
-        <Form.Control name="adresse_expediteur" value={envoie.infoEnvoie.adresse_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Esika ovandaka'    required/>
+        <Form.Label className='couleur2'>Adresse</Form.Label>
+        <Form.Control name="adresse_expediteur" value={envoie.infoEnvoie.adresse_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
+
         <Col xs = {4}>
         <Form.Label className='couleur2'>Email</Form.Label>
         <InputGroup className="mb-3">
