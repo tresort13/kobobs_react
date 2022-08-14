@@ -110,7 +110,7 @@ function FormRetrait(props)
    <Row className='pb-3'>
        <Col>
         <Link to="/retrait_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit"  onClick={submitcodeRetrait}>
+        <Button variant="outline-warning" type="submit"  onClick={e=>submitcodeRetrait(e)}>
         Valider 
         </Button>
         </Link>
