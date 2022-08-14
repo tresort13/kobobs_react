@@ -43,7 +43,7 @@ console.log(props.envoie.infoEnvoie)
               .then(
                 res => {   
                  props.dataEnvoie2(res)
-                 console(res)
+                 console.log(res)
                 }
               )
               .catch( (error) =>
