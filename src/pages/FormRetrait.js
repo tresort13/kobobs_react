@@ -42,9 +42,9 @@ function FormRetrait(props)
     {
               
         fetch('https://kobobsapi.herokuapp.com/api/getRetraitInfo/'+codeRetrait.infoCodeRetrait.code_retrait+'/', {
-                method: 'GET',
+                method:'GET',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(codeRetrait.infoCodeRetrait)
+               // body: JSON.stringify(codeRetrait.infoCodeRetrait)
               })
               .then( res => res.json())
               .then(
