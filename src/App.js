@@ -58,8 +58,7 @@ function App() {
       adresse_beneficiaire : '',
       numero_beneficiaire : '',
       pays_beneficiaire : '',
-      montant_envoie : '',
-      montant_device : '',
+      montant_beneficiaire : '',
       type_service : ''
       }};
     })
@@ -86,8 +85,7 @@ function App() {
       adresse_beneficiaire :donne.adresse_beneficiaire,
       numero_beneficiaire : donne.numero_beneficiaire,
       pays_beneficiaire : donne.pays_beneficiaire,
-      montant_envoie : donne.montant_envoie,
-      montant_device : donne.montant_device,
+      montant_beneficiaire : donne.montant_beneficiaire,
       type_service : donne.type_service
       }})
   }
@@ -110,8 +108,7 @@ function App() {
       adresse_beneficiaire : '',
       numero_beneficiaire : '',
       pays_beneficiaire : '',
-      montant_envoie : '',
-      montant_device : '',
+      montant_beneficiaire : '',
       type_service : '',
       frais_envoie : '',
       montant_total : '',
