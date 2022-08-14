@@ -49,8 +49,8 @@ function FormRetrait(props)
               .then( res => res.json())
               .then(
                 res => {   
-                   props.dataEnvoie2(res)
-                   console.log(res)
+                   props.dataEnvoie2(JSON.stringify(res))
+                   console.log(JSON.stringify(res))
 
                 }
               )
