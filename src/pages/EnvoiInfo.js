@@ -86,6 +86,7 @@ console.log(props.envoie.infoEnvoie)
         <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
         <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie.infoEnvoie.postnom_expediteur}</b>  </p>
         <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-light'>Adresse : <b className='couleur2'>{props.envoie.infoEnvoie.adresse_expediteur}</b> </p>
         <p className='text-light'>Email Adresse : <b className='couleur2'>{props.envoie.infoEnvoie.email_expediteur}</b> </p>
         <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'> {props.envoie.infoEnvoie.numero_expediteur} </b></p>
         <p className='text-light'>Ekolo (Pays) : <b className='couleur2'> {props.envoie.infoEnvoie.pays_expediteur}</b></p>
@@ -101,7 +102,7 @@ console.log(props.envoie.infoEnvoie)
         <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
         <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie.infoEnvoie.postnom_beneficiaire}</b> </p>
         <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie.infoEnvoie.prenom_beneficiaire} </b> </p>
-        <p className='text-light'>Email Adresse : <b className='couleur2'> {props.envoie.infoEnvoie.adresse_beneficiaire}</b></p>
+        <p className='text-light'>Adresse : <b className='couleur2'> {props.envoie.infoEnvoie.adresse_beneficiaire}</b></p>
         <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'>{props.envoie.infoEnvoie.numero_beneficiaire}</b>  </p>
         <p className='text-light'>Ekolo (Pays) : <b className='couleur2'>{props.envoie.infoEnvoie.pays_beneficiaire}</b> </p>
         </Col>
@@ -113,7 +114,7 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Mbongo (Montant): <b className='couleur2'>{Number(props.envoie.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie.infoEnvoie.montant_device}</b> </p>
+        <p className='text-light'>Mbongo ya kozwa epayi ya Motindi(Montant à recevoir chez le Bénéficiare): <b className='couleur2'>{Number(props.envoie.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie.infoEnvoie.montant_device}</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie.infoEnvoie.type_service}</b> </p>
         </Col>
     </Row>

@@ -22,6 +22,7 @@ function FormEnvoiClient(props)
     nom_expediteur : '',
     postnom_expediteur : '',
     prenom_expediteur : '',
+    adresse_expediteur : '',
     email_expediteur : '',
     numero_expediteur: '',
     pays_expediteur : '',
@@ -117,6 +118,12 @@ function FormEnvoiClient(props)
     </Row>
 
     <Row className='justify-content-center'>
+    <Col xs = {4}>
+        <Form.Group className="mb-3" controlId="formBasicText" >
+        <Form.Label className='couleur2'>Adresse</Form.Label>
+        <Form.Control name="nom_expediteur" value={envoie.infoEnvoie.adresse_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
+         </Form.Group>
+        </Col>
         <Col xs = {4}>
         <Form.Label className='couleur2'>Email</Form.Label>
         <InputGroup className="mb-3">
@@ -132,6 +139,16 @@ function FormEnvoiClient(props)
          </Form.Group>
         </Col>
 
+        
+    </Row>
+    <Row className='justify-content-center'>
+        <Col xs = {4}>
+        <Form.Group className="mb-3" controlId="formBasicText" >
+        <Form.Label className='couleur2'>Kombo Ya Libota(Nom)</Form.Label>
+        <Form.Control name="nom_expediteur" value={envoie.infoEnvoie.nom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
+         </Form.Group>
+        </Col>
+
         <Col xs ={4}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
@@ -143,6 +160,7 @@ function FormEnvoiClient(props)
          </Form.Select>
          </Form.Group>
         </Col>
+       
     </Row>
 
     <Row>
@@ -206,26 +224,16 @@ function FormEnvoiClient(props)
       <p className='couleur2'><b><u>Montant Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center'>
-        <Col xs = {4}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Mbongo (Montant)</Form.Label>
+        <Form.Label className='couleur2'>Mbongo ya kozwa epayi ya Motindi(Montant à recevoir chez le Bénéficiare)</Form.Label>
         <Form.Control name="montant_envoie" value={envoie.infoEnvoie.montant_envoie} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
          </Form.Group>
         </Col>
 
-        <Col xs ={4}>
-        <Form.Group className="mb-3" >
-        <Form.Label className='couleur2'>Device</Form.Label>
-        <Form.Select name="montant_device" value={envoie.infoEnvoie.montant_device} aria-label="Default select example" onChange={e=>inputChanged(e)} placeholder="Device" required>
-         <option>GBP (£)</option>
-         <option value="£">GBP (£)</option>
-         <option value="$">USD ($)</option>
-         
-         </Form.Select>
-         </Form.Group>
-        </Col>
+        
 
-        <Col xs ={4}>
+        <Col xs ={6}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
         <Form.Select name="type_service" value={envoie.infoEnvoie.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
