@@ -40,8 +40,7 @@ function FormRetrait(props)
 
     const submitcodeRetrait = (e)=>
     {
-        
-        
+              
         fetch('https://kobobsapi.herokuapp.com/api/getRetraitInfo/'+codeRetrait.infoCodeRetrait.code_retrait+'/', {
                 method: 'GET',
                 headers: {'Content-Type': 'application/json'},
@@ -70,7 +69,7 @@ function FormRetrait(props)
         setCodeRetrait({infoCodeRetrait:cred})
     }
 
-    
+
 
    
     return (
@@ -109,7 +108,7 @@ function FormRetrait(props)
    <Row className='pb-3'>
        <Col>
         <Link to="/retrait_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" >
+        <Button variant="outline-warning" type="submit"  onClick={submitcodeRetrait}>
         Valider 
         </Button>
         </Link>
