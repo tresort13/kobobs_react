@@ -33,7 +33,6 @@ function FormEnvoiClient(props)
     numero_beneficiaire : '',
     pays_beneficiaire : '',
     montant_beneficiaire : '',
-    montant_device : '',
     type_service : ''
     }})
 
