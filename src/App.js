@@ -128,7 +128,7 @@ function App() {
   const dataEnvoie2 = (donne)=>
   {
     setEnvoie2({infoEnvoie :{
-      nom_expediteur : donne.nom_expediteur,
+      nom_expediteur : donne[1],
       postnom_expediteur :donne.postnom_expediteur,
       prenom_expediteur : donne.prenom_expediteur,
       email_expediteur : donne.email_expediteur,
