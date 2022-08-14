@@ -30,7 +30,7 @@ function RetraitInfo(props)
     
   
     
-console.log(props.envoie.infoEnvoie)
+console.log(props.envoie2.infoEnvoie)
 
     const validerRetrait = (e)=>
     {      
@@ -82,12 +82,12 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie.infoEnvoie.postnom_expediteur}</b>  </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-light'>Email Adresse : <b className='couleur2'>{props.envoie.infoEnvoie.email_expediteur}</b> </p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'> {props.envoie.infoEnvoie.numero_expediteur} </b></p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'> {props.envoie.infoEnvoie.pays_expediteur}</b></p>
+        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_expediteur}</b> </p>
+        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie2.infoEnvoie.postnom_expediteur}</b>  </p>
+        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-light'>Email Adresse : <b className='couleur2'>{props.envoie2.infoEnvoie.email_expediteur}</b> </p>
+        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'> {props.envoie2.infoEnvoie.numero_expediteur} </b></p>
+        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
         </Col>
     </Row>
 
@@ -97,12 +97,12 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie.infoEnvoie.postnom_beneficiaire}</b> </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie.infoEnvoie.prenom_beneficiaire} </b> </p>
-        <p className='text-light'>Email Adresse : <b className='couleur2'> {props.envoie.infoEnvoie.adresse_beneficiaire}</b></p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'>{props.envoie.infoEnvoie.numero_beneficiaire}</b>  </p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'>{props.envoie.infoEnvoie.pays_beneficiaire}</b> </p>
+        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_beneficiaire}</b>  </p>
+        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie2.infoEnvoie.postnom_beneficiaire}</b> </p>
+        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie2.infoEnvoie.prenom_beneficiaire} </b> </p>
+        <p className='text-light'>Email Adresse : <b className='couleur2'> {props.envoie2.infoEnvoie.adresse_beneficiaire}</b></p>
+        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'>{props.envoie2.infoEnvoie.numero_beneficiaire}</b>  </p>
+        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'>{props.envoie2.infoEnvoie.pays_beneficiaire}</b> </p>
         </Col>
     </Row>
 
@@ -112,8 +112,8 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Mbongo (Montant): <b className='couleur2'>{Number(props.envoie.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie.infoEnvoie.montant_device}</b> </p>
-        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie.infoEnvoie.type_service}</b> </p>
+        <p className='text-light'>Mbongo (Montant): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie2.infoEnvoie.montant_device}</b> </p>
+        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
         </Col>
     </Row>
 
