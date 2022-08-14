@@ -37,7 +37,7 @@ console.log(props.envoie2.infoEnvoie)
       fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
               method:'POST',
                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(props.envoie.infoEnvoie)
+                body: JSON.stringify(props.envoie2.infoEnvoie)
               })
               .then( res => res.json())
               .then(
@@ -167,12 +167,12 @@ console.log(props.envoie2.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): {props.envoie.infoEnvoie.nom_expediteur} </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): {props.envoie.infoEnvoie.postnom_expediteur} </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : {props.envoie.infoEnvoie.prenom_expediteur}</p>
-        <p className='text-light'>Email Adresse : {props.envoie.infoEnvoie.adresse_expediteur}</p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : {props.envoie.infoEnvoie.numero_expediteur} </p>
-        <p className='text-light'>Ekolo (Pays) : {props.envoie.infoEnvoie.email_expediteur}</p>
+        <p className='text-light'>Kombo Ya Libota (Nom): {props.envoie2.infoEnvoie.nom_expediteur} </p>
+        <p className='text-light'>Kombo Ya Authenticité (Postnom): {props.envoie2.infoEnvoie.postnom_expediteur} </p>
+        <p className='text-light'>Kombo Ya Mukristu (Prénom) : {props.envoie2.infoEnvoie.prenom_expediteur}</p>
+        <p className='text-light'>Email Adresse : {props.envoie2.infoEnvoie.adresse_expediteur}</p>
+        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : {props.envoie2.infoEnvoie.numero_expediteur} </p>
+        <p className='text-light'>Ekolo (Pays) : {props.envoie2.infoEnvoie.email_expediteur}</p>
         </Col>
     </Row>
 
@@ -182,12 +182,12 @@ console.log(props.envoie2.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): {props.envoie.infoEnvoie.nom_beneficiaire} </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): {props.envoie.infoEnvoie.postnom_beneficiaire}</p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : {props.envoie.infoEnvoie.prenom_beneficiaire} </p>
-        <p className='text-light'>Email Adresse : {props.envoie.infoEnvoie.adresse_beneficiaire}</p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : {props.envoie.infoEnvoie.numero_beneficiaire} </p>
-        <p className='text-light'>Ekolo (Pays) : {props.envoie.infoEnvoie.pays_beneficiaire}</p>
+        <p className='text-light'>Kombo Ya Libota (Nom): {props.envoie2.infoEnvoie.nom_beneficiaire} </p>
+        <p className='text-light'>Kombo Ya Authenticité (Postnom): {props.envoie2.infoEnvoie.postnom_beneficiaire}</p>
+        <p className='text-light'>Kombo Ya Mukristu (Prénom) : {props.envoie2.infoEnvoie.prenom_beneficiaire} </p>
+        <p className='text-light'>Email Adresse : {props.envoie2.infoEnvoie.adresse_beneficiaire}</p>
+        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : {props.envoie2.infoEnvoie.numero_beneficiaire} </p>
+        <p className='text-light'>Ekolo (Pays) : {props.envoie2.infoEnvoie.pays_beneficiaire}</p>
         </Col>
     </Row>
 
@@ -197,9 +197,9 @@ console.log(props.envoie2.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Mbongo (Montant): {props.envoie.infoEnvoie.montant_envoie}</p>
-        <p className='text-light'>Dévice : {props.envoie.infoEnvoie.montant_device}</p>
-        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): {props.envoie.infoEnvoie.type_service}</p>
+        <p className='text-light'>Mbongo (Montant): {props.envoie2.infoEnvoie.montant_envoie}</p>
+        <p className='text-light'>Dévice : {props.envoie2.infoEnvoie.montant_device}</p>
+        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): {props.envoie2.infoEnvoie.type_service}</p>
         </Col>
     </Row>
 
