@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import {Link} from  'react-router-dom';
+import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
@@ -53,7 +53,7 @@ console.log(props.envoie2.infoEnvoie)
                   {
                
                     setMessage2("désolé ce code de retrait n'est pas encore validé")
-                   navigate('/')
+                   navigate('/retrait_info')
                   }
                 
                 }
@@ -155,7 +155,7 @@ console.log(props.envoie2.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3'>
         <Col  xs={"auto"}>    
-        <p className='pt-3 text-danger'><b>{message}</b></p>
+        <p className='pt-3 text-danger'><b>{message2}</b></p>
         </Col>
     </Row>
     
