@@ -112,7 +112,7 @@ console.log(props.envoie2.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Mbongo (Montant): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_envoie).toFixed(2)} {props.envoie2.infoEnvoie.montant_device}</b> </p>
+        <p className='text-light'>Mbongo yako zwa epayi ya Mozui(Montant): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
         </Col>
     </Row>
@@ -197,8 +197,7 @@ console.log(props.envoie2.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Mbongo (Montant): {props.envoie2.infoEnvoie.montant_envoie}</p>
-        <p className='text-light'>Dévice : {props.envoie2.infoEnvoie.montant_device}</p>
+        <p className='text-light'>Mbongo (Montant): {props.envoie2.infoEnvoie.montant_beneficiaire} $</p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): {props.envoie2.infoEnvoie.type_service}</p>
         </Col>
     </Row>
