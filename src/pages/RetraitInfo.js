@@ -50,6 +50,7 @@ console.log(props.envoie2.infoEnvoie)
                     props.dataEnvoie2(res)
                     navigate('/confirmation_retrait_info')
                   }  
+                  else
                   {
                
                     setMessage2("désolé ce code de retrait n'est pas encore validé")
@@ -145,7 +146,7 @@ console.log(props.envoie2.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="/confirmation_retrait_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit" onClick={e=>validerRetrait(e)}>
         Valider Retrait pour Servir
         </Button>
