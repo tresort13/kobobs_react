@@ -19,6 +19,7 @@ function RetraitInfo(props)
 {
 
     const [message,setMessage] = useState("Veuillez Vérifier les informations avant validation")
+    const [message2,setMessage2] = useState("")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
@@ -29,11 +30,13 @@ function RetraitInfo(props)
       });
     
   
-    
+const navigate = useNavigate()
+   
 console.log(props.envoie2.infoEnvoie)
 
     const validerRetrait = (e)=>
-    {      
+    { 
+      e.preventDefault()     
       fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
               method:'POST',
                headers: {'Content-Type': 'application/json'},
@@ -41,8 +44,18 @@ console.log(props.envoie2.infoEnvoie)
               })
               .then( res => res.json())
               .then(
-                res => {   
-                 props.dataEnvoie2(res)
+                res => { 
+                  if(res.status_retrait == "code_retrait_valide")
+                  {
+                    props.dataEnvoie2(res)
+                    navigate('/confirmation_retrait_info')
+                  }  
+                  {
+               
+                    setMessage2("désolé ce code de retrait n'est pas encore validé")
+                   navigate('/')
+                  }
+                
                 }
               )
               .catch( (error) =>
@@ -123,7 +136,7 @@ console.log(props.envoie2.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Status Retrait : <b className='couleur2'>retrait en attente</b> </p>
+        <p className='text-light'>Status Retrait : <b className='couleur2'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>
         </Col>
     </Row>
 
@@ -139,6 +152,11 @@ console.log(props.envoie2.infoEnvoie)
         </Link>
         </Col>
         
+    </Row>
+    <Row className='justify-content-center pb-3'>
+        <Col  xs={"auto"}>    
+        <p className='pt-3 text-danger'><b>{message}</b></p>
+        </Col>
     </Row>
     
     
