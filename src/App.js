@@ -44,7 +44,7 @@ function App() {
   const [code_retrait,setCodeRetrait] = useState(()=>
   {
     const localData = localStorage.getItem('code_retrait');
-    return localData ? JSON.parse(localData) : ""
+    return localData ? JSON.parse(localData) : "";
   })
   
   
