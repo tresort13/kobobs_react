@@ -42,16 +42,7 @@ function App() {
 
 
 
-  const [code_retrait,setCodeRetrait] = useState(()=>
-  {
-    const localData = localStorage.getItem('code_retrait');
-    return localData ? JSON.parse(localData) : "";
-  });
   
-
-  useEffect(() => {
-    window.localStorage.setItem("code_retrait", JSON.stringify(code_retrait))
-  }, [code_retrait])
 
 
 
@@ -238,13 +229,6 @@ function App() {
   }
 
 
-  const dataCodeRetrait= (donne)=>
-  {
-    setCodeRetrait(donne)
-  }
-
-
-
 
 
   const[temps,setTemps] = useState(()=>
@@ -302,10 +286,10 @@ function App() {
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >
         </Route>
 
-        <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username} dataEnvoie2={dataEnvoie2} dataCodeRetrait={dataCodeRetrait}/>} >
+        <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username} dataEnvoie2={dataEnvoie2} />} >
         </Route>
 
-        <Route path="/retrait_info" element={username == "" ? <Navigate to ='/' /> :<RetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} code_retrait={code_retrait}/>} >
+        <Route path="/retrait_info" element={username == "" ? <Navigate to ='/' /> :<RetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} />} >
         </Route>
         
         <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to ='/' /> :<AbonneFormNonValideInfo username = {username}/>} >
