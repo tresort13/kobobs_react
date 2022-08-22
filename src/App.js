@@ -41,6 +41,18 @@ function App() {
   }, [username])
 
 
+  const [code_retrait,setCodeRetrait] = useState(()=>
+  {
+    const localData = localStorage.getItem('code_retrait');
+    return localData ? JSON.parse(localData) : "";
+  });
+  
+  
+  useEffect(() => {
+    window.localStorage.setItem("code_retrait", JSON.stringify(code_retrait))
+  }, [code_retrait])
+
+
 
   
 
