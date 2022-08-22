@@ -41,16 +41,16 @@ function App() {
   }, [username])
 
 
-  const [code_retrait,setCodeRetrait] = useState(()=>
+  const [codeRetrait,setCodeRetrait] = useState(()=>
   {
-    const localData = localStorage.getItem('code_retrait');
+    const localData = localStorage.getItem('codeRetrait');
     return localData ? JSON.parse(localData) : "";
   });
   
   
   useEffect(() => {
-    window.localStorage.setItem("code_retrait", JSON.stringify(code_retrait))
-  }, [code_retrait])
+    window.localStorage.setItem("codeRetrait", JSON.stringify(code_retrait))
+  }, [codeRetrait])
 
 
 
