@@ -49,7 +49,7 @@ function App() {
   
   
   useEffect(() => {
-    window.localStorage.setItem("codeRetrait", JSON.stringify(code_retrait))
+    window.localStorage.setItem("codeRetrait", JSON.stringify(codeRetrait))
   }, [codeRetrait])
 
 
