@@ -50,7 +50,7 @@ function FormRetrait(props)
               .then(
                 res => {   
                    props.dataEnvoie2(res)
-                   props.dataCodeRetrait(res.code_retrait)
+                   props.setCodeRetrait(res.code_retrait)
                    console.log(res.code_retrait)
 
                 }

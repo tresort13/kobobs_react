@@ -32,12 +32,13 @@ function RetraitInfo(props)
   
 const navigate = useNavigate()
    
-console.log(props.envoie2.infoEnvoie)
+console.log(props.codeRetrait)
+
 
     const validerRetrait = (e)=>
     { 
       e.preventDefault()     
-      fetch('https://kobobsapi.herokuapp.com/api/getRetraitInfo/'+props.code_retrait+'/', {
+      fetch('https://kobobsapi.herokuapp.com/api/getRetraitInfo/'+props.codeRetrait+'/', {
               method:'GET',
                headers: {'Content-Type': 'application/json'},
                 //body: JSON.stringify(props.envoie2.infoEnvoie)
