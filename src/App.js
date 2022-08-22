@@ -44,8 +44,9 @@ function App() {
   const [code_retrait,setCodeRetrait] = useState(()=>
   {
     const localData = localStorage.getItem('code_retrait');
-    return localData ? JSON.parse(localData) : "";
-  });
+    return localData ? JSON.parse(localData) : {infoCodeRetrait :{
+      code_retrait :""
+  }}});
   
   
 
@@ -237,6 +238,14 @@ function App() {
   }
 
 
+  const dataCodeRetrait= (donne)=>
+  {
+    setCodeRetrait({infoCodeRetrait :{
+      code_retrait : donne
+      }})
+  }
+
+
 
 
 
@@ -295,7 +304,7 @@ function App() {
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >
         </Route>
 
-        <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username} dataEnvoie2={dataEnvoie2} setCodeRetrait={setCodeRetrait}/>} >
+        <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username} dataEnvoie2={dataEnvoie2} dataCodeRetrait={dataCodeRetrait}/>} >
         </Route>
 
         <Route path="/retrait_info" element={username == "" ? <Navigate to ='/' /> :<RetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} code_retrait={code_retrait}/>} >
