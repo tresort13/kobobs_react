@@ -46,7 +46,8 @@ function App() {
     const localData = localStorage.getItem('code_retrait');
     return localData ? JSON.parse(localData) : {infoCodeRetrait :{
       code_retrait :""
-  }}});
+  }};
+  });
   
   
 
