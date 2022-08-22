@@ -37,10 +37,10 @@ console.log(props.envoie2.infoEnvoie)
     const validerRetrait = (e)=>
     { 
       e.preventDefault()     
-      fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
-              method:'POST',
+      fetch('https://kobobsapi.herokuapp.com/api/getRetraitInfo/'+props.code_retrait+'/', {
+              method:'GET',
                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(props.envoie2.infoEnvoie)
+                //body: JSON.stringify(props.envoie2.infoEnvoie)
               })
               .then( res => res.json())
               .then(
