@@ -29,7 +29,7 @@ function MenuAbonne(props)
     const submit = (e)=>
     {
               
-        fetch('https://kobobsapi.herokuapp.com/api/getRetraitInfo/code retrait en attente de validation/', {
+        fetch('https://kobobsapi.herokuapp.com/api/getRetraitNonValideInfo/code retrait en attente de validation/', {
                 method:'GET',
                 headers: {'Content-Type': 'application/json'},
                // body: JSON.stringify(codeRetrait.infoCodeRetrait)
