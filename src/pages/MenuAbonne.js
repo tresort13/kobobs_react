@@ -38,6 +38,7 @@ function MenuAbonne(props)
               .then(
                 res => {   
                    props.dataEnvoie4(res)
+                   console.log(res)
                 }
               )
               .catch( (error) =>
