@@ -24,7 +24,7 @@ function MenuAbonne(props)
         query: "(max-width: 1224px)"
       });  
       
-    const [count,setCount] = useState(1)
+    const [count,setCount] = useState(0)
 
     const submit = (e)=>
     {
@@ -38,6 +38,7 @@ function MenuAbonne(props)
               .then(
                 res => {   
                    props.setEnvoie4(res)
+                   setCount(res.length)
                    console.log(res)
                 }
               )
@@ -47,6 +48,13 @@ function MenuAbonne(props)
                 } )
 
     }
+
+    useEffect(()=>
+    {
+       const interval =  setInterval(()=>submit(),1000);
+        return () => clearInterval(interval)
+    },[count])
+    
 console.log(props.envoie4)
 
     return (
