@@ -53,15 +53,13 @@ const navigate = useNavigate()
                   }  
                   else
                   {
-               
                     setModalShow(true)
                   }
                 
                 }
               )
               .catch( (error) =>
-                {
-                    
+                {            
                    console.log(error)
                 } )
 
@@ -268,12 +266,11 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body>
         <h4>Status Code Retrait : </h4>
-        <p className='text-danger'>
-         Ce code de retrait n'est pas encore validé !!!
+        <p className='text-danger'><b>Ce code de retrait n'est pas encore validé !!!</b>   
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Fermer</Button>
+        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
       </Modal.Footer>
     </Modal>
   );
