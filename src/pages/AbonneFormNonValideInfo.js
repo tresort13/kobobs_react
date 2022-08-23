@@ -38,7 +38,8 @@ function AbonneFormNonValideInfo(props)
         query: "(max-width: 1224px)"
       });
     
-  
+    
+      console.log(props.envoie4)
     
 
 
@@ -91,7 +92,7 @@ function AbonneFormNonValideInfo(props)
         setBarcode({infoBarcode:cred})
     }
 
-    console.log(props.envoie4)
+   
 
    
     return (
