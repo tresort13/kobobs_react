@@ -10,8 +10,7 @@ import Footer from './Footer';
 import './Header.css'
 import { useMediaQuery } from 'react-responsive';
 import Badge from 'react-bootstrap/Badge';
-import React from 'react';
-
+import React,{ useEffect } from 'react';
 
 const useState = React.useState
 function MenuAbonne(props)
@@ -54,7 +53,7 @@ function MenuAbonne(props)
        const interval =  setInterval(()=>submit(),1000);
         return () => clearInterval(interval)
     },[count])
-    
+
 console.log(props.envoie4)
 
     return (
