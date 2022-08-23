@@ -21,6 +21,7 @@ function RetraitInfo(props)
     const [message,setMessage] = useState("Veuillez Vérifier les informations avant validation")
     const [message2,setMessage2] = useState("")
     const [couleur,setCouleur] = useState("text-dark")
+    const [modalShow, setModalShow] = React.useState(false);
 
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
@@ -54,7 +55,7 @@ console.log(props.codeRetrait)
                   else
                   {
                
-                    setMessage2("désolé ce code de retrait n'est pas encore validé")
+                    setModalShow(true)
                    navigate('/retrait_info')
                   }
                 
@@ -161,7 +162,30 @@ console.log(props.codeRetrait)
         </Col>
     </Row>
     
-    
+
+ <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Modal heading
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>   
 
 </Container>
 }
