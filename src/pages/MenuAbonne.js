@@ -21,7 +21,9 @@ function MenuAbonne(props)
       });
       const isMobileOrTablet = useMediaQuery({
         query: "(max-width: 1224px)"
-      });    
+      });  
+      
+    const [count,setCount] = useState(0)
     return (
 <>
 <Header username={props.username} />
@@ -37,7 +39,7 @@ function MenuAbonne(props)
         <Col xs = {"auto"}>
         <Link to="/form_abonne_non_valide" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Formulaires Clients non validé <Badge bg="danger">4</Badge></pre> </b>
+        {count > 0 ? <b className='couleur2'><pre>Formulaires Clients non validé <Badge bg="danger">4</Badge></pre> </b> : <b className='couleur2'><pre>Formulaires Clients non validé </pre></b>}
         </Button>
         </Link>
         </Col>
