@@ -9,6 +9,7 @@ import Header from './Header';
 import Footer from './Footer';
 import './Header.css'
 import { useMediaQuery } from 'react-responsive';
+import Badge from 'react-bootstrap/Badge';
 
 
 
@@ -36,7 +37,7 @@ function MenuAbonne(props)
         <Col xs = {"auto"}>
         <Link to="/form_abonne_non_valide" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Formulaires Clients non validé <span class="badge bg-danger">4</span></pre> </b>
+        <b className='couleur2'><pre>Formulaires Clients non validé <Badge bg="danger">4</Badge></pre> </b>
         </Button>
         </Link>
         </Col>
