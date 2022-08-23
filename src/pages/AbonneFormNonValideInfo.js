@@ -151,7 +151,8 @@ function AbonneFormNonValideInfo(props)
 
     
 
-</Container> })} 
+</Container> })
+} 
 
 
 {isMobileOrTablet && <Container className='bg-dark my-auto mx-auto justify-content-center text-center bordure mb-5' style={{marginTop:50,backgroundColor:'white'}} >

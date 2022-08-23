@@ -161,7 +161,7 @@ function App() {
   const [envoie4,setEnvoie4] = useState(()=>
   {
     const localData = localStorage.getItem('envoie4');
-    return localData ? JSON.parse(localData) : [];
+    return localData ? JSON.parse(localData) :"";
     })
   
   
@@ -281,7 +281,7 @@ function App() {
         <Route path="/menu_gestion_operation" element={username == "" ? <Navigate to ='/' /> :<MenuGestionOperation username = {username}/>} >
         </Route>
 
-        <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to ='/' /> :<MenuAbonne username = {username} dataEnvoie4={dataEnvoie4}/>} >
+        <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to ='/' /> :<MenuAbonne username = {username} dataEnvoie4 = {dataEnvoie4}/>} >
         </Route>
 
         <Route path="/menu_parametre" element={username == "" ? <Navigate to ='/' /> :<MenuParametre username = {username}/>} >
@@ -307,7 +307,7 @@ function App() {
         <Route path="/retrait_info" element={username == "" ? <Navigate to ='/' /> :<RetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} />} >
         </Route>
         
-        <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to ='/' /> :<AbonneFormNonValideInfo username = {username} envoie4={envoie4} />} >
+        <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to ='/' /> :<AbonneFormNonValideInfo username = {username} envoie4 = {envoie4} />} >
         </Route>
 
         <Route path="/form_retrouver_abonne" element={username == "" ? <Navigate to ='/' /> :<FormRetrouverCodeAbonne username = {username}/>} >
