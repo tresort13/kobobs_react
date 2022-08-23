@@ -158,6 +158,74 @@ function App() {
 
 
 
+  const [envoie4,setEnvoie4] = useState(()=>
+  {
+    const localData = localStorage.getItem('envoie4');
+    return localData ? JSON.parse(localData) : {infoEnvoie :{
+      nom_expediteur : '',
+      postnom_expediteur : '',
+      prenom_expediteur : '',
+      adresse_expediteur : '',
+      email_expediteur : '',
+      numero_expediteur: '',
+      pays_expediteur : '',
+      nom_beneficiaire : '',
+      postnom_beneficiaire : '',
+      prenom_beneficiaire : '',
+      adresse_beneficiaire : '',
+      numero_beneficiaire : '',
+      pays_beneficiaire : '',
+      montant_beneficiaire : '',
+      type_service : '',
+      frais_envoie : '',
+      montant_total : '',
+      code_retrait : '',
+      data_operation : '',
+      date_heure_operation : '',
+      code_abonne : '',
+      status_retrait : ''
+      }};
+    })
+  
+  
+
+  useEffect(() => {
+    window.localStorage.setItem("envoie4", JSON.stringify(envoie4))
+  }, [envoie4])
+
+  const dataEnvoie4 = (donne)=>
+  {
+    setEnvoie2({infoEnvoie :{
+      nom_expediteur : donne[0].nom_expediteur,
+      postnom_expediteur :donne[0].postnom_expediteur,
+      prenom_expediteur : donne[0].prenom_expediteur,
+      adresse_expediteur : donne[0].adresse_expediteur,
+      email_expediteur : donne[0].email_expediteur,
+      numero_expediteur: donne[0].numero_expediteur,
+      pays_expediteur : donne[0].pays_expediteur,
+      nom_beneficiaire : donne[0].nom_beneficiaire,
+      postnom_beneficiaire : donne[0].postnom_beneficiaire,
+      prenom_beneficiaire : donne[0].prenom_beneficiaire,
+      adresse_beneficiaire :donne[0].adresse_beneficiaire,
+      numero_beneficiaire : donne[0].numero_beneficiaire,
+      pays_beneficiaire : donne[0].pays_beneficiaire,
+      montant_envoie_sans_frais : donne[0].montant_envoie_sans_frais,
+      montant_beneficiaire : donne[0].montant_beneficiaire,
+      type_service : donne[0].type_service,
+      frais_envoie : donne[0].frais_envoie,
+      frais_tva : donne[0].frais_tva,
+      montant_total : donne[0].montant_total,
+      code_retrait : donne[0].code_retrait,
+      data_operation : donne[0].date_operation,
+      date_heure_operation : donne[0].date_heure_operation,
+      code_abonne : donne[0].code_abonne,
+      status_retrait : donne[0].status_retrait
+      }})
+  }
+
+
+
+
   const [envoie3,setEnvoie3] = useState(()=>
   {
     const localData = localStorage.getItem('envoie3');
