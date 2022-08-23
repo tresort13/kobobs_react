@@ -10,6 +10,7 @@ import Footer from './Footer';
 import './Header.css'
 import { useMediaQuery } from 'react-responsive';
 import Badge from 'react-bootstrap/Badge';
+import React from 'react';
 
 
 const useState = React.useState
