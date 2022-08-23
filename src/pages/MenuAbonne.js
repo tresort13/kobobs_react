@@ -36,7 +36,7 @@ function MenuAbonne(props)
         <Col xs = {"auto"}>
         <Link to="/form_abonne_non_valide" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Formulaires des Abonnés non validé (0)</pre> </b>
+        <b className='couleur2'><pre>Formulaires Clients non validé (0)</pre> </b>
         </Button>
         </Link>
         </Col>
@@ -48,7 +48,7 @@ function MenuAbonne(props)
         <Col xs = {"auto"}>
         <Link to="/form_retrouver_abonne" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Retrouver le code d'un Abonné</pre></b>
+        <b className='couleur2'><pre>Retrouver un Abonné</pre></b>
         </Button>
         </Link>
         </Col>

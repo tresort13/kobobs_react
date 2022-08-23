@@ -61,7 +61,7 @@ function Homepage(props)
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Abonnes</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Service Clients</i></p>
               </div>
              </div>
               
@@ -172,7 +172,7 @@ function Homepage(props)
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Operations</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Service Clients</i></p>
               </div>
              </div>   
             </Col>
