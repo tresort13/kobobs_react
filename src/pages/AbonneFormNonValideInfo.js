@@ -63,7 +63,7 @@ function AbonneFormNonValideInfo(props)
       {
          const interval =  setInterval((e)=>submit(e),1000);
           return () => clearInterval(interval)
-      },[])
+      },[envoie4])
 
 
 
@@ -73,7 +73,7 @@ function AbonneFormNonValideInfo(props)
           fetch('https://kobobsapi.herokuapp.com/api/validateCodeRetrait/'+value+'/', {
                   method: 'PUT',
                   headers: {'Content-Type': 'application/json'},
-                  body: JSON.stringify(status.statusInfo)
+                  body: JSON.stringify(status.statusInfo.statusRetrait)
                 })
                 .then( res => res.json())
                 .then(
