@@ -22,6 +22,10 @@ function AbonneFormNonValideInfo(props)
        
     const [message,setMessage] = useState("Liste des formulaires non validés")
     const [couleur,setCouleur] = useState("text-dark")
+    const[status,setStatus] = useState({statusInfo :{
+        statusRetrait :"",
+    }})
+
     const navigate = useNavigate()
 
     const isDesktop = useMediaQuery({
@@ -35,9 +39,8 @@ function AbonneFormNonValideInfo(props)
     
 
 
-      const submit =()=>
-      {
-                
+      const submit =(e)=>
+      {       
           fetch('https://kobobsapi.herokuapp.com/api/getRetraitNonValideInfo/code retrait en attente de validation/', {
                   method:'GET',
                   headers: {'Content-Type': 'application/json'},
@@ -54,17 +57,23 @@ function AbonneFormNonValideInfo(props)
                   {
                       console.log(error)
                   } )
-  
       }
+
+      useEffect(()=>
+      {
+         const interval =  setInterval((e)=>submit(e),1000);
+          return () => clearInterval(interval)
+      },[])
+
 
 
       const validateCodeRetrait = (value)=>
-      {
-                
+      {       
+          setStatus("Code Retrait Valide")     
           fetch('https://kobobsapi.herokuapp.com/api/validateCodeRetrait/'+value+'/', {
-                  method:'PUT',
+                  method: 'PUT',
                   headers: {'Content-Type': 'application/json'},
-                  //body: JSON.stringify(value)
+                  body: JSON.stringify(status.statusInfo)
                 })
                 .then( res => res.json())
                 .then(
@@ -79,11 +88,7 @@ function AbonneFormNonValideInfo(props)
   
       }
 
-      useEffect(()=>
-      {
-         const interval =  setInterval(()=>submit(),1000);
-          return () => clearInterval(interval)
-      },[])
+   
    
     return (
         
