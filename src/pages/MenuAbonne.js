@@ -35,8 +35,7 @@ function MenuAbonne(props)
               })
               .then( res => res.json())
               .then(
-                res => {   
-                   props.setEnvoie4(res)
+                res => {  
                    setCount(res.length)
                    console.log(res)
                 }
@@ -54,7 +53,6 @@ function MenuAbonne(props)
         return () => clearInterval(interval)
     },[])
 
-console.log(props.envoie4)
 
     return (
 <>
