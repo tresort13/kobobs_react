@@ -123,7 +123,7 @@ function AbonneFormNonValideInfo(props)
         <p className='text-light'>Ekolo Motindi (Pays Expediteur) : <b className='couleur2'> {value.pays_expediteur}</b></p>
         <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='couleur2'> {value.pays_beneficiaire}</b></p>
         <p className='text-light'>Mbongo yako zwa (Montant à Recuperer): <b className='couleur2'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-light'>Mbongo yako futa (Montant à payer): <b className='couleur2'>{Number(value.montant_total).toFixed(2)}</b> £</p>
+        <p className='text-light'>Mbongo yako futa (Montant à payer): <b className='couleur2'>{Number(value.montant_total).toFixed(2)} £</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{value.type_service}</b> </p>
         <p className='text-light'>Code Retrait : <b className='couleur2'>{value.code_retrait}</b> </p>
         <p className='text-light'>Status Retrait : <b className='couleur2'>{value.status_retrait}</b> </p>
