@@ -22,6 +22,7 @@ function AbonneFormNonValideInfo(props)
        
     const [message,setMessage] = useState("Liste des formulaires non validés")
     const [couleur,setCouleur] = useState("text-dark")
+    const navigate = useNavigate()
 
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
@@ -31,7 +32,6 @@ function AbonneFormNonValideInfo(props)
       });
     
     
-      console.log(props.envoie4)
     
 
 
@@ -69,6 +69,7 @@ function AbonneFormNonValideInfo(props)
                 .then(
                   res => {   
                      console.log(value)
+                     navigate('/form_abonne_non_valide')
                   }
                 )
                 .catch( (error) =>
