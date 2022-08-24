@@ -63,12 +63,11 @@ function AbonneFormNonValideInfo(props)
           fetch('https://kobobsapi.herokuapp.com/api/validateCodeRetrait/'+value+'/', {
                   method:'PUT',
                   headers: {'Content-Type': 'application/json'},
-                  body: JSON.stringify(value)
+                  //body: JSON.stringify(value)
                 })
                 .then( res => res.json())
                 .then(
                   res => {   
-                     console.log(value)
                      navigate('/form_abonne_non_valide')
                   }
                 )
