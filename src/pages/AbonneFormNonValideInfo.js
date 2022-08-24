@@ -122,7 +122,7 @@ function AbonneFormNonValideInfo(props)
         <p className='text-light'>opération retrait fait par : <b className='couleur2'> {props.username}</b></p>
         <p className='text-light'>date et heure : <b className='couleur2'> {value.date_heure_operation}</b></p> 
     </Col>
-    <Col xs={6}>
+    <Col xs={12}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button className='pt-3' variant="warning" type="submit" onClick={validateCodeRetrait(value.code_retrait)}>
         Valider le code de retrait
