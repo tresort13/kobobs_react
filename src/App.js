@@ -40,6 +40,8 @@ function App() {
     window.localStorage.setItem("username", JSON.stringify(username))
   }, [username])
 
+  const [codeRetraitStatus,setCodeRetraitStatus] = useState(0)
+
 
   const [envoie,setEnvoie] = useState(()=>
   {
@@ -155,21 +157,6 @@ function App() {
       status_retrait : donne[0].status_retrait
       }})
   }
-
-
-
-  const [envoie4,setEnvoie4] = useState(()=>
-  {
-    const localData = localStorage.getItem('envoie4');
-    return localData ? JSON.parse(localData) :[];
-    })
-  
-  
-
-  useEffect(() => {
-    window.localStorage.setItem("envoie4", JSON.stringify(envoie4))
-  }, [envoie4])
-
 
   const [envoie3,setEnvoie3] = useState(()=>
   {
@@ -300,7 +287,7 @@ function App() {
         <Route path="/retrait_info" element={username == "" ? <Navigate to ='/' /> :<RetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} />} >
         </Route>
         
-        <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to ='/' /> :<AbonneFormNonValideInfo username = {username} envoie4 = {envoie4} />} >
+        <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to ='/' /> :<AbonneFormNonValideInfo username = {username} setCodeRetraitStatus={setCodeRetraitStatus} codeRetraitStatus={codeRetraitStatus}/>} >
         </Route>
 
         <Route path="/form_retrouver_abonne" element={username == "" ? <Navigate to ='/' /> :<FormRetrouverCodeAbonne username = {username}/>} >
