@@ -26,6 +26,7 @@ function AbonneFormNonValideInfo(props)
         statusRetrait :"",
     }})
 
+    const[codeRetrait,setCodeRetrait] = useState(0)
     const navigate = useNavigate()
 
     const isDesktop = useMediaQuery({
@@ -67,10 +68,10 @@ function AbonneFormNonValideInfo(props)
 
 
 
-      const validateCodeRetrait = (value)=>
+      const validateCodeRetrait = ()=>
       {       
          // setStatus("Code Retrait Valide")     
-          fetch('https://kobobsapi.herokuapp.com/api/validateCodeRetrait/'+value+'/', {
+          fetch('https://kobobsapi.herokuapp.com/api/validateCodeRetrait/'+codeRetrait+'/', {
                   method: 'PUT',
                   headers: {'Content-Type': 'application/json'},
                  // body: JSON.stringify(status.statusInfo.statusRetrait)
@@ -87,6 +88,12 @@ function AbonneFormNonValideInfo(props)
                   } )
   
       }
+
+      useEffect(()=>
+      {
+         const interval =  setInterval(()=>(validateCodeRetrait),1000);
+          return () => clearInterval(interval)
+      },[codeRetrait])
 
    
    
@@ -131,7 +138,7 @@ function AbonneFormNonValideInfo(props)
     </Col>
     <Col xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button className='pt-3' variant="warning" type="submit" onClick={validateCodeRetrait}>
+        <Button className='pt-3' variant="warning" type="submit" onClick={setCodeRetrait(value.code_retrait)}>
         Valider le code de retrait
         </Button>
         </Link>
