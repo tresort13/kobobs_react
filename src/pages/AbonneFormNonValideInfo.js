@@ -119,6 +119,7 @@ function AbonneFormNonValideInfo(props)
         <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='couleur2'> {value.pays_beneficiaire}</b></p>
         <p className='text-light'>Mbongo Bazui (Montant Récuperé): <b className='couleur2'>{Number(value.montant_beneficiaire).toFixed(2)}</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{value.type_service}</b> </p>
+        <p className='text-light'>Code Retrait : <b className='couleur2'>{value.code_retrait}</b> </p>
         <p className='text-light'>Status Retrait : <b className='couleur2'>{value.status_retrait}</b> </p>
         <p className='text-light'>opération retrait fait par : <b className='couleur2'> {props.username}</b></p>
         <p className='text-light'>date et heure : <b className='couleur2'> {value.date_heure_operation}</b></p> 
@@ -138,7 +139,7 @@ function AbonneFormNonValideInfo(props)
 } 
 
 
-{isMobileOrTablet && props.envoie4.map((value)=>
+{isMobileOrTablet && envoie4.map((value)=>
     {
     return <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
