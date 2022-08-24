@@ -67,10 +67,12 @@ function AbonneFormNonValideInfo(props)
 
 
 
-      const validateCodeRetrait = (value)=>
+      const validateCodeRetrait = (e)=>
       {       
+          e.preventDefault()
+          console.log(e.target.value)
          // setStatus("Code Retrait Valide")     
-          fetch('https://kobobsapi.herokuapp.com/api/validateCodeRetrait/'+value+'/', {
+          fetch('https://kobobsapi.herokuapp.com/api/validateCodeRetrait/'+e.target.value+'/', {
                   method: 'PUT',
                   headers: {'Content-Type': 'application/json'},
                  // body: JSON.stringify(status.statusInfo.statusRetrait)
@@ -132,7 +134,7 @@ function AbonneFormNonValideInfo(props)
     </Col>
     <Col xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button className='pt-3' variant="warning" type="submit" onClick={validateCodeRetrait}>
+        <Button name='validate' value={value.code_retrait} className='pt-3' variant="warning" type="submit" onClick={e=>validateCodeRetrait(e)}>
         Valider le code de retrait
         </Button>
         </Link>
