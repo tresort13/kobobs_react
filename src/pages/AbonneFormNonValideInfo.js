@@ -35,7 +35,7 @@ function AbonneFormNonValideInfo(props)
     
 
 
-      const submit = (e)=>
+      const submit =()=>
       {
                 
           fetch('https://kobobsapi.herokuapp.com/api/getRetraitNonValideInfo/code retrait en attente de validation/', {
@@ -56,6 +56,7 @@ function AbonneFormNonValideInfo(props)
                   } )
   
       }
+
 
       const validateCodeRetrait = (value)=>
       {
@@ -123,7 +124,7 @@ function AbonneFormNonValideInfo(props)
         <p className='text-light'>opération retrait fait par : <b className='couleur2'> {props.username}</b></p>
         <p className='text-light'>date et heure : <b className='couleur2'> {value.date_heure_operation}</b></p> 
     </Col>
-    <Col xs={12}>
+    <Col xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button className='pt-3' variant="warning" type="submit" onClick={validateCodeRetrait(value.code_retrait)}>
         Valider le code de retrait
@@ -176,13 +177,6 @@ function AbonneFormNonValideInfo(props)
         <Link to="/envoi_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
         Valider le code de retrait
-        </Button>
-        </Link>
-        </Col>
-        <Col xs={6}>
-        <Link to="/envoi_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit">
-        Click pour voir plus des détails
         </Button>
         </Link>
         </Col>

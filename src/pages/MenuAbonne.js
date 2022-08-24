@@ -25,7 +25,7 @@ function MenuAbonne(props)
       
     const [count,setCount] = useState(0)
 
-    const submit = (e)=>
+    const submit = ()=>
     {
               
         fetch('https://kobobsapi.herokuapp.com/api/getRetraitNonValideInfo/code retrait en attente de validation/', {
@@ -68,7 +68,7 @@ function MenuAbonne(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/form_abonne_non_valide" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom' onClick={e=>submit(e)}>
+        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom' onClick={submit}>
         {count > 0 ? <b className='couleur2'><pre>Formulaires Clients non validé <Badge bg="danger">{count}</Badge></pre> </b> : <b className='couleur2'><pre>Formulaires Clients non validé </pre></b>}
         </Button>
         </Link>
