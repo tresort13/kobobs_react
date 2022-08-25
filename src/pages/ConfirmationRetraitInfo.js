@@ -43,7 +43,8 @@ function ConfirmationRetraitInfo(props)
                 .then(
                   res => { 
                       props.dataEnvoie2(res)
-                      console.log(res.status_retrait)
+                      console.log(res)
+                      console.log(res[0].status_retrait)
                       navigate('/home')
                     
                   }
