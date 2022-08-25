@@ -67,7 +67,7 @@ const navigate = useNavigate()
     }
 
 
-    
+    console.log(props.envoie2.infoEnvoie.status_retrait)
 
    
     return (
