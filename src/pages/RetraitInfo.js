@@ -49,6 +49,7 @@ const navigate = useNavigate()
                   if(res.status_retrait == "Code Retrait Valide")
                   {
                     props.dataEnvoie2(res)
+                    console.log(res.status_retrait)
                     navigate('/confirmation_retrait_info')
                   }  
                   else
