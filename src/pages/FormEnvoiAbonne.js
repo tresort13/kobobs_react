@@ -104,7 +104,7 @@ function FormEnvoiAbonne(props)
         <p className='couleur2'><i><b>{message}</b></i></p>
         </Col>
         <Col xs={6}>
-        <p className='couleur2'><i><b>ID Abonné :</b></i></p>
+        <p className='couleur2'><i><b>Noms Abonné :</b></i></p>
         </Col>
     </Row>
 
@@ -118,68 +118,7 @@ function FormEnvoiAbonne(props)
     </Row>
     
 <Form>
-    <Row>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
-    </Row>
-
-    <Row className='justify-content-center'>
-        <Col xs = {4}>
-        <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo (Nom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo' autoFocus   required/>
-         </Form.Group>
-        </Col>
-
-        <Col xs = {4}>
-        <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label>  
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
-         </Form.Group>
-        </Col>
-
-        <Col xs = {4}>
-        <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo ya Mukristu (Prénom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
-         </Form.Group>
-        </Col>
-    </Row>
-
-    <Row className='justify-content-center'>
-        <Col xs = {4}>
-        <Form.Label className='couleur2'>Email</Form.Label>
-        <InputGroup className="mb-3">
-        <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-        <Form.Control
-          placeholder="Email Adresse"
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-        />
-      </InputGroup>
-        </Col>
-
-        <Col xs = {4}>
-        <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Numéro ya Tshombo (Numéro Tél)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo' required/>
-         </Form.Group>
-        </Col>
-
-        <Col xs ={4}>
-        <Form.Group className="mb-3" >
-        <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
-        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
-         <option>Ekolo (Pays)</option>
-         <option value="ok_bagage_livrer">Angleterre</option>
-         <option value="ok_bagage_stocke_arrivee">RD Congo</option>
-         
-         </Form.Select>
-         </Form.Group>
-        </Col>
-    </Row>
-
-    <Row>
+      <Row>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Mozui (Beneficiare Informations)</u></b></p>
     </Row>

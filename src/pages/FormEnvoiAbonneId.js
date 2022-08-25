@@ -126,19 +126,6 @@ function FormEnvoiAbonneId(props)
         </Col>
     </Row>
 
-    <Row className='justify-content-center'>
-    <Col xs ={6}>
-        <Form.Group className="mb-3" >
-        <Form.Label className='couleur2'>Liste des Beneficiares existants</Form.Label>
-        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
-         <option>Liste des Beneficiares</option>
-         <option value="ok_bagage_livrer">Angleterre</option>
-         <option value="ok_bagage_stocke_arrivee">RD Congo</option>
-         
-         </Form.Select>
-         </Form.Group>
-        </Col>
-    </Row>
 
    <Row className='pb-3'>
        <Col>
