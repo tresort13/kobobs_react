@@ -36,8 +36,7 @@ function ConfirmationRetraitInfo(props)
       const payerRetrait = (e)=>
       { 
 
-        e.preventDefault() 
-        setModalShow(true)    
+        e.preventDefault()    
         fetch('https://kobobsapi.herokuapp.com/api/payerCodeRetrait/'+props.envoie2.infoEnvoie.code_retrait+'/', {
                 method: 'PUT',
                  headers: {'Content-Type': 'application/json'},
@@ -45,15 +44,15 @@ function ConfirmationRetraitInfo(props)
                 })
                 .then( res => res.json())
                 .then(
-                  res => { 
-                    setModalShow(true)
+                  res => {                    
                     navigate('/home')
+                    setModalShow(true)
                   }
                 )
                 .catch( (error) =>
                   {   
-                    setModalShow(true)
-                    navigate('/home')         
+                    navigate('/home') 
+                    setModalShow(true)        
                      console.log(error)
                   } )
   
