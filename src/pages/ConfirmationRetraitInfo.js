@@ -10,6 +10,7 @@ import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -21,6 +22,7 @@ function ConfirmationRetraitInfo(props)
     const [message,setMessage] = useState("Page de confirmation Retrait")
     const [couleur,setCouleur] = useState("text-dark")
     const navigate = useNavigate()
+    const [modalShow, setModalShow] = React.useState(false);
 
 
     const isDesktop = useMediaQuery({
@@ -42,7 +44,8 @@ function ConfirmationRetraitInfo(props)
                 .then( res => res.json())
                 .then(
                   res => { 
-                      navigate('/home')
+                    setModalShow(true)
+                    navigate('/home')
                   }
                 )
                 .catch( (error) =>
@@ -161,10 +164,37 @@ function ConfirmationRetraitInfo(props)
             <p></p>
           </Col>
         </Row>
+<MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <Footer />
         </>
        
     )
 }
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Paiement Reussi
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Changement Status Code Retrait Reussi : </h4>
+        <p className='text-success'><b>le code de retrait a été payé avec success </b>   
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
 
 export default ConfirmationRetraitInfo;

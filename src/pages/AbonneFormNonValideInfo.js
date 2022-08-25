@@ -10,6 +10,7 @@ import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -25,6 +26,8 @@ function AbonneFormNonValideInfo(props)
     const[status,setStatus] = useState({statusInfo :{
         statusRetrait :"",
     }})
+
+    const [modalShow, setModalShow] = React.useState(false);
 
     const navigate = useNavigate()
 
@@ -80,6 +83,7 @@ function AbonneFormNonValideInfo(props)
                 .then( res => res.json())
                 .then(
                   res => {   
+                    setModalShow(true)
                      navigate('/form_abonne_non_valide')
                   }
                 )
@@ -198,10 +202,36 @@ function AbonneFormNonValideInfo(props)
             <p></p>
           </Col>
         </Row>
+<MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <Footer />
         </>
        
     )
 }
+
+function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Validation Réussie
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Changement Status Code Retrait Reussi : </h4>
+          <p className='text-success'><b>le code de retrait a été validé avec success </b>   
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 
 export default AbonneFormNonValideInfo;
