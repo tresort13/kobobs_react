@@ -30,6 +30,30 @@ function ConfirmationRetraitInfo(props)
       });
     
   
+      const payerRetrait = (e)=>
+      { 
+        e.preventDefault()     
+        fetch('https://kobobsapi.herokuapp.com/api/payerCodeRetrait/'+props.envoie2.infoEnvoie.code_retrait+'/', {
+                method: 'PUT',
+                 headers: {'Content-Type': 'application/json'},
+                  //body: JSON.stringify(props.envoie2.infoEnvoie)
+                })
+                .then( res => res.json())
+                .then(
+                  res => { 
+                      props.dataEnvoie2(res)
+                      console.log(res.status_retrait)
+                      navigate('/home')
+                    
+                  }
+                )
+                .catch( (error) =>
+                  {            
+                     console.log(error)
+                  } )
+  
+      }
+  
     
    
     return (
@@ -62,7 +86,6 @@ function ConfirmationRetraitInfo(props)
         <p className='text-light'>Ekolo Motindi (Pays Expediteur) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
         <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_beneficiaire}</b></p>
         <p className='text-light'>Mbongo ya kozwa epayi ya Motindi(Montant à récupérer): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-light'>Mbongo yako Futa(Montant à payer): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_total).toFixed(2)} £</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
         <p className='text-light'>Code Retrait : <b className='couleur2'> {props.envoie2.infoEnvoie.code_retrait} ({props.envoie2.infoEnvoie.status_retrait})</b></p>
         <p className='text-light'>opération envoie fait par : <b className='couleur2'> {props.username}</b></p>
@@ -78,8 +101,8 @@ function ConfirmationRetraitInfo(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit">
-        ok
+        <Button variant="warning" type="submit" onClick={e=>payerRetrait(e)}> 
+        Payé Beneficiaire
         </Button>
         </Link>
         </Col>

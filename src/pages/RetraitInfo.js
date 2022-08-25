@@ -22,6 +22,7 @@ function RetraitInfo(props)
     const [message2,setMessage2] = useState("")
     const [couleur,setCouleur] = useState("text-dark")
     const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow2, setModalShow2] = React.useState(false);
 
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
@@ -52,6 +53,10 @@ const navigate = useNavigate()
                     console.log(res.status_retrait)
                     navigate('/confirmation_retrait_info')
                   }  
+                  else if(res[0].status_retrait==='Code Retrait Payé')
+                  {
+                    setModalShow2(true)
+                  }
                   else
                   {
                     setModalShow(true)
@@ -247,6 +252,7 @@ const navigate = useNavigate()
           </Col>
         </Row>
 <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+<MyVerticallyCenteredModal show={modalShow2} onHide={() => setModalShow2(false)} />
 <Footer />
 </>     
     )
@@ -268,6 +274,31 @@ function MyVerticallyCenteredModal(props) {
       <Modal.Body>
         <h4>Status Code Retrait : </h4>
         <p className='text-danger'><b>Ce code de retrait n'est pas encore validé !!!</b>   
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+function MyVerticallyCenteredModal2(props) {
+  return (
+    <Modal
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Echec de Validation
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Status Code Retrait : </h4>
+        <p className='text-danger'><b>Désolé ce code de retrait a déjà été utilisé (status : Code Retrait Payé)!!!</b>   
         </p>
       </Modal.Body>
       <Modal.Footer>
