@@ -18,11 +18,11 @@ const useState = React.useState
 
 function ConfirmationRetraitInfo(props)
 {
-
+  const [modalShow, setModalShow] = React.useState(false);
     const [message,setMessage] = useState("Page de confirmation Retrait")
     const [couleur,setCouleur] = useState("text-dark")
     const navigate = useNavigate()
-    const [modalShow, setModalShow] = React.useState(false);
+    
 
 
     const isDesktop = useMediaQuery({
@@ -35,7 +35,7 @@ function ConfirmationRetraitInfo(props)
   
       const payerRetrait = (e)=>
       { 
-
+        setModalShow(true)  
         e.preventDefault()    
         fetch('https://kobobsapi.herokuapp.com/api/payerCodeRetrait/'+props.envoie2.infoEnvoie.code_retrait+'/', {
                 method: 'PUT',
