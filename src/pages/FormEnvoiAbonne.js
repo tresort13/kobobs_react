@@ -178,31 +178,21 @@ function FormEnvoiAbonne(props)
       <p className='couleur2'><b><u>Montant Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center'>
-        <Col xs = {4}>
+        <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Mbongo (Montant)</Form.Label>
         <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
          </Form.Group>
         </Col>
 
-        <Col xs ={4}>
-        <Form.Group className="mb-3" >
-        <Form.Label className='couleur2'>Device</Form.Label>
-        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} placeholder="Device" required>
-         <option>GBP (£)</option>
-         <option value="ok_bagage_livrer">GBP (£)</option>
-         <option value="ok_bagage_stocke_arrivee">USD ($)</option>
-         
-         </Form.Select>
-         </Form.Group>
-        </Col>
+       
 
-        <Col xs ={4}>
+        <Col xs ={6}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
-        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
-         <option>Kozua na maboko (kozua na nzela ya agence)</option>
-         <option value="ok_bagage_debarquement_arrivee">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
+        <Form.Select name="type_service" value={barcode.infoBarcode.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
+         <option value= "Kozua na maboko (kozua na nzela ya agence)">Kozua na maboko (kozua na nzela ya agence)</option>
+         <option value="Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
          
          </Form.Select>
          </Form.Group>
