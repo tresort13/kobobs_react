@@ -44,15 +44,14 @@ function ConfirmationRetraitInfo(props)
                 })
                 .then( res => res.json())
                 .then(
-                  res => {                    
+                  res => {    
+                    setModalShow(true)                
                     navigate('/home')
-                    setModalShow(true)
+
                   }
                 )
                 .catch( (error) =>
-                  {   
-                    navigate('/home') 
-                    setModalShow(true)        
+                  {          
                      console.log(error)
                   } )
   
