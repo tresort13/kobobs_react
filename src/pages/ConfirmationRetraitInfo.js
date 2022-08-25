@@ -49,7 +49,9 @@ function ConfirmationRetraitInfo(props)
                   }
                 )
                 .catch( (error) =>
-                  {            
+                  {   
+                    setModalShow(true)
+                    navigate('/home')         
                      console.log(error)
                   } )
   
