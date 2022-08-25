@@ -252,7 +252,7 @@ const navigate = useNavigate()
           </Col>
         </Row>
 <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
-<MyVerticallyCenteredModal show={modalShow2} onHide={() => setModalShow2(false)} />
+<MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
 <Footer />
 </>     
     )
