@@ -46,7 +46,7 @@ const navigate = useNavigate()
               .then( res => res.json())
               .then(
                 res => { 
-                  if(res.status_retrait == "Code Retrait Valide")
+                  if(res[0].status_retrait==='Code Retrait Valide')
                   {
                     props.dataEnvoie2(res)
                     console.log(res.status_retrait)
