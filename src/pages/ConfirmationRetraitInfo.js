@@ -44,8 +44,9 @@ function ConfirmationRetraitInfo(props)
                 .then( res => res.json())
                 .then(
                   res => {    
-                    setModalShow(true)                
-                    navigate('/home')
+                    setModalShow(true)     
+
+                    navigate('/confirmation_retrait_info')
 
                   }
                 )
@@ -191,7 +192,9 @@ function MyVerticallyCenteredModal(props) {
         </p>
       </Modal.Body>
       <Modal.Footer>
+        <Link to="/home">
         <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+        </Link>
       </Modal.Footer>
     </Modal>
   );
