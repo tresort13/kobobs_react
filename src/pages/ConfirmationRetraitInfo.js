@@ -20,6 +20,8 @@ function ConfirmationRetraitInfo(props)
 
     const [message,setMessage] = useState("Page de confirmation Retrait")
     const [couleur,setCouleur] = useState("text-dark")
+    const navigate = useNavigate()
+
 
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
