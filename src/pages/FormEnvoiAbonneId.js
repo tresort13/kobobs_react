@@ -103,7 +103,7 @@ function FormEnvoiAbonneId(props)
 
    <Row className='pb-3'>
        <Col>
-        <Link to="/retrait_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/form_envoie_abonne" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit"  onClick={e=>submitcodeAbonne(e)}>
         Valider 
         </Button>
@@ -148,7 +148,7 @@ function FormEnvoiAbonneId(props)
 
    <Row className='pb-3'>
        <Col>
-        <Link to="/retrait_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/form_envoie_abonne" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit"  onClick={e=>submitcodeAbonne(e)}>
         Valider 
         </Button>
