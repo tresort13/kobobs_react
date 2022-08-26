@@ -92,7 +92,7 @@ function FormEnvoiAbonne(props)
     }
 
     
-console.log(props.abonne)
+console.log(props.abonne.infoAbonne)
    
     return (
         
@@ -104,7 +104,7 @@ console.log(props.abonne)
         <p className='couleur2'><i><b>{message}</b></i></p>
         </Col>
         <Col xs={6}>
-        <p className='couleur2'><i><b>Noms Abonné : {props.abonne.infoCodeAbonne.prenom_expediteur} {props.abonne.infoCodeAbonne.nom_expediteur} {props.abonne.infoCodeAbonne.postnom_expediteur}</b></i></p>
+        <p className='couleur2'><i><b>Noms Abonné : {props.abonne.infoAbonne.prenom_expediteur} {props.abonne.infoAbonne.nom_expediteur} {props.abonne.infoAbonne.postnom_expediteur}</b></i></p>
         </Col>
     </Row>
 
@@ -226,7 +226,7 @@ console.log(props.abonne)
         <p className='couleur2'><i><b>{message}</b></i></p>
         </Col>
         <Col xs={6}>
-        <p className='couleur2'><i><b>Noms Abonné : {props.abonne.infoCodeAbonne.prenom_expediteur} {props.abonne.infoCodeAbonne.nom_expediteur} {props.abonne.infoCodeAbonne.postnom_expediteur}</b></i></p>
+        <p className='couleur2'><i><b>Noms Abonné : {props.abonne.infoAbonne.prenom_expediteur} {props.abonne.infoAbonne.nom_expediteur} {props.abonne.infoAbonne.postnom_expediteur}</b></i></p>
         </Col>
     </Row>
 
