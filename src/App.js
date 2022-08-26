@@ -235,7 +235,7 @@ function App() {
       adresse_expediteur : '',
       email_expediteur : '',
       numero_expediteur: '',
-      pays_expediteur : '',
+      pays_expediteur : ''
       }};
     })
   
@@ -247,7 +247,7 @@ function App() {
 
   const dataAbonne = (donne)=>
   {
-    setAbonne({infoCodeAbonne :{
+    setAbonne({infoCodeAbonne : {
       nom_expediteur : donne[0].nom_expediteur,
       postnom_expediteur :donne[0].postnom_expediteur,
       prenom_expediteur : donne[0].prenom_expediteur,
