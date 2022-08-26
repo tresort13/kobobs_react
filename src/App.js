@@ -225,6 +225,40 @@ function App() {
 
 
 
+  const [abonne,setAbonne] = useState(()=>
+  {
+    const localData = localStorage.getItem('abonne');
+    return localData ? JSON.parse(localData) : {infoAbonne :{
+      nom_expediteur : '',
+      postnom_expediteur : '',
+      prenom_expediteur : '',
+      adresse_expediteur : '',
+      email_expediteur : '',
+      numero_expediteur: '',
+      pays_expediteur : '',
+      }};
+    })
+  
+  
+
+  useEffect(() => {
+    window.localStorage.setItem("abonne", JSON.stringify(abonne))
+  }, [abonne])
+
+  const dataAbonne = (donne)=>
+  {
+    setEnvoie({infoEnvoie :{
+      nom_expediteur : donne[0].nom_expediteur,
+      postnom_expediteur :donne[0].postnom_expediteur,
+      prenom_expediteur : donne[0].prenom_expediteur,
+      adresse_expediteur : donne[0].adresse_expediteur,
+      email_expediteur : donne[0].email_expediteur,
+      numero_expediteur: donne[0].numero_expediteur,
+      pays_expediteur : donne[0].pays_expediteur,
+      }})
+  }
+
+
 
   const[temps,setTemps] = useState(()=>
     {
@@ -273,9 +307,9 @@ function App() {
         <Route path="/form_envoie_client" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiClient username = {username} dataEnvoie={dataEnvoie} envoie={envoie}/>}>
         </Route>
 
-        <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonneId username = {username}/>} >
+        <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonneId username = {username} dataAbonne={dataAbonne}/>} >
         </Route>
-        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username}/>} >
+        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username} abonne={abonne}/>} >
         </Route>
         
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >

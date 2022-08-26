@@ -104,7 +104,7 @@ function FormEnvoiAbonne(props)
         <p className='couleur2'><i><b>{message}</b></i></p>
         </Col>
         <Col xs={6}>
-        <p className='couleur2'><i><b>Noms Abonné :</b></i></p>
+        <p className='couleur2'><i><b>Noms Abonné : {props.abonne.prenom_expediteur} {props.abonne.nom_expediteur} {props.abonne.postnom_expediteur}</b></i></p>
         </Col>
     </Row>
 
