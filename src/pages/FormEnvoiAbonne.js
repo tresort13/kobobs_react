@@ -101,7 +101,7 @@ console.log(props.abonne.infoAbonne)
 {isDesktop && <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
 <Col xs={6}>
-        <p ><i><b className='text-light'>Code Abonné :</b><b className='couleur2'>{props.abonne.infoAbonne.code_abonne}</b></i></p>
+        <p ><i><b className='text-light'>Code Abonné : </b><b className='couleur2'>{props.abonne.infoAbonne.code_abonne}</b></i></p>
         </Col>
         <Col xs={6}>
         <p ><i><b className='text-light'>Noms Abonné : </b><b className='couleur2'>{props.abonne.infoAbonne.prenom_expediteur} {props.abonne.infoAbonne.nom_expediteur} {props.abonne.infoAbonne.postnom_expediteur}</b></i></p>
