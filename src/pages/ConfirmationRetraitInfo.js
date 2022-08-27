@@ -85,12 +85,12 @@ function ConfirmationRetraitInfo(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
         <p className='text-light'>Kombo Mobimba ya Motindi (Noms complets Expediteur): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_expediteur} {props.envoie2.infoEnvoie.postnom_expediteur} {props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-light'>Kombo Mobimba ya Mozui (Noms complets Beneficiare): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_beneficiaire} {props.envoie2.infoEnvoie.postnom_beneficiaire} {props.envoie2.infoEnvoie.prenom_beneficiaire}</b> </p>
+        <p className='text-light'>Kombo Mobimba ya Mozui (Noms complets Beneficiare): <b className='text-light bg-warning'>{props.envoie2.infoEnvoie.nom_beneficiaire} {props.envoie2.infoEnvoie.postnom_beneficiaire} {props.envoie2.infoEnvoie.prenom_beneficiaire}</b> </p>
         <p className='text-light'>Ekolo Motindi (Pays Expediteur) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
-        <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='couleur2 bg-warning'> {props.envoie2.infoEnvoie.pays_beneficiaire}</b></p>
+        <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='text-light '> {props.envoie2.infoEnvoie.pays_beneficiaire}</b></p>
         <p className='text-light'>Mbongo ya kozwa epayi ya Motindi(Montant à récupérer): <b className='couleur2 bg-warning'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
-        <p className='text-light'>Code Retrait : <b className='couleur2 bg-warning'> {props.envoie2.infoEnvoie.code_retrait} ({props.envoie2.infoEnvoie.status_retrait})</b></p>
+        <p className='text-light'>Code Retrait : <b className='text-light bg-warning'> {props.envoie2.infoEnvoie.code_retrait} ({props.envoie2.infoEnvoie.status_retrait})</b></p>
         <p className='text-light'>opération envoie fait par : <b className='couleur2'> {props.username}</b></p>
         <p className='text-light'>date et heure : <b className='couleur2'> {JSON.stringify(props.envoie2.infoEnvoie.date_heure_operation)}</b></p>
         </Col>
@@ -134,12 +134,12 @@ function ConfirmationRetraitInfo(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
         <p className='text-light'>Kombo Mobimba ya Motindi (Noms complets Expediteur): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_expediteur} {props.envoie2.infoEnvoie.postnom_expediteur} {props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-light'>Kombo Mobimba ya Mozui (Noms complets Beneficiare): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_beneficiaire} {props.envoie2.infoEnvoie.postnom_beneficiaire} {props.envoie2.infoEnvoie.prenom_beneficiaire}</b> </p>
+        <p className='text-light'>Kombo Mobimba ya Mozui (Noms complets Beneficiare): <b className='text-light bg-warning'>{props.envoie2.infoEnvoie.nom_beneficiaire} {props.envoie2.infoEnvoie.postnom_beneficiaire} {props.envoie2.infoEnvoie.prenom_beneficiaire}</b> </p>
         <p className='text-light'>Ekolo Motindi (Pays Expediteur) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
-        <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='couleur2 bg-warning'> {props.envoie2.infoEnvoie.pays_beneficiaire}</b></p>
+        <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='text-light '> {props.envoie2.infoEnvoie.pays_beneficiaire}</b></p>
         <p className='text-light'>Mbongo ya kozwa epayi ya Motindi(Montant à récupérer): <b className='couleur2 bg-warning'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
-        <p className='text-light'>Code Retrait : <b className='couleur2 bg-warning'> {props.envoie2.infoEnvoie.code_retrait} ({props.envoie2.infoEnvoie.status_retrait})</b></p>
+        <p className='text-light'>Code Retrait : <b className='text-light bg-warning'> {props.envoie2.infoEnvoie.code_retrait} ({props.envoie2.infoEnvoie.status_retrait})</b></p>
         <p className='text-light'>opération envoie fait par : <b className='couleur2'> {props.username}</b></p>
         <p className='text-light'>date et heure : <b className='couleur2'> {JSON.stringify(props.envoie2.infoEnvoie.date_heure_operation)}</b></p>
         </Col>
