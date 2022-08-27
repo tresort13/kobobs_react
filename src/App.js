@@ -235,7 +235,8 @@ function App() {
       adresse_expediteur : '',
       email_expediteur : '',
       numero_expediteur: '',
-      pays_expediteur : ''
+      pays_expediteur : '',
+      code_abonne : ''
       }};
     })
   
@@ -255,6 +256,7 @@ function App() {
       email_expediteur : donne[0].email_expediteur,
       numero_expediteur: donne[0].numero_expediteur,
       pays_expediteur : donne[0].pays_expediteur,
+      code_abonne : donne[0].code_abonne
       }})
   }
 
