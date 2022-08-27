@@ -140,7 +140,7 @@ const navigate = useNavigate()
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Status Retrait : <b className='couleur2'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>
+        {props.envoie2.infoEnvoie.status_retrait === 'Code Retrait Valide' ?  <p className='text-light'>Status Retrait : <b className='text-light bg-success'>{props.envoie2.infoEnvoie.status_retrait}</b> </p> : <p className='text-light'>Status Retrait : <b className='text-light bg-warning'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>}
         </Col>
     </Row>
 
