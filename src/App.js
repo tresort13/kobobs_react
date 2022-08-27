@@ -260,6 +260,27 @@ function App() {
       }})
   }
 
+  const dataEnvoieAbonne = (donne1,donne2)=>
+  {
+    setEnvoie({infoEnvoie :{
+      nom_expediteur : donne1.nom_expediteur,
+      postnom_expediteur :donne1.postnom_expediteur,
+      prenom_expediteur : donne1.prenom_expediteur,
+      adresse_expediteur : donne1.adresse_expediteur,
+      email_expediteur : donne1.email_expediteur,
+      numero_expediteur: donne1.numero_expediteur,
+      pays_expediteur : donne1.pays_expediteur,
+      nom_beneficiaire : donne2.nom_beneficiaire,
+      postnom_beneficiaire : donne2.postnom_beneficiaire,
+      prenom_beneficiaire : donne2.prenom_beneficiaire,
+      adresse_beneficiaire :donne2.adresse_beneficiaire,
+      numero_beneficiaire : donne2.numero_beneficiaire,
+      pays_beneficiaire : donne2.pays_beneficiaire,
+      montant_beneficiaire : donne2.montant_beneficiaire,
+      type_service : donne2.type_service
+      }})
+  }
+
 
 
   const[temps,setTemps] = useState(()=>
@@ -311,7 +332,7 @@ function App() {
 
         <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonneId username = {username} dataAbonne={dataAbonne} />} >
         </Route>
-        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username} abonne={abonne} />} >
+        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne}/>} >
         </Route>
         
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >

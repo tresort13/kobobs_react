@@ -18,15 +18,17 @@ const useState = React.useState
 function FormEnvoiAbonne(props)
 {
 
-    const[barcode,setBarcode] = useState({infoBarcode :{
-        barcodeBagage:"",
-        operation:"",
-        position:"",
-        volInfo:""
-    }})
-
+    const[envoieAbonne,setEnvoieAbonne] = useState({infoEnvoieAbonne :{
+        nom_beneficiaire : '',
+        postnom_beneficiaire : '',
+        prenom_beneficiaire : '',
+        adresse_beneficiaire : '',
+        numero_beneficiaire : '',
+        pays_beneficiaire : '',
+        montant_beneficiaire : '',
+        type_service : ''
+        }})
     
-        const[position,setPosition] = useState('')
 
     const [message,setMessage] = useState("Formulaire d'Envoie Abonné")
     const [couleur,setCouleur] = useState("text-dark")
@@ -42,58 +44,19 @@ function FormEnvoiAbonne(props)
     
 
 
-    const submitBarcode = (e)=>
-    {
-        
-        e.preventDefault()
-        
-        fetch('https://congoairwaysapi.herokuapp.com/api/updateBagage/', {
-                method: 'PUT',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(barcode.infoBarcode)
-              })
-              .then( res => res.json())
-              .then(
-                res => {   
-                    if(res =="ok")
-                {
-                    
-                    setMessage("le barcode" +barcode.infoBarcode.barcodeBagage+" est scanné avec succès !!!")
-                    setCouleur("text-success")
-                } 
-                else{
-                    setMessage("echec operation")
-                    setCouleur("text-danger")
-                }
-       
-                }
-              )
-              .catch( (error) =>
-                {
-                    
-                    setMessage("echec operation")
-                    setCouleur("text-danger")
-                } )
-
-                console.log(barcode.infoBarcode.operation +" "+barcode.infoBarcode.position)
-                
-
-                setBarcode({infoBarcode:{barcodeBagage:""}})
-    }
-
-    const inputChanged = (event)=>
-    {
-        const cred = barcode.infoBarcode;
-        cred[event.target.name] = event.target.value;
-        cred['operation'] = props.operationBG
-        cred['position'] = props.positionBG
-        cred['volInfo'] = props.volInfo
-        setBarcode({infoBarcode:cred})
-    }
-
-    
-console.log(props.abonne.infoAbonne)
-   
+      const submitFormulaire = (e)=>
+      {          
+        props.dataEnvoieAbonne(props.abonne,envoieAbonne.infoEnvoieAbonne)    
+        setEnvoieAbonne({infoEnvoieAbonne:{}})
+      }
+  
+      const inputChanged = (event)=>
+      {
+          const cred = envoieAbonne.infoEnvoieAbonne;
+          cred[event.target.name] = event.target.value;
+          setEnvoieAbonne({infoEnvoieAbonne:cred})
+      }
+     
     return (
         
         <>
@@ -123,55 +86,55 @@ console.log(props.abonne.infoAbonne)
       <p className='couleur2'><b><u>Mozui (Beneficiare Informations)</u></b></p>
     </Row>
     <Row className='justify-content-center'>
-        <Col xs = {4}>
+    <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo (Nom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo' required/>
+        <Form.Label className='couleur2'>Kombo Ya Libota (Nom)</Form.Label>
+        <Form.Control name="nom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label> 
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
+        <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label>  
+        <Form.Control name="postnom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.postnom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
          </Form.Group>
         </Col>
 
-        <Col xs ={4}>
-        <Form.Group className="mb-3" >
+        <Col xs = {4}>
+        <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo ya Mukristu (Prénom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
+        <Form.Control name="prenom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.prenom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
     </Row>
+
     <Row className='justify-content-center'>
-        <Col xs = {4}>
+    <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Adresse</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Adresse'  required/>
+        <Form.Control name="adresse_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Numéro ya Tshombo (Numéro Tél)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo ' required/>
+        <Form.Control name="numero_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.numero_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo' required/>
          </Form.Group>
         </Col>
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
-        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+        <Form.Select name='pays_beneficiaire' value={envoieAbonne.infoEnvoieAbonne.pays_beneficiaire} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
          <option>Ekolo (Pays)</option>
-         <option value="ok_bagage_livrer">RD Congo</option>
-         <option value="ok_bagage_stocke_arrivee">Angleterre</option>
+         <option value="Angleterre">Angleterre</option>
+         <option value="RD Congo">RD Congo</option>
          
          </Form.Select>
          </Form.Group>
         </Col>
     </Row>
-
   
     <Row>
       <hr style={{color:"darkorange"}}></hr>
@@ -180,17 +143,18 @@ console.log(props.abonne.infoAbonne)
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Mbongo (Montant)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
+        <Form.Label className='couleur2'>Mbongo Mozui akozwa(Montant à récuperer)</Form.Label>
+        <Form.Control name="montant_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.montant_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
          </Form.Group>
         </Col>
 
-       
+        
 
         <Col xs ={6}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
-        <Form.Select name="type_service" value={barcode.infoBarcode.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
+        <Form.Select name="type_service" value={envoieAbonne.infoEnvoieAbonne.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
+        <option>Nzela yako zwa Mbongo (Type de retrait)</option>
          <option value= "Kozua na maboko (kozua na nzela ya agence)">Kozua na maboko (kozua na nzela ya agence)</option>
          <option value="Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
          
@@ -206,13 +170,14 @@ console.log(props.abonne.infoAbonne)
         <Col xs ={4}>
         
         <Link to="/envoi_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" >
+        <Button variant="outline-warning" type="submit" onClick={e=>submitFormulaire(e)}>
         Valider Informations
         </Button>
         </Link>
 
         </Col>
     </Row>
+  
   
 
 
@@ -239,61 +204,61 @@ console.log(props.abonne.infoAbonne)
         </Col>
     </Row>
     
-<Form>
+    <Form>
       <Row>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Mozui (Beneficiare Informations)</u></b></p>
     </Row>
     <Row className='justify-content-center'>
-        <Col xs = {4}>
+    <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo (Nom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo' required/>
+        <Form.Label className='couleur2'>Kombo Ya Libota (Nom)</Form.Label>
+        <Form.Control name="nom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label> 
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
+        <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label>  
+        <Form.Control name="postnom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.postnom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
          </Form.Group>
         </Col>
 
-        <Col xs ={4}>
-        <Form.Group className="mb-3" >
+        <Col xs = {4}>
+        <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo ya Mukristu (Prénom)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
+        <Form.Control name="prenom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.prenom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
     </Row>
+
     <Row className='justify-content-center'>
-        <Col xs = {4}>
+    <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Adresse</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Adresse'  required/>
+        <Form.Control name="adresse_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Numéro ya Tshombo (Numéro Tél)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo ' required/>
+        <Form.Control name="numero_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.numero_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo' required/>
          </Form.Group>
         </Col>
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
-        <Form.Select name='position' value={position} aria-label="Default select example" onChange={e=>setPosition(e.target.value)} required>
+        <Form.Select name='pays_beneficiaire' value={envoieAbonne.infoEnvoieAbonne.pays_beneficiaire} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
          <option>Ekolo (Pays)</option>
-         <option value="ok_bagage_livrer">RD Congo</option>
-         <option value="ok_bagage_stocke_arrivee">Angleterre</option>
+         <option value="Angleterre">Angleterre</option>
+         <option value="RD Congo">RD Congo</option>
          
          </Form.Select>
          </Form.Group>
         </Col>
     </Row>
-
   
     <Row>
       <hr style={{color:"darkorange"}}></hr>
@@ -302,17 +267,18 @@ console.log(props.abonne.infoAbonne)
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Mbongo (Montant)</Form.Label>
-        <Form.Control name="barcodeBagage" value={barcode.infoBarcode.barcodeBagage} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
+        <Form.Label className='couleur2'>Mbongo Mozui akozwa(Montant à récuperer)</Form.Label>
+        <Form.Control name="montant_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.montant_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
          </Form.Group>
         </Col>
 
-       
+        
 
         <Col xs ={6}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
-        <Form.Select name="type_service" value={barcode.infoBarcode.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
+        <Form.Select name="type_service" value={envoieAbonne.infoEnvoieAbonne.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
+        <option>Nzela yako zwa Mbongo (Type de retrait)</option>
          <option value= "Kozua na maboko (kozua na nzela ya agence)">Kozua na maboko (kozua na nzela ya agence)</option>
          <option value="Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
          
@@ -328,13 +294,14 @@ console.log(props.abonne.infoAbonne)
         <Col xs ={4}>
         
         <Link to="/envoi_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" >
+        <Button variant="outline-warning" type="submit" onClick={e=>submitFormulaire(e)}>
         Valider Informations
         </Button>
         </Link>
 
         </Col>
     </Row>
+  
   
 
 
