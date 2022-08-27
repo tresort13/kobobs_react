@@ -92,7 +92,7 @@ function ConfirmationRetraitInfo(props)
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
         <p className='text-light'>Code Retrait : <b className='couleur2 bg-warning'> {props.envoie2.infoEnvoie.code_retrait} ({props.envoie2.infoEnvoie.status_retrait})</b></p>
         <p className='text-light'>opération envoie fait par : <b className='couleur2'> {props.username}</b></p>
-        <p className='text-light'>date et heure : <b className='couleur2'> {new Intl.DateTimeFormat.format(JSON.stringify(props.envoie2.infoEnvoie.date_heure_operation))}</b></p>
+        <p className='text-light'>date et heure : <b className='couleur2'> {JSON.stringify(props.envoie2.infoEnvoie.date_heure_operation)}</b></p>
         </Col>
     </Row>
 
@@ -141,7 +141,7 @@ function ConfirmationRetraitInfo(props)
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
         <p className='text-light'>Code Retrait : <b className='couleur2 bg-warning'> {props.envoie2.infoEnvoie.code_retrait} ({props.envoie2.infoEnvoie.status_retrait})</b></p>
         <p className='text-light'>opération envoie fait par : <b className='couleur2'> {props.username}</b></p>
-        <p className='text-light'>date et heure : <b className='couleur2'> {new Intl.DateTimeFormat.format(JSON.stringify(props.envoie2.infoEnvoie.date_heure_operation))}</b></p>
+        <p className='text-light'>date et heure : <b className='couleur2'> {JSON.stringify(props.envoie2.infoEnvoie.date_heure_operation)}</b></p>
         </Col>
     </Row>
 
