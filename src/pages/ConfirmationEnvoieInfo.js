@@ -67,7 +67,7 @@ function ConfirmationEnvoieInfo(props)
         <p className='text-light'>Code Retrait : <b className='text-dark bg-warning'> {props.envoie3.infoEnvoie.code_retrait} </b> ({props.envoie3.infoEnvoie.status_retrait})</p>
         <p className='text-light'>Code Abonné : <b className='text-dark bg-warning'> {props.envoie3.infoEnvoie.code_abonne} </b></p>
         <p className='text-light'>opération envoie fait par : <b className='couleur2'> {props.username}</b></p>
-        <p className='text-light'>date et heure : <b className='couleur2'> {new Intl.DateTimeFormat.format(JSON.stringify(props.envoie3.infoEnvoie.date_heure_operation))}</b></p>
+        <p className='text-light'>date et heure : <b className='couleur2'> {JSON.stringify(props.envoie3.infoEnvoie.date_heure_operation)}</b></p>
         </Col>
     </Row>
 
@@ -118,7 +118,7 @@ function ConfirmationEnvoieInfo(props)
         <p className='text-light'>Code Retrait : <b className='text-dark bg-warning'> {props.envoie3.infoEnvoie.code_retrait} </b> ({props.envoie3.infoEnvoie.status_retrait})</p>
         <p className='text-light'>Code Abonné : <b className='text-dark bg-warning'> {props.envoie3.infoEnvoie.code_abonne} </b></p>
         <p className='text-light'>opération envoie fait par : <b className='couleur2'> {props.username}</b></p>
-        <p className='text-light'>date et heure : <b className='couleur2'> {new Intl.DateTimeFormat.format(JSON.stringify(props.envoie3.infoEnvoie.date_heure_operation))}</b></p>
+        <p className='text-light'>date et heure : <b className='couleur2'> {JSON.stringify(props.envoie3.infoEnvoie.date_heure_operation)}</b></p>
         </Col>
     </Row>
 
