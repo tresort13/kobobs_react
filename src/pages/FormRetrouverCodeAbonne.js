@@ -107,7 +107,7 @@ function FormRetrouverCodeAbonne(props)
 
    <Row className='pb-3'>
        <Col>
-        <Link to="/retrait_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/abonne_code_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit"  onClick={e=>submitNumero(e)}>
         Valider 
         </Button>
@@ -152,7 +152,7 @@ function FormRetrouverCodeAbonne(props)
 
    <Row className='pb-3'>
        <Col>
-        <Link to="/retrait_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/abonne_code_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit"  onClick={e=>submitNumero(e)}>
         Valider 
         </Button>
