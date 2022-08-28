@@ -38,7 +38,7 @@ function FormRetrouverCodeAbonne(props)
     
 
 
-    const submitNumero = (e)=>
+    const submitNumero = ()=>
     {
               
         fetch('https://kobobsapi.herokuapp.com/api/getAbonneInfo/'+numeroAbonne.infoNumeroAbonne.numero+'/', {
@@ -50,7 +50,7 @@ function FormRetrouverCodeAbonne(props)
               .then(
                 res => {   
                     console.log(res)
-                   props.dataEnvoie2(res[0])
+                   props.dataEnvoie2(res)
                    
                 }
               )
@@ -110,7 +110,7 @@ function FormRetrouverCodeAbonne(props)
    <Row className='pb-3'>
        <Col>
         <Link to="/abonne_code_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit"  onClick={e=>submitNumero(e)}>
+        <Button variant="outline-warning" type="submit"  onClick={submitNumero}>
         Valider 
         </Button>
         </Link>
@@ -155,7 +155,7 @@ function FormRetrouverCodeAbonne(props)
    <Row className='pb-3'>
        <Col>
         <Link to="/abonne_code_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit"  onClick={e=>submitNumero(e)}>
+        <Button variant="outline-warning" type="submit"  onClick={submitNumero}>
         Valider 
         </Button>
         </Link>
