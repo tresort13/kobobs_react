@@ -49,8 +49,9 @@ function FormRetrouverCodeAbonne(props)
               .then( res => res.json())
               .then(
                 res => {   
+                    console.log(res)
                    props.dataEnvoie2(res)
-                   console.log(res)
+                   
                 }
               )
               .catch( (error) =>
