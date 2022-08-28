@@ -347,10 +347,10 @@ function App() {
         <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to ='/' /> :<AbonneFormNonValideInfo username = {username} setCodeRetraitStatus={setCodeRetraitStatus} codeRetraitStatus={codeRetraitStatus}/>} >
         </Route>
 
-        <Route path="/form_retrouver_abonne" element={username == "" ? <Navigate to ='/' /> :<FormRetrouverCodeAbonne username = {username}/>} >
+        <Route path="/form_retrouver_abonne" element={username == "" ? <Navigate to ='/' /> :<FormRetrouverCodeAbonne username = {username} dataEnvoie2={dataEnvoie2}/>} >
         </Route>
 
-        <Route path="/abonne_code_info" element={username == "" ? <Navigate to ='/' /> :<AbonneCodeInfo username = {username}/>} >
+        <Route path="/abonne_code_info" element={username == "" ? <Navigate to ='/' /> :<AbonneCodeInfo username = {username} envoie2={envoie2}/>} >
         </Route>
 
         <Route path="/confirmation_envoie_info" element={username == "" ? <Navigate to ='/' /> :<ConfirmationEnvoieInfo username = {username} envoie3={envoie3}/>} >
