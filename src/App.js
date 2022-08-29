@@ -280,6 +280,43 @@ function App() {
       type_service : donne2.type_service
       }})
   }
+ 
+  
+
+  const [abonneInfo,setAbonneInfo] = useState(()=>
+  {
+    const localData = localStorage.getItem('abonneInfo');
+    return localData ? JSON.parse(localData) : {infoAbonne :{
+      nom_expediteur : '',
+      postnom_expediteur : '',
+      prenom_expediteur : '',
+      adresse_expediteur : '',
+      email_expediteur : '',
+      numero_expediteur: '',
+      pays_expediteur : '',
+      code_abonne : ''
+      }};
+    })
+  
+  
+
+  useEffect(() => {
+    window.localStorage.setItem("abonneInfo", JSON.stringify(abonneInfo))
+  }, [abonne])
+
+  const dataAbonneInfo = (donne)=>
+  {
+    setAbonneInfo({infoAbonne : {
+      nom_expediteur : donne[0].nom_expediteur,
+      postnom_expediteur :donne[0].postnom_expediteur,
+      prenom_expediteur : donne[0].prenom_expediteur,
+      adresse_expediteur : donne[0].adresse_expediteur,
+      email_expediteur : donne[0].email_expediteur,
+      numero_expediteur: donne[0].numero_expediteur,
+      pays_expediteur : donne[0].pays_expediteur,
+      code_abonne : donne[0].code_abonne
+      }})
+  }
 
 
 
@@ -347,10 +384,10 @@ function App() {
         <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to ='/' /> :<AbonneFormNonValideInfo username = {username} setCodeRetraitStatus={setCodeRetraitStatus} codeRetraitStatus={codeRetraitStatus}/>} >
         </Route>
 
-        <Route path="/form_retrouver_abonne" element={username == "" ? <Navigate to ='/' /> :<FormRetrouverCodeAbonne username = {username} dataEnvoie2={dataEnvoie2}/>} >
+        <Route path="/form_retrouver_abonne" element={username == "" ? <Navigate to ='/' /> :<FormRetrouverCodeAbonne username = {username} dataAbonneInfo={dataAbonneInfo}/>} >
         </Route>
 
-        <Route path="/abonne_code_info" element={username == "" ? <Navigate to ='/' /> :<AbonneCodeInfo username = {username} envoie2={envoie2}/>} >
+        <Route path="/abonne_code_info" element={username == "" ? <Navigate to ='/' /> :<AbonneCodeInfo username = {username} abonneInfo={abonneInfo}/>} >
         </Route>
 
         <Route path="/confirmation_envoie_info" element={username == "" ? <Navigate to ='/' /> :<ConfirmationEnvoieInfo username = {username} envoie3={envoie3}/>} >

@@ -50,7 +50,7 @@ function FormRetrouverCodeAbonne(props)
               .then(
                 res => {   
                     console.log(res)
-                   props.dataEnvoie2(res)
+                   props.dataAbonneInfo(res)
                    
                 }
               )
