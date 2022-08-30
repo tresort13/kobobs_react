@@ -15,6 +15,7 @@ import FormEnvoiClient from './pages/FormEnvoiClient';
 import FormEnvoiAbonneId from './pages/FormEnvoiAbonneId';
 import FormEnvoiAbonne from './pages/FormEnvoiAbonne';
 import EnvoiInfo from './pages/EnvoiInfo';
+import EnvoieAbonneInfo from './pages/EnvoieAbonneInfo';
 import FormRetrait from './pages/FormRetrait';
 import RetraitInfo from './pages/RetraitInfo';
 import AbonneFormNonValideInfo from './pages/AbonneFormNonValideInfo';
@@ -61,7 +62,8 @@ function App() {
       numero_beneficiaire : '',
       pays_beneficiaire : '',
       montant_beneficiaire : '',
-      type_service : ''
+      type_service : '',
+      code_abonne : ''
       }};
     })
   
@@ -88,7 +90,8 @@ function App() {
       numero_beneficiaire : donne.numero_beneficiaire,
       pays_beneficiaire : donne.pays_beneficiaire,
       montant_beneficiaire : donne.montant_beneficiaire,
-      type_service : donne.type_service
+      type_service : donne.type_service,
+      code_abonne : ''
       }})
   }
 
@@ -277,7 +280,8 @@ function App() {
       numero_beneficiaire : donne2.numero_beneficiaire,
       pays_beneficiaire : donne2.pays_beneficiaire,
       montant_beneficiaire : donne2.montant_beneficiaire,
-      type_service : donne2.type_service
+      type_service : donne2.type_service,
+      code_abonne : donne1.infoAbonne.code_abonne
       }})
   }
  
@@ -373,6 +377,9 @@ function App() {
         </Route>
         
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >
+        </Route>
+
+        <Route path="/envoi_abonne_info" element={username == "" ? <Navigate to ='/' /> :<EnvoieAbonneInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >
         </Route>
 
         <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username} dataEnvoie2={dataEnvoie2} />} >
