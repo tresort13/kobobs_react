@@ -302,7 +302,7 @@ function App() {
 
   useEffect(() => {
     window.localStorage.setItem("abonneInfo", JSON.stringify(abonneInfo))
-  }, [abonne])
+  }, [abonneInfo])
 
   const dataAbonneInfo = (donne)=>
   {
