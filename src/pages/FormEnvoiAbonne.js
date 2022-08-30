@@ -170,7 +170,7 @@ function FormEnvoiAbonne(props)
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="/envoi_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/envoi_abonne_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit" onClick={e=>submitFormulaire(e)}>
         Valider Informations
         </Button>
@@ -294,7 +294,7 @@ function FormEnvoiAbonne(props)
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="/envoi_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/envoi_abonne_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit" onClick={e=>submitFormulaire(e)}>
         Valider Informations
         </Button>
