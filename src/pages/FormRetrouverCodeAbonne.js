@@ -24,7 +24,7 @@ function FormRetrouverCodeAbonne(props)
 
     
 
-    const [message,setMessage] = useState("Veuillez entrer le numéro de l'abonné")
+    const [message,setMessage] = useState("Veuillez entrer le code abonné ou téléphone de l'abonné")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
@@ -100,8 +100,8 @@ function FormRetrouverCodeAbonne(props)
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Numéro Abonné</Form.Label>
-        <Form.Control name="numero" value={numeroAbonne.infoNumeroAbonne.numero} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez entrer le numéro de l'abonné" autoFocus   required/>
+        <Form.Label className='couleur2'>Code Abonné ou Téléphone Abonné</Form.Label>
+        <Form.Control name="numero" value={numeroAbonne.infoNumeroAbonne.numero} onChange={e=>inputChanged(e)} type="text" placeholder="entrer le code abonné ou téléphone de l'abonné" autoFocus   required/>
          </Form.Group>
         </Col>
     </Row>
@@ -145,8 +145,8 @@ function FormRetrouverCodeAbonne(props)
 <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Numéro Abonné</Form.Label>
-        <Form.Control name="numero" value={numeroAbonne.infoNumeroAbonne.numero} onChange={e=>inputChanged(e)} type="text" placeholder="Veuillez entrer le numéro de l'abonné" autoFocus   required/>
+        <Form.Label className='couleur2'>Code Abonné ou Téléphone Abonné</Form.Label>
+        <Form.Control name="numero" value={numeroAbonne.infoNumeroAbonne.numero} onChange={e=>inputChanged(e)} type="text" placeholder="entrer le code abonné ou téléphone de l'abonné" autoFocus   required/>
          </Form.Group>
         </Col>
     </Row>
