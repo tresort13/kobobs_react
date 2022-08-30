@@ -32,10 +32,10 @@ function EnvoieAbonneInfo(props)
     
 console.log(props.envoie.infoEnvoie)
 
-    const submitEnvoie = (e)=>
+    const submitEnvoie = ()=>
     {      
         fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaireAbonne/', {
-                method:'POST',
+                method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(props.envoie.infoEnvoie)
               })
@@ -125,7 +125,7 @@ console.log(props.envoie.infoEnvoie)
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
         <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
+        <Button variant="warning" type="submit" onClick={submitEnvoie}>
         Valider Informations
         </Button>
         </Link>
@@ -208,7 +208,7 @@ console.log(props.envoie.infoEnvoie)
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
+        <Button variant="warning" type="submit" onClick={submitEnvoie}>
         Valider Informations
         </Button>
         </Link>
