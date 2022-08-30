@@ -70,13 +70,13 @@ console.log(props.abonneInfo)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo ya Libota (Nom): <b className='couleur2'>{props.abonneInfo.infoEnvoie.nom_expediteur}</b></p>
-        <p className='text-light'>Kombo ya Authenticité  (Postnom) : {props.abonneInfo.infoEnvoie.postnom_expediteur}</p>
-        <p className='text-light'>Kombo ya Mukristu (Prénom) : {props.abonneInfo.infoEnvoie.prenom_expediteur}</p>
-        <p className='text-light'>Email : {props.abonneInfo.infoEnvoie.email_expediteur}</p>
-        <p className='text-light'>Numéro Ya Tshombo : {props.abonneInfo.infoEnvoie.numero_expediteur}</p>
-        <p className='text-light'>Ekolo (Pays) : {props.abonneInfo.infoEnvoie.pays_expediteur}</p>
-        <p className='text-light'>Code Abonné : {props.abonneInfo.infoEnvoie.code_abonne}</p>
+        <p className='text-light'>Kombo ya Libota (Nom): <b className='couleur2'>{props.abonneInfo.infoAbonne.nom_expediteur}</b></p>
+        <p className='text-light'>Kombo ya Authenticité  (Postnom) : {props.abonneInfo.infoAbonne.postnom_expediteur}</p>
+        <p className='text-light'>Kombo ya Mukristu (Prénom) : {props.abonneInfo.infoAbonne.prenom_expediteur}</p>
+        <p className='text-light'>Email : {props.abonneInfo.infoAbonne.email_expediteur}</p>
+        <p className='text-light'>Numéro Ya Tshombo : {props.abonneInfo.infoAbonne.numero_expediteur}</p>
+        <p className='text-light'>Ekolo (Pays) : {props.abonneInfo.infoAbonne.pays_expediteur}</p>
+        <p className='text-light'>Code Abonné : {props.abonneInfo.infoAbonne.code_abonne}</p>
         </Col>
         <Col xs={6}>
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
@@ -114,13 +114,13 @@ console.log(props.abonneInfo)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo ya Libota (Nom): <b className='couleur2'>{props.abonneInfo.infoEnvoie.nom_expediteur}</b></p>
-        <p className='text-light'>Kombo ya Authenticité  (Postnom) : {props.abonneInfo.infoEnvoie.postnom_expediteur}</p>
-        <p className='text-light'>Kombo ya Mukristu (Prénom) : {props.abonneInfo.infoEnvoie.prenom_expediteur}</p>
-        <p className='text-light'>Email : {props.abonneInfo.infoEnvoie.email_expediteur}</p>
-        <p className='text-light'>Numéro Ya Tshombo : {props.abonneInfo.infoEnvoie.numero_expediteur}</p>
-        <p className='text-light'>Ekolo (Pays) : {props.abonneInfo.infoEnvoie.pays_expediteur}</p>
-        <p className='text-light'>Code Abonné : {props.abonneInfo.infoEnvoie.code_abonne}</p>
+        <p className='text-light'>Kombo ya Libota (Nom): <b className='couleur2'>{props.abonneInfo.infoAbonne.nom_expediteur}</b></p>
+        <p className='text-light'>Kombo ya Authenticité  (Postnom) : {props.abonneInfo.infoAbonne.postnom_expediteur}</p>
+        <p className='text-light'>Kombo ya Mukristu (Prénom) : {props.abonneInfo.infoAbonne.prenom_expediteur}</p>
+        <p className='text-light'>Email : {props.abonneInfo.infoAbonne.email_expediteur}</p>
+        <p className='text-light'>Numéro Ya Tshombo : {props.abonneInfo.infoAbonne.numero_expediteur}</p>
+        <p className='text-light'>Ekolo (Pays) : {props.abonneInfo.infoAbonne.pays_expediteur}</p>
+        <p className='text-light'>Code Abonné : {props.abonneInfo.infoAbonne.code_abonne}</p>
         </Col>
         <Col xs={6}>
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
