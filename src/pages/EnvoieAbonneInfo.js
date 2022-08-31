@@ -37,7 +37,7 @@ console.log(props.envoie.infoEnvoie)
         fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaireAbonne/',{
                 method: 'GET',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(props.envoie.infoEnvoie)
+                
               })
               .then( res => res.json())
               .then(
