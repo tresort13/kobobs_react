@@ -34,7 +34,7 @@ console.log(props.envoie.infoEnvoie)
 
     const submitEnvoie = ()=>
     {      
-        fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaireAbonne/',{
+        fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaireAbonne/'+props.envoie.infoEnvoie.code_abonne+'/',{
                 method:'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(props.envoie.infoEnvoie)
