@@ -44,7 +44,7 @@ function App() {
   const [taux,setTaux] = useState(()=>
   {
     const localData = localStorage.getItem('taux');
-    return localData ? JSON.parse(localData) : 0 ;
+    return localData ? JSON.parse(localData) : "";
   });
   
   
@@ -100,7 +100,7 @@ function App() {
       adresse_beneficiaire :donne.adresse_beneficiaire,
       numero_beneficiaire : donne.numero_beneficiaire,
       pays_beneficiaire : donne.pays_beneficiaire,
-      montant_beneficiaire : Number(donne.montant_beneficiaire * taux).toFixed(2),
+      montant_beneficiaire : Number(donne.montant_beneficiaire).toFixed(2) * Number(taux).toFixed(2),
       type_service : donne.type_service,
       code_abonne : ''
       }})
