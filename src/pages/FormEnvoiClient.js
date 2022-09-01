@@ -58,7 +58,8 @@ function FormEnvoiClient(props)
                 })
                 .then( res => res.json())
                 .then(
-                  res => {   
+                  res => {  
+                    props.setTaux(res.rates.GBP) 
                      console.log(res.rates.GBP)
                   }
                 )

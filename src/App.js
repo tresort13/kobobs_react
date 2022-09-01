@@ -41,6 +41,17 @@ function App() {
     window.localStorage.setItem("username", JSON.stringify(username))
   }, [username])
 
+  const [taux,setTaux] = useState(()=>
+  {
+    const localData = localStorage.getItem('taux');
+    return localData ? JSON.parse(localData) : 0 ;
+  });
+  
+  
+  useEffect(() => {
+    window.localStorage.setItem("taux", JSON.stringify(taux))
+  }, [taux])
+
   const [codeRetraitStatus,setCodeRetraitStatus] = useState(0)
 
 
@@ -89,7 +100,7 @@ function App() {
       adresse_beneficiaire :donne.adresse_beneficiaire,
       numero_beneficiaire : donne.numero_beneficiaire,
       pays_beneficiaire : donne.pays_beneficiaire,
-      montant_beneficiaire : donne.montant_beneficiaire,
+      montant_beneficiaire : Number(donne.montant_beneficiaire * taux).toFixed(2),
       type_service : donne.type_service,
       code_abonne : ''
       }})
@@ -368,7 +379,7 @@ function App() {
         <Route path="/menu_users" element={username == "" ? <Navigate to ='/' /> :<MenuUsers username = {username}/>} >
         </Route>
 
-        <Route path="/form_envoie_client" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiClient username = {username} dataEnvoie={dataEnvoie} envoie={envoie}/>}>
+        <Route path="/form_envoie_client" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiClient username = {username} dataEnvoie={dataEnvoie} envoie={envoie} setTaux={setTaux}/>}>
         </Route>
 
         <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonneId username = {username} dataAbonne={dataAbonne} />} >
