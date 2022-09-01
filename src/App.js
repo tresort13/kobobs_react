@@ -73,6 +73,7 @@ function App() {
       numero_beneficiaire : '',
       pays_beneficiaire : '',
       montant_beneficiaire : '',
+      montant_pour_payer :'',
       type_service : '',
       code_abonne : ''
       }};
@@ -100,7 +101,8 @@ function App() {
       adresse_beneficiaire :donne.adresse_beneficiaire,
       numero_beneficiaire : donne.numero_beneficiaire,
       pays_beneficiaire : donne.pays_beneficiaire,
-      montant_beneficiaire : Number(donne.montant_beneficiaire).toFixed(2) * Number(taux).toFixed(2),
+      montant_beneficiaire : donne.montant_beneficiaire,
+      montant_pour_payer : Number(donne.montant_beneficiaire).toFixed(2) * Number(taux).toFixed(2),
       type_service : donne.type_service,
       code_abonne : ''
       }})
@@ -291,6 +293,7 @@ function App() {
       numero_beneficiaire : donne2.numero_beneficiaire,
       pays_beneficiaire : donne2.pays_beneficiaire,
       montant_beneficiaire : donne2.montant_beneficiaire,
+      montant_pour_payer : Number(donne2.montant_beneficiaire).toFixed(2) * Number(taux).toFixed(2),
       type_service : donne2.type_service,
       code_abonne : donne1.infoAbonne.code_abonne
       }})
