@@ -75,7 +75,7 @@ function FormEnvoiClient(props)
 
     const submitFormulaire = (e)=>
     {   
-      e.prevendDefault() 
+      e.preventDefault() 
       tauxEchanger()      
       props.dataEnvoie(envoie.infoEnvoie)
       navigate('/envoi_info')
