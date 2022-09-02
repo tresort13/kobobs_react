@@ -87,7 +87,7 @@ function FormEnvoiClient(props)
 
     const inputChanged = (event)=>
     {
-      event.prevendDefault()
+      
         const cred = envoie.infoEnvoie;
         cred[event.target.name] = event.target.value;
         setEnvoie({infoEnvoie:cred})
