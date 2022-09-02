@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import {Link} from  'react-router-dom';
+import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
@@ -28,7 +28,7 @@ function EnvoiInfo(props)
         query: "(max-width: 1224px)"
       });
     
-  
+      const navigate = useNavigate()
     
 console.log(props.envoie.infoEnvoie)
 
@@ -54,9 +54,11 @@ console.log(props.envoie.infoEnvoie)
 
     }
 
-    const modifierFormulaire = ()=>
-    {         
-      props.dataEnvoie(props.envoie.infoEnvoie)    
+    const modifierFormulaire = (e)=>
+    {    
+      e.preventDefault()     
+      props.dataEnvoie(props.envoie.infoEnvoie) 
+      navigate('/form_envoie_client')   
       //setEnvoie({infoEnvoie:{}})
     }
     
