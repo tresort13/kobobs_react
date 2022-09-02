@@ -57,7 +57,6 @@ console.log(props.envoie.infoEnvoie)
     const modifierFormulaire = (e)=>
     {    
       e.preventDefault()     
-      props.dataEnvoie(props.envoie.infoEnvoie) 
       navigate('/form_envoie_client')   
       //setEnvoie({infoEnvoie:{}})
     }
