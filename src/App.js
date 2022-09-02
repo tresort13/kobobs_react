@@ -74,6 +74,8 @@ function App() {
       pays_beneficiaire : '',
       montant_beneficiaire : '',
       montant_pour_payer :'',
+      frais_envoie : '',
+      frais_tva : '',
       type_service : '',
       code_abonne : ''
       }};
@@ -103,6 +105,8 @@ function App() {
       pays_beneficiaire : donne.pays_beneficiaire,
       montant_beneficiaire : donne.montant_beneficiaire,
       montant_pour_payer : (Number(donne.montant_beneficiaire).toFixed(2) * Number(taux).toFixed(2)) + ((Number(donne.montant_beneficiaire).toFixed(2) * Number(taux).toFixed(2)) * 5)/100 + ((Number(donne.montant_beneficiaire).toFixed(2) * Number(taux).toFixed(2)) * 1)/100,
+      frais_envoie : ((Number(donne.montant_beneficiaire).toFixed(2) * Number(taux).toFixed(2)) * 5)/100,
+      frais_tva : ((Number(donne.montant_beneficiaire).toFixed(2) * Number(taux).toFixed(2)) * 1)/100,
       type_service : donne.type_service,
       code_abonne : ''
       }})
