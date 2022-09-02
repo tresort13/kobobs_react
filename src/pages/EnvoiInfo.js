@@ -54,7 +54,7 @@ console.log(props.envoie.infoEnvoie)
 
     }
 
-    const modifierFormulaire = (e)=>
+    const modifierFormulaire = ()=>
     {         
       props.dataEnvoie(props.envoie.infoEnvoie)    
       //setEnvoie({infoEnvoie:{}})
@@ -138,7 +138,7 @@ console.log(props.envoie.infoEnvoie)
         
         <Col xs={6}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>modifierFormulaire(e)} >
+        <Button variant="outline-warning" type="submit" onClick={modifierFormulaire} >
         Modifier Informations
         </Button>
         </Link>
