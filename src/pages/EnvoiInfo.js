@@ -54,7 +54,12 @@ console.log(props.envoie.infoEnvoie)
 
     }
 
-
+    const modifierFormulaire = (e)=>
+    {    
+      tauxEchanger()      
+      props.dataEnvoie(props.envoie.infoEnvoie)    
+      //setEnvoie({infoEnvoie:{}})
+    }
     
 
    
