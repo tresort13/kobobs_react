@@ -73,14 +73,11 @@ function FormEnvoiClient(props)
     
 
 
-    const submitFormulaire = (e)=>
+    const submitFormulaire = ()=>
     {   
-      e.preventDefault() 
       tauxEchanger()      
       props.dataEnvoie(envoie.infoEnvoie)
-      
-
-      //setEnvoie({infoEnvoie:{}})
+      setEnvoie({infoEnvoie:{}})
     }
 
     
@@ -275,7 +272,7 @@ function FormEnvoiClient(props)
         <Col xs ={4}>
         
         <Link to="/envoi_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit">
+        <Button variant="outline-warning" type="submit" onClick={e=>submitFormulaire(e)}>
         Valider Informations
         </Button>
         </Link>
