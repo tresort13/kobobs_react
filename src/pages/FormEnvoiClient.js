@@ -19,7 +19,7 @@ function FormEnvoiClient(props)
 {
 
     const[envoie,setEnvoie] = useState({infoEnvoie :{
-    nom_expediteur : '',
+    nom_expediteur : 'kongo',
     postnom_expediteur : '',
     prenom_expediteur : '',
     adresse_expediteur : '',
@@ -124,7 +124,7 @@ function FormEnvoiClient(props)
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo Ya Libota(Nom)</Form.Label>
-        <Form.Control name="nom_expediteur" value="tresor" onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
+        <Form.Control name="nom_expediteur" value={envoie.infoEnvoie.nom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
          </Form.Group>
         </Col>
 
