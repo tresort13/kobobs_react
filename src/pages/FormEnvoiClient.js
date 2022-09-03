@@ -19,7 +19,7 @@ function FormEnvoiClient(props)
 {
 
     const[envoie,setEnvoie] = useState({infoEnvoie :{
-    nom_expediteur : 'kongo',
+    nom_expediteur : '',
     postnom_expediteur : '',
     prenom_expediteur : '',
     adresse_expediteur : '',
