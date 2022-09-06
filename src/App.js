@@ -27,6 +27,8 @@ import SelectDateFormEnvoie from './pages/SelectDateFormEnvoie';
 import SelectDateFormRetrait from './pages/SelectDateFormRetrait';
 import SelectMoisFormRetrait from './pages/SelectMoisFormRetrait';
 import SelectMoisFormEnvoie from './pages/SelectMoisFormEnvoie';
+import MenuRapportEnvoie from './pages/MenuRapportEnvoie';
+import MenuRapportRetrait from './pages/MenuRapportRetrait';
 
 
 
@@ -427,6 +429,12 @@ function App() {
         </Route>
 
         <Route path="/menu_gestion_operation" element={username == "" ? <Navigate to ='/' /> :<MenuGestionOperations username = {username}/>} >
+        </Route>
+
+        <Route path="/menu_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MenuRapportEnvoie username = {username}/>} >
+        </Route>
+
+        <Route path="/menu_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MenuRapportRetrait username = {username}/>} >
         </Route>
 
         <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to ='/' /> :<MenuAbonne username = {username}/>} >
