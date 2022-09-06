@@ -7,7 +7,6 @@ import {Navigate} from  'react-router-dom';
 import  './pages/Assets.css';
 import MenuEnvoi from './pages/MenuEnvoi';
 import MenuRetrait from './pages/MenuRetrait';
-import MenuGestionOperation from './pages/MenuGestionOperation';
 import MenuParametre from './pages/MenuParametre';
 import MenuUsers from './pages/MenuUsers';
 import MenuAbonne from './pages/MenuAbonne';
@@ -23,6 +22,7 @@ import FormRetrouverCodeAbonne from './pages/FormRetrouverCodeAbonne';
 import AbonneCodeInfo from './pages/AbonneCodeInfo';
 import ConfirmationEnvoieInfo from './pages/ConfirmationEnvoieInfo';
 import ConfirmationRetraitInfo from './pages/ConfirmationRetraitInfo';
+import MenuGestionOperations from './pages/MenuGestionOperations';
 
 
 
@@ -376,7 +376,7 @@ function App() {
         <Route path="/menu_retrait" element={username == "" ? <Navigate to ='/' /> :<MenuRetrait username = {username}/>} >
         </Route>
 
-        <Route path="/menu_gestion_operation" element={username == "" ? <Navigate to ='/' /> :<MenuGestionOperation username = {username}/>} >
+        <Route path="/menu_gestion_operation" element={username == "" ? <Navigate to ='/' /> :<MenuGestionOperations username = {username}/>} >
         </Route>
 
         <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to ='/' /> :<MenuAbonne username = {username}/>} >
