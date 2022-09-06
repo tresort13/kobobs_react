@@ -36,7 +36,7 @@ function MenuRapportEnvoie(props)
         <Col xs = {"auto"}>
         <Link to="/select_date_form_envoie" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Rapport Jounalière</pre></b>
+        <b className='couleur2'><pre>Rapport Jounalier</pre></b>
         </Button>
         </Link>
         </Col>

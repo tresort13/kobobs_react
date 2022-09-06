@@ -50,7 +50,7 @@ return (
 {isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
 <Row className='justify-content-center mb-3 pt-5' >
         <Col xs={6}>
-        <p className={couleur}><i><b>{message}</b></i></p>
+        <p className="couleur2"><i><b>{message}</b></i></p>
         </Col>
     </Row>
     
@@ -84,7 +84,7 @@ return (
 {isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
 <Row className='justify-content-center mb-3 pt-5' >
         <Col xs={6}>
-        <p className={couleur}><i><b>{message}</b></i></p>
+        <p className="couleur2"><i><b>{message}</b></i></p>
         </Col>
     </Row>
     
