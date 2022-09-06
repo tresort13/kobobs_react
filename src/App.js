@@ -23,6 +23,8 @@ import AbonneCodeInfo from './pages/AbonneCodeInfo';
 import ConfirmationEnvoieInfo from './pages/ConfirmationEnvoieInfo';
 import ConfirmationRetraitInfo from './pages/ConfirmationRetraitInfo';
 import MenuGestionOperations from './pages/MenuGestionOperations';
+import SelectDateFormEnvoie from './pages/SelectDateFormEnvoie';
+import SelectDateFormRetrait from './pages/SelectDateFormRetrait';
 
 
 
@@ -40,6 +42,30 @@ function App() {
   useEffect(() => {
     window.localStorage.setItem("username", JSON.stringify(username))
   }, [username])
+
+
+  const [dateEnvoie,setDateEnvoie] = useState(()=>
+  {
+    const localData = localStorage.getItem('dateEnvoie');
+    return localData ? JSON.parse(localData) : "";
+  });
+  
+  
+  useEffect(() => {
+    window.localStorage.setItem("username", JSON.stringify(dateEnvoie))
+  }, [dateEnvoie])
+
+
+  const [dateRetrait,setDateRetrait] = useState(()=>
+  {
+    const localData = localStorage.getItem('dateRetrait');
+    return localData ? JSON.parse(localData) : "";
+  });
+  
+  
+  useEffect(() => {
+    window.localStorage.setItem("username", JSON.stringify(dateRetrait))
+  }, [dateRetrait])
 
   const [taux,setTaux] = useState(()=>
   {
@@ -394,6 +420,12 @@ function App() {
         <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonneId username = {username} dataAbonne={dataAbonne} />} >
         </Route>
         <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne}/>} >
+        </Route>
+
+        <Route path="/select_date_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormEnvoie username = {username} setDateEnvoie={setDateEnvoie}/>} >
+        </Route>
+
+        <Route path="/select_date_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormRetrait username = {username} setDateRetrait={setDateRetrait}/>} >
         </Route>
         
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >
