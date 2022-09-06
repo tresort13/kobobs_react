@@ -25,6 +25,8 @@ import ConfirmationRetraitInfo from './pages/ConfirmationRetraitInfo';
 import MenuGestionOperations from './pages/MenuGestionOperations';
 import SelectDateFormEnvoie from './pages/SelectDateFormEnvoie';
 import SelectDateFormRetrait from './pages/SelectDateFormRetrait';
+import SelectMoisFormRetrait from './pages/SelectMoisFormRetrait';
+import SelectMoisFormEnvoie from './pages/SelectMoisFormEnvoie';
 
 
 
@@ -52,8 +54,19 @@ function App() {
   
   
   useEffect(() => {
-    window.localStorage.setItem("username", JSON.stringify(dateEnvoie))
+    window.localStorage.setItem("dateEnvoie", JSON.stringify(dateEnvoie))
   }, [dateEnvoie])
+
+  const [moisEnvoie,setMoisEnvoie] = useState(()=>
+  {
+    const localData = localStorage.getItem('moisEnvoie');
+    return localData ? JSON.parse(localData) : "";
+  });
+  
+  
+  useEffect(() => {
+    window.localStorage.setItem("moisEnvoie", JSON.stringify(moisEnvoie))
+  }, [moisEnvoie])
 
 
   const [dateRetrait,setDateRetrait] = useState(()=>
@@ -64,8 +77,19 @@ function App() {
   
   
   useEffect(() => {
-    window.localStorage.setItem("username", JSON.stringify(dateRetrait))
+    window.localStorage.setItem("dateRetrait", JSON.stringify(dateRetrait))
   }, [dateRetrait])
+
+  const [moisRetrait,setMoisRetrait] = useState(()=>
+  {
+    const localData = localStorage.getItem('moisEnvoie');
+    return localData ? JSON.parse(localData) : "";
+  });
+  
+  
+  useEffect(() => {
+    window.localStorage.setItem("moisEnvoie", JSON.stringify(moisEnvoie))
+  }, [moisEnvoie])
 
   const [taux,setTaux] = useState(()=>
   {
@@ -426,6 +450,12 @@ function App() {
         </Route>
 
         <Route path="/select_date_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormRetrait username = {username} setDateRetrait={setDateRetrait}/>} >
+        </Route>
+
+        <Route path="/select_mois_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormEnvoie username = {username} setDateEnvoie={setMoisEnvoie}/>} >
+        </Route>
+
+        <Route path="/select_mois_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormRetrait username = {username} setDateRetrait={setMoisRetrait}/>} >
         </Route>
         
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >

@@ -71,7 +71,7 @@ return (
         <Col xs ={4}>
         
         <Link to="/operation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="primary" type="submit" onClick={e=>submitVol(e)}>
+        <Button variant="outline-warning" type="submit" onClick={e=>submitVol(e)}>
         Valider 
         </Button>
         </Link>
@@ -105,7 +105,7 @@ return (
         <Col xs ={4}>
         
         <Link to="/operation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="primary" type="submit" onClick={e=>submitVol(e)}>
+        <Button variant="outline-warning" type="submit" onClick={e=>submitVol(e)}>
         Valider 
         </Button>
         </Link>

@@ -14,10 +14,10 @@ import Form from 'react-bootstrap/Form';
 
 const useState = React.useState
 
-function SelectDateFormEnvoie(props)
+function SelectMoisFormRetrait(props)
 {
-    const[dateEnvoie,setDateEnvoie] = useState({infodateEnvoie :{
-        dateInfo:""
+    const[moisRetrait,setMoisRetrait] = useState({infomoisRetrait :{
+        moisInfo:""
     }})
 
     const isDesktop = useMediaQuery({
@@ -27,20 +27,20 @@ function SelectDateFormEnvoie(props)
         query: "(max-width: 1224px)"
       });    
 
-    const [message,setMessage] = useState("Veuillez selectionner la date ")
+    const [message,setMessage] = useState("Veuillez selectionner le Mois ")
     const [couleur,setCouleur] = useState("text-dark")
     const submitVol = (e)=>
     {
-        props.setDateEnvoie(dateEnvoie.infodateEnvoie.dateInfo)
-        console.log(dateEnvoie.infodateEnvoie.dateInfo)    
+        props.setMoisRetrait(moisRetrait.infomoisRetrait.moisInfo)
+        console.log(moisRetrait.infomoisRetrait.moisInfo)    
                 
     }
 
     const inputChanged = (event)=>
     {
-         const cred = dateEnvoie.infodateEnvoie ;
+         const cred = moisRetrait.infomoisRetrait ;
          cred[event.target.name] = event.target.value;
-         setDateEnvoie({infodateEnvoie:cred})
+         setMoisRetrait({infomoisRetrait:cred})
     }
 
 return (
@@ -61,7 +61,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Control name="dateInfo"  type="date" onChange={e=>inputChanged(e)}  />
+        <Form.Control name="moisInfo"  type="month" onChange={e=>inputChanged(e)}  />
          </Form.Group>
         </Col>
     </Row>
@@ -95,7 +95,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Control name="dateInfo"  type="date" onChange={e=>inputChanged(e)}  />
+        <Form.Control name="moisInfo"  type="month" onChange={e=>inputChanged(e)}  />
          </Form.Group>
         </Col>
     </Row>
@@ -121,4 +121,4 @@ return (
 }
 
 
-export default SelectDateFormEnvoie;
+export default SelectMoisFormRetrait;
