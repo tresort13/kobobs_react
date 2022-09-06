@@ -12,7 +12,7 @@ import { useMediaQuery } from 'react-responsive';
 
 
 
-function MenuGestionOperation(props)
+function MenuGestionOperations(props)
 {
 
     const isDesktop = useMediaQuery({
@@ -25,18 +25,18 @@ function MenuGestionOperation(props)
 <>
 <Header username={props.username} />
 {isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
-    <Row className='justify-content-center mb-3 pt-3' >
+    <Row className='justify-content-center mb-5 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:150}}></Image>
             </Link>
         </Col>
     </Row>
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Envoie Argent Client</b>
+        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'><pre>Opérations Envoie</pre></b>
         </Button>
         </Link>
         </Col>
@@ -46,9 +46,9 @@ function MenuGestionOperation(props)
 
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
-        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Envoie Argent Client</b>
+        <Link to="/form_envoie_abonne_id" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'><pre>Opérations Retrait</pre></b>
         </Button>
         </Link>
         </Col>
@@ -57,19 +57,19 @@ function MenuGestionOperation(props)
 
 </Container>}
 
-{isMobileOrTablet && <Container className='bg-dark my-auto justify-content-center text-center bordure mb-5' style={{marginTop:30,backgroundColor:'white'}} >
-    <Row className='justify-content-center mb-3 pt-3' >
+{isMobileOrTablet && <Container className='bg-dark my-auto justify-content-center text-center bordure mb-5' style={{marginTop:30}} >
+    <Row className='justify-content-center mb-5 pt-3' >
         <Col xs={"auto"}>
             <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
+            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
             </Link>
         </Col>
     </Row>
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Envoie Argent Client</b>
+        <Button variant='light'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'><i>Envoie Argent Client</i></b>
         </Button>
         </Link>
         </Col>
@@ -79,9 +79,9 @@ function MenuGestionOperation(props)
 
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
-        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Envoie Argent Client</b>
+        <Link to="/form_envoie_abonne" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant='light'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='couleur2'><i>Envoie Argent Abonné</i></b>
         </Button>
         </Link>
         </Col>
@@ -93,4 +93,4 @@ function MenuGestionOperation(props)
     )
 }
 
-export default MenuGestionOperation;
+export default MenuGestionOperations;
