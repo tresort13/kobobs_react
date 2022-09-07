@@ -33,6 +33,8 @@ import DailyRapportInfoEnvoie from './pages/DailyRapportInfoEnvoie';
 import DailyRapportInfoRetrait from './pages/DailyRapportInfoRetrait';
 import MonthlyRapportInfoEnvoie from './pages/MonthlyRapportInfoEnvoie';
 import MonthlyRapportInfoRetrait from './pages/MonthlyRapportInfoRetrait';
+import DetailsEnvoieInfo from './pages/DetailsEnvoieInfo';
+import DetailsRetraitInfo from './pages/DetailsRetraitInfo';
 
 
 
@@ -508,6 +510,14 @@ function App() {
 
         <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoRetrait username = {username}/>} >
         </Route>
+
+        <Route path="/details_envoie_info" element={username == "" ? <Navigate to ='/' /> :<DetailsEnvoieInfo username = {username}/>} >
+        </Route>
+
+        <Route path="/details_retrait_info" element={username == "" ? <Navigate to ='/' /> :<DetailsRetraitInfo username = {username}/>} >
+        </Route>
+
+
 
 
 

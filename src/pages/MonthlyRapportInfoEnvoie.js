@@ -87,10 +87,10 @@ function MonthlyRapportInfoEnvoie(props)
         </Col>
 
         <Col xs={6}>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
         </Col>
     </Row>
 
@@ -154,10 +154,10 @@ function MonthlyRapportInfoEnvoie(props)
         </Col>
 
         <Col xs={6}>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
         </Col>
     </Row>
 
