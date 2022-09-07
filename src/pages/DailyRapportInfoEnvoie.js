@@ -30,35 +30,15 @@ function DailyRapportInfoEnvoie(props)
     
       const navigate = useNavigate()
     
-console.log(props.envoie.infoEnvoie)
 
     const submitEnvoie = (e)=>
     {      
-        fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
-                method:'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(props.envoie.infoEnvoie)
-              })
-              .then( res => res.json())
-              .then(
-                res => {   
-                 props.dataEnvoie3(res)
-                 console.log(res)
-                }
-              )
-              .catch( (error) =>
-                {
-                    
-                   console.log(error)
-                } )
-
+       
     }
 
     const modifierFormulaire = (e)=>
     {    
-      e.preventDefault()     
-      navigate('/form_envoie_client')   
-      //setEnvoie({infoEnvoie:{}})
+     
     }
     
 
