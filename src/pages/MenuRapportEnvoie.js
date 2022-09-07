@@ -34,7 +34,7 @@ function MenuRapportEnvoie(props)
     </Row>
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
-        <Link to="/select_date_form_envoie" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/daily_rapport_envoie" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
         <b className='couleur2'><pre>Rapport Jounalier</pre></b>
         </Button>

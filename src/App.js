@@ -29,6 +29,7 @@ import SelectMoisFormRetrait from './pages/SelectMoisFormRetrait';
 import SelectMoisFormEnvoie from './pages/SelectMoisFormEnvoie';
 import MenuRapportEnvoie from './pages/MenuRapportEnvoie';
 import MenuRapportRetrait from './pages/MenuRapportRetrait';
+import DailyRapportInfoEnvoie from './pages/DailyRapportInfoEnvoie';
 
 
 
@@ -493,8 +494,11 @@ function App() {
         <Route path="/confirmation_retrait_info" element={username == "" ? <Navigate to ='/' /> :<ConfirmationRetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2}/>} >
         </Route>
 
+        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoEnvoie username = {username}/>} >
+        </Route>
 
 
+        
 
       </Routes >
     </BrowserRouter>
