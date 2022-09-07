@@ -154,10 +154,10 @@ function DailyRapportInfoEnvoie(props)
         </Col>
 
         <Col xs={6}>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </Button></Link><br></br>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </Button></Link><br></br>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </Button></Link><br></br>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </Button></Link><br></br>
+        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
         </Col>
     </Row>
 
