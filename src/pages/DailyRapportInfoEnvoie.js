@@ -58,7 +58,7 @@ function DailyRapportInfoEnvoie(props)
 
      props.dataDetailEnvoieTotal(props.dailyRapport)
     // props.dataDetailEnvoieValide(nombre_envoie_valide)
-     p//rops.dataDetailEnvoieNonValide(nombre_envoie_nonvalide)
+     //props.dataDetailEnvoieNonValide(nombre_envoie_nonvalide)
    
     return (
         
