@@ -64,16 +64,16 @@ function App() {
     window.localStorage.setItem("dateInfo", JSON.stringify(dateInfo))
   }, [dateInfo])
 
-  const [mois,setMois] = useState(()=>
+  const [moisInfo,setMois] = useState(()=>
   {
-    const localData = localStorage.getItem('mois');
+    const localData = localStorage.getItem('moisInfo');
     return localData ? JSON.parse(mois) : "";
   });
   
   
   useEffect(() => {
-    window.localStorage.setItem("mois", JSON.stringify(mois))
-  }, [mois])
+    window.localStorage.setItem("moisInfo", JSON.stringify(moisInfo))
+  }, [moisInfo])
 
 
   const [dailyRapport,setDailyRapport] = useState(()=>
@@ -554,10 +554,10 @@ function App() {
         <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoRetrait username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} dateInfo={dateInfo}/>} >
         </Route>
  
-        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoEnvoie username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} mois={mois}/>} >
+        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoEnvoie username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} moisInfo={moisInfo}/>} >
         </Route>
 
-        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoRetrait username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} mois={mois}/>} >
+        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoRetrait username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} moisInfo={moisInfo}/>} >
         </Route>
 
         <Route path="/details_envoie_info" element={username == "" ? <Navigate to ='/' /> :<DetailsEnvoieInfo username = {username} detailEnvoieTotal={detailEnvoieTotal}/>} >
