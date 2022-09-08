@@ -53,6 +53,28 @@ function App() {
     window.localStorage.setItem("username", JSON.stringify(username))
   }, [username])
 
+  const [date,setDate] = useState(()=>
+  {
+    const localData = localStorage.getItem('date');
+    return localData ? JSON.parse(date) : "";
+  });
+  
+  
+  useEffect(() => {
+    window.localStorage.setItem("date", JSON.stringify(date))
+  }, [date])
+
+  const [mois,setMois] = useState(()=>
+  {
+    const localData = localStorage.getItem('mois');
+    return localData ? JSON.parse(mois) : "";
+  });
+  
+  
+  useEffect(() => {
+    window.localStorage.setItem("mois", JSON.stringify(mois))
+  }, [mois])
+
 
   const [dailyRapport,setDailyRapport] = useState(()=>
   {
@@ -487,16 +509,16 @@ function App() {
         <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne}/>} >
         </Route>
 
-        <Route path="/select_date_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormEnvoie username = {username} dataDailyRapport={dataDailyRapport}/>} >
+        <Route path="/select_date_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormEnvoie username = {username} dataDailyRapport={dataDailyRapport} setDate={setDate}/>} >
         </Route>
 
-        <Route path="/select_date_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormRetrait username = {username} dataDailyRapport={dataDailyRapport}/>} >
+        <Route path="/select_date_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormRetrait username = {username} dataDailyRapport={dataDailyRapport} setDate={setDate}/>} >
         </Route>
 
-        <Route path="/select_mois_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormEnvoie username = {username} dataMonthlyRapport={dataMonthlyRapport}/>} >
+        <Route path="/select_mois_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormEnvoie username = {username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois}/>} >
         </Route>
 
-        <Route path="/select_mois_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormRetrait username = {username} dataMonthlyRapport={dataMonthlyRapport}/>} >
+        <Route path="/select_mois_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormRetrait username = {username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois}/>} >
         </Route>
         
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >
@@ -526,16 +548,16 @@ function App() {
         <Route path="/confirmation_retrait_info" element={username == "" ? <Navigate to ='/' /> :<ConfirmationRetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2}/>} >
         </Route>
 
-        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoEnvoie username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal}/>} >
+        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoEnvoie username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} date={date}/>} >
         </Route>
 
-        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoRetrait username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal}/>} >
+        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoRetrait username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} date={date}/>} >
+        </Route>
+ 
+        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoEnvoie username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} mois={mois}/>} >
         </Route>
 
-        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoEnvoie username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal}/>} >
-        </Route>
-
-        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoRetrait username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal}/>} >
+        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoRetrait username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} mois={mois}/>} >
         </Route>
 
         <Route path="/details_envoie_info" element={username == "" ? <Navigate to ='/' /> :<DetailsEnvoieInfo username = {username} detailEnvoieTotal={detailEnvoieTotal}/>} >

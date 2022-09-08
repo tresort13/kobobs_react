@@ -109,7 +109,7 @@ function DailyRapportInfoEnvoie(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
         <p className='text-light'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
-        <p className='text-light'>Date : <b className='couleur2'>{props.dailyRapport[0].data_operation}</b>  </p>
+        <p className='text-light'>Date : <b className='couleur2'>{props.date}</b>  </p>
         
         </Col>
     </Row>
