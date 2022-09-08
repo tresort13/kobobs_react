@@ -10,7 +10,6 @@ import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
-import InputGroup from 'react-bootstrap/InputGroup';
 
 
 
@@ -31,23 +30,32 @@ function DailyRapportInfoRetrait(props)
       const navigate = useNavigate()
     
 
-      const nombre_envoie_total =  props.dailyRapport.reduce((total,value)=>
+      const nombre_retrait_total =  props.dailyRapport.reduce((total,value)=>
       {
          total = total + 1
          return total
       },0)
- 
- 
-      const nombre_envoie_valide = props.dailyRapport.filter((value)=>
+
+      const nombre_retrait_paye = props.dailyRapport.filter((value)=>
       {
-        return value.status_retrait !== "code retrait en attente de validation"
+        return value.status_retrait === "Code Retrait Payé"
       }).reduce((total,value)=>
       {
         total = total + 1
         return total
       },0)
  
-      const nombre_envoie_nonvalide = props.dailyRapport.filter((value)=>
+ 
+      const nombre_retrait_valide = props.dailyRapport.filter((value)=>
+      {
+        return value.status_retrait === "Code Retrait Valide"
+      }).reduce((total,value)=>
+      {
+        total = total + 1
+        return total
+      },0)
+ 
+      const nombre_retrait_nonvalide = props.dailyRapport.filter((value)=>
       {
         return value.status_retrait === "code retrait en attente de validation"
       }).reduce((total,value)=>
@@ -55,19 +63,27 @@ function DailyRapportInfoRetrait(props)
         total = total + 1
         return total
       },0)
- 
+  
     
- 
       const detailTotal =()=>
       {
        props.dataDetailEnvoieTotal(props.dailyRapport)
+      }
+
+
+      const detailPaye =()=>
+      {
+       props.dataDetailEnvoieTotal(props.dailyRapport.filter((value)=>
+       {
+         return value.status_retrait === "Code Retrait Payé"
+       }))
       }
  
       const detailValide =()=>
       {
        props.dataDetailEnvoieTotal(props.dailyRapport.filter((value)=>
        {
-         return value.status_retrait !== "code retrait en attente de validation"
+         return value.status_retrait === "Code Retrait Valide"
        }))
       }
  
@@ -118,13 +134,15 @@ function DailyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres des retraits : <b className='couleur2'> {nombre_envoie_total}</b>  </p>
-        <p className='text-light'>Nombres des retraits validés : <b className='couleur2'> {nombre_envoie_valide}</b> </p>
-        <p className='text-light'>Nombres des retraits non validés : <b className='couleur2'> {nombre_envoie_nonvalide}</b></p>
+        <p className='text-light'>Nombres des retraits : <b className='couleur2'> {nombre_retrait_total}</b>  </p>
+        <p className='text-light'>Nombres des retraits payés : <b className='couleur2'> {nombre_retrait_paye}</b> </p>
+        <p className='text-light'>Nombres des retraits validés : <b className='couleur2'> {nombre_retrait_valide}</b> </p>
+        <p className='text-light'>Nombres des retraits non validés : <b className='couleur2'> {nombre_retrait_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>
         <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailTotal}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailPaye}>Voir Details </p></Link>
         <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailValide}>Voir Details </p></Link>
         <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailNonValide}>Voir Details </p></Link>
         </Col>
