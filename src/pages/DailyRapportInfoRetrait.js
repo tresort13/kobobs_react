@@ -202,7 +202,7 @@ function DailyRapportInfoRetrait(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
         <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
+        <Button variant="warning" type="submit">
         Fermer
         </Button>
         </Link>
