@@ -31,22 +31,11 @@ function DailyRapportInfoEnvoie(props)
       const navigate = useNavigate()
      const nombre_envoie_effectue =  props.dailyRapport.filter((value)=>
      {
-       return value.status_retrait == "paye"
+       return value.status_retrait == "Code Retrait Payé"
      }).reduce((total,value)=>
      {
         total = total + 1
      },0)
-
-    const submitEnvoie = (e)=>
-    {      
-       
-    }
-
-    const modifierFormulaire = (e)=>
-    {    
-     
-    }
-    
 
    
     return (
@@ -86,7 +75,7 @@ function DailyRapportInfoEnvoie(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'></b>  </p>
+        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'> {nombre_envoie_effectue}</b>  </p>
         <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'></b> </p>
         <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> </b> </p>
         <p className='text-light'>Nombres d'envoies suprimés : <b className='couleur2'> </b></p>
