@@ -107,6 +107,25 @@ function App() {
     setDetailEnvoieTotal(donne)
   }
 
+
+  /*const [detailEnvoieValide,setDetailEnvoieValide] = useState(()=>
+  {
+    const localData = localStorage.getItem('detailEnvoieValide');
+    return localData ? JSON.parse(localData) :[];
+    })
+  
+  
+
+  useEffect(() => {
+    window.localStorage.setItem("detailEnvoieValide", JSON.stringify(detailEnvoieValide))
+  }, [detailEnvoieValide])
+
+  const dataDetailEnvoieValide = (donne)=>
+  {
+    setDetailEnvoieValide(donne)
+  }
+*/
+
   const [taux,setTaux] = useState(()=>
   {
     const localData = localStorage.getItem('taux');

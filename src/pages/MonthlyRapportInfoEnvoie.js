@@ -109,7 +109,7 @@ function MonthlyRapportInfoEnvoie(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
         <p className='text-light'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
-        <p className='text-light'>Mois et Année : <b className='couleur2'>{props.monthlyRapport[0].month_year_operation}</b>  </p>
+        <p className='text-light'>Mois et Année : <b className='couleur2'></b>  </p>
         
         </Col>
     </Row>
