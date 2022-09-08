@@ -27,7 +27,7 @@ function SelectMoisFormEnvoie(props)
         query: "(max-width: 1224px)"
       });    
 
-    const [message,setMessage] = useState("Veuillez selectionner le Mois et l'année")
+    const [message,setMessage] = useState("Veuillez selectionner le Mois")
     const [couleur,setCouleur] = useState("text-dark")
     console.log(moisEnvoie.infomoisEnvoie.moisInfo )
     const submitVol = (e)=>
