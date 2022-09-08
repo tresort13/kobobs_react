@@ -67,7 +67,7 @@ function App() {
   const [moisInfo,setMois] = useState(()=>
   {
     const localData = localStorage.getItem('moisInfo');
-    return localData ? JSON.parse(mois) : "";
+    return localData ? JSON.parse(moisInfo) : "";
   });
   
   
