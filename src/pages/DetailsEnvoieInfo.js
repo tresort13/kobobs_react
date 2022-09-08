@@ -100,7 +100,7 @@ function DetailsEnvoieInfo(props)
 } 
 
 
-{isMobileOrTablet && envoie4.map((value)=>
+{isMobileOrTablet && props.detailEnvoieTotal.map((value)=>
     {
     return <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
@@ -154,36 +154,12 @@ function DetailsEnvoieInfo(props)
             <p></p>
           </Col>
         </Row>
-<MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <Footer />
         </>
        
     )
 }
 
-function MyVerticallyCenteredModal(props) {
-    return (
-      <Modal
-        {...props}
-        size="md"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Validation Réussie
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>Changement Status Code Retrait Reussi : </h4>
-          <p className='text-success'><b>le code de retrait a été validé avec success </b>   
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant='warning' onClick={props.onHide}>Fermer</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
+
 
 export default DetailsEnvoieInfo;
