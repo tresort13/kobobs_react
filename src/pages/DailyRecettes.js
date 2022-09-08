@@ -111,7 +111,7 @@ const total_montant = props.dailyRapport.reduce((total,value)=>
         <Col xs ={4} >
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit" onClick={message} >
-        Imprimer les informations
+        Imprimer 
         </Button>
         </Link>
 
