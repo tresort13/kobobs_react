@@ -18,7 +18,7 @@ const useState = React.useState
 function MonthlyRapportInfoEnvoie(props)
 {
 
-    const [message,setMessage] = useState("Rapport Journalier des Envoies")
+    const [message,setMessage] = useState("Rapport Mensuel des Envoies")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
@@ -108,7 +108,7 @@ function MonthlyRapportInfoEnvoie(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
+        <p className='text-light'>Type de Rapport: <b className='couleur2'>Mensuel</b> </p>
         <p className='text-light'>Période : <b className='couleur2'>{props.moisInfo}</b>  </p>
         
         </Col>

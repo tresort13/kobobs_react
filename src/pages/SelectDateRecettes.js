@@ -14,7 +14,7 @@ import Form from 'react-bootstrap/Form';
 
 const useState = React.useState
 
-function SelectDateFormRetrait(props)
+function SelectDateRecettes(props)
 {
     const[dateEnvoie,setDateEnvoie] = useState({infodateEnvoie :{
         dateInfo:""
@@ -86,7 +86,7 @@ return (
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="/daily_rapport_envoie" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/daily_recettes_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit" onClick={e=>submitVol(e)}>
         Valider 
         </Button>
@@ -137,4 +137,4 @@ return (
 }
 
 
-export default SelectDateFormRetrait;
+export default SelectDateRecettes;

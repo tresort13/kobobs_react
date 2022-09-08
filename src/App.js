@@ -35,6 +35,9 @@ import MonthlyRapportInfoEnvoie from './pages/MonthlyRapportInfoEnvoie';
 import MonthlyRapportInfoRetrait from './pages/MonthlyRapportInfoRetrait';
 import DetailsEnvoieInfo from './pages/DetailsEnvoieInfo';
 import DetailsRetraitInfo from './pages/DetailsRetraitInfo';
+import SelectDateRecettes from './pages/SelectDateRecettes';
+import SelectMonthRecettes from './pages/SelectMonthRecettes';
+import MonthlyRecettes from './pages/MonthlyRecettes';
 
 
 
@@ -520,6 +523,13 @@ function App() {
 
         <Route path="/select_mois_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormRetrait username = {username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois}/>} >
         </Route>
+
+        <Route path="/select_date_recettes" element={username == "" ? <Navigate to ='/' /> :<SelectDateRecettes username = {username} dataDailyRapport={dataDailyRapport} setDate={setDate}/>} >
+        </Route>
+
+        <Route path="/select_mois_recettes" element={username == "" ? <Navigate to ='/' /> :<SelectMonthRecettes username = {username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois}/>} >
+        </Route>
+
         
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >
         </Route>
@@ -565,6 +575,13 @@ function App() {
 
         <Route path="/details_retrait_info" element={username == "" ? <Navigate to ='/' /> :<DetailsRetraitInfo username = {username} detailEnvoieTotal={detailEnvoieTotal}/>} >
         </Route>
+
+        <Route path="/monthly_recettes_info" element={username == "" ? <Navigate to ='/' /> :<MonthlyRecettes username = {username} monthlyRapport={monthlyRapport} moisInfo={moisInfo}/>} >
+        </Route>
+
+        <Route path="/daily_recettes_info" element={username == "" ? <Navigate to ='/' /> :<DailyRecettes username = {username} dailyRapport={dailyRapport} dateInfo={dateInfo}/>} >
+        </Route>
+
 
 
 

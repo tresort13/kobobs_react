@@ -16,7 +16,7 @@ const useState = React.useState
 
 function SelectMoisFormRetrait(props)
 {
-    const[moisRetrait,setMoisRetrait] = useState({infomoisRetrait :{
+    const[moisEnvoie,setMoisEnvoie] = useState({infomoisEnvoie :{
         moisInfo:""
     }})
 
@@ -27,20 +27,37 @@ function SelectMoisFormRetrait(props)
         query: "(max-width: 1224px)"
       });    
 
-    const [message,setMessage] = useState("Veuillez selectionner le Mois ")
+    const [message,setMessage] = useState("Veuillez selectionner le Mois")
     const [couleur,setCouleur] = useState("text-dark")
+    console.log(moisEnvoie.infomoisEnvoie.moisInfo )
     const submitVol = (e)=>
     {
-        props.setMoisRetrait(moisRetrait.infomoisRetrait.moisInfo)
-        console.log(moisRetrait.infomoisRetrait.moisInfo)    
+        fetch('https://kobobsapi.herokuapp.com/api/getMonthlyRapportInfo/'+moisEnvoie.infomoisEnvoie.moisInfo+'/', {
+            method:'GET',
+            headers: {'Content-Type': 'application/json'},
+           // body: JSON.stringify(codeRetrait.infoCodeRetrait)
+          })
+          .then( res => res.json())
+          .then(
+            res => {   
+            console.log(res)
+            props.dataMonthlyRapport(res)
+            props.setMois(moisEnvoie.infomoisEnvoie.moisInfo)
+            }
+          )
+          .catch( (error) =>
+            {
+                console.log(error)
+            } )
+       
                 
     }
 
     const inputChanged = (event)=>
     {
-         const cred = moisRetrait.infomoisRetrait ;
+         const cred = moisEnvoie.infomoisEnvoie ;
          cred[event.target.name] = event.target.value;
-         setMoisRetrait({infomoisRetrait:cred})
+         setMoisEnvoie({infomoisEnvoie:cred})
     }
 
 return (
@@ -70,7 +87,7 @@ return (
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="/monthly_rapport_retrait" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/monthly_rapport_envoie" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit" onClick={e=>submitVol(e)}>
         Valider 
         </Button>
@@ -92,7 +109,7 @@ return (
 <Form>
    
 
-    <Row className='justify-content-center'>
+<Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Control name="moisInfo"  type="month" onChange={e=>inputChanged(e)}  />

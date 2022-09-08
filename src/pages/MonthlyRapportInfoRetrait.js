@@ -10,7 +10,6 @@ import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
-import InputGroup from 'react-bootstrap/InputGroup';
 
 
 
@@ -31,16 +30,64 @@ function MonthlyRapportInfoRetrait(props)
       const navigate = useNavigate()
     
 
-    const submitEnvoie = (e)=>
-    {      
-       
-    }
-
-    const modifierFormulaire = (e)=>
-    {    
      
-    }
+
+      const nombre_retrait_paye = props.monthlyRapport.filter((value)=>
+      {
+        return value.status_retrait === "Code Retrait Payé"
+      }).reduce((total,value)=>
+      {
+        total = total + 1
+        return total
+      },0)
+ 
+ 
+      const nombre_retrait_valide = props.monthlyRapport.filter((value)=>
+      {
+        return value.status_retrait === "Code Retrait Valide"
+      }).reduce((total,value)=>
+      {
+        total = total + 1
+        return total
+      },0)
+ 
+      const nombre_retrait_nonvalide = props.monthlyRapport.filter((value)=>
+      {
+        return value.status_retrait === "code retrait en attente de validation"
+      }).reduce((total,value)=>
+      {
+        total = total + 1
+        return total
+      },0)
+  
     
+      
+
+
+      const detailPaye =()=>
+      {
+       props.dataDetailEnvoieTotal(props.monthlyRapport.filter((value)=>
+       {
+         return value.status_retrait === "Code Retrait Payé"
+       }))
+      }
+ 
+      const detailValide =()=>
+      {
+       props.dataDetailEnvoieTotal(props.monthlyRapport.filter((value)=>
+       {
+         return value.status_retrait === "Code Retrait Valide"
+       }))
+      }
+ 
+      const detailNonValide =()=>
+      {
+       props.dataDetailEnvoieTotal(props.monthlyRapport.filter((value)=>
+       {
+         return value.status_retrait === "code retrait en attente de validation"
+       }))
+        
+      }
 
    
     return (
@@ -68,8 +115,8 @@ function MonthlyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Type de Rapport: <b className='couleur2'></b> </p>
-        <p className='text-light'>Mois : <b className='couleur2'></b>  </p>
+        <p className='text-light'>Type de Rapport: <b className='couleur2'>Mensuel</b> </p>
+        <p className='text-light'>Date : <b className='couleur2'>{props.moisInfo}</b>  </p>
         
         </Col>
     </Row>
@@ -80,17 +127,15 @@ function MonthlyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres des retraits payés : <b className='couleur2'></b>  </p>
-        <p className='text-light'>Nombres des retraits validés : <b className='couleur2'></b> </p>
-        <p className='text-light'>Nombres des retraits non validés : <b className='couleur2'> </b> </p>
-        <p className='text-light'>Nombres des retraits suprimés : <b className='couleur2'> </b></p>
+        <p className='text-light'>Nombres des retraits payés : <b className='couleur2'> {nombre_retrait_paye}</b> </p>
+        <p className='text-light'>Nombres des retraits validés : <b className='couleur2'> {nombre_retrait_valide}</b> </p>
+        <p className='text-light'>Nombres des retraits non validés : <b className='couleur2'> {nombre_retrait_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailPaye}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailValide}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailNonValide}>Voir Details </p></Link>
         </Col>
     </Row>
 
@@ -100,8 +145,8 @@ function MonthlyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="/monthly_rapport_retrait" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
+        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant="warning" type="submit">
         Fermer
         </Button>
         </Link>
@@ -135,8 +180,8 @@ function MonthlyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Type de Rapport: <b className='couleur2'></b> </p>
-        <p className='text-light'>Mois : <b className='couleur2'></b>  </p>
+        <p className='text-light'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
+        <p className='text-light'>Date : <b className='couleur2'>{props.dateInfo}</b>  </p>
         
         </Col>
     </Row>
@@ -147,17 +192,15 @@ function MonthlyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'></b>  </p>
-        <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'></b> </p>
-        <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> </b> </p>
-        <p className='text-light'>Nombres d'envoies suprimés : <b className='couleur2'> </b></p>
+        <p className='text-light'>Nombres des retraits payés : <b className='couleur2'> {nombre_retrait_paye}</b> </p>
+        <p className='text-light'>Nombres des retraits validés : <b className='couleur2'> {nombre_retrait_valide}</b> </p>
+        <p className='text-light'>Nombres des retraits non validés : <b className='couleur2'> {nombre_retrait_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailPaye}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailValide}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailNonValide}>Voir Details </p></Link>
         </Col>
     </Row>
 
@@ -168,7 +211,7 @@ function MonthlyRapportInfoRetrait(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
         <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
+        <Button variant="warning" type="submit">
         Fermer
         </Button>
         </Link>

@@ -91,13 +91,13 @@ function Homepage(props)
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom pt-1 bordure2" style={{width:300}}>
               <div>
-              <Link to="">
+              <Link to="/menu_gestion_recettes">
               <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Parametres </i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Recettes </i></p>
               </div>
              </div>
               
