@@ -60,7 +60,7 @@ function App() {
   const [dateInfo,setDate] = useState(()=>
   {
     const localData = localStorage.getItem('dateInfo');
-    return localData ? JSON.parse(dateInfo) : "";
+    return localData ? JSON.parse(localData) : "";
   });
   
   
@@ -71,7 +71,7 @@ function App() {
   const [moisInfo,setMois] = useState(()=>
   {
     const localData = localStorage.getItem('moisInfo');
-    return localData ? JSON.parse(moisInfo) : "";
+    return localData ? JSON.parse(localData) : "";
   });
   
   
