@@ -18,7 +18,7 @@ const useState = React.useState
 function MonthlyRapportInfoEnvoie(props)
 {
 
-    const [message,setMessage] = useState("Rapport Mensuel des Envoies")
+    const [message,setMessage] = useState("Rapport Journalier des Envoies")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
@@ -29,20 +29,60 @@ function MonthlyRapportInfoEnvoie(props)
       });
     
       const navigate = useNavigate()
-    
-
-    const submitEnvoie = (e)=>
-    {      
-       
-    }
-
-    const modifierFormulaire = (e)=>
-    {    
+      console.log(props.monthlyRapport)
      
-    }
+     const nombre_envoie_total =  props.monthlyRapport.reduce((total,value)=>
+     {
+        total = total + 1
+        return total
+     },0)
+
+
+     const nombre_envoie_valide = props.monthlyRapport.filter((value)=>
+     {
+       return value.status_retrait !== "code retrait en attente de validation"
+     }).reduce((total,value)=>
+     {
+       total = total + 1
+       return total
+     },0)
+
+     const nombre_envoie_nonvalide = props.monthlyRapport.filter((value)=>
+     {
+       return value.status_retrait === "code retrait en attente de validation"
+     }).reduce((total,value)=>
+     {
+       total = total + 1
+       return total
+     },0)
+
+     
     
 
    
+
+     const detailTotal =()=>
+     {
+      props.dataDetailEnvoieTotal(props.monthlyRapport)
+     }
+
+     const detailValide =()=>
+     {
+      props.dataDetailEnvoieTotal(props.monthlyRapport.filter((value)=>
+      {
+        return value.status_retrait !== "code retrait en attente de validation"
+      }))
+     }
+
+     const detailNonValide =()=>
+     {
+      props.dataDetailEnvoieTotal(props.monthlyRapport.filter((value)=>
+      {
+        return value.status_retrait === "code retrait en attente de validation"
+      }))
+       
+     }
+     
     return (
         
         <>
@@ -68,8 +108,8 @@ function MonthlyRapportInfoEnvoie(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Type de Rapport: <b className='couleur2'></b> </p>
-        <p className='text-light'>Mois : <b className='couleur2'></b>  </p>
+        <p className='text-light'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
+        <p className='text-light'>Mois et Année : <b className='couleur2'>{props.monthlyRapport[0].month_operation} {props.monthlyRapport[0].year_operation}</b>  </p>
         
         </Col>
     </Row>
@@ -80,17 +120,16 @@ function MonthlyRapportInfoEnvoie(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'></b>  </p>
-        <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'></b> </p>
-        <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> </b> </p>
-        <p className='text-light'>Nombres d'envoies suprimés : <b className='couleur2'> </b></p>
+        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'> {nombre_envoie_total}</b>  </p>
+        <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'> {nombre_envoie_valide}</b> </p>
+        <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> {nombre_envoie_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailTotal}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailValide}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailNonValide}>Voir Details </p></Link>
+       
         </Col>
     </Row>
 
@@ -101,7 +140,7 @@ function MonthlyRapportInfoEnvoie(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
         <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
+        <Button variant="warning" type="submit">
         Fermer
         </Button>
         </Link>
@@ -136,7 +175,7 @@ function MonthlyRapportInfoEnvoie(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
         <p className='text-light'>Type de Rapport: <b className='couleur2'></b> </p>
-        <p className='text-light'>Mois : <b className='couleur2'></b>  </p>
+        <p className='text-light'>Date : <b className='couleur2'></b>  </p>
         
         </Col>
     </Row>
@@ -154,10 +193,10 @@ function MonthlyRapportInfoEnvoie(props)
         </Col>
 
         <Col xs={6}>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
         </Col>
     </Row>
 
@@ -168,7 +207,7 @@ function MonthlyRapportInfoEnvoie(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
         <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
+        <Button variant="warning" type="submit">
         Fermer
         </Button>
         </Link>

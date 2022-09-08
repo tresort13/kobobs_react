@@ -17,7 +17,8 @@ const useState = React.useState
 function SelectMoisFormEnvoie(props)
 {
     const[moisEnvoie,setMoisEnvoie] = useState({infomoisEnvoie :{
-        moisInfo:""
+        moisInfo:"",
+        yearInfo:""
     }})
 
     const isDesktop = useMediaQuery({
@@ -27,12 +28,28 @@ function SelectMoisFormEnvoie(props)
         query: "(max-width: 1224px)"
       });    
 
-    const [message,setMessage] = useState("Veuillez selectionner le Mois")
+    const [message,setMessage] = useState("Veuillez selectionner le Mois et l'année")
     const [couleur,setCouleur] = useState("text-dark")
+    console.log(moisEnvoie.infomoisEnvoie.moisInfo + " "+ moisEnvoie.infomoisEnvoie.yearInfo)
     const submitVol = (e)=>
     {
-        props.setMoisEnvoie(moisEnvoie.infomoisEnvoie.moisInfo)
-        console.log(moisEnvoie.infomoisEnvoie.moisInfo)    
+        fetch('https://kobobsapi.herokuapp.com/api/getMonthlyRapportInfo/'+moisEnvoie.infomoisEnvoie.moisInfo+'/'+moisEnvoie.infomoisEnvoie.yearInfo+'/', {
+            method:'GET',
+            headers: {'Content-Type': 'application/json'},
+           // body: JSON.stringify(codeRetrait.infoCodeRetrait)
+          })
+          .then( res => res.json())
+          .then(
+            res => {   
+            console.log(res)
+               props.dataMonthlyRapport(res)
+            }
+          )
+          .catch( (error) =>
+            {
+                console.log(error)
+            } )
+       
                 
     }
 
@@ -66,6 +83,14 @@ return (
         </Col>
     </Row>
 
+    <Row className='justify-content-center'>
+        <Col xs = {6}>
+        <Form.Group className="mb-3" controlId="formBasicText" >
+        <Form.Control name="yearInfo"  type="year" onChange={e=>inputChanged(e)}  />
+         </Form.Group>
+        </Col>
+    </Row>
+
     
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
@@ -92,10 +117,18 @@ return (
 <Form>
    
 
-    <Row className='justify-content-center'>
+<Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Control name="moisInfo"  type="month" onChange={e=>inputChanged(e)}  />
+         </Form.Group>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center'>
+        <Col xs = {6}>
+        <Form.Group className="mb-3" controlId="formBasicText" >
+        <Form.Control name="yearInfo"  type="year" onChange={e=>inputChanged(e)}  />
          </Form.Group>
         </Col>
     </Row>
