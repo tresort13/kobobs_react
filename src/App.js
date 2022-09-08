@@ -39,6 +39,7 @@ import SelectDateRecettes from './pages/SelectDateRecettes';
 import SelectMonthRecettes from './pages/SelectMonthRecettes';
 import MonthlyRecettes from './pages/MonthlyRecettes';
 import DailyRecettes from './pages/DailyRecettes';
+import MenuGestionRecettes from './pages/MenuGestionRecettes';
 
 
 
@@ -499,7 +500,7 @@ function App() {
         <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to ='/' /> :<MenuAbonne username = {username}/>} >
         </Route>
 
-        <Route path="/menu_parametre" element={username == "" ? <Navigate to ='/' /> :<MenuParametre username = {username}/>} >
+        <Route path="/menu_gestion_recettes" element={username == "" ? <Navigate to ='/' /> :<MenuGestionRecettes username = {username}/>} >
         </Route>
 
         <Route path="/menu_users" element={username == "" ? <Navigate to ='/' /> :<MenuUsers username = {username}/>} >
