@@ -56,10 +56,32 @@ function DailyRapportInfoEnvoie(props)
        return total
      },0)
 
-     props.dataDetailEnvoieTotal(props.dailyRapport)
-    // props.dataDetailEnvoieValide(nombre_envoie_valide)
-     //props.dataDetailEnvoieNonValide(nombre_envoie_nonvalide)
+     
+    
+
    
+
+     const detailTotal =()=>
+     {
+      props.dataDetailEnvoieTotal(props.dailyRapport)
+     }
+
+     const detailValide =()=>
+     {
+      props.dataDetailEnvoieTotal(props.dailyRapport.filter((value)=>
+      {
+        return value.status_retrait !== "code retrait en attente de validation"
+      }))
+     }
+
+     const detailNonValide =()=>
+     {
+      props.dataDetailEnvoieTotal(props.dailyRapport.filter((value)=>
+      {
+        return value.status_retrait === "code retrait en attente de validation"
+      }))
+       
+     }
     return (
         
         <>
@@ -103,9 +125,9 @@ function DailyRapportInfoEnvoie(props)
         </Col>
 
         <Col xs={6}>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailTotal}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailValide}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailNonValide}>Voir Details </p></Link>
        
         </Col>
     </Row>
