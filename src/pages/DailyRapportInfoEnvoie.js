@@ -39,10 +39,11 @@ function DailyRapportInfoEnvoie(props)
 
      const nombre_envoie_valide = props.dailyRapport.filter((value)=>
      {
-       return value.status_retrait === "Code Retrait Payé"
+       return value.status_retrait !== "code retrait en attente de validation"
      }).reduce((total,value)=>
      {
        total = total + 1
+       return total
      },0)
 
      const nombre_envoie_nonvalide = props.dailyRapport.filter((value)=>
@@ -51,6 +52,7 @@ function DailyRapportInfoEnvoie(props)
      }).reduce((total,value)=>
      {
        total = total + 1
+       return total
      },0)
 
    
