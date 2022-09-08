@@ -41,6 +41,7 @@ function SelectDateFormEnvoie(props)
             res => {   
             console.log(res)
                props.dataDailyRapport(res)
+               props.setDate(dateEnvoie.infodateEnvoie.dateInfo)
             }
           )
           .catch( (error) =>

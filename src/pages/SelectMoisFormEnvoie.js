@@ -42,6 +42,7 @@ function SelectMoisFormEnvoie(props)
             res => {   
             console.log(res)
             props.dataMonthlyRapport(res)
+            props.setMois(moisEnvoie.infomoisEnvoie.moisInfo)
             }
           )
           .catch( (error) =>
