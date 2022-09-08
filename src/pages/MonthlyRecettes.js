@@ -28,26 +28,26 @@ function MonthlyRecettes(props)
 
 const total_montant_beneficiaire = props.monthlyRapport.reduce((total,value)=>
 {
-  console.log(value.taille_province)
-  total = total + parseInt(value.montant_beneficiaire)
+  
+  total = total + Number(value.montant_beneficiaire).toFixed(2)
   return total
 },0)
 
 const total_frais_envoie = props.monthlyRapport.reduce((total,value)=>
 {
-  total=total + parseInt(value.frais_envoie)
+  total=total + Number(value.frais_envoie).toFixed(2)
   return total
 },0)
 
 const total_frais_tva = props.monthlyRapport.reduce((total,value)=>
 {
-  total=total + parseInt(value.frais_tva)
+  total=total + Number(value.frais_tva).toFixed(2)
   return total
 },0)
 
 const total_montant = props.monthlyRapport.reduce((total,value)=>
 {
-  total=total + parseInt(value.montant_total)
+  total=total + Number(value.montant_total).toFixed(2)
   return total
 },0)
   
@@ -65,23 +65,23 @@ const total_montant = props.monthlyRapport.reduce((total,value)=>
 <Row className='justify-content-center '>
         <Col xs = {12} className='text-center borders pt-2'>
         <div>
-        <h6 ><u><b><i className='text-primary'>Table des Recettes Mensuelles</i></b></u></h6>
+        <h6 ><u><b><i className='couleur2'>Table des Recettes Mensuelles</i></b></u></h6>
         </div>
         <div>
         <Table striped bordered hover variant="primary">
       <thead>
-        <tr className='text-primary' style={{border:"2px solid white"}}>
+        <tr className='text-light' style={{border:"2px solid white"}}>
           <th>Periode</th>
-          <th>Montant Beneficiaire</th>
-          <th>Frais Envoie</th>
-          <th>Frais TVA</th>
-          <th>Montant Total Payé</th>
+          <th>Montant Beneficiaire ($)</th>
+          <th>Frais Envoie (£)</th>
+          <th>Frais TVA (£)</th>
+          <th>Montant Total Payé (£)</th>
         </tr>
       </thead>
       <tbody>
         {props.monthlyRapport.map((value)=>
         {
-          return  <tr style={{border:"2px solid white"}}>
+          return  <tr style={{border:"2px solid white"}} className="couleur2">
              <td><i ><b>{props.moisInfo}</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.montant_beneficiaire).toFixed()) }</b></i></td>
              <td><i><b>{new Intl.NumberFormat().format(Number(value.frais_envoie).toFixed())}</b></i></td>
@@ -92,10 +92,10 @@ const total_montant = props.monthlyRapport.reduce((total,value)=>
         }
        <tr style={{border:"2px solid white"}}>
          <td><i><b>TOTAL</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_montant_beneficiaire).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_frais_envoie).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_frais_tva).toFixed())}</b></i></td>
-         <td><i className='text-primary'><b>{new Intl.NumberFormat().format(Number(total_montant).toFixed())}</b></i></td>
+         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_montant_beneficiaire).toFixed())}</b></i></td>
+         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_frais_envoie).toFixed())}</b></i></td>
+         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_frais_tva).toFixed())}</b></i></td>
+         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_montant).toFixed())}</b></i></td>
        </tr>
          
       </tbody>
