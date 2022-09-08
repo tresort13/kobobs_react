@@ -53,16 +53,16 @@ function App() {
     window.localStorage.setItem("username", JSON.stringify(username))
   }, [username])
 
-  const [date,setDate] = useState(()=>
+  const [dateInfo,setDate] = useState(()=>
   {
-    const localData = localStorage.getItem('date');
-    return localData ? JSON.parse(date) : "";
+    const localData = localStorage.getItem('dateInfo');
+    return localData ? JSON.parse(dateInfo) : "";
   });
   
   
   useEffect(() => {
-    window.localStorage.setItem("date", JSON.stringify(date))
-  }, [date])
+    window.localStorage.setItem("dateInfo", JSON.stringify(dateInfo))
+  }, [dateInfo])
 
   const [mois,setMois] = useState(()=>
   {
@@ -548,10 +548,10 @@ function App() {
         <Route path="/confirmation_retrait_info" element={username == "" ? <Navigate to ='/' /> :<ConfirmationRetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2}/>} >
         </Route>
 
-        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoEnvoie username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} date={date}/>} >
+        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoEnvoie username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} dateInfo={dateInfo}/>} >
         </Route>
 
-        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoRetrait username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} date={date}/>} >
+        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoRetrait username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} dateInfo={dateInfo}/>} >
         </Route>
  
         <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoEnvoie username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} mois={mois}/>} >
