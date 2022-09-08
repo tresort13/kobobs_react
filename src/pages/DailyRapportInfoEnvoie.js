@@ -29,6 +29,8 @@ function DailyRapportInfoEnvoie(props)
       });
     
       const navigate = useNavigate()
+      console.log(props.dailyRapport)
+     
      const nombre_envoie_effectue =  props.dailyRapport.filter((value)=>
      {
        return value.status_retrait == "Code Retrait Payé"
