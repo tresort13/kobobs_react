@@ -29,28 +29,27 @@ function MonthlyRecettes(props)
 const total_montant_beneficiaire = props.monthlyRapport.reduce((total,value)=>
 {
   
-  total = total + value.montant_beneficiaire
+  total = total + parseFloat(value.montant_beneficiaire)
   return total
 },0)
 
 const total_frais_envoie = props.monthlyRapport.reduce((total,value)=>
 {
-  total=total + value.frais_envoie
+  total=total + parseFloat(value.frais_envoie)
   return total
 },0)
 
 const total_frais_tva = props.monthlyRapport.reduce((total,value)=>
 {
-  total=total + value.frais_tva
+  total=total + parseFloat(value.frais_tva)
   return total
 },0)
 
 const total_montant = props.monthlyRapport.reduce((total,value)=>
 {
-  total=total + value.montant_total
+  total=total + parseFloat(value.montant_total)
   return total
 },0)
-  
   
     return (
         <>

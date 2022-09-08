@@ -29,25 +29,25 @@ function DailyRecettes(props)
 const total_montant_beneficiaire = props.dailyRapport.reduce((total,value)=>
 {
   
-  total = total + value.montant_beneficiaire
+  total = total + parseFloat(value.montant_beneficiaire)
   return total
 },0)
 
 const total_frais_envoie = props.dailyRapport.reduce((total,value)=>
 {
-  total=total + value.frais_envoie
+  total=total + parseFloat(value.frais_envoie)
   return total
 },0)
 
 const total_frais_tva = props.dailyRapport.reduce((total,value)=>
 {
-  total=total + value.frais_tva
+  total=total + parseFloat(value.frais_tva)
   return total
 },0)
 
 const total_montant = props.dailyRapport.reduce((total,value)=>
 {
-  total=total + value.montant_total
+  total=total + parseFloat(value.montant_total)
   return total
 },0)
   
