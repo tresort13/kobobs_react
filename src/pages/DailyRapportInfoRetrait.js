@@ -31,16 +31,54 @@ function DailyRapportInfoRetrait(props)
       const navigate = useNavigate()
     
 
-    const submitEnvoie = (e)=>
-    {      
-       
-    }
-
-    const modifierFormulaire = (e)=>
-    {    
-     
-    }
+      const nombre_envoie_total =  props.dailyRapport.reduce((total,value)=>
+      {
+         total = total + 1
+         return total
+      },0)
+ 
+ 
+      const nombre_envoie_valide = props.dailyRapport.filter((value)=>
+      {
+        return value.status_retrait !== "code retrait en attente de validation"
+      }).reduce((total,value)=>
+      {
+        total = total + 1
+        return total
+      },0)
+ 
+      const nombre_envoie_nonvalide = props.dailyRapport.filter((value)=>
+      {
+        return value.status_retrait === "code retrait en attente de validation"
+      }).reduce((total,value)=>
+      {
+        total = total + 1
+        return total
+      },0)
+ 
     
+ 
+      const detailTotal =()=>
+      {
+       props.dataDetailEnvoieTotal(props.dailyRapport)
+      }
+ 
+      const detailValide =()=>
+      {
+       props.dataDetailEnvoieTotal(props.dailyRapport.filter((value)=>
+       {
+         return value.status_retrait !== "code retrait en attente de validation"
+       }))
+      }
+ 
+      const detailNonValide =()=>
+      {
+       props.dataDetailEnvoieTotal(props.dailyRapport.filter((value)=>
+       {
+         return value.status_retrait === "code retrait en attente de validation"
+       }))
+        
+      }
 
    
     return (
@@ -68,8 +106,8 @@ function DailyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Type de Rapport: <b className='couleur2'></b> </p>
-        <p className='text-light'>Date : <b className='couleur2'></b>  </p>
+        <p className='text-light'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
+        <p className='text-light'>Date : <b className='couleur2'>{props.dailyRapport[0].data_operation}</b>  </p>
         
         </Col>
     </Row>
@@ -80,17 +118,15 @@ function DailyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres des retraits payés : <b className='couleur2'></b>  </p>
-        <p className='text-light'>Nombres des retraits validés : <b className='couleur2'></b> </p>
-        <p className='text-light'>Nombres des retraits non validés : <b className='couleur2'> </b> </p>
-        <p className='text-light'>Nombres des retraits suprimés : <b className='couleur2'> </b></p>
+        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'> {nombre_envoie_total}</b>  </p>
+        <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'> {nombre_envoie_valide}</b> </p>
+        <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> {nombre_envoie_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailTotal}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailValide}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailNonValide}>Voir Details </p></Link>
         </Col>
     </Row>
 
@@ -101,7 +137,7 @@ function DailyRapportInfoRetrait(props)
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
         <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
+        <Button variant="warning" type="submit">
         Fermer
         </Button>
         </Link>
@@ -135,8 +171,8 @@ function DailyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Type de Rapport: <b className='couleur2'></b> </p>
-        <p className='text-light'>Date : <b className='couleur2'></b>  </p>
+        <p className='text-light'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
+        <p className='text-light'>Date : <b className='couleur2'>{props.dailyRapport[0].data_operation}</b>  </p>
         
         </Col>
     </Row>
@@ -147,17 +183,15 @@ function DailyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'></b>  </p>
-        <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'></b> </p>
-        <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> </b> </p>
-        <p className='text-light'>Nombres d'envoies suprimés : <b className='couleur2'> </b></p>
+        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'> {nombre_envoie_total}</b>  </p>
+        <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'> {nombre_envoie_valide}</b> </p>
+        <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> {nombre_envoie_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
-        <Link to="/details_retrait_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={e=>submitEnvoie(e)}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailTotal}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailValide}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailNonValide}>Voir Details </p></Link>
         </Col>
     </Row>
 

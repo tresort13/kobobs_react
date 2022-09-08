@@ -82,6 +82,7 @@ function DailyRapportInfoEnvoie(props)
       }))
        
      }
+     
     return (
         
         <>
