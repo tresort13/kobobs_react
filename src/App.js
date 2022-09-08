@@ -38,6 +38,7 @@ import DetailsRetraitInfo from './pages/DetailsRetraitInfo';
 import SelectDateRecettes from './pages/SelectDateRecettes';
 import SelectMonthRecettes from './pages/SelectMonthRecettes';
 import MonthlyRecettes from './pages/MonthlyRecettes';
+import DailyRecettes from './pages/DailyRecettes';
 
 
 
