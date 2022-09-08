@@ -31,13 +31,26 @@ function DailyRapportInfoEnvoie(props)
       const navigate = useNavigate()
       console.log(props.dailyRapport)
      
-     const nombre_envoie_effectue =  props.dailyRapport.filter((value)=>
-     {
-       return value.status_retrait == "Code Retrait Payé"
-     }).reduce((total,value)=>
+     const nombre_envoie_total =  props.dailyRapport.reduce((total,value)=>
      {
         total = total + 1
         return total
+     },0)
+
+     const nombre_envoie_valide = props.dailyRapport.filter((value)=>
+     {
+       return value.status_retrait != "code retrait en attente de validation"
+     }).reduce((total,value)=>
+     {
+       total = total + 1
+     },0)
+
+     const nombre_envoie_nonvalide = props.dailyRapport.filter((value)=>
+     {
+       return value.status_retrait == "code retrait en attente de validation"
+     }).reduce((total,value)=>
+     {
+       total = total + 1
      },0)
 
    
@@ -66,8 +79,8 @@ function DailyRapportInfoEnvoie(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Type de Rapport: <b className='couleur2'></b> </p>
-        <p className='text-light'>Date : <b className='couleur2'></b>  </p>
+        <p className='text-light'>Type de Rapport: Envoie<b className='couleur2'></b> </p>
+        <p className='text-light'>Date : {props.dailyRapport[0].data_operation}<b className='couleur2'></b>  </p>
         
         </Col>
     </Row>
@@ -78,17 +91,16 @@ function DailyRapportInfoEnvoie(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'> {nombre_envoie_effectue}</b>  </p>
-        <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'></b> </p>
-        <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> </b> </p>
-        <p className='text-light'>Nombres d'envoies suprimés : <b className='couleur2'> </b></p>
+        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'> {nombre_envoie_total}</b>  </p>
+        <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'> {nombre_envoie_valide}</b> </p>
+        <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> {nombre_envoie_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>
         <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
         <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
         <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
+       
         </Col>
     </Row>
 
