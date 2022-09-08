@@ -529,19 +529,19 @@ function App() {
         <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoEnvoie username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal}/>} >
         </Route>
 
-        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoRetrait username = {username} dailyRapport={dailyRapport}/>} >
+        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoRetrait username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal}/>} >
         </Route>
 
-        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoEnvoie username = {username} monthlyRapport={monthlyRapport}/>} >
+        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoEnvoie username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal}/>} >
         </Route>
 
-        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoRetrait username = {username} monthlyRapport={monthlyRapport}/>} >
+        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoRetrait username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal}/>} >
         </Route>
 
         <Route path="/details_envoie_info" element={username == "" ? <Navigate to ='/' /> :<DetailsEnvoieInfo username = {username} detailEnvoieTotal={detailEnvoieTotal}/>} >
         </Route>
 
-        <Route path="/details_retrait_info" element={username == "" ? <Navigate to ='/' /> :<DetailsRetraitInfo username = {username}/>} >
+        <Route path="/details_retrait_info" element={username == "" ? <Navigate to ='/' /> :<DetailsRetraitInfo username = {username} detailEnvoieTotal={detailEnvoieTotal}/>} >
         </Route>
 
 
