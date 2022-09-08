@@ -54,50 +54,138 @@ function App() {
   }, [username])
 
 
-  const [dateEnvoie,setDateEnvoie] = useState(()=>
+  const [dailyRapport,setDailyRapport] = useState(()=>
   {
-    const localData = localStorage.getItem('dateEnvoie');
-    return localData ? JSON.parse(localData) : "";
-  });
+    const localData = localStorage.getItem('dailyRapport');
+    return localData ? JSON.parse(localData) : {infoDailyRapport :{
+      nom_expediteur : '',
+      postnom_expediteur : '',
+      prenom_expediteur : '',
+      adresse_expediteur : '',
+      email_expediteur : '',
+      numero_expediteur: '',
+      pays_expediteur : '',
+      nom_beneficiaire : '',
+      postnom_beneficiaire : '',
+      prenom_beneficiaire : '',
+      adresse_beneficiaire : '',
+      numero_beneficiaire : '',
+      pays_beneficiaire : '',
+      montant_beneficiaire : '',
+      type_service : '',
+      frais_envoie : '',
+      montant_total : '',
+      code_retrait : '',
+      data_operation : '',
+      date_heure_operation : '',
+      code_abonne : '',
+      status_retrait : ''
+      }};
+    })
   
   
-  useEffect(() => {
-    window.localStorage.setItem("dateEnvoie", JSON.stringify(dateEnvoie))
-  }, [dateEnvoie])
 
-  const [moisEnvoie,setMoisEnvoie] = useState(()=>
+  useEffect(() => {
+    window.localStorage.setItem("dailyRapport", JSON.stringify(dailyRapport))
+  }, [dailyRapport])
+
+  const dataDailyRapport = (donne)=>
   {
-    const localData = localStorage.getItem('moisEnvoie');
-    return localData ? JSON.parse(localData) : "";
-  });
-  
-  
-  useEffect(() => {
-    window.localStorage.setItem("moisEnvoie", JSON.stringify(moisEnvoie))
-  }, [moisEnvoie])
+    setDailyRapport({infoDailyRapport :{
+      nom_expediteur : donne[0].nom_expediteur,
+      postnom_expediteur :donne[0].postnom_expediteur,
+      prenom_expediteur : donne[0].prenom_expediteur,
+      adresse_expediteur : donne[0].adresse_expediteur,
+      email_expediteur : donne[0].email_expediteur,
+      numero_expediteur: donne[0].numero_expediteur,
+      pays_expediteur : donne[0].pays_expediteur,
+      nom_beneficiaire : donne[0].nom_beneficiaire,
+      postnom_beneficiaire : donne[0].postnom_beneficiaire,
+      prenom_beneficiaire : donne[0].prenom_beneficiaire,
+      adresse_beneficiaire :donne[0].adresse_beneficiaire,
+      numero_beneficiaire : donne[0].numero_beneficiaire,
+      pays_beneficiaire : donne[0].pays_beneficiaire,
+      montant_envoie_sans_frais : donne[0].montant_envoie_sans_frais,
+      montant_beneficiaire : donne[0].montant_beneficiaire,
+      type_service : donne[0].type_service,
+      frais_envoie : donne[0].frais_envoie,
+      frais_tva : donne[0].frais_tva,
+      montant_total : donne[0].montant_total,
+      code_retrait : donne[0].code_retrait,
+      data_operation : donne[0].date_operation,
+      date_heure_operation : donne[0].date_heure_operation,
+      code_abonne : donne[0].code_abonne,
+      status_retrait : donne[0].status_retrait
+      }})
+  }
 
 
-  const [dateRetrait,setDateRetrait] = useState(()=>
+  const [monthlyRapport,setMonthlyRapport] = useState(()=>
   {
-    const localData = localStorage.getItem('dateRetrait');
-    return localData ? JSON.parse(localData) : "";
-  });
+    const localData = localStorage.getItem('monthlyRapport');
+    return localData ? JSON.parse(localData) : {infoMonthlyRapport :{
+      nom_expediteur : '',
+      postnom_expediteur : '',
+      prenom_expediteur : '',
+      adresse_expediteur : '',
+      email_expediteur : '',
+      numero_expediteur: '',
+      pays_expediteur : '',
+      nom_beneficiaire : '',
+      postnom_beneficiaire : '',
+      prenom_beneficiaire : '',
+      adresse_beneficiaire : '',
+      numero_beneficiaire : '',
+      pays_beneficiaire : '',
+      montant_beneficiaire : '',
+      type_service : '',
+      frais_envoie : '',
+      montant_total : '',
+      code_retrait : '',
+      data_operation : '',
+      date_heure_operation : '',
+      code_abonne : '',
+      status_retrait : ''
+      }};
+    })
   
   
-  useEffect(() => {
-    window.localStorage.setItem("dateRetrait", JSON.stringify(dateRetrait))
-  }, [dateRetrait])
 
-  const [moisRetrait,setMoisRetrait] = useState(()=>
-  {
-    const localData = localStorage.getItem('moisRetrait');
-    return localData ? JSON.parse(localData) : "";
-  });
-  
-  
   useEffect(() => {
-    window.localStorage.setItem("moisRetrait", JSON.stringify(moisRetrait))
-  }, [moisRetrait])
+    window.localStorage.setItem("monthlyRapport", JSON.stringify(monthlyRapport))
+  }, [monthlyRapport])
+
+  const dataMonthlyRapport = (donne)=>
+  {
+    setMonthlyRapport({infoDailyRapport :{
+      nom_expediteur : donne[0].nom_expediteur,
+      postnom_expediteur :donne[0].postnom_expediteur,
+      prenom_expediteur : donne[0].prenom_expediteur,
+      adresse_expediteur : donne[0].adresse_expediteur,
+      email_expediteur : donne[0].email_expediteur,
+      numero_expediteur: donne[0].numero_expediteur,
+      pays_expediteur : donne[0].pays_expediteur,
+      nom_beneficiaire : donne[0].nom_beneficiaire,
+      postnom_beneficiaire : donne[0].postnom_beneficiaire,
+      prenom_beneficiaire : donne[0].prenom_beneficiaire,
+      adresse_beneficiaire :donne[0].adresse_beneficiaire,
+      numero_beneficiaire : donne[0].numero_beneficiaire,
+      pays_beneficiaire : donne[0].pays_beneficiaire,
+      montant_envoie_sans_frais : donne[0].montant_envoie_sans_frais,
+      montant_beneficiaire : donne[0].montant_beneficiaire,
+      type_service : donne[0].type_service,
+      frais_envoie : donne[0].frais_envoie,
+      frais_tva : donne[0].frais_tva,
+      montant_total : donne[0].montant_total,
+      code_retrait : donne[0].code_retrait,
+      data_operation : donne[0].date_operation,
+      date_heure_operation : donne[0].date_heure_operation,
+      code_abonne : donne[0].code_abonne,
+      status_retrait : donne[0].status_retrait
+      }})
+  }
+
+
 
   const [taux,setTaux] = useState(()=>
   {
@@ -460,16 +548,16 @@ function App() {
         <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne}/>} >
         </Route>
 
-        <Route path="/select_date_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormEnvoie username = {username} setDateEnvoie={setDateEnvoie}/>} >
+        <Route path="/select_date_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormEnvoie username = {username} dataDailyRapport={dataDailyRapport}/>} >
         </Route>
 
-        <Route path="/select_date_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormRetrait username = {username} setDateRetrait={setDateRetrait}/>} >
+        <Route path="/select_date_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormRetrait username = {username} dataDailyRapport={dataDailyRapport}/>} >
         </Route>
 
-        <Route path="/select_mois_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormEnvoie username = {username} setDateEnvoie={setMoisEnvoie}/>} >
+        <Route path="/select_mois_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormEnvoie username = {username} dataMonthlyRapport={dataMonthlyRapport}/>} >
         </Route>
 
-        <Route path="/select_mois_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormRetrait username = {username} setDateRetrait={setMoisRetrait}/>} >
+        <Route path="/select_mois_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormRetrait username = {username} dataMonthlyRapport={dataMonthlyRapport}/>} >
         </Route>
         
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >
@@ -499,16 +587,16 @@ function App() {
         <Route path="/confirmation_retrait_info" element={username == "" ? <Navigate to ='/' /> :<ConfirmationRetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2}/>} >
         </Route>
 
-        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoEnvoie username = {username}/>} >
+        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoEnvoie username = {username} dailyRapport={dailyRapport}/>} >
         </Route>
 
-        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoRetrait username = {username}/>} >
+        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoRetrait username = {username} dailyRapport={dailyRapport}/>} >
         </Route>
 
-        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoEnvoie username = {username}/>} >
+        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoEnvoie username = {username} monthlyRapport={monthlyRapport}/>} >
         </Route>
 
-        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoRetrait username = {username}/>} >
+        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoRetrait username = {username} monthlyRapport={monthlyRapport}/>} >
         </Route>
 
         <Route path="/details_envoie_info" element={username == "" ? <Navigate to ='/' /> :<DetailsEnvoieInfo username = {username}/>} >

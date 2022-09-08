@@ -31,8 +31,23 @@ function SelectDateFormEnvoie(props)
     const [couleur,setCouleur] = useState("text-dark")
     const submitVol = (e)=>
     {
-        props.setDateEnvoie(dateEnvoie.infodateEnvoie.dateInfo)
-        console.log(dateEnvoie.infodateEnvoie.dateInfo)    
+        fetch('https://kobobsapi.herokuapp.com/api/getDailyRapportInfo/'+dateEnvoie.infodateEnvoie.dateInfo+'/', {
+            method:'GET',
+            headers: {'Content-Type': 'application/json'},
+           // body: JSON.stringify(codeRetrait.infoCodeRetrait)
+          })
+          .then( res => res.json())
+          .then(
+            res => {   
+            console.log(res)
+               props.dataDailyRapport(res)
+            }
+          )
+          .catch( (error) =>
+            {
+                console.log(error)
+            } )
+       
                 
     }
 

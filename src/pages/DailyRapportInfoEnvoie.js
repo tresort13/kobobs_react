@@ -29,7 +29,13 @@ function DailyRapportInfoEnvoie(props)
       });
     
       const navigate = useNavigate()
-    
+     const nombre_envoie_effectue =  props.dailyRapport.filter((value)=>
+     {
+       return value.status_retrait == "paye"
+     }).reduce((total,value)=>
+     {
+        total = total + 1
+     },0)
 
     const submitEnvoie = (e)=>
     {      
