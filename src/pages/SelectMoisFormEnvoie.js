@@ -17,8 +17,7 @@ const useState = React.useState
 function SelectMoisFormEnvoie(props)
 {
     const[moisEnvoie,setMoisEnvoie] = useState({infomoisEnvoie :{
-        moisInfo:"",
-        yearInfo:""
+        moisInfo:""
     }})
 
     const isDesktop = useMediaQuery({
@@ -30,10 +29,10 @@ function SelectMoisFormEnvoie(props)
 
     const [message,setMessage] = useState("Veuillez selectionner le Mois et l'année")
     const [couleur,setCouleur] = useState("text-dark")
-    console.log(moisEnvoie.infomoisEnvoie.moisInfo + " "+ moisEnvoie.infomoisEnvoie.yearInfo)
+    console.log(moisEnvoie.infomoisEnvoie.moisInfo )
     const submitVol = (e)=>
     {
-        fetch('https://kobobsapi.herokuapp.com/api/getMonthlyRapportInfo/'+moisEnvoie.infomoisEnvoie.moisInfo+'/'+moisEnvoie.infomoisEnvoie.yearInfo+'/', {
+        fetch('https://kobobsapi.herokuapp.com/api/getMonthlyRapportInfo/'+moisEnvoie.infomoisEnvoie.moisInfo+'/', {
             method:'GET',
             headers: {'Content-Type': 'application/json'},
            // body: JSON.stringify(codeRetrait.infoCodeRetrait)
@@ -83,14 +82,6 @@ return (
         </Col>
     </Row>
 
-    <Row className='justify-content-center'>
-        <Col xs = {6}>
-        <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Control name="yearInfo"  type="year" onChange={e=>inputChanged(e)}  />
-         </Form.Group>
-        </Col>
-    </Row>
-
     
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
@@ -121,14 +112,6 @@ return (
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Control name="moisInfo"  type="month" onChange={e=>inputChanged(e)}  />
-         </Form.Group>
-        </Col>
-    </Row>
-
-    <Row className='justify-content-center'>
-        <Col xs = {6}>
-        <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Control name="yearInfo"  type="year" onChange={e=>inputChanged(e)}  />
          </Form.Group>
         </Col>
     </Row>
