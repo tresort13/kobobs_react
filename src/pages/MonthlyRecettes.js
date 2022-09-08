@@ -29,25 +29,25 @@ function MonthlyRecettes(props)
 const total_montant_beneficiaire = props.monthlyRapport.reduce((total,value)=>
 {
   
-  total = total + Number(value.montant_beneficiaire).toFixed(0)
+  total = total + value.montant_beneficiaire
   return total
 },0)
 
 const total_frais_envoie = props.monthlyRapport.reduce((total,value)=>
 {
-  total=total + Number(value.frais_envoie).toFixed(0)
+  total=total + value.frais_envoie
   return total
 },0)
 
 const total_frais_tva = props.monthlyRapport.reduce((total,value)=>
 {
-  total=total + Number(value.frais_tva).toFixed(0)
+  total=total + value.frais_tva
   return total
 },0)
 
 const total_montant = props.monthlyRapport.reduce((total,value)=>
 {
-  total=total + Number(value.montant_total).toFixed(0)
+  total=total + value.montant_total
   return total
 },0)
   
@@ -83,19 +83,19 @@ const total_montant = props.monthlyRapport.reduce((total,value)=>
         {
           return  <tr style={{border:"2px solid white"}} >
              <td><i ><b>{props.moisInfo}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.montant_beneficiaire).toFixed()) }</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.frais_envoie).toFixed())}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.frais_tva).toFixed())}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.montant_total).toFixed())}</b></i></td>
+             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.montant_beneficiaire).toFixed(2)) }</b></i></td>
+             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.frais_envoie).toFixed(2))}</b></i></td>
+             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.frais_tva).toFixed(2))}</b></i></td>
+             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.montant_total).toFixed(2))}</b></i></td>
             </tr>     
         }) 
         }
        <tr style={{border:"2px solid white"}}>
          <td><i><b>TOTAL</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format((total_montant_beneficiaire))}</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format((total_frais_envoie))}</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format((total_frais_tva))}</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format((total_montant))}</b></i></td>
+         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_montant_beneficiaire).toFixed(2))}</b></i></td>
+         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_frais_envoie).toFixed(2))}</b></i></td>
+         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_frais_tva).toFixed(2))}</b></i></td>
+         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_montant).toFixed(2))}</b></i></td>
        </tr>
          
       </tbody>
