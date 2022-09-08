@@ -19,17 +19,12 @@ const useState = React.useState
 function DetailsEnvoieInfo(props)
 {
 
-    const [envoie4,setEnvoie4] = useState([])
+   
        
     const [message,setMessage] = useState("")
     const [couleur,setCouleur] = useState("text-dark")
-    const[status,setStatus] = useState({statusInfo :{
-        statusRetrait :"",
-    }})
 
-    const [modalShow, setModalShow] = React.useState(false);
 
-    const navigate = useNavigate()
 
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
@@ -42,26 +37,7 @@ function DetailsEnvoieInfo(props)
     
 
 
-      const submit =(e)=>
-      {       
-          fetch('https://kobobsapi.herokuapp.com/api/getRetraitNonValideInfo/code retrait en attente de validation/', {
-                  method:'GET',
-                  headers: {'Content-Type': 'application/json'},
-                 // body: JSON.stringify(codeRetrait.infoCodeRetrait)
-                })
-                .then( res => res.json())
-                .then(
-                  res => {   
-                    setEnvoie4(res)
-                     console.log(res)
-                  }
-                )
-                .catch( (error) =>
-                  {
-                      console.log(error)
-                  } )
-      }
-
+    
      /* useEffect(()=>
       {
          const interval =  setInterval((e)=>submit(e),1000);
@@ -70,29 +46,7 @@ function DetailsEnvoieInfo(props)
 
 */
 
-      const validateCodeRetrait = (e)=>
-      {       
-          e.preventDefault()
-          console.log(e.target.value)
-         // setStatus("Code Retrait Valide")     
-          fetch('https://kobobsapi.herokuapp.com/api/validateCodeRetrait/'+e.target.value+'/', {
-                  method: 'PUT',
-                  headers: {'Content-Type': 'application/json'},
-                 // body: JSON.stringify(status.statusInfo.statusRetrait)
-                })
-                .then( res => res.json())
-                .then(
-                  res => {   
-                    setModalShow(true)
-                     navigate('/form_abonne_non_valide')
-                  }
-                )
-                .catch( (error) =>
-                  {
-                      console.log(error)
-                  } )
-  
-      }
+     
 
    
    
@@ -100,7 +54,7 @@ function DetailsEnvoieInfo(props)
         
         <>
         <Header username={props.username} />
-{isDesktop && envoie4.map((value)=>
+{isDesktop && props.detailEnvoieTotal.map((value)=>
     {
     return <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
@@ -133,7 +87,7 @@ function DetailsEnvoieInfo(props)
     <Row>
     <Col xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button name='validate' value={value.code_retrait} className='pt-3' variant="warning" type="submit" onClick={e=>validateCodeRetrait(e)}>
+        <Button name='validate' value={value.code_retrait} className='pt-3' variant="warning" type="submit">
         Fermer
         </Button>
         </Link>

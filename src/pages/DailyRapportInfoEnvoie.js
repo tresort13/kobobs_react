@@ -37,6 +37,7 @@ function DailyRapportInfoEnvoie(props)
         return total
      },0)
 
+
      const nombre_envoie_valide = props.dailyRapport.filter((value)=>
      {
        return value.status_retrait !== "code retrait en attente de validation"
@@ -55,6 +56,9 @@ function DailyRapportInfoEnvoie(props)
        return total
      },0)
 
+     props.dataDetailEnvoieTotal(props.dailyRapport)
+    // props.dataDetailEnvoieValide(nombre_envoie_valide)
+     p//rops.dataDetailEnvoieNonValide(nombre_envoie_nonvalide)
    
     return (
         

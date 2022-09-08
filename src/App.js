@@ -90,6 +90,22 @@ function App() {
   }
 
 
+  const [detailEnvoieTotal,setDetailEnvoieTotal] = useState(()=>
+  {
+    const localData = localStorage.getItem('detailEnvoieTotal');
+    return localData ? JSON.parse(localData) :[];
+    })
+  
+  
+
+  useEffect(() => {
+    window.localStorage.setItem("detailEnvoieTotal", JSON.stringify(detailEnvoieTotal))
+  }, [detailEnvoieTotal])
+
+  const dataDetailEnvoieTotal = (donne)=>
+  {
+    setDetailEnvoieTotal(donne)
+  }
 
   const [taux,setTaux] = useState(()=>
   {
@@ -491,7 +507,7 @@ function App() {
         <Route path="/confirmation_retrait_info" element={username == "" ? <Navigate to ='/' /> :<ConfirmationRetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2}/>} >
         </Route>
 
-        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoEnvoie username = {username} dailyRapport={dailyRapport}/>} >
+        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoEnvoie username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal}/>} >
         </Route>
 
         <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoRetrait username = {username} dailyRapport={dailyRapport}/>} >
@@ -503,7 +519,7 @@ function App() {
         <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoRetrait username = {username} monthlyRapport={monthlyRapport}/>} >
         </Route>
 
-        <Route path="/details_envoie_info" element={username == "" ? <Navigate to ='/' /> :<DetailsEnvoieInfo username = {username}/>} >
+        <Route path="/details_envoie_info" element={username == "" ? <Navigate to ='/' /> :<DetailsEnvoieInfo username = {username} detailEnvoieTotal={detailEnvoieTotal}/>} >
         </Route>
 
         <Route path="/details_retrait_info" element={username == "" ? <Navigate to ='/' /> :<DetailsRetraitInfo username = {username}/>} >
