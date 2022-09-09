@@ -58,12 +58,11 @@ console.log(props.userInfo)
         {props.userInfo.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}} >
-             <td><i ><b>{props.dateInfo}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.username).toFixed(2)) }</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.email).toFixed(2))}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.is_superuser).toFixed(2))}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.last_login).toFixed(2))}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.date_joined).toFixed(2))}</b></i></td>
+             <td><i><b className="couleur2">{value.username}</b></i></td>
+             <td><i><b className="couleur2">{value.email}</b></i></td>
+             <td><i><b className="couleur2">{value.is_superuser}</b></i></td>
+             <td><i><b className="couleur2">{value.last_login}</b></i></td>
+             <td><i><b className="couleur2">{value.date_joined}</b></i></td>
             </tr>     
         }) 
         }
