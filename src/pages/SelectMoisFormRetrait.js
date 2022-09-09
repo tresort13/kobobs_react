@@ -52,6 +52,7 @@ function SelectMoisFormRetrait(props)
           )
           .catch( (error) =>
             {
+              setModalShow(true)
                 console.log(error)
             } )
        
