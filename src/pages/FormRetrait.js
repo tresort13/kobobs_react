@@ -22,7 +22,8 @@ function FormRetrait(props)
         code_retrait :"",
     }})
 
-    
+    const navigate = useNavigate()
+    const [modalShow, setModalShow] = React.useState(false);
 
     const [message,setMessage] = useState("Veuillez entrer le code de retrait")
     const [couleur,setCouleur] = useState("text-dark")
@@ -50,10 +51,12 @@ function FormRetrait(props)
               .then(
                 res => {   
                    props.dataEnvoie2(res)
+                   navigate('/code_retrait')
                 }
               )
               .catch( (error) =>
                 {
+                    setModalShow(true)
                     console.log(error)
                 } )
 
@@ -107,7 +110,7 @@ function FormRetrait(props)
 
    <Row className='pb-3'>
        <Col>
-        <Link to="/retrait_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit"  onClick={e=>submitcodeRetrait(e)}>
         Valider 
         </Button>
@@ -172,10 +175,36 @@ function FormRetrait(props)
             <p></p>
           </Col>
         </Row>
+<MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <Footer />
         </>
        
     )
 }
+
+function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Echec de Validation
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Message : </h4>
+          <p className='text-danger'><b>Désolé ce code de retrait n'existe pas !!!</b>   
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 
 export default FormRetrait;
