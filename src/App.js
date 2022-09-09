@@ -139,7 +139,7 @@ function App() {
   const [userInfo,setUserInfo] = useState(()=>
   {
     const localData = localStorage.getItem('userInfo');
-    return localData ? JSON.parse(localData) : "";
+    return localData ? JSON.parse(localData) :[];
   });
   
   
