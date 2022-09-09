@@ -79,14 +79,13 @@ function FormEnvoiClient(props)
         event.preventDefault();
         event.stopPropagation();
       }
-      else
-      {
+     
       setValidated(true);
       tauxEchanger()      
       props.dataEnvoie(envoie.infoEnvoie)
       setEnvoie({infoEnvoie:{}})
      // navigate('/envoi_info')
-      }
+      
       
     }
 
