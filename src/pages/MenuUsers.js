@@ -71,7 +71,7 @@ function MenuUsers(props)
 
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
-        <Link to="/create_user" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="https://kobobsapi.herokuapp.com/admin/" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
         <b className='couleur2'>Créer Utilisateur<pre></pre></b>
         </Button>

@@ -41,7 +41,7 @@ console.log(props.userInfo)
 <Row className='justify-content-center '>
         <Col xs = {12} className='text-center borders pt-2'>
         <div>
-        <h6 ><u><b><i className='couleur2'>Table des Recettes Journalières</i></b></u></h6>
+        <h6 ><u><b><i className='couleur2'>Informations Utilisateur(s)</i></b></u></h6>
         </div>
         <div>
         <Table striped bordered hover variant="dark">
