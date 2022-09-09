@@ -36,9 +36,7 @@ function FormEnvoiClient(props)
     type_service : ''
     }})
 
-    
-        const[position,setPosition] = useState('')
-
+    const [validated, setValidated] = useState(false);
     const [message,setMessage] = useState("Formulaire d'Envoie Client")
     const [couleur,setCouleur] = useState("text-dark")
 
@@ -48,6 +46,7 @@ function FormEnvoiClient(props)
       const isMobileOrTablet = useMediaQuery({
         query: "(max-width: 1224px)"
       });
+     
 
       const navigate = useNavigate()
     
@@ -73,8 +72,14 @@ function FormEnvoiClient(props)
     
 
 
-    const submitFormulaire = ()=>
+    const submitFormulaire = (event)=>
     {   
+      const form = event.currentTarget;
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      setValidated(true);
       tauxEchanger()      
       props.dataEnvoie(envoie.infoEnvoie)
       setEnvoie({infoEnvoie:{}})
@@ -112,7 +117,7 @@ function FormEnvoiClient(props)
         </Col>
     </Row>
     
-<Form onSubmit={submitFormulaire}>
+<Form noValidate validated={validated} onSubmit={submitFormulaire}>
     <Row>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
@@ -123,6 +128,9 @@ function FormEnvoiClient(props)
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo Ya Libota(Nom)</Form.Label>
         <Form.Control name="nom_expediteur" value={envoie.infoEnvoie.nom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
+        <Form.Control.Feedback type="invalid">
+              Please enter a name.
+            </Form.Control.Feedback>
          </Form.Group>
         </Col>
 
@@ -130,6 +138,9 @@ function FormEnvoiClient(props)
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label>  
         <Form.Control name="postnom_expediteur" value={envoie.infoEnvoie.postnom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
+        <Form.Control.Feedback type="invalid">
+              Please enter a postname.
+            </Form.Control.Feedback>
          </Form.Group>
         </Col>
 
@@ -137,6 +148,9 @@ function FormEnvoiClient(props)
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo ya Mukristu (Prénom)</Form.Label>
         <Form.Control name="prenom_expediteur" value={envoie.infoEnvoie.prenom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
+        <Form.Control.Feedback type="invalid">
+              Please enter a surname.
+            </Form.Control.Feedback>
          </Form.Group>
         </Col>
     </Row>
@@ -272,11 +286,10 @@ function FormEnvoiClient(props)
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+        
         <Button variant="outline-warning" type="submit">
         Valider Informations
         </Button>
-        </Link>
 
         </Col>
     </Row>
