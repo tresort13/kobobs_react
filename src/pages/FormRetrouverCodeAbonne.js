@@ -6,11 +6,11 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import {Link} from  'react-router-dom';
+import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
-import InputGroup from 'react-bootstrap/InputGroup';
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -22,7 +22,8 @@ function FormRetrouverCodeAbonne(props)
         numero :"",
     }})
 
-    
+    const navigate = useNavigate()
+    const [modalShow, setModalShow] = React.useState(false);
 
     const [message,setMessage] = useState("Veuillez entrer le code abonné ou téléphone de l'abonné")
     const [couleur,setCouleur] = useState("text-dark")
@@ -51,11 +52,13 @@ function FormRetrouverCodeAbonne(props)
                 res => {   
                     console.log(res)
                    props.dataAbonneInfo(res)
+                   navigate('/abonne_code_info')
                    
                 }
               )
               .catch( (error) =>
                 {
+                    setModalShow(true)
                     console.log(error)
                 } )
 
@@ -109,7 +112,7 @@ function FormRetrouverCodeAbonne(props)
 
    <Row className='pb-3'>
        <Col>
-        <Link to="/abonne_code_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit"  onClick={submitNumero}>
         Valider 
         </Button>
@@ -174,10 +177,36 @@ function FormRetrouverCodeAbonne(props)
             <p></p>
           </Col>
         </Row>
+<MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <Footer />
         </>
        
     )
 }
+
+function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Echec de Validation
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Message : </h4>
+          <p className='text-danger'><b>Désolé l'information n'est correcte !!!</b>   
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 
 export default FormRetrouverCodeAbonne;
