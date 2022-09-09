@@ -4,13 +4,13 @@ import Button from "react-bootstrap/Button";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
-import {Link} from  'react-router-dom';
+import {Link,useNavigate} from  'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import './Header.css'
 import { useMediaQuery } from 'react-responsive';
 import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 
 const useState = React.useState
 
@@ -19,6 +19,9 @@ function SelectDateFormEnvoie(props)
     const[dateEnvoie,setDateEnvoie] = useState({infodateEnvoie :{
         dateInfo:""
     }})
+
+    const navigate = useNavigate()
+    const [modalShow, setModalShow] = React.useState(false);
 
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
@@ -42,10 +45,12 @@ function SelectDateFormEnvoie(props)
             console.log(res)
                props.dataDailyRapport(res)
                props.setDate(dateEnvoie.infodateEnvoie.dateInfo)
+               navigate('/daily_rapport_envoie')
             }
           )
           .catch( (error) =>
             {
+                setModalShow(true)
                 console.log(error)
             } )
        
@@ -86,7 +91,7 @@ return (
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="/daily_rapport_envoie" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit" onClick={e=>submitVol(e)}>
         Valider 
         </Button>
@@ -130,11 +135,36 @@ return (
     </Row>
 </Form>
 </Container>}
-
+<MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <Footer />
 </>
     )
 }
+
+function MyVerticallyCenteredModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Echec de Validation
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Message : </h4>
+          <p className='text-danger'><b>Désolé veuillez selectionner la date  !!!</b>   
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 
 
 export default SelectDateFormEnvoie;
