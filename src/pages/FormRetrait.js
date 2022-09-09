@@ -50,7 +50,7 @@ function FormRetrait(props)
               .then(
                 res => {   
                    props.dataEnvoie2(res)
-                   navigate('/code_retrait')
+                   navigate('/retrait_info')
                 }
               )
               .catch( (error) =>
