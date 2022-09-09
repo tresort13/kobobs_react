@@ -25,7 +25,7 @@ function UsersInfo(props)
         {
             alert(" désolé la page d'impression n'est pas encore disponible")
         }
-
+console.log(props.userInfo)
 
   
     return (
