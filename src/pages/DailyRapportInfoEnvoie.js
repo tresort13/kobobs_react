@@ -139,7 +139,7 @@ function DailyRapportInfoEnvoie(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
         Fermer
         </Button>

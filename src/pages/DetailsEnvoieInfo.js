@@ -86,7 +86,7 @@ function DetailsEnvoieInfo(props)
 
     <Row className='justify-content-center pb-3'>
     <Col xs={6}>
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button name='validate' value={value.code_retrait} className='pt-3' variant="warning" type="submit">
         Fermer
         </Button>
