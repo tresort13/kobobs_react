@@ -1,0 +1,111 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from "react-bootstrap/Button";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import {Link} from  'react-router-dom';
+import Header from './Header';
+import { useMediaQuery } from 'react-responsive';
+import Footer from './Footer';
+import Table from 'react-bootstrap/Table';
+
+
+
+function UsersInfo(props)
+{
+    const isDesktop = useMediaQuery({
+        query: "(min-width: 1224px)"
+      });
+      const isMobileOrTablet = useMediaQuery({
+        query: "(max-width: 1224px)"
+      });
+
+            const message = ()=>
+        {
+            alert(" désolé la page d'impression n'est pas encore disponible")
+        }
+
+
+  
+    return (
+        <>
+            <Header username={props.username}/>
+            <div>
+{isDesktop && <Container fluid className='bg-dark justify-content-center text-center borders mb-5' style={{marginTop:20}} >
+
+
+
+    
+<div>
+<Row className='justify-content-center '>
+        <Col xs = {12} className='text-center borders pt-2'>
+        <div>
+        <h6 ><u><b><i className='couleur2'>Table des Recettes Journalières</i></b></u></h6>
+        </div>
+        <div>
+        <Table striped bordered hover variant="dark">
+      <thead>
+        <tr className='text-light' style={{border:"2px solid white"}}>
+          <th>Nom Utilisateur</th>
+          <th>email</th>
+          <th>Administrateur</th>
+          <th>Dernière Connexion</th>
+          <th>Date de Creation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {props.userInfo.map((value)=>
+        {
+          return  <tr style={{border:"2px solid white"}} >
+             <td><i ><b>{props.dateInfo}</b></i></td>
+             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.username).toFixed(2)) }</b></i></td>
+             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.email).toFixed(2))}</b></i></td>
+             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.is_superuser).toFixed(2))}</b></i></td>
+             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.last_login).toFixed(2))}</b></i></td>
+             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.date_joined).toFixed(2))}</b></i></td>
+            </tr>     
+        }) 
+        }
+      
+         
+      </tbody>
+    </Table>
+        </div>
+        </Col>
+    </Row>
+
+
+
+  
+    <Row className='justify-content-center pb-3 pt-3'>
+        <Col xs ={4} >
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant="outline-warning" type="submit" onClick={message} >
+        Imprimer 
+        </Button>
+        </Link>
+
+        </Col>
+    </Row>
+  
+
+
+</div>
+
+
+</Container>}
+
+
+<Row className="mt-5">
+          <Col md={12}>
+            <p></p>
+          </Col>
+        </Row>
+</div>
+<Footer />
+        </>
+    )
+}
+
+export default UsersInfo;

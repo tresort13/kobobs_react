@@ -20,7 +20,32 @@ function MenuUsers(props)
       });
       const isMobileOrTablet = useMediaQuery({
         query: "(max-width: 1224px)"
-      });    
+      });   
+      
+      
+      const submit = ()=>
+      {
+          fetch('https://kobobsapi.herokuapp.com/api/getUsersInfo/', {
+              method:'GET',
+              headers: {'Content-Type': 'application/json'},
+             // body: JSON.stringify(codeRetrait.infoCodeRetrait)
+            })
+            .then( res => res.json())
+            .then(
+              res => {   
+              console.log(res)
+              props.dataUserInfo(res)
+        
+              }
+            )
+            .catch( (error) =>
+              {
+                  console.log(error)
+              } )
+         
+                  
+      }
+
     return (
 <>
 <Header username={props.username} />
@@ -35,7 +60,7 @@ function MenuUsers(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/users_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <Button variant='light'  onClick={submit} style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
         <b className='couleur2'><pre>Utilisateurs</pre></b>
         </Button>
         </Link>

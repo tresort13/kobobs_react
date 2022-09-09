@@ -40,6 +40,7 @@ import SelectMonthRecettes from './pages/SelectMonthRecettes';
 import MonthlyRecettes from './pages/MonthlyRecettes';
 import DailyRecettes from './pages/DailyRecettes';
 import MenuGestionRecettes from './pages/MenuGestionRecettes';
+import UsersInfo from './pages/UsersInfo';
 
 
 
@@ -134,6 +135,22 @@ function App() {
     setDetailEnvoieTotal(donne)
   }
 
+
+  const [userInfo,setUserInfo] = useState(()=>
+  {
+    const localData = localStorage.getItem('userInfo');
+    return localData ? JSON.parse(localData) : "";
+  });
+  
+  
+  useEffect(() => {
+    window.localStorage.setItem("userInfo", JSON.stringify(userInfo))
+  }, [userInfo])
+
+  const dataUserInfo = (donne)=>
+  {
+    setUserInfo(donne)
+  }
 
   /*const [detailEnvoieValide,setDetailEnvoieValide] = useState(()=>
   {
@@ -503,7 +520,7 @@ function App() {
         <Route path="/menu_gestion_recettes" element={username == "" ? <Navigate to ='/' /> :<MenuGestionRecettes username = {username}/>} >
         </Route>
 
-        <Route path="/menu_users" element={username == "" ? <Navigate to ='/' /> :<MenuUsers username = {username}/>} >
+        <Route path="/menu_users" element={username == "" ? <Navigate to ='/' /> :<MenuUsers username = {username} dataUserInfo={dataUserInfo}/>} >
         </Route>
 
         <Route path="/form_envoie_client" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiClient username = {username} dataEnvoie={dataEnvoie} envoie={envoie} setTaux={setTaux}/>}>
@@ -582,6 +599,9 @@ function App() {
         </Route>
 
         <Route path="/daily_recettes_info" element={username == "" ? <Navigate to ='/' /> :<DailyRecettes username = {username} dailyRapport={dailyRapport} dateInfo={dateInfo}/>} >
+        </Route>
+
+        <Route path="/users_info" element={username == "" ? <Navigate to ='/' /> :<UsersInfo username = {username} userInfo={userInfo}/>} >
         </Route>
 
 
