@@ -60,7 +60,7 @@ console.log(props.userInfo)
           return  <tr style={{border:"2px solid white"}} >
              <td><i><b className="couleur2">{value.username}</b></i></td>
              <td><i><b className="couleur2">{value.email}</b></i></td>
-             <td><i><b className="couleur2">{toString(value.is_superuser)}</b></i></td>
+             <td><i><b className="couleur2">{JSON.stringify(value.is_superuser)}</b></i></td>
              <td><i><b className="couleur2">{value.last_login}</b></i></td>
              <td><i><b className="couleur2">{value.date_joined}</b></i></td>
             </tr>     
