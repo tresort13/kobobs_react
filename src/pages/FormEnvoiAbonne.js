@@ -24,7 +24,7 @@ function FormEnvoiAbonne(props)
         prenom_beneficiaire : '',
         adresse_beneficiaire : '',
         numero_beneficiaire : '',
-        pays_beneficiaire : '',
+        pays_beneficiaire : 'RD Congo',
         montant_beneficiaire : '',
         type_service : ''
         }})

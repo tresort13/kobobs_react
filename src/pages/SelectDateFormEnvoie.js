@@ -35,6 +35,7 @@ function SelectDateFormEnvoie(props)
 
     const submitVol =()=>
     {
+      e.preventDefault()
         fetch('https://kobobsapi.herokuapp.com/api/getDailyRapportInfo/'+dateEnvoie.infodateEnvoie.dateInfo+'/', {
             method:'GET',
             headers: {'Content-Type': 'application/json'},
@@ -91,7 +92,7 @@ return (
     
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>  
-        <Button variant="outline-warning" type="submit">
+        <Button variant="outline-warning" type="submit" >
         Valider 
         </Button>
         </Col>
@@ -107,7 +108,7 @@ return (
     </Row>
     
     
-<Form>
+<Form >
    
 
     <Row className='justify-content-center'>

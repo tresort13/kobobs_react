@@ -25,13 +25,13 @@ function FormEnvoiClient(props)
     adresse_expediteur : '',
     email_expediteur : '',
     numero_expediteur: '',
-    pays_expediteur : '',
+    pays_expediteur : 'Angleterre',
     nom_beneficiaire : '',
     postnom_beneficiaire : '',
     prenom_beneficiaire : '',
     adresse_beneficiaire : '',
     numero_beneficiaire : '',
-    pays_beneficiaire : '',
+    pays_beneficiaire : 'RD Congo',
     montant_beneficiaire : '',
     type_service : ''
     }})
