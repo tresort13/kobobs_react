@@ -79,12 +79,17 @@ function FormEnvoiClient(props)
         event.preventDefault();
         event.stopPropagation();
       }
-     
       setValidated(true);
-      tauxEchanger()      
-      props.dataEnvoie(envoie.infoEnvoie)
-      setEnvoie({infoEnvoie:{}})
-     // navigate('/envoi_info')
+
+      
+      if(validated == true)
+      {
+        tauxEchanger()      
+        props.dataEnvoie(envoie.infoEnvoie)
+        setEnvoie({infoEnvoie:{}})
+         navigate('/envoi_info')
+      }
+      
       
       
     }
@@ -272,12 +277,10 @@ function FormEnvoiClient(props)
         <Col xs ={4}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
-        <Form.Select >
-          <Form.Control name='pays_beneficiaire' value={envoie.infoEnvoie.pays_beneficiaire} aria-label="Default select example" onChange={e=>inputChanged(e)} required />
+        <Form.Select name='pays_beneficiaire' value={envoie.infoEnvoie.pays_beneficiaire} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
          <option>Ekolo (Pays)</option>
          <option value="Angleterre">Angleterre</option>
          <option value="RD Congo">RD Congo</option>
-         
          </Form.Select>
          <Form.Control.Feedback type="invalid">
         svp veuillez selectionner le pays du bénéficiare
