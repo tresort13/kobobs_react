@@ -154,7 +154,7 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Header>
         <Modal.Body>
           <h4>Message : </h4>
-          <p className='text-danger'><b>Désolé veuillez selectionner la date  !!!</b>   
+          <p className='text-danger'><b>Désolé veuillez selectionner une date   !!!</b>   
           </p>
         </Modal.Body>
         <Modal.Footer>

@@ -33,6 +33,7 @@ function SelectDateRecettes(props)
     const [couleur,setCouleur] = useState("text-dark")
     const submitVol = (e)=>
     {
+      e.preventDefault()
         fetch('https://kobobsapi.herokuapp.com/api/getDailyRapportInfo/'+dateEnvoie.infodateEnvoie.dateInfo+'/', {
             method:'GET',
             headers: {'Content-Type': 'application/json'},
@@ -75,9 +76,7 @@ return (
     </Row>
     
     
-<Form>
-   
-
+<Form onSubmit={submitVol}>
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
@@ -89,13 +88,9 @@ return (
     
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
-        
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitVol(e)}>
+        <Button variant="outline-warning" type="submit">
         Valider 
-        </Button>
-        </Link>
-
+        </Button> 
         </Col>
     </Row>
 </Form>
