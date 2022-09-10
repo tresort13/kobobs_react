@@ -33,7 +33,7 @@ function SelectDateFormEnvoie(props)
     const [message,setMessage] = useState("Veuillez selectionner la date ")
     const [couleur,setCouleur] = useState("text-dark")
 
-    const submitVol =()=>
+    const submitVol =(e)=>
     {
       e.preventDefault()
         fetch('https://kobobsapi.herokuapp.com/api/getDailyRapportInfo/'+dateEnvoie.infodateEnvoie.dateInfo+'/', {
