@@ -125,13 +125,6 @@ console.log(props.envoie.infoEnvoie)
         </Link>
         </Col>
         
-        <Col xs={6}>
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit">
-        Modifier Informations
-        </Button>
-        </Link>
-        </Col>
     </Row>
     
     
