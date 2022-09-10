@@ -75,14 +75,12 @@ function FormEnvoiClient(props)
     const submitFormulaire = (event)=>
     {   
       const form = event.currentTarget;
-      if (form.checkValidity() === false) {
+      if (form.checkValidity() === false) 
+      {
         event.preventDefault();
         event.stopPropagation();
       }
-      else
-      {
         setValidated(true);
-      }
       
 
 
