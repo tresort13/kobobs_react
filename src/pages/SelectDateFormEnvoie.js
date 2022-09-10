@@ -32,7 +32,8 @@ function SelectDateFormEnvoie(props)
 
     const [message,setMessage] = useState("Veuillez selectionner la date ")
     const [couleur,setCouleur] = useState("text-dark")
-    const submitVol = (e)=>
+
+    const submitVol =()=>
     {
         fetch('https://kobobsapi.herokuapp.com/api/getDailyRapportInfo/'+dateEnvoie.infodateEnvoie.dateInfo+'/', {
             method:'GET',
@@ -42,7 +43,7 @@ function SelectDateFormEnvoie(props)
           .then( res => res.json())
           .then(
             res => {   
-            console.log(res)
+               console.log(res)
                props.dataDailyRapport(res)
                props.setDate(dateEnvoie.infodateEnvoie.dateInfo)
                navigate('/daily_rapport_envoie')
@@ -89,14 +90,10 @@ return (
 
     
     <Row className='justify-content-center pb-3'>
-        <Col xs ={4}>
-        
-        
+        <Col xs ={4}>  
         <Button variant="outline-warning" type="submit">
         Valider 
         </Button>
-
-
         </Col>
     </Row>
 </Form>
