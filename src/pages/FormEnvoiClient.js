@@ -72,9 +72,9 @@ function FormEnvoiClient(props)
     
 
 
-    const submitFormulaire = (event)=>
+    const submitFormulaire = ()=>
     {   
-      const form = event.currentTarget;
+     /* const form = event.currentTarget;
       if (form.checkValidity() === false) 
       {
         event.preventDefault();
@@ -91,8 +91,11 @@ function FormEnvoiClient(props)
         setEnvoie({infoEnvoie:{}})
          navigate('/envoi_info')
       }
-      
-      
+      */
+      tauxEchanger()      
+        props.dataEnvoie(envoie.infoEnvoie)
+        setEnvoie({infoEnvoie:{}})
+        // navigate('/envoi_info')
       
     }
 
@@ -127,7 +130,7 @@ function FormEnvoiClient(props)
         </Col>
     </Row>
     
-<Form noValidate validated={validated} onSubmit={submitFormulaire}>
+<Form  onSubmit={submitFormulaire}>
     <Row>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
