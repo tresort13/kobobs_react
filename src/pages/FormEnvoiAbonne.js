@@ -64,7 +64,7 @@ function FormEnvoiAbonne(props)
     
 
 
-      const submitFormulaire = (e)=>
+      const submitFormulaire = ()=>
       {     
         tauxEchanger()     
         props.dataEnvoieAbonne(props.abonne,envoieAbonne.infoEnvoieAbonne)   
@@ -102,7 +102,7 @@ function FormEnvoiAbonne(props)
         </Col>
     </Row>
     
-<Form>
+<Form onSubmit={submitFormulaire}>
       <Row>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Mozui (Beneficiare Informations)</u></b></p>
@@ -192,7 +192,7 @@ function FormEnvoiAbonne(props)
         <Col xs ={4}>
         
         <Link to="/envoi_abonne_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitFormulaire(e)}>
+        <Button variant="outline-warning" type="submit">
         Valider Informations
         </Button>
         </Link>
