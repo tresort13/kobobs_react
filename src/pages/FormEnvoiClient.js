@@ -79,9 +79,13 @@ function FormEnvoiClient(props)
         event.preventDefault();
         event.stopPropagation();
       }
-      setValidated(true);
-
+      else
+      {
+        setValidated(true);
+      }
       
+
+
       if(validated == true)
       {
         tauxEchanger()      
@@ -125,7 +129,7 @@ function FormEnvoiClient(props)
         </Col>
     </Row>
     
-<Form noValidate validated={validated} onSubmit={e=>submitFormulaire(e)}>
+<Form noValidate validated={validated} onSubmit={submitFormulaire}>
     <Row>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
