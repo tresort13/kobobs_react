@@ -56,12 +56,7 @@ console.log(props.envoie.infoEnvoie)
 
     }
 
-    const modifierFormulaire = (e)=>
-    {    
-      e.preventDefault()     
-      navigate('/form_envoie_client')   
-      //setEnvoie({infoEnvoie:{}})
-    }
+
     
 
    
@@ -132,11 +127,9 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
         envoyer
         </Button>
-        </Link>
         </Col>
         
     </Row>

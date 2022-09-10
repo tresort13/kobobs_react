@@ -76,13 +76,13 @@ return (
     </Row>
     
     
-<Form>
+<Form onSubmit={submitVol}>
    
 
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Control name="dateInfo"  type="date" onChange={e=>inputChanged(e)}  />
+        <Form.Control name="dateInfo"  type="date" onChange={e=>inputChanged(e)} required />
          </Form.Group>
         </Col>
     </Row>
@@ -91,11 +91,11 @@ return (
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitVol(e)}>
+        
+        <Button variant="outline-warning" type="submit">
         Valider 
         </Button>
-        </Link>
+
 
         </Col>
     </Row>

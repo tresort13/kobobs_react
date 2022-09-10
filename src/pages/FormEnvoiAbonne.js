@@ -32,6 +32,7 @@ function FormEnvoiAbonne(props)
 
     const [message,setMessage] = useState("Formulaire d'Envoie Abonné")
     const [couleur,setCouleur] = useState("text-dark")
+    const navigate = useNavigate()
 
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
@@ -40,7 +41,7 @@ function FormEnvoiAbonne(props)
         query: "(max-width: 1224px)"
       });
     
-      const navigate = useNavigate()
+      
     
       const tauxEchanger = ()=>
       {
@@ -112,7 +113,7 @@ function FormEnvoiAbonne(props)
     <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Kombo Ya Libota (Nom)</Form.Label>
-        <Form.Control name="nom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
+        <Form.Control name="nom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'  required/>
          </Form.Group>
         </Col>
 
@@ -190,14 +191,10 @@ function FormEnvoiAbonne(props)
     </Row>
   
     <Row className='justify-content-center pb-3'>
-        <Col xs ={4}>
-        
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+        <Col xs ={4}> 
         <Button variant="outline-warning" type="submit">
         Valider Informations
         </Button>
-        </Link>
-
         </Col>
     </Row>
   
