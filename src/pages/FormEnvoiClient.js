@@ -95,7 +95,7 @@ function FormEnvoiClient(props)
       tauxEchanger()      
         props.dataEnvoie(envoie.infoEnvoie)
         setEnvoie({infoEnvoie:{}})
-        // navigate('/envoi_info')
+         navigate('/envoi_info')
       
     }
 
