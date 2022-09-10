@@ -70,14 +70,7 @@ function ConfirmationRetraitInfo(props)
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3' >
-        <Col xs={6}>
-            <Link to="">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        
-        </Col>
-    </Row>
+
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Page de confirmation de rétrait</u></b> </p>

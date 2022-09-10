@@ -40,7 +40,7 @@ function FormEnvoiAbonneId(props)
 
       const submitcodeAbonne = (e)=>
       {
-                
+            e.preventDefault()    
           fetch('https://kobobsapi.herokuapp.com/api/getCodeAbonneInfo/'+codeAbonne.infoCodeAbonne.code_abonne+'/', {
                   method:'GET',
                   headers: {'Content-Type': 'application/json'},
@@ -86,16 +86,9 @@ function FormEnvoiAbonneId(props)
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3' >
-        <Col xs={6}>
-            <Link to="">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        
-        </Col>
-    </Row>
+
     
-<Form>
+<Form onSubmit={submitcodeAbonne}>
    
 
     <Row className='justify-content-center'>
@@ -110,11 +103,9 @@ function FormEnvoiAbonneId(props)
 
    <Row className='pb-3'>
        <Col>
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit"  onClick={e=>submitcodeAbonne(e)}>
+        <Button variant="outline-warning" type="submit" >
         Valider 
         </Button>
-        </Link>
         </Col>
     </Row>
   

@@ -88,18 +88,8 @@ function FormRetrouverCodeAbonne(props)
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3' >
-        <Col xs={6}>
-            <Link to="">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        
-        </Col>
-    </Row>
     
-<Form>
-   
-
+<Form onSubmit={submitNumero}>
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
@@ -112,11 +102,9 @@ function FormRetrouverCodeAbonne(props)
 
    <Row className='pb-3'>
        <Col>
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit"  onClick={submitNumero}>
+        <Button variant="outline-warning" type="submit">
         Valider 
         </Button>
-        </Link>
         </Col>
     </Row>
   
@@ -199,7 +187,7 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Header>
         <Modal.Body>
           <h4>Message : </h4>
-          <p className='text-danger'><b>Désolé l'information n'est pas correcte !!!</b>   
+          <p className='text-danger'><b>Désolé ce numéro de phone ou code abonné n'existe pas !!!</b>   
           </p>
         </Modal.Body>
         <Modal.Footer>

@@ -40,7 +40,7 @@ function FormRetrait(props)
 
     const submitcodeRetrait = (e)=>
     {
-              
+        e.preventDefault(e)      
         fetch('https://kobobsapi.herokuapp.com/api/getRetraitInfo/'+codeRetrait.infoCodeRetrait.code_retrait+'/', {
                 method:'GET',
                 headers: {'Content-Type': 'application/json'},
@@ -85,16 +85,9 @@ function FormRetrait(props)
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3' >
-        <Col xs={6}>
-            <Link to="">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        
-        </Col>
-    </Row>
+   
     
-<Form>
+<Form onSubmit={submitcodeRetrait}>
    
 
     <Row className='justify-content-center'>
@@ -109,11 +102,9 @@ function FormRetrait(props)
 
    <Row className='pb-3'>
        <Col>
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit"  onClick={e=>submitcodeRetrait(e)}>
+        <Button variant="outline-warning" type="submit" >
         Valider 
         </Button>
-        </Link>
         </Col>
     </Row>
   

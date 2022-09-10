@@ -55,14 +55,7 @@ console.log(props.abonneInfo)
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3' >
-        <Col xs={6}>
-            <Link to="/tracer_baggages">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        
-        </Col>
-    </Row>
+
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>

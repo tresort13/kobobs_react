@@ -80,7 +80,7 @@ return (
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Control name="dateInfo"  type="date" onChange={e=>inputChanged(e)}  />
+        <Form.Control name="dateInfo"  type="date" onChange={e=>inputChanged(e)}  required/>
          </Form.Group>
         </Col>
     </Row>

@@ -25,13 +25,7 @@ function MenuRapportEnvoie(props)
 <>
 <Header username={props.username} />
 {isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
-    <Row className='justify-content-center mb-5 pt-3' >
-        <Col xs={"auto"}>
-            <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:150}}></Image>
-            </Link>
-        </Col>
-    </Row>
+    
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/select_date_form_envoie" style={{color:'white',textDecorationLine:'none'}}>

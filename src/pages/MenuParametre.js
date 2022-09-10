@@ -25,13 +25,7 @@ function MenuParametre(props)
 <>
 <Header username={props.username} />
 {isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
-    <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={"auto"}>
-            <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
-            </Link>
-        </Col>
-    </Row>
+    
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>

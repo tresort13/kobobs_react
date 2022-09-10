@@ -36,6 +36,7 @@ function SelectMonthRecettes(props)
     console.log(moisEnvoie.infomoisEnvoie.moisInfo )
     const submitVol = (e)=>
     {
+      e.preventDefault()
         fetch('https://kobobsapi.herokuapp.com/api/getMonthlyRapportInfo/'+moisEnvoie.infomoisEnvoie.moisInfo+'/', {
             method:'GET',
             headers: {'Content-Type': 'application/json'},
@@ -78,13 +79,13 @@ return (
     </Row>
     
     
-<Form>
+<Form onSubmit={submitVol}>
    
 
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Control name="moisInfo"  type="month" onChange={e=>inputChanged(e)}  />
+        <Form.Control name="moisInfo"  type="month" onChange={e=>inputChanged(e)}  required/>
          </Form.Group>
         </Col>
     </Row>
@@ -92,13 +93,9 @@ return (
     
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
-        
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitVol(e)}>
+        <Button variant="outline-warning" type="submit">
         Valider 
         </Button>
-        </Link>
-
         </Col>
     </Row>
 </Form>
