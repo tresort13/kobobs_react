@@ -32,7 +32,7 @@ function SelectDateFormEnvoie(props)
 
     const [message,setMessage] = useState("Veuillez selectionner la date ")
     const [couleur,setCouleur] = useState("text-dark")
-    const submitVol = ()=>
+    const submitVol = (e)=>
     {
         fetch('https://kobobsapi.herokuapp.com/api/getDailyRapportInfo/'+dateEnvoie.infodateEnvoie.dateInfo+'/', {
             method:'GET',
@@ -76,13 +76,13 @@ return (
     </Row>
     
     
-<Form onSubmit={submitVol}>
+<Form>
    
 
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Control name="dateInfo"  type="date" onChange={e=>inputChanged(e)}  required/>
+        <Form.Control name="dateInfo"  type="date" onChange={e=>inputChanged(e)}  />
          </Form.Group>
         </Col>
     </Row>
@@ -92,7 +92,7 @@ return (
         <Col xs ={4}>
         
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit">
+        <Button variant="outline-warning" type="submit" onClick={e=>submitVol(e)}>
         Valider 
         </Button>
         </Link>
