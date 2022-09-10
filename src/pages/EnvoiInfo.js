@@ -10,7 +10,7 @@ import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
-import InputGroup from 'react-bootstrap/InputGroup';
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -18,7 +18,7 @@ const useState = React.useState
 function EnvoiInfo(props)
 {
 
-    const [message,setMessage] = useState("Veuillez Vérifier les informations avant validation")
+    const [message,setMessage] = useState("Veuillez Vérifier les informations avant d'envoyer")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
@@ -29,6 +29,7 @@ function EnvoiInfo(props)
       });
     
       const navigate = useNavigate()
+      const [modalShow, setModalShow] = React.useState(false);
     
 console.log(props.envoie.infoEnvoie)
 
@@ -44,11 +45,12 @@ console.log(props.envoie.infoEnvoie)
                 res => {   
                  props.dataEnvoie3(res)
                  console.log(res)
+                 navigate('/confirmation_envoie_info')
                 }
               )
               .catch( (error) =>
                 {
-                    
+                  setModalShow(true)  
                    console.log(error)
                 } )
 
@@ -130,9 +132,9 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
-        Valider Informations
+        envoyer
         </Button>
         </Link>
         </Col>
@@ -227,10 +229,36 @@ console.log(props.envoie.infoEnvoie)
             <p></p>
           </Col>
         </Row>
+  <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <Footer />
         </>
        
     )
+}
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Echec d'envoi
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Message : </h4>
+        <p className='text-danger'><b>Désolé veuillez verifier que vous avez renseigner tous les champs !!!</b>   
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+      </Modal.Footer>
+    </Modal>
+  );
 }
 
 export default EnvoiInfo;
