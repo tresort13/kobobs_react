@@ -40,7 +40,7 @@ function FormEnvoiAbonneId(props)
 
       const submitcodeAbonne = (e)=>
       {
-   
+            e.preventDefault()
           fetch('https://kobobsapi.herokuapp.com/api/getCodeAbonneInfo/'+codeAbonne.infoCodeAbonne.code_abonne+'/', {
                   method:'GET',
                   headers: {'Content-Type': 'application/json'},
