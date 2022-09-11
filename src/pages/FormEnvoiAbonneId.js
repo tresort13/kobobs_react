@@ -41,8 +41,9 @@ function FormEnvoiAbonneId(props)
       const submitcodeAbonne = (e)=>
       {
             e.preventDefault()
-          fetch('https://kobobsapi.herokuapp.com/api/getCodeAbonneInfo/'+codeAbonne.infoCodeAbonne.code_abonne+'/', {
-                  method:'GET',
+
+            fetch('https://kobobsapi.herokuapp.com/api/getCodeAbonneInfo/'+codeAbonne.infoCodeAbonne.code_abonne+'/', {
+                  method: 'GET',
                   headers: {'Content-Type': 'application/json'},
                  // body: JSON.stringify(codeRetrait.infoCodeRetrait)
                 })
@@ -182,7 +183,7 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Header>
         <Modal.Body>
           <h4>Message : </h4>
-          <p className='text-danger'><b>Désolé ce code abonné  n'existe pas !!!</b>   
+          <p className='text-danger'><b>Désolé ce code abonné ou téléphone n'existe pas !!!</b>   
           </p>
         </Modal.Body>
         <Modal.Footer>
