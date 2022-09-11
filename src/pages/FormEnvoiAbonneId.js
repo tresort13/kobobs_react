@@ -40,7 +40,7 @@ function FormEnvoiAbonneId(props)
 
       const submitcodeAbonne = (e)=>
       {
-            e.preventDefault()    
+   
           fetch('https://kobobsapi.herokuapp.com/api/getCodeAbonneInfo/'+codeAbonne.infoCodeAbonne.code_abonne+'/', {
                   method:'GET',
                   headers: {'Content-Type': 'application/json'},
@@ -88,7 +88,7 @@ function FormEnvoiAbonneId(props)
 
 
     
-<Form>
+<Form onSubmit={submitcodeAbonne}>
    
 
     <Row className='justify-content-center'>
@@ -103,7 +103,7 @@ function FormEnvoiAbonneId(props)
 
    <Row className='pb-3'>
        <Col>
-        <Button variant="outline-warning" type="submit" onClick={submitcodeAbonne} >
+        <Button variant="outline-warning" type="submit">
         Valider 
         </Button>
         </Col>
