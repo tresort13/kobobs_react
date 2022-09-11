@@ -90,7 +90,7 @@ function AbonneFormNonValideInfo(props)
                 )
                 .catch( (error) =>
                   {
-                    setModalShow(true)
+                    
                       console.log(error)
                   } )
   
@@ -115,6 +115,7 @@ function AbonneFormNonValideInfo(props)
                 )
                 .catch( (error) =>
                   {
+                    setModalShow(true)
                       console.log(error)
                   } )
   
