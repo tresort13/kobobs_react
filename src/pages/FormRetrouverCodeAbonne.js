@@ -39,9 +39,9 @@ function FormRetrouverCodeAbonne(props)
     
 
 
-    const submitNumero = ()=>
+    const submitNumero = (e)=>
     {
-              
+          e.preventDefault()
         fetch('https://kobobsapi.herokuapp.com/api/getAbonneInfo/'+numeroAbonne.infoNumeroAbonne.numero+'/', {
                 method:'GET',
                 headers: {'Content-Type': 'application/json'},

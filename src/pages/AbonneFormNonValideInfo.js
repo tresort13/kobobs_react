@@ -90,6 +90,7 @@ function AbonneFormNonValideInfo(props)
                 )
                 .catch( (error) =>
                   {
+                    setModalShow(true)
                       console.log(error)
                   } )
   
