@@ -43,7 +43,7 @@ function FormEnvoiAbonneId(props)
             e.preventDefault()
 
             fetch('https://kobobsapi.herokuapp.com/api/getCodeAbonneInfo/'+codeAbonne.infoCodeAbonne.code_abonne+'/', {
-                  method: 'GET',
+                  method:'get',
                   headers: {'Content-Type': 'application/json'},
                  // body: JSON.stringify(codeRetrait.infoCodeRetrait)
                 })
@@ -60,8 +60,6 @@ function FormEnvoiAbonneId(props)
                     setModalShow(true)
                       console.log(error)
                   } )
-  
-                  
   
                   setCodeAbonne({infoCodeAbonne:{code_abonne:""}})
       }

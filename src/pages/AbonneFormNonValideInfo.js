@@ -28,6 +28,7 @@ function AbonneFormNonValideInfo(props)
     }})
 
     const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow2, setModalShow2] = React.useState(false);
 
     const navigate = useNavigate()
 
@@ -94,6 +95,30 @@ function AbonneFormNonValideInfo(props)
   
       }
 
+      const suprimerOperation = (e)=>
+      {       
+          e.preventDefault()
+          console.log(e.target.value)
+         // setStatus("Code Retrait Valide")     
+          fetch('https://kobobsapi.herokuapp.com/api/suprimer/'+e.target.value+'/', {
+                  method: 'DELETE',
+                  headers: {'Content-Type': 'application/json'},
+                 // body: JSON.stringify(status.statusInfo.statusRetrait)
+                })
+                .then( res => res.json())
+                .then(
+                  res => {   
+                    setModalShow2(true)
+                     navigate('/form_abonne_non_valide')
+                  }
+                )
+                .catch( (error) =>
+                  {
+                      console.log(error)
+                  } )
+  
+      }
+
    
    
     return (
@@ -134,6 +159,14 @@ function AbonneFormNonValideInfo(props)
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button name='validate' value={value.code_retrait} className='pt-3' variant="warning" type="submit" onClick={e=>validateCodeRetrait(e)}>
         Valider le code de retrait
+        </Button>
+        </Link>
+        </Col>
+
+        <Col xs={6}>
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+        <Button name='validate' value={value.code_retrait} className='pt-3' variant="danger" type="submit" onClick={e=>suprimerOperation(e)}>
+        suprimer opération
         </Button>
         </Link>
         </Col>
@@ -200,6 +233,7 @@ function AbonneFormNonValideInfo(props)
           </Col>
         </Row>
 <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+<MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
 <Footer />
         </>
        
@@ -222,6 +256,31 @@ function MyVerticallyCenteredModal(props) {
         <Modal.Body>
           <h4>Changement Status Code Retrait Reussi : </h4>
           <p className='text-success'><b>le code de retrait a été validé avec success </b>   
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+
+  function MyVerticallyCenteredModal2(props) {
+    return (
+      <Modal
+        {...props}
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Suppression Réussie
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Message : </h4>
+          <p className='text-success'><b>le formulaire d'envoi a été supprimé avec succès</b>   
           </p>
         </Modal.Body>
         <Modal.Footer>
