@@ -46,7 +46,7 @@ function ConfirmationEnvoieInfo(props)
    
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Page de confirmation d'envoie</u></b> </p>
+      <p className='couleur2'><b><u>Page de confirmation d'envoi</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
@@ -54,7 +54,7 @@ function ConfirmationEnvoieInfo(props)
         <p className='text-light'>Kombo Mobimba ya Mozui (Noms complets Beneficiare): <b className='couleur2'>{props.envoie3.infoEnvoie.nom_beneficiaire} {props.envoie3.infoEnvoie.postnom_beneficiaire} {props.envoie3.infoEnvoie.prenom_beneficiaire}</b> </p>
         <p className='text-light'>Ekolo Motindi (Pays Expediteur) : <b className='couleur2'> {props.envoie3.infoEnvoie.pays_expediteur}</b></p>
         <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='couleur2'> {props.envoie3.infoEnvoie.pays_beneficiaire}</b></p>
-        <p className='text-light'>Mbongo ya kozwa epayi ya Motindi(Montant à récupérer): <b className='text-dark bg-warning'>{Number(props.envoie3.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
+        <p className='text-light'>Mbongo ya kozwa epayi ya Mozui(Montant à récupérer): <b className='text-dark bg-warning'>{Number(props.envoie3.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-light'>Mbongo yako Futa(Montant à payer): <b className='text-dark bg-warning'>{Number(props.envoie3.infoEnvoie.montant_total).toFixed(2)} £</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie3.infoEnvoie.type_service}</b> </p>
         <p className='text-light'>Code Retrait : <b className='text-dark bg-warning'> {props.envoie3.infoEnvoie.code_retrait} ({props.envoie3.infoEnvoie.status_retrait})</b> </p>
@@ -71,7 +71,7 @@ function ConfirmationEnvoieInfo(props)
         <Col xs={6}>
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
-        ok
+        fermer
         </Button>
         </Link>
         </Col>

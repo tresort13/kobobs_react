@@ -6,11 +6,11 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import {Link} from  'react-router-dom';
+import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
-import InputGroup from 'react-bootstrap/InputGroup';
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -18,7 +18,7 @@ const useState = React.useState
 function EnvoieAbonneInfo(props)
 {
 
-    const [message,setMessage] = useState("Veuillez Vérifier les informations avant validation")
+    const [message,setMessage] = useState("Veuillez Vérifier les informations avant d'envoyer")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
@@ -27,13 +27,18 @@ function EnvoieAbonneInfo(props)
       const isMobileOrTablet = useMediaQuery({
         query: "(max-width: 1224px)"
       });
+
+      const navigate = useNavigate()
+    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow2, setModalShow2] = React.useState(false);
     
   
     
 console.log(props.envoie.infoEnvoie)
 
-    const submitEnvoie = ()=>
-    {      
+    const submitEnvoie = (e)=>
+    {    
+      e.preventDefault()  
         fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaireAbonne/',{
                 method:'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -41,21 +46,20 @@ console.log(props.envoie.infoEnvoie)
               })
               .then( res => res.json())
               .then(
-                res => {   
+                res => {  
+                 setModalShow(true) 
                  props.dataEnvoie3(res)
                  console.log(res)
+                 navigate('/confirmation_envoie_info')
                 }
               )
               .catch( (error) =>
                 {
-                    
+                  setModalShow2(true)  
                    console.log(error)
                 } )
 
     }
-
-
-    
 
    
     return (
@@ -118,11 +122,9 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit" onClick={submitEnvoie}>
-        Valider Informations
+        envoyer
         </Button>
-        </Link>
         </Col>
         
     </Row>
@@ -215,10 +217,62 @@ console.log(props.envoie.infoEnvoie)
             <p></p>
           </Col>
         </Row>
+   <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+   <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
 <Footer />
         </>
        
     )
+}
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Envoi Réussi
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Message : </h4>
+        <p className='text-success'><b>Votre formulaire a été envoyé avec succès</b>   
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+function MyVerticallyCenteredModal2(props) {
+  return (
+    <Modal
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Echec Envoi 
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Message : </h4>
+        <p className='text-danger'><b>Désolé veuillez verifier que vous avez renseigner tous les champs !!!</b>   
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+      </Modal.Footer>
+    </Modal>
+  );
 }
 
 export default EnvoieAbonneInfo;

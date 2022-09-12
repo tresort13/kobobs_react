@@ -72,10 +72,10 @@ function Header(props)
         <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column">
         <Nav.Link href="/menu_envoie"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Envoi Argent</i></Button></Nav.Link>
         <Nav.Link href="/menu_retrait"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Retrait Argent</i></Button></Nav.Link>
-        <Nav.Link href="/menu_gestion_abonne"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestions Abonnes</i></Button></Nav.Link>
-        <Nav.Link href=""><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestions Operations</i></Button></Nav.Link>
-        <Nav.Link href=""><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Parametres</i></Button></Nav.Link>
-        <Nav.Link href=""><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion d'utilisateur</i></Button></Nav.Link>
+        <Nav.Link href="/menu_gestion_abonne"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Service Clients</i></Button></Nav.Link>
+        <Nav.Link href="/menu_gestion_operation"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion Operations</i></Button></Nav.Link>
+        <Nav.Link href="/menu_gestion_recettes"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion Recettes</i></Button></Nav.Link>
+        <Nav.Link href="/menu_users"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion Utilisateurs</i></Button></Nav.Link>
           
                   
                 </Nav>
