@@ -76,7 +76,7 @@ function Homepage(props)
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
               <Link to="/menu_gestion_operation">
-              <Image src={require('./kobo_audit.jpg')}  className='rounded-pill' style={{width:200}}></Image>
+              <Image src={require('./kobo_operation.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
