@@ -155,7 +155,7 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body>
         <h4>Message : </h4>
-        <p className='text-danger'><b>Votre formulaire a été envoyé avec succès</b>   
+        <p className='text-success'><b>Votre formulaire a été envoyé avec succès</b>   
         </p>
       </Modal.Body>
       <Modal.Footer>

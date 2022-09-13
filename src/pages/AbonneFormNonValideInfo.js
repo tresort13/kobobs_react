@@ -21,7 +21,7 @@ function AbonneFormNonValideInfo(props)
 
     const [envoie4,setEnvoie4] = useState([])
        
-    const [message,setMessage] = useState("Liste des formulaires non validés")
+    const [message,setMessage] = useState("formulaire non validé")
     const [couleur,setCouleur] = useState("text-dark")
     const[status,setStatus] = useState({statusInfo :{
         statusRetrait :"",
@@ -99,6 +99,7 @@ function AbonneFormNonValideInfo(props)
       const suprimerOperation = (e)=>
       {       
           e.preventDefault()
+          setModalShow2(true)
           console.log(e.target.value)
          // setStatus("Code Retrait Valide")     
           fetch('https://kobobsapi.herokuapp.com/api/suprimer/'+e.target.value+'/', {
@@ -109,13 +110,11 @@ function AbonneFormNonValideInfo(props)
                 .then( res => res.json())
                 .then(
                   res => {   
-                    setModalShow2(true)
                      navigate('/form_abonne_non_valide')
                   }
                 )
                 .catch( (error) =>
                   {
-                    setModalShow(true)
                       console.log(error)
                   } )
   
