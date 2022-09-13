@@ -26,7 +26,7 @@ function FormEnvoiAbonne(props)
         numero_beneficiaire : '',
         pays_beneficiaire : 'RD Congo',
         montant_beneficiaire : '',
-        type_service : ''
+        type_service : 'Kozua na maboko (kozua na nzela ya agence)'
         }})
     
 
@@ -143,9 +143,9 @@ function FormEnvoiAbonne(props)
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
         <Form.Select name='pays_beneficiaire' value={envoieAbonne.infoEnvoieAbonne.pays_beneficiaire} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
-         <option>Ekolo (Pays)</option>
-         <option value="Angleterre">Angleterre</option>
-         <option value="RD Congo">RD Congo</option>
+         <option value='RD Congo'>RD Congo</option>
+         <option value="Angleterre">RD Congo</option>
+         <option value="RD Congo">Angleterre</option>
          
          </Form.Select>
          </Form.Group>
@@ -170,7 +170,7 @@ function FormEnvoiAbonne(props)
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
         <Form.Select name="type_service" value={envoieAbonne.infoEnvoieAbonne.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
-        <option>Nzela yako zwa Mbongo (Type de retrait)</option>
+        <option value='Kozua na maboko (kozua na nzela ya agence)'>Kozua na maboko (kozua na nzela ya agence)</option>
          <option value= "Kozua na maboko (kozua na nzela ya agence)">Kozua na maboko (kozua na nzela ya agence)</option>
          <option value="Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
          

@@ -205,7 +205,7 @@ function App() {
       montant_pour_payer :'',
       frais_envoie : '',
       frais_tva : '',
-      type_service : '',
+      type_service : 'Kozua na maboko (kozua na nzela ya agence)',
       code_abonne : ''
       }};
     })
@@ -260,7 +260,7 @@ function App() {
       numero_beneficiaire : '',
       pays_beneficiaire : 'RD Congo',
       montant_beneficiaire : '',
-      type_service : '',
+      type_service : 'Kozua na maboko (kozua na nzela ya agence)',
       frais_envoie : '',
       montant_total : '',
       code_retrait : '',
@@ -326,7 +326,7 @@ function App() {
       pays_beneficiaire : 'RD Congo',
       montant_envoie_sans_frais : '',
       montant_beneficiaire : '',
-      type_service : '',
+      type_service : 'Kozua na maboko (kozua na nzela ya agence)',
       frais_envoie : '',
       frais_tva : '',
       montant_total : '',

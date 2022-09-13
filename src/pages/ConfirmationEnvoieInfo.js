@@ -10,7 +10,7 @@ import {Link} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
-import InputGroup from 'react-bootstrap/InputGroup';
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -21,6 +21,7 @@ function ConfirmationEnvoieInfo(props)
 
     const [message,setMessage] = useState("Page de confirmation envoie")
     const [couleur,setCouleur] = useState("text-dark")
+    const [modalShow, setModalShow] = React.useState(true);
 
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
@@ -132,10 +133,36 @@ function ConfirmationEnvoieInfo(props)
             <p></p>
           </Col>
         </Row>
+  <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <Footer />
         </>
        
     )
+}
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+        Envoi Réussi
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Message : </h4>
+        <p className='text-danger'><b>Votre formulaire a été envoyé avec succès</b>   
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+      </Modal.Footer>
+    </Modal>
+  );
 }
 
 export default ConfirmationEnvoieInfo;

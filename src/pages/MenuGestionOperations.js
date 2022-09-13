@@ -30,7 +30,7 @@ function MenuGestionOperations(props)
         <Col xs = {"auto"}>
         <Link to="/menu_rapport_envoie" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Opérations Envoie</pre></b>
+        <b className='couleur2'><pre>Opérations Envoi</pre></b>
         </Button>
         </Link>
         </Col>

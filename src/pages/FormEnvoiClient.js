@@ -33,7 +33,7 @@ function FormEnvoiClient(props)
     numero_beneficiaire : '',
     pays_beneficiaire : 'RD Congo',
     montant_beneficiaire : '',
-    type_service : ''
+    type_service : 'Kozua na maboko (kozua na nzela ya agence)'
     }})
 
     const [validated, setValidated] = useState(false);
@@ -287,7 +287,7 @@ function FormEnvoiClient(props)
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
         <Form.Select name="type_service" value={envoie.infoEnvoie.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
-        <option>Nzela yako zwa Mbongo (Type de retrait)</option>
+        <option value="Kozua na maboko (kozua na nzela ya agence)">Kozua na maboko (kozua na nzela ya agence)</option>
          <option value= "Kozua na maboko (kozua na nzela ya agence)">Kozua na maboko (kozua na nzela ya agence)</option>
          <option value="Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
          
