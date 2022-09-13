@@ -30,7 +30,6 @@ function EnvoiInfo(props)
     
       const navigate = useNavigate()
       const [modalShow, setModalShow] = React.useState(false);
-      const [modalShow2, setModalShow2] = React.useState(false);
     
 console.log(props.envoie.infoEnvoie)
 
@@ -44,16 +43,18 @@ console.log(props.envoie.infoEnvoie)
               .then( res => res.json())
               .then(
                 res => { 
-                  setModalShow2(true)   
+                  
                  props.dataEnvoie3(res)
                  console.log(res)
                  navigate('/confirmation_envoie_info')
+                 
                 }
               )
               .catch( (error) =>
                 {
                   setModalShow(true)  
                    console.log(error)
+                   navigate('/envoi_info')
                 } )
 
     }
@@ -216,7 +217,6 @@ console.log(props.envoie.infoEnvoie)
             <p></p>
           </Col>
         </Row>
-    <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
   <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <Footer />
         </>
@@ -249,29 +249,6 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-function MyVerticallyCenteredModal2(props) {
-  return (
-    <Modal
-      {...props}
-      size="md"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-        Envoi Réussi
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h4>Message : </h4>
-        <p className='text-danger'><b>Votre formulaire a été envoyé avec succès</b>   
-        </p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
+
 
 export default EnvoiInfo;
