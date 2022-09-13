@@ -29,8 +29,8 @@ function MenuGestionOperations(props)
     <Row className='justify-content-center pb-3 pt-3'>
         <Col xs = {"auto"}>
         <Link to="/menu_rapport_envoie" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Opérations Envoi</pre></b>
+        <Button variant='warning'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='text-dark'><pre>Opérations Envoi</pre></b>
         </Button>
         </Link>
         </Col>
@@ -41,8 +41,8 @@ function MenuGestionOperations(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/menu_rapport_retrait" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Opérations Retrait</pre></b>
+        <Button variant='warning'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='text-dark'><pre>Opérations Retrait</pre></b>
         </Button>
         </Link>
         </Col>

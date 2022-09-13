@@ -54,8 +54,8 @@ function MenuUsers(props)
     <Row className='justify-content-center pb-3 pt-3'>
         <Col xs = {"auto"}>
         <Link to="/users_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  onClick={submit} style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Utilisateurs</pre></b>
+        <Button variant='warning'  onClick={submit} style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='text-dark'><pre>Utilisateurs</pre></b>
         </Button>
         </Link>
         </Col>
@@ -66,8 +66,8 @@ function MenuUsers(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <a href='https://kobobsapi.herokuapp.com/admin/' target='_blank'  style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Parametres Utilisateurs<pre></pre></b>
+        <Button variant='warning'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='text-dark'>Parametres Utilisateurs<pre></pre></b>
         </Button>
         </a>
         </Col>

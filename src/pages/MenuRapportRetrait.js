@@ -29,8 +29,8 @@ function MenuRapportRetrait(props)
     <Row className='justify-content-center pb-3 pt-3'>
         <Col xs = {"auto"}>
         <Link to="/select_date_form_retrait" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Rapport Jounalier</pre></b>
+        <Button variant='warning'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='text-dark'><pre>Rapport Jounalier</pre></b>
         </Button>
         </Link>
         </Col>
@@ -41,8 +41,8 @@ function MenuRapportRetrait(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/select_mois_form_retrait" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Rapport Mensuel </pre></b>
+        <Button variant='warning'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='text-dark'><pre>Rapport Mensuel </pre></b>
         </Button>
         </Link>
         </Col>

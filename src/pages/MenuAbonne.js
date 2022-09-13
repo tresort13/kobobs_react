@@ -62,8 +62,8 @@ function MenuAbonne(props)
     <Row className='justify-content-center pb-3 pt-3'>
         <Col xs = {"auto"}>
         <Link to="/form_abonne_non_valide" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom' onClick={submit}>
-        {count > 0 ? <b className='couleur2'><pre>Formulaires Clients non validé <Badge bg="danger">{count}</Badge></pre> </b> : <b className='couleur2'><pre>Formulaires Clients non validé </pre></b>}
+        <Button variant='warning'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom' onClick={submit}>
+        {count > 0 ? <b className='text-dark'><pre>Formulaires Clients non validé <Badge bg="danger">{count}</Badge></pre> </b> : <b className='couleur2'><pre>Formulaires Clients non validé </pre></b>}
         </Button>
         </Link>
         </Col>
@@ -74,8 +74,8 @@ function MenuAbonne(props)
     <Row className='justify-content-center pb-3'>
         <Col xs = {"auto"}>
         <Link to="/form_retrouver_abonne" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><pre>Retrouver un Abonné</pre></b>
+        <Button variant='warning'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='text-dark'><pre>Retrouver un Abonné</pre></b>
         </Button>
         </Link>
         </Col>
