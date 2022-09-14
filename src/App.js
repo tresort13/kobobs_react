@@ -437,7 +437,7 @@ function App() {
       frais_tva : ((Number(donne2.montant_beneficiaire).toFixed(2) * Number(taux).toFixed(2)) * 1)/100,
       type_service : donne2.type_service,
       code_abonne : donne1.infoAbonne.code_abonne,
-      numero_transfer : donne2.infoAbonne.numero_transfer
+      numero_transfer : donne2.numero_transfer
       }})
   }
  
@@ -535,7 +535,7 @@ function App() {
 
         <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonneId username = {username} dataAbonne={dataAbonne} />} >
         </Route>
-        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne}/>} >
+        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne} setTaux={setTaux}/>} >
         </Route>
 
         <Route path="/select_date_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormEnvoie username = {username} dataDailyRapport={dataDailyRapport} setDate={setDate}/>} >
