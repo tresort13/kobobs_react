@@ -66,8 +66,9 @@ function FormEnvoiAbonne(props)
     
 
 
-      const submitFormulaire = ()=>
-      {     
+      const submitFormulaire = (e)=>
+      {   
+        e.preventDefault()  
         tauxEchanger()     
         props.dataEnvoieAbonne(props.abonne,envoieAbonne.infoEnvoieAbonne)   
         console.log(props.abonne) 
@@ -181,7 +182,7 @@ function FormEnvoiAbonne(props)
         {envoieAbonne.infoEnvoieAbonne.type_service == "Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)" ? <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>* Numero yako tinda mbongo (numero de tranfer)</Form.Label>
-        <Form.Control name="numero_transfer"  value={envoieAbonne.infoEnvoieAbonne.numero_transfer} onChange={e=>inputChanged(e)} type="text" placeholder='numero ya transfer'  required/>
+        <Form.Control name="numero_transfer"   onChange={e=>inputChanged(e)} type="text" placeholder='numero ya transfer'  required/>
        
          </Form.Group>
         </Col> : <span></span>}

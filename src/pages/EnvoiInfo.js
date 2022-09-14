@@ -34,7 +34,8 @@ function EnvoiInfo(props)
 console.log(props.envoie.infoEnvoie)
 
     const submitEnvoie = (e)=>
-    {      
+    {   
+      e.preventDefault()
         fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
                 method:'POST',
                 headers: {'Content-Type': 'application/json'},
