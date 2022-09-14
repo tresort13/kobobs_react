@@ -58,7 +58,7 @@ function ConfirmationEnvoieInfo(props)
         <p className='text-light'>Mbongo ya kozwa epayi ya Motindi(Montant à récupérer): <b className='text-dark bg-warning'>{Number(props.envoie3.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-light'>Mbongo yako Futa(Montant à payer): <b className='text-dark bg-warning'>{Number(props.envoie3.infoEnvoie.montant_total).toFixed(2)} £</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie3.infoEnvoie.type_service}</b> </p>
-        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='bg-warning text-dark'>{props.envoie3.infoEnvoie.numero_transfer}</b> </p>
+        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='couleur2'>{props.envoie3.infoEnvoie.numero_transfer}</b> </p>
         <p className='text-light'>Code Retrait : <b className='text-dark bg-warning'> {props.envoie3.infoEnvoie.code_retrait} </b> ({props.envoie3.infoEnvoie.status_retrait})</p>
         <p className='text-light'>Code Abonné : <b className='text-dark bg-warning'> {props.envoie3.infoEnvoie.code_abonne} </b></p>
         <p className='text-light'>date et heure : <b className='couleur2'> {JSON.stringify(props.envoie3.infoEnvoie.date_heure_operation)}</b></p>

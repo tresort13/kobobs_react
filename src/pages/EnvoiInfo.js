@@ -114,7 +114,7 @@ console.log(props.envoie.infoEnvoie)
         <Col xs={12}>
         <p className='text-light'>Mbongo ya kozwa epayi ya Mozui(Montant à recevoir chez le Bénéficiare): <b className='couleur2'>{Number(props.envoie.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie.infoEnvoie.type_service}</b> </p>
-        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='bg-warning text-dark'>{props.envoie.infoEnvoie.numero_transfer}</b> </p>
+        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='couleur2'>{props.envoie.infoEnvoie.numero_transfer}</b> </p>
         <p className='text-light'>Mbongo Yako Futa Pona ko Tinda(Montant Total à payer): <b className='bg-warning text-dark'>{Number(props.envoie.infoEnvoie.montant_pour_payer).toFixed(2)} £</b> </p>
         
         </Col>

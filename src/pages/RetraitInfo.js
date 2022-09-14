@@ -124,6 +124,7 @@ const navigate = useNavigate()
         <Col xs={12}>
         <p className='text-light'>Mbongo yako zwa epayi ya Mozui(Montant): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
+        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='bg-warning text-dark'>{props.envoie2.infoEnvoie.numero_transfer}</b> </p>
         </Col>
     </Row>
 

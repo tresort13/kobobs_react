@@ -78,6 +78,7 @@ function DetailsEnvoieInfo(props)
         <p className='text-light'>Mbongo yako zwa (Montant à Recuperer): <b className='text-dark bg-warning'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-light'>Mbongo yako futa (Montant à payer): <b className='text-dark bg-warning'>{Number(value.montant_total).toFixed(2)} £</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='text-dark bg-warning'>{value.type_service}</b> </p>
+        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='couleur2'>{value.numero_transfer}</b> </p>
         <p className='text-light'>Code Retrait : <b className='text-dark bg-warning'>{value.code_retrait}</b> </p>
         <p className='text-light'>Status Retrait : <b className='text-dark bg-warning'>{value.status_retrait}</b> </p>
         <p className='text-light'>date et heure : <b className='couleur2'> {value.date_heure_operation}</b></p> 
