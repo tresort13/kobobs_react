@@ -26,11 +26,12 @@ function FormEnvoiAbonne(props)
         numero_beneficiaire : '',
         pays_beneficiaire : 'RD Congo',
         montant_beneficiaire : '',
-        type_service : 'Kozua na maboko (kozua na nzela ya agence)'
+        type_service : 'Kozua na maboko (kozua na nzela ya agence)',
+        numero_transfer :''
         }})
     
 
-    const [message,setMessage] = useState("Formulaire d'Envoie Abonné")
+    const [message,setMessage] = useState("Formulaire d'Envoi Abonné")
     const [couleur,setCouleur] = useState("text-dark")
     const navigate = useNavigate()
 
@@ -176,6 +177,14 @@ function FormEnvoiAbonne(props)
          </Form.Select>
          </Form.Group>
         </Col>
+
+        {envoie.infoEnvoie.type_service == "Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)" ? <Col xs = {12}>
+        <Form.Group className="mb-3" controlId="formBasicText" >
+        <Form.Label className='couleur2'>* Numero yako tinda mbongo (numero de tranfer)</Form.Label>
+        <Form.Control name="numero_transfer"  value={envoieAbonne.infoEnvoieAbonne.numero_transfer} onChange={e=>inputChanged(e)} type="text" placeholder='numero ya transfer'  required/>
+       
+         </Form.Group>
+        </Col> : <span></span>}
     </Row>
     <Row>
       <hr style={{color:"darkorange"}}></hr>

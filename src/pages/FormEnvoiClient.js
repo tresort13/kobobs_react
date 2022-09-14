@@ -33,7 +33,8 @@ function FormEnvoiClient(props)
     numero_beneficiaire : '',
     pays_beneficiaire : 'RD Congo',
     montant_beneficiaire : '',
-    type_service : 'Kozua na maboko (kozua na nzela ya agence)'
+    type_service : 'Kozua na maboko (kozua na nzela ya agence)',
+    numero_transfer : ''
     }})
 
     const [validated, setValidated] = useState(false);
@@ -267,7 +268,7 @@ function FormEnvoiClient(props)
         {envoie.infoEnvoie.type_service == "Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)" ? <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>* Numero yako tinda mbongo (numero de tranfer)</Form.Label>
-        <Form.Control name="numero_envoi"  onChange={e=>inputChanged(e)} type="text" placeholder='numero ya transfer'  required/>
+        <Form.Control name="numero_transfer" value={envoie.infoEnvoie.numero_transfer}  onChange={e=>inputChanged(e)} type="text" placeholder='numero ya transfer'  required/>
        
          </Form.Group>
         </Col> : <span></span>}
