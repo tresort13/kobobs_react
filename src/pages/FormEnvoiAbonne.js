@@ -99,26 +99,26 @@ function FormEnvoiAbonne(props)
 <Form onSubmit={submitFormulaire}>
       <Row>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mozui (Beneficiare Informations)</u></b></p>
+      <p className='couleur2'><b><u>* Mozui (Beneficiare Informations)</u></b></p>
     </Row>
     <Row className='justify-content-center'>
     <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo Ya Libota (Nom)</Form.Label>
+        <Form.Label className='couleur2'>* Kombo Ya Libota (Nom)</Form.Label>
         <Form.Control name="nom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'  required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label>  
+        <Form.Label className='couleur2'>* Kombo ya authenticité (Postnom)</Form.Label>  
         <Form.Control name="postnom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.postnom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo ya Mukristu (Prénom)</Form.Label>
+        <Form.Label className='couleur2'>* Kombo ya Mukristu (Prénom)</Form.Label>
         <Form.Control name="prenom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.prenom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
@@ -127,14 +127,14 @@ function FormEnvoiAbonne(props)
     <Row className='justify-content-center'>
     <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Adresse</Form.Label>
+        <Form.Label className='couleur2'>* Adresse</Form.Label>
         <Form.Control name="adresse_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Numéro ya Tshombo (Numéro Tél)</Form.Label>
+        <Form.Label className='couleur2'>* Numéro ya Tshombo (Numéro Tél)</Form.Label>
         <Form.Control name="numero_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.numero_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo' required/>
          </Form.Group>
         </Col>
@@ -159,7 +159,7 @@ function FormEnvoiAbonne(props)
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Mbongo Mozui akozwa(Montant à récuperer)</Form.Label>
+        <Form.Label className='couleur2'>* Mbongo Mozui akozwa(Montant à récuperer)</Form.Label>
         <Form.Control name="montant_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.montant_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
          </Form.Group>
         </Col>
