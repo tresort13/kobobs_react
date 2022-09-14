@@ -27,7 +27,7 @@ function FormEnvoiAbonne(props)
         pays_beneficiaire : 'RD Congo',
         montant_beneficiaire : '',
         type_service : 'Kozua na maboko (kozua na nzela ya agence)',
-        numero_transfer :''
+        numero_transfer :'Kozua na maboko (kozua na nzela ya agence)'
         }})
     
 

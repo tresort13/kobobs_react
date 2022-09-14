@@ -34,7 +34,7 @@ function FormEnvoiClient(props)
     pays_beneficiaire : 'RD Congo',
     montant_beneficiaire : '',
     type_service : 'Kozua na maboko (kozua na nzela ya agence)',
-    numero_transfer : 'Non Renseigner'
+    numero_transfer : 'Kozua na maboko (kozua na nzela ya agence)'
     }})
 
     const [validated, setValidated] = useState(false);
