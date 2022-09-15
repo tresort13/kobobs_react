@@ -557,7 +557,7 @@ function App() {
         </Route>
 
         
-        <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >
+        <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie} setEnvoie={setEnvoie}/>} >
         </Route>
 
         <Route path="/envoi_abonne_info" element={username == "" ? <Navigate to ='/' /> :<EnvoieAbonneInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >
