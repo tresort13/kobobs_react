@@ -50,6 +50,33 @@ console.log(props.envoie.infoEnvoie)
                  setModalShow(true) 
                  props.dataEnvoie3(res)
                  console.log(res)
+                 props.setEnvoie({infoEnvoie:{
+                  nom_expediteur : '',
+                  postnom_expediteur : '',
+                  prenom_expediteur : '',
+                  adresse_expediteur : '',
+                  email_expediteur : '',
+                  numero_expediteur: '',
+                  pays_expediteur : 'Angleterre',
+                  nom_beneficiaire : '',
+                  postnom_beneficiaire : '',
+                  prenom_beneficiaire : '',
+                  adresse_beneficiaire : '',
+                  numero_beneficiaire : '',
+                  pays_beneficiaire : 'RD Congo',
+                  montant_envoie_sans_frais : '',
+                  montant_beneficiaire : '',
+                  type_service : 'Kozua na maboko (kozua na nzela ya agence)',
+                  frais_envoie : '',
+                  frais_tva : '',
+                  montant_total : '',
+                  code_retrait : '',
+                  data_operation : '',
+                  date_heure_operation : '',
+                  code_abonne : '',
+                  status_retrait : '',
+                  numero_transfer: 'Kozua na maboko (kozua na nzela ya agence)'
+                 }})
                  navigate('/confirmation_envoie_info')
                 }
               )
@@ -127,6 +154,14 @@ console.log(props.envoie.infoEnvoie)
         envoyer
         </Button>
         </Col>
+
+        <Col xs={6}>
+        <Link to="/form_envoie_abonne">
+         <Button variant="warning" type="submit">
+        modifier
+        </Button>
+        </Link>
+        </Col>
         
     </Row>
     
@@ -195,6 +230,14 @@ console.log(props.envoie.infoEnvoie)
         <Button variant="warning" type="submit" onClick={submitEnvoie}>
         envoyer
         </Button>
+        </Col>
+
+        <Col xs={6}>
+        <Link to="/form_envoie_abonne">
+         <Button variant="warning" type="submit">
+        modifier
+        </Button>
+        </Link>
         </Col>
         
     </Row>

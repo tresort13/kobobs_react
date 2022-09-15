@@ -535,7 +535,7 @@ function App() {
 
         <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonneId username = {username} dataAbonne={dataAbonne} />} >
         </Route>
-        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne} setTaux={setTaux}/>} >
+        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne} envoie={envoie} setTaux={setTaux}/>} >
         </Route>
 
         <Route path="/select_date_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormEnvoie username = {username} dataDailyRapport={dataDailyRapport} setDate={setDate}/>} >
@@ -560,7 +560,7 @@ function App() {
         <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie} setEnvoie={setEnvoie}/>} >
         </Route>
 
-        <Route path="/envoi_abonne_info" element={username == "" ? <Navigate to ='/' /> :<EnvoieAbonneInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie}/>} >
+        <Route path="/envoi_abonne_info" element={username == "" ? <Navigate to ='/' /> :<EnvoieAbonneInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie} setEnvoie={setEnvoie}/>} >
         </Route>
 
         <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username} dataEnvoie2={dataEnvoie2} />} >

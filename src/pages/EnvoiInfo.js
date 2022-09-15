@@ -156,6 +156,14 @@ console.log(props.envoie.infoEnvoie)
         envoyer
         </Button>
         </Col>
+
+        <Col xs={6}>
+        <Link to="/form_envoie_client">
+         <Button variant="warning" type="submit">
+        modifier
+        </Button>
+        </Link>
+        </Col>
         
     </Row>
     
@@ -224,6 +232,14 @@ console.log(props.envoie.infoEnvoie)
         <Button variant="warning" type="submit" onClick={e=>submitEnvoie(e)}>
         envoyer
         </Button>
+        </Col>
+
+        <Col xs={6}>
+        <Link to="/form_envoie_client">
+         <Button variant="warning" type="submit">
+        modifier
+        </Button>
+        </Link>
         </Col>
         
     </Row>

@@ -19,15 +19,15 @@ function FormEnvoiAbonne(props)
 {
 
     const[envoieAbonne,setEnvoieAbonne] = useState({infoEnvoieAbonne :{
-        nom_beneficiaire : '',
-        postnom_beneficiaire : '',
-        prenom_beneficiaire : '',
-        adresse_beneficiaire : '',
-        numero_beneficiaire : '',
-        pays_beneficiaire : 'RD Congo',
-        montant_beneficiaire : '',
-        type_service : 'Kozua na maboko (kozua na nzela ya agence)',
-        numero_transfer :'Kozua na maboko (kozua na nzela ya agence)'
+      nom_beneficiaire : props.envoie.infoEnvoie.nom_beneficiaire,
+      postnom_beneficiaire : props.envoie.infoEnvoie.postnom_beneficiaire,
+      prenom_beneficiaire : props.envoie.infoEnvoie.prenom_beneficiaire,
+      adresse_beneficiaire : props.envoie.infoEnvoie.adresse_beneficiaire,
+      numero_beneficiaire : props.envoie.infoEnvoie.numero_beneficiaire,
+      pays_beneficiaire : props.envoie.infoEnvoie.pays_beneficiaire,
+      montant_beneficiaire : props.envoie.infoEnvoie.montant_beneficiaire,
+      type_service : props.envoie.infoEnvoie.type_service,
+      numero_transfer : props.envoie.infoEnvoie.numero_transfer
         }})
     
 
