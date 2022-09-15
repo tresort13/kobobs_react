@@ -152,29 +152,22 @@ function MonthlyRapportInfoRetrait(props)
 </Container>
 }
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
+{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto my-auto' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3' >
-        <Col xs={6}>
-            <Link to="">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        
-        </Col>
-    </Row>
+   
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u></u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
-        <p className='text-light'>Date : <b className='couleur2'>{props.dateInfo}</b>  </p>
+        <p className='text-light'>Type de Rapport: <b className='couleur2'>Mensuel</b> </p>
+        <p className='text-light'>Date : <b className='couleur2'>{props.moisInfo}</b>  </p>
         
         </Col>
     </Row>
@@ -203,15 +196,18 @@ function MonthlyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
         Fermer
         </Button>
         </Link>
         </Col>
         
-    </Row>   
-</Container>}
+    </Row>
+    
+    
+
+</Container> }
 <Row className="mt-5">
           <Col md={12}>
             <p></p>

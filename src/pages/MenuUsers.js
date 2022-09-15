@@ -76,19 +76,13 @@ function MenuUsers(props)
 
 </Container>}
 
-{isMobileOrTablet && <Container className='bg-dark my-auto justify-content-center text-center bordure mb-5' style={{marginTop:30}} >
-    <Row className='justify-content-center mb-5 pt-3' >
-        <Col xs={"auto"}>
-            <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        </Col>
-    </Row>
-    <Row className='justify-content-center pb-3'>
-        <Col xs = {"auto"}>
-        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><i>Envoie Argent Client</i></b>
+{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5' style={{marginTop:100,width:750}} >
+    
+    <Row className='justify-content-center pb-3 pt-3'>
+        <Col xs = {12}>
+        <Link to="/users_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant='warning'  onClick={submit} style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='text-dark'><pre>Utilisateurs</pre></b>
         </Button>
         </Link>
         </Col>
@@ -97,16 +91,17 @@ function MenuUsers(props)
 
 
     <Row className='justify-content-center pb-3'>
-        <Col xs = {"auto"}>
-        <Link to="/form_envoie_abonne" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><i>Envoie Argent Abonné</i></b>
+        <Col xs = {12}>
+        <a href='https://kobobsapi.herokuapp.com/admin/' target='_blank'  style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant='warning'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
+        <b className='text-dark'>Parametres Utilisateurs<pre></pre></b>
         </Button>
-        </Link>
+        </a>
         </Col>
     </Row>
+  
 
-</Container>}
+</Container> }
 <Footer />
 </>
     )

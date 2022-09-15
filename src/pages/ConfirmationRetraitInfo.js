@@ -105,24 +105,17 @@ function ConfirmationRetraitInfo(props)
 </Container>
 }
 
-{isMobileOrTablet && <Container className='bg-dark my-auto mx-auto justify-content-center text-center bordure mb-5' style={{marginTop:50,backgroundColor:'white'}} >
+{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto my-auto' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3' >
-        <Col xs={6}>
-            <Link to="/tracer_baggages">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        
-        </Col>
-    </Row>
-    <Row className='justify-content-center pb-3'>
+
+    <Row className='justify-content-start pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Page de confirmation retrait</u></b> </p>
+      <p className='couleur2'><b><u>Page de confirmation de rétrait</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
@@ -130,8 +123,9 @@ function ConfirmationRetraitInfo(props)
         <p className='text-light'>Kombo Mobimba ya Mozui (Noms complets Beneficiare): <b className='text-dark bg-warning'>{props.envoie2.infoEnvoie.nom_beneficiaire} {props.envoie2.infoEnvoie.postnom_beneficiaire} {props.envoie2.infoEnvoie.prenom_beneficiaire}</b> </p>
         <p className='text-light'>Ekolo Motindi (Pays Expediteur) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
         <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_beneficiaire}</b></p>
-        <p className='text-light'>Mbongo ya kozwa epayi ya Motindi(Montant à récupérer): <b className='text-dark bg-warning'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
+        <p className='text-light'>Mbongo ya kozwa epayi ya Mozui(Montant à récupérer): <b className='text-dark bg-warning'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
+        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='couleur2'>{props.envoie2.infoEnvoie.numero_transfer}</b> </p>
         <p className='text-light'>Code Retrait : <b className='text-dark bg-warning'> {props.envoie2.infoEnvoie.code_retrait} ({props.envoie2.infoEnvoie.status_retrait})</b></p>
         <p className='text-light'>date et heure : <b className='couleur2'> {JSON.stringify(props.envoie2.infoEnvoie.date_heure_operation)}</b></p>
         </Col>
@@ -143,9 +137,9 @@ function ConfirmationRetraitInfo(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="warning" type="submit">
-        ok
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant="warning" type="submit" onClick={e=>payerRetrait(e)}> 
+        Payé Beneficiaire
         </Button>
         </Link>
         </Col>

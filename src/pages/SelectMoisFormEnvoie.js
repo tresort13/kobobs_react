@@ -102,21 +102,21 @@ return (
 </Form>
 </Container>}
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
+{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mt-5 mx-auto'  >
 <Row className='justify-content-center mb-3 pt-5' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className="couleur2"><i><b>{message}</b></i></p>
         </Col>
     </Row>
     
     
-<Form>
+<Form onSubmit={submitVol}>
    
 
-<Row className='justify-content-center'>
-        <Col xs = {6}>
+    <Row className='justify-content-center'>
+        <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Control name="moisInfo"  type="month" onChange={e=>inputChanged(e)}  />
+        <Form.Control name="moisInfo"  type="month" onChange={e=>inputChanged(e)} required />
          </Form.Group>
         </Col>
     </Row>
@@ -125,16 +125,14 @@ return (
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Link to="/operation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitVol(e)}>
+        <Button variant="outline-warning" type="submit">
         Valider 
         </Button>
-        </Link>
 
         </Col>
     </Row>
 </Form>
-</Container>}
+</Container>} 
 <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <Footer />
 </>

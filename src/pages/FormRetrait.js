@@ -114,30 +114,23 @@ function FormRetrait(props)
 </Container>
 }
 
-{isMobileOrTablet && <Container className='bg-dark my-auto mx-auto justify-content-center text-center bordure mb-5' style={{marginTop:50,backgroundColor:'white'}} >
+{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5'>
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3' >
-        <Col xs={6}>
-            <Link to="/tracer_baggages">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        
-        </Col>
-    </Row>
+   
     
-<Form>
+<Form onSubmit={submitcodeRetrait}>
    
 
     <Row className='justify-content-center'>
-        <Col xs = {6}>
+        <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>Code Retrait</Form.Label>
-        <Form.Control name="barcodeBagage" value={codeRetrait.infoCodeRetrait.code_retrait} onChange={e=>inputChanged(e)} type="text" placeholder='Veuillez entrer code retrait' autoFocus   required/>
+        <Form.Control name="code_retrait" value={codeRetrait.infoCodeRetrait.code_retrait} onChange={e=>inputChanged(e)} type="text" placeholder='Veuillez entrer code retrait' autoFocus   required/>
          </Form.Group>
         </Col>
     </Row>
@@ -145,21 +138,16 @@ function FormRetrait(props)
 
    <Row className='pb-3'>
        <Col>
-        <Link to="/retrait_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="outline-warning" type="submit" >
         Valider 
         </Button>
-        </Link>
         </Col>
     </Row>
   
 
 
-
-
-
 </Form>
-</Container>}
+</Container> }
 <Row className="mt-5">
           <Col md={12}>
             <p></p>

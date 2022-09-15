@@ -130,7 +130,7 @@ function FormEnvoiAbonne(props)
     <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='couleur2'>* Adresse</Form.Label>
-        <Form.Control name="adresse_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
+        <Form.Control name="adresse_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Adresse'  required/>
          </Form.Group>
         </Col>
 
@@ -208,73 +208,65 @@ function FormEnvoiAbonne(props)
 
 {isMobileOrTablet &&  <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
-        <p ><i><b className='text-light'>Code Abonné :</b><b className='couleur2'>{props.abonne.infoAbonne.code_abonne}</b></i></p>
+<Col xs={12}>
+        <p ><i><b className='text-light'>Code Abonné : </b><b className='couleur2'>{props.abonne.infoAbonne.code_abonne}</b></i></p>
         </Col>
-        <Col xs={6}>
+        <Col xs={12}>
         <p ><i><b className='text-light'>Noms Abonné : </b><b className='couleur2'>{props.abonne.infoAbonne.prenom_expediteur} {props.abonne.infoAbonne.nom_expediteur} {props.abonne.infoAbonne.postnom_expediteur}</b></i></p>
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3' >
-        <Col xs={6}>
-            <Link to="/tracer_baggages">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        
-        </Col>
-    </Row>
     
-    <Form>
+<Form onSubmit={submitFormulaire}>
       <Row>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mozui (Beneficiare Informations)</u></b></p>
+      <p className='couleur2'><b><u>* Mozui (Beneficiare Informations)</u></b></p>
     </Row>
     <Row className='justify-content-center'>
-    <Col xs = {4}>
+    <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo Ya Libota (Nom)</Form.Label>
-        <Form.Control name="nom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
+        <Form.Label className='couleur2'>* Kombo Ya Libota (Nom)</Form.Label>
+        <Form.Control name="nom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'  required/>
          </Form.Group>
         </Col>
 
-        <Col xs = {4}>
+        <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo ya authenticité (Postnom)</Form.Label>  
+        <Form.Label className='couleur2'>* Kombo ya authenticité (Postnom)</Form.Label>  
         <Form.Control name="postnom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.postnom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
          </Form.Group>
         </Col>
 
-        <Col xs = {4}>
+        <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Kombo ya Mukristu (Prénom)</Form.Label>
+        <Form.Label className='couleur2'>* Kombo ya Mukristu (Prénom)</Form.Label>
         <Form.Control name="prenom_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.prenom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
          </Form.Group>
         </Col>
     </Row>
 
     <Row className='justify-content-center'>
-    <Col xs = {4}>
+    <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Adresse</Form.Label>
-        <Form.Control name="adresse_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
+        <Form.Label className='couleur2'>* Adresse</Form.Label>
+        <Form.Control name="adresse_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Adresse'  required/>
          </Form.Group>
         </Col>
 
-        <Col xs = {4}>
+        <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Numéro ya Tshombo (Numéro Tél)</Form.Label>
+        <Form.Label className='couleur2'>* Numéro ya Tshombo (Numéro Tél)</Form.Label>
         <Form.Control name="numero_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.numero_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo' required/>
          </Form.Group>
         </Col>
 
-        <Col xs ={4}>
+        <Col xs ={12}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
         <Form.Select name='pays_beneficiaire' value={envoieAbonne.infoEnvoieAbonne.pays_beneficiaire} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
-         <option>Ekolo (Pays)</option>
-         <option value="Angleterre">Angleterre</option>
-         <option value="RD Congo">RD Congo</option>
+         <option value='RD Congo'>RD Congo</option>
+         <option value="Angleterre">RD Congo</option>
+         <option value="RD Congo">Angleterre</option>
          
          </Form.Select>
          </Form.Group>
@@ -286,40 +278,43 @@ function FormEnvoiAbonne(props)
       <p className='couleur2'><b><u>Montant Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center'>
-        <Col xs = {6}>
+        <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Mbongo Mozui akozwa(Montant à récuperer)</Form.Label>
+        <Form.Label className='couleur2'>* Mbongo Mozui akozwa(Montant à récuperer)</Form.Label>
         <Form.Control name="montant_beneficiaire" value={envoieAbonne.infoEnvoieAbonne.montant_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
          </Form.Group>
         </Col>
 
         
 
-        <Col xs ={6}>
+        <Col xs ={12}>
         <Form.Group className="mb-3" >
         <Form.Label className='couleur2'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
         <Form.Select name="type_service" value={envoieAbonne.infoEnvoieAbonne.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
-        <option>Nzela yako zwa Mbongo (Type de retrait)</option>
-         <option value= "Kozua na maboko (kozua na nzela ya agence)">Kozua na maboko (kozua na nzela ya agence)</option>
+        <option value='Kozua na maboko (kozua na nzela ya agence)'>Kozua na maboko (kozua na nzela ya agence)</option>
          <option value="Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
          
          </Form.Select>
          </Form.Group>
         </Col>
+
+        {envoieAbonne.infoEnvoieAbonne.type_service == "Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)" ? <Col xs = {12}>
+        <Form.Group className="mb-3" controlId="formBasicText" >
+        <Form.Label className='couleur2'>* Numero yako tinda mbongo (numero de tranfer)</Form.Label>
+        <Form.Control name="numero_transfer"   onChange={e=>inputChanged(e)} type="text" placeholder='numero ya transfer'  required/>
+       
+         </Form.Group>
+        </Col> : <span></span>}
     </Row>
     <Row>
       <hr style={{color:"darkorange"}}></hr>
     </Row>
   
     <Row className='justify-content-center pb-3'>
-        <Col xs ={4}>
-        
-        <Link to="/envoi_abonne_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitFormulaire(e)}>
+        <Col xs ={4}> 
+        <Button variant="outline-warning" type="submit">
         Valider Informations
         </Button>
-        </Link>
-
         </Col>
     </Row>
   

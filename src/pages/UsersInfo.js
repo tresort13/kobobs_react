@@ -95,6 +95,69 @@ console.log(props.userInfo)
 
 </Container>}
 
+{isMobileOrTablet && <Container fluid className='bg-dark justify-content-center text-center borders mx-auto my-auto' >
+
+
+
+    
+<div>
+<Row className='justify-content-center '>
+        <Col xs = {12} className='text-center borders pt-2'>
+        <div>
+        <h6 ><u><b><i className='couleur2'>Informations Utilisateur(s)</i></b></u></h6>
+        </div>
+        <div>
+        <Table striped bordered hover variant="dark">
+      <thead>
+        <tr className='text-light' style={{border:"2px solid white"}}>
+          <th>Nom Utilisateur</th>
+          <th>email</th>
+          <th>Administrateur</th>
+          <th>Dernière Connexion</th>
+          <th>Date de Creation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {props.userInfo.map((value)=>
+        {
+          return  <tr style={{border:"2px solid white"}} >
+             <td><i><b className="couleur2">{value.username}</b></i></td>
+             <td><i><b className="couleur2">{value.email}</b></i></td>
+             <td><i><b className="couleur2">{JSON.stringify(value.is_superuser)}</b></i></td>
+             <td><i><b className="couleur2">{value.last_login}</b></i></td>
+             <td><i><b className="couleur2">{value.date_joined}</b></i></td>
+            </tr>     
+        }) 
+        }
+      
+         
+      </tbody>
+    </Table>
+        </div>
+        </Col>
+    </Row>
+
+
+
+  
+    <Row className='justify-content-center pb-3 pt-3'>
+        <Col xs ={4} >
+        <Link to="" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant="outline-warning" type="submit" onClick={message} >
+        Imprimer 
+        </Button>
+        </Link>
+
+        </Col>
+    </Row>
+  
+
+
+</div>
+
+
+</Container>}
+
 
 <Row className="mt-5">
           <Col md={12}>

@@ -82,21 +82,15 @@ function MenuAbonne(props)
     </Row>
   
 
-</Container>}
+</Container> }
 
-{isMobileOrTablet && <Container className='bg-dark my-auto justify-content-center text-center bordure mb-5' style={{marginTop:30,backgroundColor:'white'}} >
-    <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={"auto"}>
-            <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:200}}></Image>
-            </Link>
-        </Col>
-    </Row>
-    <Row className='justify-content-center pb-3'>
-        <Col xs = {"auto"}>
-        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Envoie Argent Client</b>
+{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5' >
+    
+    <Row className='justify-content-center pb-3 pt-3'>
+        <Col xs = {12}>
+        <Link to="/form_abonne_non_valide" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant='warning'  style={{width:400,height:50}} className='btn-lg rounded-pill zoom' onClick={submit}>
+        {count > 0 ? <b className='text-dark'><pre>Formulaires Clients non validé <Badge bg="danger">{count}</Badge></pre> </b> : <b className='couleur2'><pre>Formulaires Clients non validé </pre></b>}
         </Button>
         </Link>
         </Col>
@@ -105,14 +99,15 @@ function MenuAbonne(props)
 
 
     <Row className='justify-content-center pb-3'>
-        <Col xs = {"auto"}>
-        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='secondary'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'>Envoie Argent Client</b>
+        <Col xs = {12}>
+        <Link to="/form_retrouver_abonne" style={{color:'white',textDecorationLine:'none'}}>
+        <Button variant='warning'  style={{width:400,height:50}} className='btn-lg rounded-pill zoom'>
+        <b className='text-dark'><pre>Retrouver un Abonné</pre></b>
         </Button>
         </Link>
         </Col>
     </Row>
+  
 
 </Container>}
 <Footer />

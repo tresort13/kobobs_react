@@ -96,21 +96,19 @@ return (
 </Form>
 </Container>}
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
+{isMobileOrTablet &&<Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5' style={{marginTop:100,width:750}} >
 <Row className='justify-content-center mb-3 pt-5' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className="couleur2"><i><b>{message}</b></i></p>
         </Col>
     </Row>
     
     
-<Form>
-   
-
+<Form onSubmit={submitVol}>
     <Row className='justify-content-center'>
-        <Col xs = {6}>
+        <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Control name="dateInfo"  type="date" onChange={e=>inputChanged(e)}  />
+        <Form.Control name="dateInfo"  type="date" onChange={e=>inputChanged(e)}  required/>
          </Form.Group>
         </Col>
     </Row>
@@ -118,13 +116,9 @@ return (
     
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
-        
-        <Link to="/operation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={e=>submitVol(e)}>
+        <Button variant="outline-warning" type="submit">
         Valider 
-        </Button>
-        </Link>
-
+        </Button> 
         </Col>
     </Row>
 </Form>

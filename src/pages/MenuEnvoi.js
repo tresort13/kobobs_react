@@ -51,35 +51,30 @@ function MenuEnvoi(props)
 
 </Container>}
 
-{isMobileOrTablet && <Container className='bg-dark my-auto justify-content-center text-center bordure mb-5' style={{marginTop:30}} >
-    <Row className='justify-content-center mb-5 pt-3' >
-        <Col xs={"auto"}>
-            <Link to="/home">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        </Col>
-    </Row>
-    <Row className='justify-content-center pb-3'>
-        <Col xs = {"auto"}>
-        <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><i>Envoie Argent Client</i></b>
-        </Button>
-        </Link>
-        </Col>
-    </Row>
-  
+{isMobileOrTablet &&<Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5' >
+   
+   <Row className='justify-content-center pb-3 pt-3'>
+       <Col xs = {"auto"}>
+       <Link to="/form_envoie_client" style={{color:'white',textDecorationLine:'none'}}>
+       <Button variant='warning'  style={{width:400,height:50}} className='btn-lg rounded-pill zoom'>
+       <b className='text-dark'><pre>Envoi Argent Client</pre></b>
+       </Button>
+       </Link>
+       </Col>
+   </Row>
+ 
 
 
-    <Row className='justify-content-center pb-3'>
-        <Col xs = {"auto"}>
-        <Link to="/form_envoie_abonne" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant='light'  style={{width:300,height:80}} className='btn-lg rounded-pill zoom'>
-        <b className='couleur2'><i>Envoie Argent Abonné</i></b>
-        </Button>
-        </Link>
-        </Col>
-    </Row>
+   <Row className='justify-content-center pb-3'>
+       <Col xs = {"auto"}>
+       <Link to="/form_envoie_abonne_id" style={{color:'white',textDecorationLine:'none'}}>
+       <Button variant='warning'  style={{width:400,height:50}} className='btn-lg rounded-pill zoom'>
+       <b className='text-dark'><pre>Envoi Argent Abonné</pre></b>
+       </Button>
+       </Link>
+       </Col>
+   </Row>
+ 
 
 </Container>}
 <Footer />

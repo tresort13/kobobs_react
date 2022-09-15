@@ -146,29 +146,22 @@ function DailyRapportInfoEnvoie(props)
 </Container>
 }
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
+{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto my-auto'>
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3' >
-        <Col xs={6}>
-            <Link to="">
-            <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-            </Link>
-        
-        </Col>
-    </Row>
+
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u></u></b> </p>
     </Row>
-    <Row className='justify-content-center pb-3' >
+    <Row className='justify-content-start pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Type de Rapport: <b className='couleur2'></b> </p>
-        <p className='text-light'>Date : <b className='couleur2'></b>  </p>
+        <p className='text-light'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
+        <p className='text-light'>Date : <b className='couleur2'>{props.dateInfo}</b>  </p>
         
         </Col>
     </Row>
@@ -179,17 +172,16 @@ function DailyRapportInfoEnvoie(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'></b>  </p>
-        <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'></b> </p>
-        <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> </b> </p>
-        <p className='text-light'>Nombres d'envoies suprimés : <b className='couleur2'> </b></p>
+        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'> {nombre_envoie_total}</b>  </p>
+        <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'> {nombre_envoie_valide}</b> </p>
+        <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> {nombre_envoie_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
-        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" >Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailTotal}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailValide}>Voir Details </p></Link>
+        <Link to="/details_envoie_info" style={{color:'white',textDecorationLine:'none'}}><p className='btn-warning rounded-pill' type="submit" onClick={detailNonValide}>Voir Details </p></Link>
+       
         </Col>
     </Row>
 
@@ -199,14 +191,17 @@ function DailyRapportInfoEnvoie(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <Link to="/confirmation_envoie_info" style={{color:'white',textDecorationLine:'none'}}>
+        <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
         Fermer
         </Button>
         </Link>
         </Col>
         
-    </Row>   
+    </Row>
+    
+    
+
 </Container>}
 <Row className="mt-5">
           <Col md={12}>
