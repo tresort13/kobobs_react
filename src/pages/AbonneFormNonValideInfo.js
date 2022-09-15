@@ -212,7 +212,7 @@ function AbonneFormNonValideInfo(props)
         <Col xs={6}>
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
             <Button name='validate' value={value.code_retrait} className='pt-3' variant="warning" type="submit" onClick={e=>validateCodeRetrait(e)}>
-            Valider le code de retrait
+            Valider code 
             </Button>
             </Link>
             </Col>

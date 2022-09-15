@@ -157,7 +157,7 @@ console.log(props.envoie.infoEnvoie)
 
         <Col xs={6}>
         <Link to="/form_envoie_abonne">
-         <Button variant="warning" type="submit">
+         <Button variant="outline-warning" type="submit">
         modifier
         </Button>
         </Link>
@@ -234,7 +234,7 @@ console.log(props.envoie.infoEnvoie)
 
         <Col xs={6}>
         <Link to="/form_envoie_abonne">
-         <Button variant="warning" type="submit">
+         <Button variant="outline-warning" type="submit">
         modifier
         </Button>
         </Link>
