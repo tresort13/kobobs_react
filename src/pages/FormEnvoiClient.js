@@ -19,22 +19,22 @@ function FormEnvoiClient(props)
 {
 
     const[envoie,setEnvoie] = useState({infoEnvoie :{
-    nom_expediteur : '',
-    postnom_expediteur : '',
-    prenom_expediteur : '',
-    adresse_expediteur : '',
-    email_expediteur : '',
-    numero_expediteur: '',
-    pays_expediteur : 'Angleterre',
-    nom_beneficiaire : '',
-    postnom_beneficiaire : '',
-    prenom_beneficiaire : '',
-    adresse_beneficiaire : '',
-    numero_beneficiaire : '',
-    pays_beneficiaire : 'RD Congo',
-    montant_beneficiaire : '',
-    type_service : 'Kozua na maboko (kozua na nzela ya agence)',
-    numero_transfer : 'Kozua na maboko (kozua na nzela ya agence)'
+    nom_expediteur : props.envoie.infoEnvoie.nom_expediteur,
+    postnom_expediteur : props.envoie.infoEnvoie.postnom_expediteur,
+    prenom_expediteur : props.envoie.infoEnvoie.prenom_expediteur,
+    adresse_expediteur : props.envoie.infoEnvoie.adresse_expediteur,
+    email_expediteur : props.envoie.infoEnvoie.email_expediteur,
+    numero_expediteur: props.envoie.infoEnvoie.numero_expediteur,
+    pays_expediteur : props.envoie.infoEnvoie.pays_expediteur,
+    nom_beneficiaire : props.envoie.infoEnvoie.nom_beneficiaire,
+    postnom_beneficiaire : props.envoie.infoEnvoie.postnom_beneficiaire,
+    prenom_beneficiaire : props.envoie.infoEnvoie.prenom_beneficiaire,
+    adresse_beneficiaire : props.envoie.infoEnvoie.adresse_beneficiaire,
+    numero_beneficiaire : props.envoie.infoEnvoie.numero_beneficiaire,
+    pays_beneficiaire : props.envoie.infoEnvoie.pays_beneficiaire,
+    montant_beneficiaire : props.envoie.infoEnvoie.montant_beneficiaire,
+    type_service : props.envoie.infoEnvoie.type_service,
+    numero_transfer : props.envoie.infoEnvoie.numero_transfer
     }})
 
     const [validated, setValidated] = useState(false);

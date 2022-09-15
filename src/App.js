@@ -527,7 +527,7 @@ function App() {
         <Route path="/menu_gestion_recettes" element={username == "" ? <Navigate to ='/' /> :<MenuGestionRecettes username = {username}/>} >
         </Route>
 
-        <Route path="/menu_users" element={username == "" ? <Navigate to ='/' /> :<MenuUsers username = {username} dataUserInfo={dataUserInfo}/>} >
+        <Route path="/menu_users" element={username == "" ? <Navigate to ='/' /> :<MenuUsers username = {username} dataUserInfo={dataUserInfo} envoie={envoie}/>} >
         </Route>
 
         <Route path="/form_envoie_client" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiClient username = {username} dataEnvoie={dataEnvoie} envoie={envoie} setTaux={setTaux}/>}>
