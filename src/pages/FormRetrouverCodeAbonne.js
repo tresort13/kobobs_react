@@ -114,7 +114,7 @@ function FormRetrouverCodeAbonne(props)
 </Container>
 }
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5' style={{marginTop:100,width:750}} >
+{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5'  >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={12}>
         <p className='couleur2'><i><b>{message}</b></i></p>

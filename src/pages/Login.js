@@ -8,6 +8,9 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
+import HeaderHome from './HeaderHome';
+import Footer from './Footer';
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -46,7 +49,7 @@ yn
        
           
    const navigate = useNavigate()
-
+   const [modalShow, setModalShow] = React.useState(false);
    
 
     const connection = (e)=>
@@ -70,7 +73,7 @@ yn
               else
               {
                
-                setMessage("accès réfusé")
+                setModalShow(true)
                navigate('/')
               }
               
@@ -98,12 +101,12 @@ yn
 
 
 <>
-
+<HeaderHome />
 {isDesktop && <Container className='bg-dark justify-content-center text-center pt-2 bordure' style={{marginTop:100,backgroundColor:'grey',width:650}} >
 
     <Row className='justify-content-center mb-5 pt-3' >
         <Col>
-        <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:300}}></Image>
+        <Image src={require('./kobo_logo.JPG')}  className='rounded ' style={{width:300}}></Image>
         </Col>
     </Row>
       
@@ -138,72 +141,87 @@ yn
         </Link>
         </Col>
     </Row>
-    <Row className='justify-content-center pb-3'>
-        <Col  xs={"auto"}>    
-        <p className='pt-3 text-danger'><b>{message}</b></p>
-        </Col>
-    </Row>
+  
   
 
 
 </Form>
 </Container> }
 
-{isMobileOrTablet && <Container className='bg-dark my-auto mx-auto text-start bordure' style={{backgroundColor:'grey'}} >
-    
+{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center pt-2 bordure mx-auto' style={{backgroundColor:'grey',height:450}} >
 
-
-    <Row className='justify-content-center text-center mb-5 pt-3' >
-        <Col xs={"12"}>
-        <Image src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:300}}></Image>
-        </Col>
-    </Row>
-      
+<Row className='justify-content-center mb-5 pt-3' >
+    <Col>
+    <Image src={require('./kobo_logo.JPG')}  className='rounded ' style={{width:300}}></Image>
+    </Col>
+</Row>
+  
 <Form>
-    <Row className='justify-content-center'>
-        <Col xs={"auto"} >
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Control type="email" placeholder="nom d'utilisateur"  name="username"
-        value ={state.credentials.username} onChange={inputChanged} autoFocus/>
-        
-         </Form.Group>
-        </Col>
-    </Row>
-  
-    <Row className='justify-content-center'>
-        <Col xs={"auto"}>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-         <Form.Control type="password" placeholder="mot de passe" name="password"
-         value ={state.credentials.password} onChange={inputChanged} />
+<Row className='justify-content-center'>
+    <Col xs={12} >
+    <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Control type="email" placeholder="nom d'utilisateur"  name="username"
+    value ={state.credentials.username} onChange={inputChanged} autoFocus/>
+    
+     </Form.Group>
+    </Col>
+</Row>
 
-         </Form.Group>
-        </Col>
-    </Row>
-  
-    <Row className='justify-content-center pb-3'>
-        <Col  xs={"auto"}>    
-        <Link to="" style={{color:'white',textDecorationLine:'none'}}> 
-        
-        <Button variant="outline-warning" type="submit" >
-        connexion
-        </Button>
-        </Link>
-        </Col>
-    </Row>
+<Row className='justify-content-center'>
+    <Col xs={12}>
+    <Form.Group className="mb-3" controlId="formBasicPassword">
+     <Form.Control type="password" placeholder="mot de passe" name="password"
+     value ={state.credentials.password} onChange={inputChanged} />
 
-    <Row className='justify-content-center pb-3'>
-        <Col  xs={"auto"}>    
-        <p className='pt-3 text-danger'><b>{message}</b></p>
-        </Col>
-    </Row>
-  
+     </Form.Group>
+    </Col>
+</Row>
+
+<Row className='justify-content-center pb-3'>
+    <Col  xs={12}>    
+    <Link to="" style={{color:'white',textDecorationLine:'none'}}> 
+    
+    <Button variant="outline-warning" type="submit" onClick={e=>connection(e)}>
+    <b>connexion</b>
+    </Button>
+    </Link>
+    </Col>
+</Row>
+
 
 
 </Form>
 </Container> }
+<MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+<Footer />
 </>
 
 )
+}
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Echec connexion
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Message : </h4>
+        <p className='text-danger'><b>Désolé le mot de passe ou nom d'utilisateur est incorrect!!!</b>   
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='warning' onClick={props.onHide}>ok</Button>
+      </Modal.Footer>
+    </Modal>
+  );
 }
 
 export default Login;

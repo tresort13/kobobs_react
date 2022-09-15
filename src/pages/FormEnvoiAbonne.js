@@ -206,7 +206,7 @@ function FormEnvoiAbonne(props)
 </Container>
 }
 
-{isMobileOrTablet &&  <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
+{isMobileOrTablet &&  <Container className='bg-dark justify-content-center text-center bordure mb-5' >
 <Row className='justify-content-center mb-3 pt-3' >
 <Col xs={12}>
         <p ><i><b className='text-light'>Code Abonné : </b><b className='couleur2'>{props.abonne.infoAbonne.code_abonne}</b></i></p>
