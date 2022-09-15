@@ -172,9 +172,9 @@ function MonthlyRapportInfoEnvoie(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres d'envoies effectué : <b className='couleur2'> {nombre_envoie_total}</b>  </p>
-        <p className='text-light'>Nombres d'envoies validés : <b className='couleur2'> {nombre_envoie_valide}</b> </p>
-        <p className='text-light'>Nombres d'envoies non validés : <b className='couleur2'> {nombre_envoie_nonvalide}</b></p>
+        <p className='text-light'>envoies effectué: <b className='couleur2'> {nombre_envoie_total}</b>  </p>
+        <p className='text-light'>envoies validés: <b className='couleur2'> {nombre_envoie_valide}</b> </p>
+        <p className='text-light'>envoies non validés: <b className='couleur2'> {nombre_envoie_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>

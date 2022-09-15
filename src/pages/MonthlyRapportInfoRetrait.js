@@ -178,9 +178,9 @@ function MonthlyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres des retraits payés : <b className='couleur2'> {nombre_retrait_paye}</b> </p>
-        <p className='text-light'>Nombres des retraits validés : <b className='couleur2'> {nombre_retrait_valide}</b> </p>
-        <p className='text-light'>Nombres des retraits non validés : <b className='couleur2'> {nombre_retrait_nonvalide}</b></p>
+        <p className='text-light'>retraits payés: <b className='couleur2'> {nombre_retrait_paye}</b> </p>
+        <p className='text-light'>retraits validés: <b className='couleur2'> {nombre_retrait_valide}</b> </p>
+        <p className='text-light'>retraits non validés: <b className='couleur2'> {nombre_retrait_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>
