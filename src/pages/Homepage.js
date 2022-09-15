@@ -128,10 +128,9 @@ function Homepage(props)
 
        </Container>}
 
-       {isMobileOrTablet && <Container className="my-auto mt-3 justify-content-center mb-5">
-        
-            <Row className="my-auto text-center justify-content-center ">
-            <Col xs={"auto"} className="my-auto  mb-5">
+       {isMobileOrTablet && <Container className="mt-4 mb-5 mx-auto">
+        <Row className="text-center justify-content-center">
+            <Col md={12} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
               <Link to="/menu_envoie">
@@ -144,14 +143,12 @@ function Homepage(props)
               </div>
              </div>    
             </Col>
-            </Row>
-           
-            <Row className="my-auto text-center justify-content-center ">
-            <Col xs={"auto"} className="my-auto text-center justify-content-center mb-5">
+
+            <Col mdmd={12} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
-              <Link to="/menu_retrait">
-              <Image src={require('./retrait.png')}  className='rounded-pill' style={{width:180}}></Image>
+              <Link to="/form_retrait">
+              <Image src={require('./retrait.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
@@ -160,27 +157,8 @@ function Homepage(props)
               </div>
              </div>          
             </Col>
-            </Row>
-        
-            <Row className="my-auto text-center justify-content-center ">
-            <Col xs={"auto"} className="mb-5">
-             <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
-              <div>
-              <Link to="/menu_gestion_operation">
-              <Image src={require('./kobo_audit.jpg')}  className='rounded-pill' style={{width:200}}></Image>
-              </Link>
-              </div>
 
-              <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Service Clients</i></p>
-              </div>
-             </div>   
-            </Col>
-            </Row>
-        
-
-            <Row className="my-auto text-center justify-content-center ">
-            <Col xs={"auto"} className=" mb-5">
+            <Col md={12} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
               <Link to="/menu_gestion_abonne">
@@ -189,33 +167,49 @@ function Homepage(props)
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Abonnes</i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Service Clients</i></p>
               </div>
              </div>
               
-            </Col> 
-            </Row>
+            </Col>
 
 
-            <Row className="my-auto text-center justify-content-center ">
-            <Col xs={"auto"} className="mb-5">
+           
+        </Row>
+
+        <Row className="text-center justify-content-center mt-3 ">
+        <Col md={12} className="my-auto text-center">
+             <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
+              <div>
+              <Link to="/menu_gestion_operation">
+              <Image src={require('./kobo_operation.png')}  className='rounded-pill' style={{width:200}}></Image>
+              </Link>
+              </div>
+
+              <div>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Operations</i></p>
+              </div>
+             </div>   
+            </Col>
+
+
+
+            <Col md={12} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom pt-1 bordure2" style={{width:300}}>
               <div>
-              <Link to="/menu_parametre">
+              <Link to="/menu_gestion_recettes">
               <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link>
               </div>
 
               <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Parametres </i></p>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Recettes </i></p>
               </div>
              </div>
               
             </Col>
-            </Row>
 
-            <Row className="my-auto text-center justify-content-center ">
-            <Col xs={"auto"} className="mb-5">
+            <Col md={12} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
               <Link to="/menu_users">
@@ -229,7 +223,14 @@ function Homepage(props)
              </div>
               
             </Col>
-            </Row>
+
+        </Row>
+
+        <Row className="mt-5">
+          <Col md={12}>
+            <p></p>
+          </Col>
+        </Row>
 
        </Container>}
        <Footer />
