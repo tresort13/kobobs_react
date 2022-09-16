@@ -213,9 +213,9 @@ function Homepage(props)
         <Col xs={"auto"} className="mb-5">
         <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom pt-1 bordure2" style={{width:300}}>
               <div>
-              {props.username == "" ? <Link to="/menu_gestion_recettes">
+              {props.username == "makabagisele@" ? <Link to="/menu_gestion_recettes">
               <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}}></Image>
-              </Link> : <Link to="makabagisele@">
+              </Link> : <Link to="">
               <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}} onClick={access}></Image>
               </Link>}
               </div>
