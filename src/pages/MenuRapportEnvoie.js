@@ -24,9 +24,9 @@ function MenuRapportEnvoie(props)
     return (
 <>
 <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
+{isDesktop && <Container >
     
-    <Row className='justify-content-center pb-3 pt-3'>
+    <Row className='justify-content-center pb-3 pt-5 mt-5'>
         <Col xs = {"auto"}>
         <Link to="/select_date_form_envoie" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='warning'  style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
@@ -51,9 +51,9 @@ function MenuRapportEnvoie(props)
 
 </Container> }
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5' >
+{isMobileOrTablet && <Container >
     
-    <Row className='justify-content-center pb-3 pt-3'>
+    <Row className='justify-content-center pb-3 pt-5 mt-5'>
         <Col xs = {12}>
         <Link to="/select_date_form_envoie" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='warning'  style={{width:400,height:50}} className='btn-lg rounded-pill zoom'>

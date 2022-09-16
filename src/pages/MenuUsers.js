@@ -49,9 +49,9 @@ function MenuUsers(props)
     return (
 <>
 <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
+{isDesktop && <Container >
     
-    <Row className='justify-content-center pb-3 pt-3'>
+    <Row className='justify-content-center pb-3 pt-5 mt-5'>
         <Col xs = {"auto"}>
         <Link to="/users_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='warning'  onClick={submit} style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
@@ -76,9 +76,9 @@ function MenuUsers(props)
 
 </Container>}
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5'>
+{isMobileOrTablet && <Container>
     
-    <Row className='justify-content-center pb-3 pt-3'>
+    <Row className='justify-content-center pb-3 pt-5 mt-5'>
         <Col xs = {12}>
         <Link to="/users_info" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant='warning'  onClick={submit} style={{width:400,height:80}} className='btn-lg rounded-pill zoom'>
