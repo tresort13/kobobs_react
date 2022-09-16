@@ -257,7 +257,7 @@ console.log(props.envoie.infoEnvoie)
           </Col>
         </Row>
   <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
-  <MyVerticallyCenteredModal show={modalShow2} onHide={() => setModalShow2(false)} />
+  <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
 <Footer />
         </>
        
@@ -299,7 +299,7 @@ function MyVerticallyCenteredModal2(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Zela Mukie...
+          Veuillez Patienter...
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

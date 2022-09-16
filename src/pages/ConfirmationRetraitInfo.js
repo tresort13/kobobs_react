@@ -11,6 +11,8 @@ import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
+import ClipLoader from "react-spinners/ClipLoader";
+import  './Header.css';
 
 
 
@@ -19,6 +21,8 @@ const useState = React.useState
 function ConfirmationRetraitInfo(props)
 {
   const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow2,setModalShow2] = React.useState(false);
+    
     const [message,setMessage] = useState("Page de confirmation Retrait")
     const [couleur,setCouleur] = useState("text-dark")
     const navigate = useNavigate()
@@ -31,11 +35,13 @@ function ConfirmationRetraitInfo(props)
       const isMobileOrTablet = useMediaQuery({
         query: "(max-width: 1224px)"
       });
-    
+
+      
   
       const payerRetrait = (e)=>
       {  
-        e.preventDefault()    
+        e.preventDefault()  
+        setModalShow2(true)  
         fetch('https://kobobsapi.herokuapp.com/api/payerCodeRetrait/'+props.envoie2.infoEnvoie.code_retrait+'/', {
                 method: 'PUT',
                  headers: {'Content-Type': 'application/json'},
@@ -151,6 +157,7 @@ function ConfirmationRetraitInfo(props)
           </Col>
         </Row>
 <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+<MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
 <Footer />
         </>
        
@@ -179,6 +186,28 @@ function MyVerticallyCenteredModal(props) {
         <Link to="/home">
         <Button variant='warning' onClick={props.onHide}>Fermer</Button>
         </Link>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+function MyVerticallyCenteredModal2(props) {
+  return (
+    <Modal
+      {...props}
+      size="sm"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Veuillez Patienter...
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+      <ClipLoader color={"#ff8c00"} loading={true} size={150} /> 
+      </Modal.Body>
+      <Modal.Footer>
       </Modal.Footer>
     </Modal>
   );
