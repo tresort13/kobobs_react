@@ -38,7 +38,7 @@ function FormEnvoiClient(props)
     }})
 
     const [validated, setValidated] = useState(false);
-    const [message,setMessage] = useState("Formulaire d'Envoie Client")
+    const [message,setMessage] = useState("Formulaire d'Envoi Client")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
