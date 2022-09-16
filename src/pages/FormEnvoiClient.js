@@ -108,20 +108,20 @@ function FormEnvoiClient(props)
 <Form  onSubmit={submitFormulaire}>
     <Row>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
+      <p className='text-light'><b><u>Motindi (Expediteur Informations)</u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Kombo Ya Libota(Nom)</Form.Label>
+        <Form.Label className='text-light'>* Kombo Ya Libota(Nom)</Form.Label>
         <Form.Control name="nom_expediteur" value={envoie.infoEnvoie.nom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Kombo ya authenticité (Postnom)</Form.Label>  
+        <Form.Label className='text-light'>* Kombo ya authenticité (Postnom)</Form.Label>  
         <Form.Control name="postnom_expediteur" value={envoie.infoEnvoie.postnom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
        
          </Form.Group>
@@ -129,7 +129,7 @@ function FormEnvoiClient(props)
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Kombo ya Mukristu (Prénom)</Form.Label>
+        <Form.Label className='text-light'>* Kombo ya Mukristu (Prénom)</Form.Label>
         <Form.Control name="prenom_expediteur" value={envoie.infoEnvoie.prenom_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
 
          </Form.Group>
@@ -140,14 +140,14 @@ function FormEnvoiClient(props)
     
        <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Adresse</Form.Label>
+        <Form.Label className='text-light'>* Adresse</Form.Label>
         <Form.Control name="adresse_expediteur" value={envoie.infoEnvoie.adresse_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Adresse'  required/>
         
          </Form.Group>
         </Col>
 
         <Col xs = {4}>
-        <Form.Label className='couleur2'>* Email</Form.Label>
+        <Form.Label className='text-light'>* Email</Form.Label>
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
         <Form.Control name="email_expediteur" value={envoie.infoEnvoie.email_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Email' required/>
@@ -157,7 +157,7 @@ function FormEnvoiClient(props)
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Numéro ya Tshombo (Numéro Tél)</Form.Label>
+        <Form.Label className='text-light'>* Numéro ya Tshombo (Numéro Tél)</Form.Label>
         <Form.Control name="numero_expediteur" value={envoie.infoEnvoie.numero_expediteur} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo' required/>
         
          </Form.Group>
@@ -169,7 +169,7 @@ function FormEnvoiClient(props)
         
         <Col xs ={12}>
         <Form.Group className="mb-3" >
-        <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
+        <Form.Label className='text-light'>Ekolo (Pays)</Form.Label>
         <Form.Select name='pays_expediteur' value={envoie.infoEnvoie.pays_expediteur} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
          <option value="Angleterre">Angleterre</option>
          <option value="RD Congo">RD Congo</option> 
@@ -182,13 +182,13 @@ function FormEnvoiClient(props)
 
     <Row>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mozui (Beneficiare Informations)</u></b> </p>
+      <p className='text-light'><b><u>Mozui (Beneficiare Informations)</u></b> </p>
     </Row>
 
     <Row className='justify-content-center'>
     <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Kombo Ya Libota (Nom)</Form.Label>
+        <Form.Label className='text-light'>* Kombo Ya Libota (Nom)</Form.Label>
         <Form.Control name="nom_beneficiaire" value={envoie.infoEnvoie.nom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Libota'    required/>
         
          </Form.Group>
@@ -196,7 +196,7 @@ function FormEnvoiClient(props)
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Kombo ya authenticité (Postnom)</Form.Label>  
+        <Form.Label className='text-light'>* Kombo ya authenticité (Postnom)</Form.Label>  
         <Form.Control name="postnom_beneficiaire" value={envoie.infoEnvoie.postnom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya authenticité' required/>
         
          </Form.Group>
@@ -204,7 +204,7 @@ function FormEnvoiClient(props)
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Kombo ya Mukristu (Prénom)</Form.Label>
+        <Form.Label className='text-light'>* Kombo ya Mukristu (Prénom)</Form.Label>
         <Form.Control name="prenom_beneficiaire" value={envoie.infoEnvoie.prenom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
        
          </Form.Group>
@@ -214,7 +214,7 @@ function FormEnvoiClient(props)
     <Row className='justify-content-center'>
     <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Adresse</Form.Label>
+        <Form.Label className='text-light'>* Adresse</Form.Label>
         <Form.Control name="adresse_beneficiaire" value={envoie.infoEnvoie.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
        
          </Form.Group>
@@ -222,7 +222,7 @@ function FormEnvoiClient(props)
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Numéro ya Tshombo (Numéro Tél)</Form.Label>
+        <Form.Label className='text-light'>* Numéro ya Tshombo (Numéro Tél)</Form.Label>
         <Form.Control name="numero_beneficiaire" value={envoie.infoEnvoie.numero_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Numéro ya Tshombo' required/>
        
          </Form.Group>
@@ -230,7 +230,7 @@ function FormEnvoiClient(props)
 
         <Col xs ={4}>
         <Form.Group className="mb-3" >
-        <Form.Label className='couleur2'>Ekolo (Pays)</Form.Label>
+        <Form.Label className='text-light'>Ekolo (Pays)</Form.Label>
         <Form.Select name='pays_beneficiaire' value={envoie.infoEnvoie.pays_beneficiaire} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
          <option value="RD Congo">RD Congo</option>
          <option value="Angleterre">Angleterre</option>
@@ -242,12 +242,12 @@ function FormEnvoiClient(props)
   
     <Row>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Montant Informations</u></b> </p>
+      <p className='text-light'><b><u>Montant Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Mbongo Mozui akozwa(Montant à récuperer)</Form.Label>
+        <Form.Label className='text-light'>* Mbongo Mozui akozwa(Montant à récuperer)</Form.Label>
         <Form.Control name="montant_beneficiaire" value={envoie.infoEnvoie.montant_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder="Mbongo"  required/>
 
          </Form.Group>
@@ -257,7 +257,7 @@ function FormEnvoiClient(props)
 
         <Col xs ={6}>
         <Form.Group className="mb-3" >
-        <Form.Label className='couleur2'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
+        <Form.Label className='text-light'>Nzela yako zwa Mbongo (Type de retrait)</Form.Label>
         <Form.Select name="type_service" value={envoie.infoEnvoie.type_service} aria-label="Default select example" onChange={e=>inputChanged(e)} required>
         <option value="Kozua na maboko (kozua na nzela ya agence)">Kozua na maboko (kozua na nzela ya agence)</option>
          <option value="Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)">Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money) </option>
@@ -267,7 +267,7 @@ function FormEnvoiClient(props)
 
         {envoie.infoEnvoie.type_service == "Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)" ? <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>* Numero yako tinda mbongo (numero de tranfer)</Form.Label>
+        <Form.Label className='text-light'>* Numero yako tinda mbongo (numero de tranfer)</Form.Label>
         <Form.Control name="numero_transfer"   onChange={e=>inputChanged(e)} type="text" placeholder='numero ya transfer'  required/>
        
          </Form.Group>
