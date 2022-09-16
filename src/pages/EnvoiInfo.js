@@ -11,6 +11,8 @@ import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
+import ClipLoader from "react-spinners/ClipLoader";
+import  './Header.css';
 
 
 
@@ -30,12 +32,14 @@ function EnvoiInfo(props)
     
       const navigate = useNavigate()
       const [modalShow, setModalShow] = React.useState(false);
+      const [modalShow2, setModalShow2] = React.useState(false);
     
 console.log(props.envoie.infoEnvoie)
 
     const submitEnvoie = (e)=>
     {   
       e.preventDefault()
+      setModalShow2(true)
         fetch('https://kobobsapi.herokuapp.com/api/envoieFormulaire/', {
                 method:'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -253,6 +257,7 @@ console.log(props.envoie.infoEnvoie)
           </Col>
         </Row>
   <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+  <MyVerticallyCenteredModal show={modalShow2} onHide={() => setModalShow2(false)} />
 <Footer />
         </>
        
@@ -279,6 +284,28 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+function MyVerticallyCenteredModal2(props) {
+  return (
+    <Modal
+      {...props}
+      size="sm"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Zela Mukie...
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+      <ClipLoader color={"#ff8c00"} loading={true} size={150} /> 
+      </Modal.Body>
+      <Modal.Footer>
       </Modal.Footer>
     </Modal>
   );
