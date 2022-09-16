@@ -1,3 +1,4 @@
+import React from 'react';
 import Container from "react-bootstrap/esm/Container";
 import { Link } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
@@ -9,6 +10,7 @@ import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
+import Button from "react-bootstrap/Button";
 
 
 function Homepage(props)
