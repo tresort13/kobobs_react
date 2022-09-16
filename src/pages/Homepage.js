@@ -8,6 +8,7 @@ import  './Header.css';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
+import Modal from 'react-bootstrap/Modal';
 
 
 function Homepage(props)
@@ -19,6 +20,13 @@ function Homepage(props)
       const isMobileOrTablet = useMediaQuery({
         query: "(max-width: 1224px)"
       });
+      const [modalShow, setModalShow] = React.useState(false);
+
+      const access = ()=>
+      {
+        setModalShow(true)
+      }
+
     return (
     <>
     <Header username={props.username}/>
@@ -91,9 +99,11 @@ function Homepage(props)
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom pt-1 bordure2" style={{width:300}}>
               <div>
-              <Link to="/menu_gestion_recettes">
+              {props.username == "makabagisele@" ? <Link to="/menu_gestion_recettes">
               <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}}></Image>
-              </Link>
+              </Link> : <Link to="">
+              <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}} onClick={access}></Image>
+              </Link>}
               </div>
 
               <div>
@@ -201,9 +211,11 @@ function Homepage(props)
         <Col xs={"auto"} className="mb-5">
         <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom pt-1 bordure2" style={{width:300}}>
               <div>
-              <Link to="/menu_gestion_recettes">
+              {props.username == "" ? <Link to="/menu_gestion_recettes">
               <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}}></Image>
-              </Link>
+              </Link> : <Link to="makabagisele@">
+              <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}} onClick={access}></Image>
+              </Link>}
               </div>
 
               <div>
@@ -231,12 +243,38 @@ function Homepage(props)
         </Row>
 
    </Container>}
-       <Footer />
-       </>
+   <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+    <Footer />
+    </>
 
 
         
     )
+}
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Accès Refusé
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        
+        <p className='text-danger'><b>Vous n'avez pas l'accès à cette option !!!</b>   
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+      </Modal.Footer>
+    </Modal>
+  );
 }
 
 export default Homepage;
