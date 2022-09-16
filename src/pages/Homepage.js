@@ -118,9 +118,11 @@ function Homepage(props)
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
-              <Link to="/menu_users">
+              {props.username == "makabagisele@" ? <Link to="/menu_users">
               <Image src={require('./user_kobo.png')}  className='rounded-pill' style={{width:200}}></Image>
-              </Link>
+              </Link> : <Link to="">
+              <Image src={require('./user_kobo.png')}  className='rounded-pill' style={{width:200}} onClick={access}></Image>
+              </Link>}
               </div>
 
               <div>
@@ -232,9 +234,11 @@ function Homepage(props)
         <Col xs={"auto"} className="mb-5">
         <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
-              <Link to="/menu_users">
+              {props.username == "makabagisele@" ? <Link to="/menu_users">
               <Image src={require('./user_kobo.png')}  className='rounded-pill' style={{width:200}}></Image>
-              </Link>
+              </Link> : <Link to="">
+              <Image src={require('./user_kobo.png')}  className='rounded-pill' style={{width:200}} onClick={access}></Image>
+              </Link>}
               </div>
 
               <div>
