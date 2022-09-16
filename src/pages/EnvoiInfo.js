@@ -72,7 +72,7 @@ console.log(props.envoie.infoEnvoie)
                   date_heure_operation : '',
                   code_abonne : '',
                   status_retrait : '',
-                  numero_transfer: 'Kozua na maboko (kozua na nzela ya agence)'
+                  numero_transfer: '**********'
                  }})
                  navigate('/confirmation_envoie_info')
                  
