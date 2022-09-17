@@ -50,13 +50,13 @@ function Header(props)
     }
     return (
      <div>
-    {isDesktop && <Container fluid className="bg-dark mx-auto">
+    {isDesktop && <Container fluid className=" mx-auto" style={{backgroundColor:"white"}}>
     <Row>
         <Col xs={4} className="my-auto mx-auto text-start">
         {[false].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container>
-            <Navbar.Toggle className="bg-secondary btn-lg"   aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle className="bg-dark btn-lg"   aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
