@@ -56,7 +56,7 @@ function Header(props)
         {[false].map((expand) => (
         <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
           <Container fluid>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle variant="warning" aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
