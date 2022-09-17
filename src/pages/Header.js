@@ -75,24 +75,22 @@ function Header(props)
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="#action1">Home</Nav.Link>
+                  <NavDropdown.Divider />
                   <Nav.Link href="#action2">Envoi Argent</Nav.Link>
+                  <NavDropdown.Divider />
                   <Nav.Link href="#action1">Retrait Argent</Nav.Link>
+                  <NavDropdown.Divider />
                   <Nav.Link href="#action2">Gestion Client</Nav.Link>
+                  <NavDropdown.Divider />
                   <Nav.Link href="#action1">Gestion Operations</Nav.Link>
+                  <NavDropdown.Divider />
                   <Nav.Link href="#action2">Gestion Recettes</Nav.Link>
+                  <NavDropdown.Divider />
                   <Nav.Link href="#action2">Gestion Utilisateurs</Nav.Link>
 
                  
                 </Nav>
-                <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
-                </Form>
+               
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
