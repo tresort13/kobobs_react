@@ -49,11 +49,9 @@ function Header(props)
     {isDesktop && <Container fluid className="bg-dark mx-auto">
     <Row>
         <Col xs={4} className="my-auto mx-auto text-start">
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+        <Navbar bg="light"  className="mb-3">
+            <Navbar.Toggle />
             <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="start" >      
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="text-end mx-auto"><i className="display-6 text-secondary text-end"><b>Menu Navigation</b></i> </Offcanvas.Title>
