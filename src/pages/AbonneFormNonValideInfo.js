@@ -171,7 +171,12 @@ function AbonneFormNonValideInfo(props)
         <p className='text-dark'>Type de retrait: <b className='text-dark '>{value.type_service}</b> </p>
         <p className='text-dark'>date et heure : <b className='text-dark'> {value.date_heure_operation}</b></p> 
     </Col>
-    <Col xs={6}>
+    </Row>
+
+    <Row>
+      <hr style={{color:"darkorange"}}></hr>
+
+    <Col className='text-start' xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button name='validate' value={value.code_retrait} className='pt-3' variant="warning" type="submit" onClick={e=>validateCodeRetrait(e)}>
         Valider code
@@ -179,7 +184,7 @@ function AbonneFormNonValideInfo(props)
         </Link>
         </Col>
 
-        <Col xs={6}>
+        <Col className='text-end' xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button name='validate' value={value.code_retrait} className='pt-3' variant="danger" type="submit" onClick={e=>suprimerOperation(e)}>
         suprimer opération
