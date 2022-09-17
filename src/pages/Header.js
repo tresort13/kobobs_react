@@ -55,8 +55,8 @@ function Header(props)
         <Col xs={4} className="my-auto mx-auto text-start">
         {[false].map((expand) => (
         <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
-          <Container variant="warning">
-            <Navbar.Toggle  aria-controls={`offcanvasNavbar-expand-${expand}`} />
+          <Container>
+            <Navbar.Toggle   aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -100,9 +100,9 @@ function Header(props)
         </Navbar>
       ))}
         </Col>
-        <Col xs={4} className="my-auto mx-auto text-center">
+        <Col xs={4} className="my-auto mx-auto text-start justify-content-start">
           <Link to="/home" style={{textDecoration:"none"}}>
-          <Image  src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:150}}></Image>
+          <Image  src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:180}}></Image>
           </Link>
         </Col>
         <Col xs={4} className="my-auto mx-auto text-end ">
@@ -130,7 +130,7 @@ function Header(props)
     <Row className="mt-2">
         <Col xs={"auto"} className=" mx-auto my-auto text-start ">
          <div>
-         <Button variant="warning" className="btn-lg rounded zoom " onClick={handleShow}><b className="text-dark"> Menu</b></Button>
+         <Button variant="warning" className="btn-lg rounded zoom " onClick={handleShow}><b className="text-dark navbar-toggler"> Menu</b></Button>
         </div>  
         </Col>
 
