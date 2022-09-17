@@ -78,7 +78,7 @@ console.log(props.abonneInfo)
 
     <Row>
     <hr style={{color:"darkorange"}}></hr>
-    <Col xs={12} className ="text-center pt-5">
+    <Col xs={12} className ="text-center pb-3">
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
         Fermer
@@ -118,7 +118,8 @@ console.log(props.abonneInfo)
     </Row>
 
     <Row>
-    <Col xs={6} className ="text-center">
+    <hr style={{color:"darkorange"}}></hr>
+    <Col xs={12} className ="text-center pb-3">
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
         Fermer

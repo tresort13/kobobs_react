@@ -65,9 +65,11 @@ function Homepage(props)
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
-              <Link to="/menu_gestion_abonne">
+              {props.username == "makabagisele@" ? <Link to="/menu_gestion_abonne">
               <Image src={require('./kobo_client.jpg')}  className='rounded-pill' style={{width:200}}></Image>
-              </Link>
+              </Link> : <Link to="">
+              <Image src={require('./kobo_client.jpg')}  className='rounded-pill' style={{width:200}} onClick={access}></Image>
+              </Link>}
               </div>
 
               <div>
@@ -268,12 +270,12 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Accès Refusé
+          
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         
-        <p className='text-danger'><b>Vous n'avez pas l'accès à cette option !!!</b>   
+        <p className='text-danger'><b>Accès Refusé !!!</b>   
         </p>
       </Modal.Body>
       <Modal.Footer>

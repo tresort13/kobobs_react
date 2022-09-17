@@ -100,7 +100,7 @@ return (
         <Col xs ={4}>
         
         
-        <Button variant="outline-warning" type="submit" >
+        <Button variant="warning" type="submit" >
         Valider 
         </Button>
 
@@ -134,7 +134,7 @@ return (
         <Col xs ={4}>
         
         
-        <Button variant="outline-warning" type="submit" >
+        <Button variant="warning" type="submit" >
         Valider 
         </Button>
 

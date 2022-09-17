@@ -10,6 +10,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Nav from 'react-bootstrap/Nav';
 import { useMediaQuery } from 'react-responsive';
 import Button from "react-bootstrap/Button";
+import Navbar from 'react-bootstrap/Navbar';
+
 
 
 
@@ -46,14 +48,14 @@ function Header(props)
      <div>
     {isDesktop && <Container fluid className="bg-dark mx-auto">
     <Row>
-        <Col xs={3} className="my-auto mx-auto text-start">
+        <Col xs={4} className="my-auto mx-auto text-start">
           <a href="#" style={{textDecoration:"none"}}>
           <Image onClick={handleShow} src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
           </a>
         </Col>
-        <Col xs={5} className="my-auto mx-auto my-auto text-end">
-        <Link to="/home" style={{textDecoration:"none"}}>
-          <p className="display-6 text-secondary">KOBO BUSINESS SERVICES</p>
+        <Col xs={4} className="my-auto mx-auto text-start">
+          <Link to="/home" style={{textDecoration:"none"}}>
+          <Image  src={require('./kobo_logo.JPG')}  className='rounded ' style={{width:130}}></Image>
           </Link>
         </Col>
         <Col xs={4} className="my-auto mx-auto text-end ">
@@ -64,7 +66,15 @@ function Header(props)
         </Col>
     </Row>
    
-    <Offcanvas show={show} onHide={handleClose} className="bordure " style={{height:550}}>
+    {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map((expand) => (
+        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+          <Container fluid>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="start" >
+              
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="text-end mx-auto"><i className="display-6 text-secondary text-end"><b>Menu Navigation</b></i> </Offcanvas.Title>
         </Offcanvas.Header>
@@ -79,7 +89,10 @@ function Header(props)
       </Nav>
 
         </Offcanvas.Body>
-      </Offcanvas>
+      </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      ))}
    </Container>}
 
 

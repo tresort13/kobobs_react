@@ -20,7 +20,7 @@ const useState = React.useState
 function RetraitInfo(props)
 {
 
-    const [message,setMessage] = useState("Veuillez Vérifier les informations avant validation")
+    const [message,setMessage] = useState("Vérifier le status code retrait avant validation")
     const [message2,setMessage2] = useState("")
     const [couleur,setCouleur] = useState("text-dark")
     const [modalShow,setModalShow] = React.useState(false);
@@ -84,15 +84,15 @@ const navigate = useNavigate()
         <Header username={props.username} />
 {isDesktop && <Container className='bg-light justify-content-center text-center  mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Retrait Status</u></b> </p>
+      <p className='text-dark'><b><u>Retrait Status</u></b> </p>
     </Row>
-    <Row className='justify-content-center pb-3' >
+    <Row className='justify-content-start pb-3' >
         <Col xs={12}>
         {props.envoie2.infoEnvoie.status_retrait === 'Code Retrait Valide' ?  <p className='text-text-dark'>Status Retrait : <b className='text-light bg-success'>{props.envoie2.infoEnvoie.status_retrait}</b> </p> : <p className='text-text-dark'>Status Retrait : <b className='text-dark bg-danger'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>}
         </Col>
@@ -101,13 +101,16 @@ const navigate = useNavigate()
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Expediteur Informations</u></b> </p>
+      <p className='text-dark'><b><u>Expediteur Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
+        <Col xs={6}>
         <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_expediteur}</b> </p>
         <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_expediteur}</b>  </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
+        </Col>
+
+        <Col xs={6}>
         <p className='text-dark'>Email: <b className='text-dark'>{props.envoie2.infoEnvoie.email_expediteur}</b> </p>
         <p className='text-dark'>Numéro Téléphone: <b className='text-dark'> {props.envoie2.infoEnvoie.numero_expediteur} </b></p>
         <p className='text-dark'>Pays: <b className='text-dark'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
@@ -116,13 +119,16 @@ const navigate = useNavigate()
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Bénéficiare Informations</u></b> </p>
+      <p className='text-dark'><b><u>Bénéficiare Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
         <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_beneficiaire}</b>  </p>
         <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_beneficiaire}</b> </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie2.infoEnvoie.prenom_beneficiaire} </b> </p>
+        </Col>
+
+        <Col xs={12}>
         <p className='text-dark'>Email Adresse: <b className='text-dark'> {props.envoie2.infoEnvoie.adresse_beneficiaire}</b></p>
         <p className='text-dark'>Numéro Téléphone: <b className='text-dark'>{props.envoie2.infoEnvoie.numero_beneficiaire}</b>  </p>
         <p className='text-dark'>Pays: <b className='text-dark'>{props.envoie2.infoEnvoie.pays_beneficiaire}</b> </p>
@@ -131,13 +137,17 @@ const navigate = useNavigate()
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motant Informations</u></b> </p>
+      <p className='text-dark'><b><u>Motant Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
+        <Col xs={6}>
         <p className='text-dark'>Montant: <b className='text-dark'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie2.infoEnvoie.type_service}</b> </p>
-        <p className='text-dark'>Numéro à transferer de l'argent: <b className='text-dark'>{props.envoie2.infoEnvoie.numero_transfer}</b> </p>
+        
+        </Col>
+
+        <Col xs={6}>
+        <p className='text-dark'>Mobile Money: <b className='text-dark'>{props.envoie2.infoEnvoie.numero_transfer}</b> </p>
         </Col>
     </Row>
 
@@ -168,7 +178,7 @@ const navigate = useNavigate()
 
 {isMobileOrTablet && <Container className='bg-light justify-content-center text-center bordure mx-auto mt-5' >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
@@ -185,7 +195,7 @@ const navigate = useNavigate()
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Expediteur Informations</u></b> </p>
+      <p className='text-dark'><b><u>Expediteur Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
@@ -200,7 +210,7 @@ const navigate = useNavigate()
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Bénéficiare Informations</u></b> </p>
+      <p className='text-dark'><b><u>Bénéficiare Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
@@ -215,7 +225,7 @@ const navigate = useNavigate()
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motant Informations</u></b> </p>
+      <p className='text-dark'><b><u>Motant Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>

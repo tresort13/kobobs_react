@@ -80,7 +80,7 @@ console.log(props.userInfo)
     <Row className='justify-content-center pb-3 pt-3'>
         <Col xs ={4} >
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={message} >
+        <Button variant="warning" type="submit" onClick={message} >
         Imprimer 
         </Button>
         </Link>
@@ -143,7 +143,7 @@ console.log(props.userInfo)
     <Row className='justify-content-center pb-3 pt-3'>
         <Col xs ={4} >
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-        <Button variant="outline-warning" type="submit" onClick={message} >
+        <Button variant="warning" type="submit" onClick={message} >
         Imprimer 
         </Button>
         </Link>

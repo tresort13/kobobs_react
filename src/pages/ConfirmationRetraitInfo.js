@@ -80,7 +80,7 @@ function ConfirmationRetraitInfo(props)
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
     </Row>
-    <Row className='justify-content-center pb-3' >
+    <Row className='justify-content-start pb-3' >
         <Col xs={6}>
         <p className='text-dark'>Code Retrait : <b className='text-dark bg-danger'> {props.envoie2.infoEnvoie.code_retrait}</b></p>
         <p className='text-dark'>Montant à récupérer: <b className='text-dark bg-danger'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
@@ -127,7 +127,7 @@ function ConfirmationRetraitInfo(props)
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Page de confirmation de rétrait</u></b> </p>
     </Row>
-    <Row className='justify-content-center pb-3' >
+    <Row className='justify-content-start pb-3' >
     <Col xs={12}>
         <p className='text-dark'>Code Retrait : <b className='text-dark bg-danger'> {props.envoie2.infoEnvoie.code_retrait}</b></p>
         <p className='text-dark'>Montant à récupérer: <b className='text-dark bg-danger'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
@@ -173,7 +173,7 @@ function MyVerticallyCenteredModal(props) {
   return (
     <Modal
       {...props}
-      size="md"
+      size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >

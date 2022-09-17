@@ -19,7 +19,7 @@ const useState = React.useState
 function ConfirmationEnvoieInfo(props)
 {
 
-    const [message,setMessage] = useState("Votre Code de retrait ne sera valide qu'après votre paiement")
+    const [message,setMessage] = useState("Code retrait ne sera valide qu'après votre paiement")
     const [couleur,setCouleur] = useState("text-dark")
     const [modalShow, setModalShow] = React.useState(true);
 

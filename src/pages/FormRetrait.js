@@ -106,7 +106,7 @@ function FormRetrait(props)
 
    <Row className='pb-3'>
        <Col>
-        <Button variant="outline-warning" type="submit" >
+        <Button variant="warning" type="submit" >
         Valider 
         </Button>
         </Col>
@@ -141,7 +141,7 @@ function FormRetrait(props)
 
    <Row className='pb-3'>
        <Col>
-        <Button variant="outline-warning" type="submit" >
+        <Button variant="warning" type="submit" >
         Valider 
         </Button>
         </Col>

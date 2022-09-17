@@ -108,7 +108,7 @@ console.log(props.envoie.infoEnvoie)
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motant Informations</u></b> </p>
+      <p className='text-dark'><b><u>Motant Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6} className="text-start">
@@ -126,7 +126,7 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Expediteur Informations</u></b> </p>
+      <p className='text-dark'><b><u>Expediteur Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6} className="text-start">
@@ -145,7 +145,7 @@ console.log(props.envoie.infoEnvoie)
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Bénéficiare Informations</u></b> </p>
+      <p className='text-dark'><b><u>Bénéficiare Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6} className="text-start">
@@ -195,7 +195,7 @@ console.log(props.envoie.infoEnvoie)
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motant Informations</u></b> </p>
+      <p className='text-dark'><b><u>Motant Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12} className="text-start">
@@ -208,7 +208,7 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Expediteur Informations</u></b> </p>
+      <p className='text-dark'><b><u>Expediteur Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12} className="text-start">
@@ -224,7 +224,7 @@ console.log(props.envoie.infoEnvoie)
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Bénéficiare Informations</u></b> </p>
+      <p className='text-dark'><b><u>Bénéficiare Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12} className="text-start">
@@ -251,7 +251,7 @@ console.log(props.envoie.infoEnvoie)
 
         <Col xs={6}>
         <Link to="/form_envoie_client">
-         <Button variant="outline-warning" type="submit">
+         <Button variant="secondary" type="submit">
         modifier
         </Button>
         </Link>

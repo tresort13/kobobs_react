@@ -96,7 +96,7 @@ return (
     
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>  
-        <Button variant="outline-warning" type="submit" >
+        <Button variant="warning" type="submit" >
         Valider 
         </Button>
         </Col>
@@ -126,7 +126,7 @@ return (
     
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>  
-        <Button variant="outline-warning" type="submit" >
+        <Button variant="warning" type="submit" >
         Valider 
         </Button>
         </Col>

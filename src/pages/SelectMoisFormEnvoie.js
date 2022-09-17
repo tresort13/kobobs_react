@@ -75,7 +75,7 @@ return (
     <>
     <Header username={props.username}/>
 
-{isDesktop && <Container className='bg-light justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
+{isDesktop && <Container className='bg-light justify-content-center text-center ' style={{marginTop:100,width:750}} >
 <Row className='justify-content-center mb-3 pt-5' >
         <Col xs={6}>
         <p className="text-dark"><i><b>{message}</b></i></p>
@@ -98,7 +98,7 @@ return (
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Button variant="outline-warning" type="submit">
+        <Button variant="warning" type="submit">
         Valider 
         </Button>
 
@@ -130,7 +130,7 @@ return (
     <Row className='justify-content-center pb-3'>
         <Col xs ={4}>
         
-        <Button variant="outline-warning" type="submit">
+        <Button variant="warning" type="submit">
         Valider 
         </Button>
 
