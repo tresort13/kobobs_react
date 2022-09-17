@@ -53,7 +53,7 @@ function Header(props)
     {isDesktop && <Container fluid className="bg-dark mx-auto">
     <Row>
         <Col xs={4} className="my-auto mx-auto text-start">
-        {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map((expand) => (
+        {['lg'].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
             <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
