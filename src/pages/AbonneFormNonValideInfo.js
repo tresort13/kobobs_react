@@ -142,7 +142,7 @@ function AbonneFormNonValideInfo(props)
     return <Container className='bg-light justify-content-center text-center mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
-        <p className='couleur2'><i><b>{message}</b></i></p>
+        <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
@@ -150,16 +150,20 @@ function AbonneFormNonValideInfo(props)
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Informations</u></b> </p>
+
     </Row>
     <Row className='justify-content-start pb-3 text-start' >
-    <Col className='justify-content-start text-start'  xs={12}>
+    <Col className='justify-content-start text-start'  xs={6}>
        <p className='text-dark'>Code Retrait : <b className='text-dark bg-danger'>{value.code_retrait}</b> </p>
         <p className='text-dark'>Status Retrait : <b className='text-dark '>{value.status_retrait}</b> </p>
         <p className='text-dark'>Noms complets Expediteur: <b className='text-dark '>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
         <p className='text-dark'>Noms complets Beneficiare: <b className='text-dark'>{value.nom_beneficiaire} {value.postnom_beneficiaire} {value.prenom_beneficiaire}</b> </p>
         <p className='text-dark'>Pays Expediteur: <b className='text-dark'> {value.pays_expediteur}</b></p>
         <p className='text-dark'>Numéro Expediteur: <b className='text-dark'> {value.numero_expediteur}</b></p>
+    </Col>
+
+    <Col className='justify-content-start text-start'  xs={6}>
+      
         <p className='text-dark'>Email Expediteur: <b className='text-dark'> {value.email_expediteur}</b></p>
         <p className='text-dark'>Pays Beneficiare: <b className='text-dark'> {value.pays_beneficiaire}</b></p>
         <p className='text-dark'>Montant à Recuperer: <b className='text-dark'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
