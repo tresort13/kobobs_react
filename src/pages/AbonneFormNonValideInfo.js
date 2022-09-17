@@ -69,7 +69,7 @@ function AbonneFormNonValideInfo(props)
 
       useEffect(()=>
       {
-         const interval =  setInterval(()=>setModalShow3(false),5000);
+         const interval =  setInterval(()=>setModalShow3(false),4000);
           return () => clearInterval(interval)
       },[])
 
@@ -173,8 +173,8 @@ function AbonneFormNonValideInfo(props)
     </Col>
     </Row>
 
-    <Row>
-      <hr style={{color:"darkorange"}} className="pb-3"></hr>
+    <Row className="pb-3">
+      <hr style={{color:"darkorange"}} ></hr>
 
     <Col className='text-center' xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
@@ -201,10 +201,10 @@ function AbonneFormNonValideInfo(props)
 
 {isMobileOrTablet && envoie4.map((value)=>
     {
-    return <Container className='bg-light justify-content-center text-center mx-auto my-auto' >
+    return <Container className='bg-light justify-content-center text-center mx-auto my-auto mb-5' >
     <Row className='justify-content-center mb-3 pt-3' >
             <Col xs={6}>
-            <p className='couleur2'><i><b>{message}</b></i></p>
+            <p className='couleur2 display-6'><i><b>{message}</b></i></p>
             </Col>
         </Row>
     
@@ -212,24 +212,27 @@ function AbonneFormNonValideInfo(props)
     
         <Row className='justify-content-center pb-3'>
           <hr style={{color:"darkorange"}}></hr>
-          <p className='couleur2'><b><u>Informations</u></b> </p>
         </Row>
         <Row className='justify-content-start pb-3' >
         <Col xs={12}>
-        <p className='text-dark'>Code Retrait : <b className='text-dark bg-warning'>{value.code_retrait}</b> </p>
-        <p className='text-dark'>Status Retrait : <b className='text-dark bg-warning'>{value.status_retrait}</b> </p>
-        <p className='text-dark'>Noms complets Expediteur: <b className='text-dark bg-warning'>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
-        <p className='text-dark'>Noms complets Beneficiare: <b className='couleur2'>{value.nom_beneficiaire} {value.postnom_beneficiaire} {value.prenom_beneficiaire}</b> </p>
+        <p className='text-dark'>Code Retrait : <b className='text-dark bg-danger'>{value.code_retrait}</b> </p>
+        <p className='text-dark'>Status Retrait : <b className='text-dark bg-danger'>{value.status_retrait}</b> </p>
+        <p className='text-dark'>Noms complets Expediteur: <b className='text-dark '>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Noms complets Beneficiare: <b className='text-dark'>{value.nom_beneficiaire} {value.postnom_beneficiaire} {value.prenom_beneficiaire}</b> </p>
         <p className='text-dark'>Pays Expediteur: <b className='couleur2'> {value.pays_expediteur}</b></p>
-        <p className='text-dark'>Numéro Expediteur: <b className='text-dark bg-warning'> {value.numero_expediteur}</b></p>
-        <p className='text-dark'>Email Expediteur: <b className='couleur2'> {value.email_expediteur}</b></p>
-        <p className='text-dark'>Pays Beneficiare: <b className='couleur2'> {value.pays_beneficiaire}</b></p>
-        <p className='text-dark'>Montant à Recuperer: <b className='text-dark bg-warning'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-dark'>Montant à payer: <b className='text-dark bg-warning'>{Number(value.montant_total).toFixed(2)} £</b> </p>
-        <p className='text-dark'>Type de retrait: <b className='text-dark bg-warning'>{value.type_service}</b> </p>
-        <p className='text-dark'>date et heure : <b className='couleur2'> {value.date_heure_operation}</b></p> 
+        <p className='text-dark'>Numéro Expediteur: <b className='text-dark'> {value.numero_expediteur}</b></p>
+        <p className='text-dark'>Email Expediteur: <b className='text-dark'> {value.email_expediteur}</b></p>
+        <p className='text-dark'>Pays Beneficiare: <b className='text-dark'> {value.pays_beneficiaire}</b></p>
+        <p className='text-dark'>Montant à Recuperer: <b className='text-dark '>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
+        <p className='text-dark'>Montant à payer: <b className='text-dark'>{Number(value.montant_total).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Type de retrait: <b className='text-dark'>{value.type_service}</b> </p>
+        <p className='text-dark'>date et heure : <b className='text-dark'> {value.date_heure_operation}</b></p> 
         </Col>
-        <Col xs={6}>
+        </Row>
+
+        <Row className='pt-3'>
+        <hr style={{color:"darkorange"}}></hr>
+        <Col xs={6} className="text-center">
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
             <Button name='validate' value={value.code_retrait} className='pt-3' variant="warning" type="submit" onClick={e=>validateCodeRetrait(e)}>
             Valider code 
@@ -237,7 +240,7 @@ function AbonneFormNonValideInfo(props)
             </Link>
             </Col>
     
-            <Col xs={6}>
+            <Col xs={6} className="text-center">
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
             <Button name='validate' value={value.code_retrait} className='pt-3' variant="danger" type="submit" onClick={e=>suprimerOperation(e)}>
             suprimer opération
@@ -269,7 +272,7 @@ function MyVerticallyCenteredModal(props) {
     return (
       <Modal
         {...props}
-        size="md"
+        size="sm"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
@@ -279,7 +282,6 @@ function MyVerticallyCenteredModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Changement Status Code Retrait Reussi : </h4>
           <p className='text-success'><b>le code de retrait a été validé avec success </b>   
           </p>
         </Modal.Body>
@@ -294,7 +296,7 @@ function MyVerticallyCenteredModal(props) {
     return (
       <Modal
         {...props}
-        size="md"
+        size="sm"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
@@ -304,7 +306,6 @@ function MyVerticallyCenteredModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Message : </h4>
           <p className='text-success'><b>le formulaire d'envoi a été supprimé avec succès</b>   
           </p>
         </Modal.Body>

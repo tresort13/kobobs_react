@@ -28,7 +28,7 @@ function AbonneCodeInfo(props)
     
         const[position,setPosition] = useState('')
 
-    const [message,setMessage] = useState("Informations Générales sur l'abonné")
+    const [message,setMessage] = useState("Informations Abonné")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
@@ -48,10 +48,10 @@ console.log(props.abonneInfo)
         
         <>
         <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
+{isDesktop && <Container className='bg-light justify-content-center text-center mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
-        <p className='couleur2'><i><b>{message}</b></i></p>
+        <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
@@ -59,22 +59,22 @@ console.log(props.abonneInfo)
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Abonné Informations  </u></b> </p>
+      
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo ya Libota (Nom): <b className='couleur2'>{props.abonneInfo.infoAbonne.nom_expediteur}</b></p>
-        <p className='text-light'>Kombo ya Authenticité  (Postnom) : <b className='couleur2'>{props.abonneInfo.infoAbonne.postnom_expediteur}</b></p>
-        <p className='text-light'>Kombo ya Mukristu (Prénom) : <b className='couleur2'>{props.abonneInfo.infoAbonne.prenom_expediteur}</b> </p>
-        <p className='text-light'>Email : <b className='couleur2'>{props.abonneInfo.infoAbonne.email_expediteur}</b> </p>
-        <p className='text-light'>Numéro Ya Tshombo : <b className='couleur2'>{props.abonneInfo.infoAbonne.numero_expediteur}</b> </p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'> {props.abonneInfo.infoAbonne.pays_expediteur}</b></p>
-        <p className='text-light'>Code Abonné : <b className='couleur2'>{props.abonneInfo.infoAbonne.code_abonne}</b> </p>
+        <p className='text-light'>Nom: <b className='text-dark'>{props.abonneInfo.infoAbonne.nom_expediteur}</b></p>
+        <p className='text-light'>Postnom: <b className='text-dark'>{props.abonneInfo.infoAbonne.postnom_expediteur}</b></p>
+        <p className='text-light'>Prénom: <b className='text-dark'>{props.abonneInfo.infoAbonne.prenom_expediteur}</b> </p>
+        <p className='text-light'>Email: <b className='text-dark'>{props.abonneInfo.infoAbonne.email_expediteur}</b> </p>
+        <p className='text-light'>Téléphone: <b className='text-dark'>{props.abonneInfo.infoAbonne.numero_expediteur}</b> </p>
+        <p className='text-light'>Pays: <b className='text-dark'> {props.abonneInfo.infoAbonne.pays_expediteur}</b></p>
+        <p className='text-light'>Code Abonné: <b className='text-dark'>{props.abonneInfo.infoAbonne.code_abonne}</b> </p>
         </Col>
         <Col xs={6}>
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
-        ok
+        Fermer
         </Button>
         </Link>
         </Col>
@@ -85,10 +85,10 @@ console.log(props.abonneInfo)
 </Container>
 }
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto my-auto'>
+{isMobileOrTablet && <Container className='bg-light justify-content-center text-center  mx-auto my-auto'>
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={12}>
-        <p className='couleur2'><i><b>{message}</b></i></p>
+        <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
@@ -96,22 +96,22 @@ console.log(props.abonneInfo)
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Abonné Informations  </u></b> </p>
+      
     </Row>
-    <Row className='justify-content-start pb-3' >
+    <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Kombo ya Libota (Nom): <b className='couleur2'>{props.abonneInfo.infoAbonne.nom_expediteur}</b></p>
-        <p className='text-light'>Kombo ya Authenticité  (Postnom) : <b className='couleur2'>{props.abonneInfo.infoAbonne.postnom_expediteur}</b></p>
-        <p className='text-light'>Kombo ya Mukristu (Prénom) : <b className='couleur2'>{props.abonneInfo.infoAbonne.prenom_expediteur}</b> </p>
-        <p className='text-light'>Email : <b className='couleur2'>{props.abonneInfo.infoAbonne.email_expediteur}</b> </p>
-        <p className='text-light'>Numéro Ya Tshombo : <b className='couleur2'>{props.abonneInfo.infoAbonne.numero_expediteur}</b> </p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'> {props.abonneInfo.infoAbonne.pays_expediteur}</b></p>
-        <p className='text-light'>Code Abonné : <b className='couleur2'>{props.abonneInfo.infoAbonne.code_abonne}</b> </p>
+        <p className='text-light'>Nom: <b className='text-dark'>{props.abonneInfo.infoAbonne.nom_expediteur}</b></p>
+        <p className='text-light'>Postnom: <b className='text-dark'>{props.abonneInfo.infoAbonne.postnom_expediteur}</b></p>
+        <p className='text-light'>Prénom: <b className='text-dark'>{props.abonneInfo.infoAbonne.prenom_expediteur}</b> </p>
+        <p className='text-light'>Email: <b className='text-dark'>{props.abonneInfo.infoAbonne.email_expediteur}</b> </p>
+        <p className='text-light'>Téléphone: <b className='text-dark'>{props.abonneInfo.infoAbonne.numero_expediteur}</b> </p>
+        <p className='text-light'>Pays: <b className='text-dark'> {props.abonneInfo.infoAbonne.pays_expediteur}</b></p>
+        <p className='text-light'>Code Abonné: <b className='text-dark'>{props.abonneInfo.infoAbonne.code_abonne}</b> </p>
         </Col>
         <Col xs={6}>
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
-        ok
+        Fermer
         </Button>
         </Link>
         </Col>
