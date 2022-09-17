@@ -54,13 +54,13 @@ function Header(props)
     <Row>
     <Col xs={2} className="my-auto mx-auto text-center justify-content-center">
           <Link to="/home" style={{textDecoration:"none"}}>
-          <Image  src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:100}}></Image>
+          <Image  src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
           </Link>
         </Col>
 
         <Col xs={2} className="my-auto mx-auto text-start">
         {[false].map((expand) => (
-        <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
+        <Navbar key={expand} bg="dark" expand={expand} className="mb-1">
           <Container>
             <Navbar.Toggle className="bg-secondary"   aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
