@@ -50,7 +50,7 @@ function Header(props)
     <Row>
         <Col xs={4} className="my-auto mx-auto text-start">
         <div>
-         <Button variant="dark" type="button" className="btn-lg rounded zoom navbar-toggler" onClick={handleShow}><span class="navbar-toggler-icon"></span></Button>
+         <Button variant="warning"  className="btn-lg rounded zoom" onClick={handleShow}><span class="navbar-toggler-icon" variant="dark"></span></Button>
         </div> 
         </Col>
         <Col xs={4} className="my-auto mx-auto text-center">
