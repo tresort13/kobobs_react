@@ -11,6 +11,9 @@ import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
+import ClipLoader from "react-spinners/ClipLoader";
+import  './Header.css';
+
 
 
 
@@ -29,6 +32,7 @@ function AbonneFormNonValideInfo(props)
 
     const [modalShow, setModalShow] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
+    const [modalShow3, setModalShow3] = React.useState(true);
 
     const navigate = useNavigate()
 
@@ -62,6 +66,13 @@ function AbonneFormNonValideInfo(props)
                       console.log(error)
                   } )
       }
+
+      useEffect(()=>
+      {
+         const interval =  setInterval(()=>setModalShow3(false),20000);
+          return () => clearInterval(interval)
+      },[])
+
 
       useEffect(()=>
       {
@@ -141,20 +152,20 @@ function AbonneFormNonValideInfo(props)
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Informations</u></b> </p>
     </Row>
-    <Row className='justify-content-center pb-3' >
+    <Row className='justify-content-start pb-3' >
     <Col xs={12}>
-       <p className='text-dark'>Code Retrait : <b className='text-dark bg-warning'>{value.code_retrait}</b> </p>
-        <p className='text-dark'>Status Retrait : <b className='text-dark bg-warning'>{value.status_retrait}</b> </p>
-        <p className='text-dark'>Noms complets Expediteur: <b className='text-dark bg-warning'>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
-        <p className='text-dark'>Noms complets Beneficiare: <b className='couleur2'>{value.nom_beneficiaire} {value.postnom_beneficiaire} {value.prenom_beneficiaire}</b> </p>
-        <p className='text-dark'>Pays Expediteur: <b className='couleur2'> {value.pays_expediteur}</b></p>
-        <p className='text-dark'>Numéro Expediteur: <b className='text-dark bg-warning'> {value.numero_expediteur}</b></p>
-        <p className='text-dark'>Email Expediteur: <b className='couleur2'> {value.email_expediteur}</b></p>
-        <p className='text-dark'>Pays Beneficiare: <b className='couleur2'> {value.pays_beneficiaire}</b></p>
-        <p className='text-dark'>Montant à Recuperer: <b className='text-dark bg-warning'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-dark'>Montant à payer: <b className='text-dark bg-warning'>{Number(value.montant_total).toFixed(2)} £</b> </p>
-        <p className='text-dark'>Type de retrait: <b className='text-dark bg-warning'>{value.type_service}</b> </p>
-        <p className='text-dark'>date et heure : <b className='couleur2'> {value.date_heure_operation}</b></p> 
+       <p className='text-dark'>Code Retrait : <b className='text-dark bg-danger'>{value.code_retrait}</b> </p>
+        <p className='text-dark'>Status Retrait : <b className='text-dark '>{value.status_retrait}</b> </p>
+        <p className='text-dark'>Noms complets Expediteur: <b className='text-dark '>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Noms complets Beneficiare: <b className='text-dark'>{value.nom_beneficiaire} {value.postnom_beneficiaire} {value.prenom_beneficiaire}</b> </p>
+        <p className='text-dark'>Pays Expediteur: <b className='text-dark'> {value.pays_expediteur}</b></p>
+        <p className='text-dark'>Numéro Expediteur: <b className='text-dark'> {value.numero_expediteur}</b></p>
+        <p className='text-dark'>Email Expediteur: <b className='text-dark'> {value.email_expediteur}</b></p>
+        <p className='text-dark'>Pays Beneficiare: <b className='text-dark'> {value.pays_beneficiaire}</b></p>
+        <p className='text-dark'>Montant à Recuperer: <b className='text-dark'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
+        <p className='text-dark'>Montant à payer: <b className='text-dark '>{Number(value.montant_total).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Type de retrait: <b className='text-dark '>{value.type_service}</b> </p>
+        <p className='text-dark'>date et heure : <b className='text-dark'> {value.date_heure_operation}</b></p> 
     </Col>
     <Col xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
@@ -238,6 +249,7 @@ function AbonneFormNonValideInfo(props)
         </Row>
 <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
+<MyVerticallyCenteredModal3 show={modalShow3} onHide={() => setModalShow3(false)} />
 <Footer />
         </>
        
@@ -293,5 +305,29 @@ function MyVerticallyCenteredModal(props) {
       </Modal>
     );
   }
+
+  function MyVerticallyCenteredModal3(props) {
+    return (
+      <Modal
+        {...props}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Veuillez Patienter...
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <ClipLoader color={"#ff8c00"} loading={true} size={150} /> 
+        </Modal.Body>
+        <Modal.Footer>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+
+
 
 export default AbonneFormNonValideInfo;
