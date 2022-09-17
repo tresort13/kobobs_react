@@ -75,19 +75,20 @@ function Header(props)
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                 <NavDropdown.Divider />
-                  <Nav.Link href="#action1">Home</Nav.Link>
+                  <Nav.Link href="/home"><b>Home</b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="#action2">Envoi Argent</Nav.Link>
+                  <Nav.Link href="/menu_envoie"><b>Envoi Argent</b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="#action1">Retrait Argent</Nav.Link>
+                  <Nav.Link href="/form_retrait"><b>Retrait Argent</b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="#action2">Gestion Client</Nav.Link>
+                  <Nav.Link href="/menu_gestion_abonne"><b>Gestion Client</b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="#action1">Gestion Operations</Nav.Link>
+                  <Nav.Link href="/menu_gestion_operation"><b>Gestion Operation</b>s</Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="#action2">Gestion Recettes</Nav.Link>
+                  <Nav.Link href="/menu_gestion_recettes"><b>Gestion Recettes</b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="#action2">Gestion Utilisateurs</Nav.Link>
+                  <Nav.Link href="/menu_users"><b>Gestion Utilisateurs</b></Nav.Link>
+                  <NavDropdown.Divider />
 
                  
                 </Nav>
