@@ -49,15 +49,12 @@ function Header(props)
     {isDesktop && <Container fluid className="bg-dark mx-auto">
     <Row>
         <Col xs={4} className="my-auto mx-auto text-start">
-        {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
-          <Container fluid>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="start" >
-              
+              placement="start" >      
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="text-end mx-auto"><i className="display-6 text-secondary text-end"><b>Menu Navigation</b></i> </Offcanvas.Title>
         </Offcanvas.Header>
@@ -70,13 +67,12 @@ function Header(props)
         <Nav.Link href="/menu_gestion_recettes"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion Recettes</i></Button></Nav.Link>
         <Nav.Link href="/menu_users"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion Utilisateurs</i></Button></Nav.Link> 
       </Nav>
-
         </Offcanvas.Body>
       </Navbar.Offcanvas>
-          </Container>
         </Navbar>
-      ))}
         </Col>
+
+
         <Col xs={4} className="my-auto mx-auto text-start">
           <Link to="/home" style={{textDecoration:"none"}}>
           <Image  src={require('./kobo_logo.JPG')}  className='rounded ' style={{width:130}}></Image>
