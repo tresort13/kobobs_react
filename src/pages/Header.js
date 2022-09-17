@@ -56,12 +56,11 @@ function Header(props)
         {[false].map((expand) => (
         <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
           <Container>
-            <Navbar.Toggle   aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle className="bg-warning"   aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="start" variant="warning"
-            >
+              placement="start" >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   Offcanvas
@@ -100,14 +99,14 @@ function Header(props)
         </Navbar>
       ))}
         </Col>
-        <Col xs={4} className="my-auto mx-auto text-start justify-content-start">
+        <Col xs={4} className="my-auto mx-auto text-center justify-content-center">
           <Link to="/home" style={{textDecoration:"none"}}>
-          <Image  src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:180}}></Image>
+          <Image  src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:150}}></Image>
           </Link>
         </Col>
         <Col xs={4} className="my-auto mx-auto text-end ">
          <div>
-           <pre className="text-dark display-6" style={{fontSize: 20}}><Image className="navbar-brand rounded-circle" src={require('./login.jpeg')} type="button" alt="profil" style={{width:40}} ></Image><span ><i className="text-white"> Bonjour <b className="couleur2">{props.username}</b></i> </span><span className="separateur text-secondary"></span><a href="" style={{textDecoration:"none"}}><span className="text-danger"><i onClick={logout}> Logout </i> </span></a></pre>
+           <pre className="text-dark display-6" style={{fontSize: 20}}><Image className="navbar-brand rounded-circle" src={require('./login.jpeg')} type="button" alt="profil" style={{width:40}} ></Image><span ><i className="text-white"><b className="couleur2">{props.username}</b></i> </span><span className="separateur text-secondary"></span><a href="" style={{textDecoration:"none"}}><span className="text-danger"><i onClick={logout}> Logout </i> </span></a></pre>
            <i><pre className="couleur2 display-6 timing text-center" style={{fontSize: 15}}>{theTime}</pre></i>
         </div>  
         </Col>
