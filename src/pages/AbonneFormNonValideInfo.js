@@ -69,7 +69,7 @@ function AbonneFormNonValideInfo(props)
 
       useEffect(()=>
       {
-         const interval =  setInterval(()=>setModalShow3(false),10000);
+         const interval =  setInterval(()=>setModalShow3(false),5000);
           return () => clearInterval(interval)
       },[])
 
@@ -174,9 +174,9 @@ function AbonneFormNonValideInfo(props)
     </Row>
 
     <Row>
-      <hr style={{color:"darkorange"}}></hr>
+      <hr style={{color:"darkorange"}} className="pb-3"></hr>
 
-    <Col className='text-start' xs={6}>
+    <Col className='text-center' xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button name='validate' value={value.code_retrait} className='pt-3' variant="warning" type="submit" onClick={e=>validateCodeRetrait(e)}>
         Valider code
@@ -184,7 +184,7 @@ function AbonneFormNonValideInfo(props)
         </Link>
         </Col>
 
-        <Col className='text-end' xs={6}>
+        <Col className='text-center' xs={6}>
         <Link to="" style={{color:'white',textDecorationLine:'none'}}>
         <Button name='validate' value={value.code_retrait} className='pt-3' variant="danger" type="submit" onClick={e=>suprimerOperation(e)}>
         suprimer opération
