@@ -69,20 +69,14 @@ function Header(props)
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
-                  <NavDropdown
-                    title="Dropdown"
-                    id={`offcanvasNavbarDropdown-expand-${expand}`}
-                  >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item>
-                  </NavDropdown>
+                  <Nav.Link href="#action2">Envoi Argent</Nav.Link>
+                  <Nav.Link href="#action1">Retrait Argent</Nav.Link>
+                  <Nav.Link href="#action2">Gestion Client</Nav.Link>
+                  <Nav.Link href="#action1">Gestion Operations</Nav.Link>
+                  <Nav.Link href="#action2">Gestion Recettes</Nav.Link>
+                  <Nav.Link href="#action2">Gestion Utilisateurs</Nav.Link>
+
+                 
                 </Nav>
                 <Form className="d-flex">
                   <Form.Control
