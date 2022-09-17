@@ -62,7 +62,7 @@ function Header(props)
         {[false].map((expand) => (
         <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
           <Container>
-            <Navbar.Toggle className="bg-outline-warning "   aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle className="bg-light"   aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -100,9 +100,9 @@ function Header(props)
       ))}
         </Col>
 
-        <Col xs={4} className="my-auto mx-auto my-auto text-end">
+        <Col xs={4} className="my-auto mx-auto my-auto text-center">
           <Link to="/home" style={{textDecoration:"none"}}>
-          <p className="display-6 text-secondary">KOBO BUSINESS</p>
+          <p className="display-6 text-secondary">KOBO BS</p>
           </Link>
         </Col>
         
