@@ -69,7 +69,7 @@ function AbonneFormNonValideInfo(props)
 
       useEffect(()=>
       {
-         const interval =  setInterval(()=>setModalShow3(false),20000);
+         const interval =  setInterval(()=>setModalShow3(false),10000);
           return () => clearInterval(interval)
       },[])
 
@@ -152,8 +152,8 @@ function AbonneFormNonValideInfo(props)
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Informations</u></b> </p>
     </Row>
-    <Row className='justify-content-start pb-3' >
-    <Col xs={12}>
+    <Row className='justify-content-start pb-3 text-start' >
+    <Col className='justify-content-start text-start'  xs={12}>
        <p className='text-dark'>Code Retrait : <b className='text-dark bg-danger'>{value.code_retrait}</b> </p>
         <p className='text-dark'>Status Retrait : <b className='text-dark '>{value.status_retrait}</b> </p>
         <p className='text-dark'>Noms complets Expediteur: <b className='text-dark '>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
