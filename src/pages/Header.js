@@ -60,7 +60,7 @@ function Header(props)
 
         <Col xs={2} className="my-auto mx-auto text-start">
         {[false].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+        <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
           <Container>
             <Navbar.Toggle className="bg-outline-warning "   aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
@@ -69,7 +69,7 @@ function Header(props)
               placement="start" >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
+                  Menu
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
@@ -102,9 +102,8 @@ function Header(props)
 
         <Col xs={4} className="my-auto mx-auto my-auto text-end">
           <Link to="/home" style={{textDecoration:"none"}}>
-          <p className="display-6 text-secondary">KOBO BUSINESS SERVICES</p>
+          <p className="display-6 text-secondary">KOBO BUSINESS</p>
           </Link>
-          <div className="text-center justify-content-center"><Button variant="warning" className="btn-lg rounded zoom mb-3" onClick={handleShow}><b className="text-dark"> Menu</b></Button></div> 
         </Col>
         
         <Col xs={4} className="my-auto mx-auto text-end ">
