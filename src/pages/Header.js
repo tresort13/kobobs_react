@@ -54,7 +54,7 @@ function Header(props)
     <Row>
     <Col xs={2} className="my-auto mx-auto text-center justify-content-center">
           <Link to="/home" style={{textDecoration:"none"}}>
-          <Image  src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:150}}></Image>
+          <Image  src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:100}}></Image>
           </Link>
         </Col>
 
