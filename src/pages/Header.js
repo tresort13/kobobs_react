@@ -66,7 +66,7 @@ function Header(props)
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="start" >
+              placement="start" style={{height:550}} >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   Menu
@@ -74,6 +74,7 @@ function Header(props)
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
+                <NavDropdown.Divider />
                   <Nav.Link href="#action1">Home</Nav.Link>
                   <NavDropdown.Divider />
                   <Nav.Link href="#action2">Envoi Argent</Nav.Link>
