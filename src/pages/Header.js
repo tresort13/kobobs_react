@@ -50,13 +50,19 @@ function Header(props)
     }
     return (
      <div>
-    {isDesktop && <Container fluid className=" mx-auto" style={{backgroundColor:"white"}}>
+    {isDesktop && <Container fluid className="bg-dark mx-auto" >
     <Row>
-        <Col xs={4} className="my-auto mx-auto text-start">
+    <Col xs={2} className="my-auto mx-auto text-center justify-content-center">
+          <Link to="/home" style={{textDecoration:"none"}}>
+          <Image  src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:150}}></Image>
+          </Link>
+        </Col>
+
+        <Col xs={2} className="my-auto mx-auto text-start">
         {[false].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container>
-            <Navbar.Toggle className="bg-dark btn-lg"   aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle className="bg-outline-warning "   aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -93,11 +99,14 @@ function Header(props)
         </Navbar>
       ))}
         </Col>
-        <Col xs={4} className="my-auto mx-auto text-center justify-content-center">
+
+        <Col xs={4} className="my-auto mx-auto my-auto text-end">
           <Link to="/home" style={{textDecoration:"none"}}>
-          <Image  src={require('./kobo_logo.JPG')}  className='rounded ' style={{width:150}}></Image>
+          <p className="display-6 text-secondary">KOBO BUSINESS SERVICES</p>
           </Link>
+          <div className="text-center justify-content-center"><Button variant="warning" className="btn-lg rounded zoom mb-3" onClick={handleShow}><b className="text-dark"> Menu</b></Button></div> 
         </Col>
+        
         <Col xs={4} className="my-auto mx-auto text-end ">
          <div>
            <pre className="text-dark display-6" style={{fontSize: 20}}><span ><i className="text-white"><b className="couleur2">{props.username}</b></i> </span><span className="separateur text-secondary"></span><a href="" style={{textDecoration:"none"}}><span className="text-danger"><i onClick={logout}> Logout </i> </span></a></pre>
