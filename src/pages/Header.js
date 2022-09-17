@@ -49,24 +49,7 @@ function Header(props)
     {isDesktop && <Container fluid className="bg-dark mx-auto">
     <Row>
         <Col xs={4} className="my-auto mx-auto text-start">
-          <a href="#" style={{textDecoration:"none"}}>
-          <Image onClick={handleShow} src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:130}}></Image>
-          </a>
-        </Col>
-        <Col xs={4} className="my-auto mx-auto text-start">
-          <Link to="/home" style={{textDecoration:"none"}}>
-          <Image  src={require('./kobo_logo.JPG')}  className='rounded ' style={{width:130}}></Image>
-          </Link>
-        </Col>
-        <Col xs={4} className="my-auto mx-auto text-end ">
-         <div>
-           <pre className="text-dark display-6" style={{fontSize: 20}}><Image className="navbar-brand rounded-circle" src={require('./login.jpeg')} type="button" alt="profil" style={{width:40}} ></Image><span ><i className="text-white"> Bonjour <b className="couleur2">{props.username}</b></i> </span><span className="separateur text-secondary"></span><a href="" style={{textDecoration:"none"}}><span className="text-danger"><i onClick={logout}> Logout </i> </span></a></pre>
-           <i><pre className="couleur2 display-6 timing text-center" style={{fontSize: 15}}>{theTime}</pre></i>
-        </div>  
-        </Col>
-    </Row>
-   
-    {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map((expand) => (
+        {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map((expand) => (
         <Navbar key={expand} bg="light" expand={expand} className="mb-3">
           <Container fluid>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -93,6 +76,21 @@ function Header(props)
           </Container>
         </Navbar>
       ))}
+        </Col>
+        <Col xs={4} className="my-auto mx-auto text-start">
+          <Link to="/home" style={{textDecoration:"none"}}>
+          <Image  src={require('./kobo_logo.JPG')}  className='rounded ' style={{width:130}}></Image>
+          </Link>
+        </Col>
+        <Col xs={4} className="my-auto mx-auto text-end ">
+         <div>
+           <pre className="text-dark display-6" style={{fontSize: 20}}><Image className="navbar-brand rounded-circle" src={require('./login.jpeg')} type="button" alt="profil" style={{width:40}} ></Image><span ><i className="text-white"> Bonjour <b className="couleur2">{props.username}</b></i> </span><span className="separateur text-secondary"></span><a href="" style={{textDecoration:"none"}}><span className="text-danger"><i onClick={logout}> Logout </i> </span></a></pre>
+           <i><pre className="couleur2 display-6 timing text-center" style={{fontSize: 15}}>{theTime}</pre></i>
+        </div>  
+        </Col>
+    </Row>
+   
+    
    </Container>}
 
 
