@@ -62,7 +62,7 @@ function Header(props)
         {[false].map((expand) => (
         <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
           <Container>
-            <Navbar.Toggle className="bg-light"   aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle className="bg-secondary"   aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -102,7 +102,7 @@ function Header(props)
 
         <Col xs={4} className="my-auto mx-auto my-auto text-center">
           <Link to="/home" style={{textDecoration:"none"}}>
-          <p className="display-6 text-secondary">KOBO BS</p>
+          <p className="display-6 text-secondary">KOBOBS</p>
           </Link>
         </Col>
         
