@@ -19,7 +19,7 @@ const useState = React.useState
 function ConfirmationEnvoieInfo(props)
 {
 
-    const [message,setMessage] = useState("Page de confirmation envoi")
+    const [message,setMessage] = useState("Votre Code de retrait ne sera valide qu'après votre paiement")
     const [couleur,setCouleur] = useState("text-dark")
     const [modalShow, setModalShow] = React.useState(true);
 
@@ -47,21 +47,23 @@ function ConfirmationEnvoieInfo(props)
    
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Page  Confirmation Envoi</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-dark'>Noms complets Expediteur: <b className='couleur2'>{props.envoie3.infoEnvoie.nom_expediteur} {props.envoie3.infoEnvoie.postnom_expediteur} {props.envoie3.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-dark'>Noms complets Beneficiare: <b className='couleur2'>{props.envoie3.infoEnvoie.nom_beneficiaire} {props.envoie3.infoEnvoie.postnom_beneficiaire} {props.envoie3.infoEnvoie.prenom_beneficiaire}</b> </p>
-        <p className='text-dark'>Pays Expediteur: <b className='couleur2'> {props.envoie3.infoEnvoie.pays_expediteur}</b></p>
-        <p className='text-dark'>Pays Beneficiare: <b className='couleur2'> {props.envoie3.infoEnvoie.pays_beneficiaire}</b></p>
-        <p className='text-dark'>Montant à récupérer: <b className='text-dark bg-warning'>{Number(props.envoie3.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-dark'>Montant à payer: <b className='text-dark bg-warning'>{Number(props.envoie3.infoEnvoie.montant_total).toFixed(2)} £</b> </p>
-        <p className='text-dark'>Type de retrait: <b className='couleur2'>{props.envoie3.infoEnvoie.type_service}</b> </p>
-        <p className='text-dark'>Numéro à transferer de l'argent: <b className='couleur2'>{props.envoie3.infoEnvoie.numero_transfer}</b> </p>
-        <p className='text-dark'>Code Retrait : <b className='text-dark bg-warning'> {props.envoie3.infoEnvoie.code_retrait} </b> ({props.envoie3.infoEnvoie.status_retrait})</p>
-        <p className='text-dark'>Code Abonné : <b className='text-dark bg-warning'> {props.envoie3.infoEnvoie.code_abonne} </b></p>
-        <p className='text-dark'>date et heure : <b className='couleur2'> {JSON.stringify(props.envoie3.infoEnvoie.date_heure_operation)}</b></p>
+        <Col xs={6} className="text-start">
+        <p className='text-dark'>Code Retrait : <b className='text-dark bg-danger'> {props.envoie3.infoEnvoie.code_retrait} </b></p>
+        <p className='text-dark'>Code Abonné : <b className='text-dark bg-danger'> {props.envoie3.infoEnvoie.code_abonne} (à retenir)</b></p>
+        <p className='text-dark'>Montant à récupérer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
+        <p className='text-dark'>Montant à payer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_total).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Noms Expediteur: <b className='text-dark'>{props.envoie3.infoEnvoie.nom_expediteur} {props.envoie3.infoEnvoie.postnom_expediteur} {props.envoie3.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Pays Expediteur: <b className='text-dark'> {props.envoie3.infoEnvoie.pays_expediteur}</b></p>
+        </Col>
+
+        <Col xs={6} className="text-start">
+        <p className='text-dark'>Noms Beneficiare: <b className='text-dark'>{props.envoie3.infoEnvoie.nom_beneficiaire} {props.envoie3.infoEnvoie.postnom_beneficiaire} {props.envoie3.infoEnvoie.prenom_beneficiaire}</b> </p>   
+        <p className='text-dark'>Pays Beneficiare: <b className='text-dark'> {props.envoie3.infoEnvoie.pays_beneficiaire}</b></p>
+        <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie3.infoEnvoie.type_service}</b> </p>
+        <p className='text-dark'>Mobile money : <b className='text-dark'>{props.envoie3.infoEnvoie.numero_transfer}</b> </p>
+        <p className='text-dark'>date et heure : <b className='text-dark'> {JSON.stringify(props.envoie3.infoEnvoie.date_heure_operation)}</b></p>
         </Col>
     </Row>
     
@@ -80,7 +82,7 @@ function ConfirmationEnvoieInfo(props)
 </Container>
 }
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto my-auto'>
+{isMobileOrTablet && <Container className='bg-light justify-content-center text-center mx-auto my-auto'>
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
         <p className='couleur2 display-6'><i><b>{message}</b></i></p>
@@ -90,21 +92,20 @@ function ConfirmationEnvoieInfo(props)
    
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Page  Confirmation Envoi</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-dark'>Noms complets Expediteur: <b className='couleur2'>{props.envoie3.infoEnvoie.nom_expediteur} {props.envoie3.infoEnvoie.postnom_expediteur} {props.envoie3.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-dark'>Noms complets Beneficiare: <b className='couleur2'>{props.envoie3.infoEnvoie.nom_beneficiaire} {props.envoie3.infoEnvoie.postnom_beneficiaire} {props.envoie3.infoEnvoie.prenom_beneficiaire}</b> </p>
-        <p className='text-dark'>Pays Expediteur: <b className='couleur2'> {props.envoie3.infoEnvoie.pays_expediteur}</b></p>
-        <p className='text-dark'>Pays Beneficiare: <b className='couleur2'> {props.envoie3.infoEnvoie.pays_beneficiaire}</b></p>
-        <p className='text-dark'>Montant à récupérer: <b className='text-dark bg-warning'>{Number(props.envoie3.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-dark'>Montant à payer: <b className='text-dark bg-warning'>{Number(props.envoie3.infoEnvoie.montant_total).toFixed(2)} £</b> </p>
-        <p className='text-dark'>Type de retrait: <b className='couleur2'>{props.envoie3.infoEnvoie.type_service}</b> </p>
-        <p className='text-dark'>Numéro à transferer de l'argent: <b className='couleur2'>{props.envoie3.infoEnvoie.numero_transfer}</b> </p>
-        <p className='text-dark'>Code Retrait : <b className='text-dark bg-warning'> {props.envoie3.infoEnvoie.code_retrait} </b> ({props.envoie3.infoEnvoie.status_retrait})</p>
-        <p className='text-dark'>Code Abonné : <b className='text-dark bg-warning'> {props.envoie3.infoEnvoie.code_abonne} </b></p>
-        <p className='text-dark'>date et heure : <b className='couleur2'> {JSON.stringify(props.envoie3.infoEnvoie.date_heure_operation)}</b></p>
+        <p className='text-dark'>Code Retrait : <b className='text-dark bg-danger'> {props.envoie3.infoEnvoie.code_retrait} </b></p>
+        <p className='text-dark'>Code Abonné : <b className='text-dark bg-danger'> {props.envoie3.infoEnvoie.code_abonne} (à retenir)</b></p>
+        <p className='text-dark'>Montant à récupérer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
+        <p className='text-dark'>Montant à payer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_total).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Noms Expediteur: <b className='text-dark'>{props.envoie3.infoEnvoie.nom_expediteur} {props.envoie3.infoEnvoie.postnom_expediteur} {props.envoie3.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Pays Expediteur: <b className='text-dark'> {props.envoie3.infoEnvoie.pays_expediteur}</b></p>
+        <p className='text-dark'>Noms Beneficiare: <b className='text-dark'>{props.envoie3.infoEnvoie.nom_beneficiaire} {props.envoie3.infoEnvoie.postnom_beneficiaire} {props.envoie3.infoEnvoie.prenom_beneficiaire}</b> </p>   
+        <p className='text-dark'>Pays Beneficiare: <b className='text-dark'> {props.envoie3.infoEnvoie.pays_beneficiaire}</b></p>
+        <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie3.infoEnvoie.type_service}</b> </p>
+        <p className='text-dark'>Mobile money : <b className='text-dark'>{props.envoie3.infoEnvoie.numero_transfer}</b> </p>
+        <p className='text-dark'>date et heure : <b className='text-dark'> {JSON.stringify(props.envoie3.infoEnvoie.date_heure_operation)}</b></p>
         </Col>
     </Row>
     

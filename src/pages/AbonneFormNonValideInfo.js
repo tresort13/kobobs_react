@@ -167,7 +167,7 @@ function AbonneFormNonValideInfo(props)
         <p className='text-dark'>Email Expediteur: <b className='text-dark'> {value.email_expediteur}</b></p>
         <p className='text-dark'>Pays Beneficiare: <b className='text-dark'> {value.pays_beneficiaire}</b></p>
         <p className='text-dark'>Montant à Recuperer: <b className='text-dark'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-dark'>Montant à payer: <b className='text-dark '>{Number(value.montant_total).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Montant à payer: <b className='text-dark bg-danger'>{Number(value.montant_total).toFixed(2)} £</b> </p>
         <p className='text-dark'>Type de retrait: <b className='text-dark '>{value.type_service}</b> </p>
         <p className='text-dark'>date et heure : <b className='text-dark'> {value.date_heure_operation}</b></p> 
     </Col>
@@ -224,7 +224,7 @@ function AbonneFormNonValideInfo(props)
         <p className='text-dark'>Email Expediteur: <b className='text-dark'> {value.email_expediteur}</b></p>
         <p className='text-dark'>Pays Beneficiare: <b className='text-dark'> {value.pays_beneficiaire}</b></p>
         <p className='text-dark'>Montant à Recuperer: <b className='text-dark '>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-dark'>Montant à payer: <b className='text-dark'>{Number(value.montant_total).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Montant à payer: <b className='text-dark bg-danger'>{Number(value.montant_total).toFixed(2)} £</b> </p>
         <p className='text-dark'>Type de retrait: <b className='text-dark'>{value.type_service}</b> </p>
         <p className='text-dark'>date et heure : <b className='text-dark'> {value.date_heure_operation}</b></p> 
         </Col>

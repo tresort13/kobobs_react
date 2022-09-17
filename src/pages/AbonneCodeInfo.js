@@ -50,7 +50,7 @@ console.log(props.abonneInfo)
         <Header username={props.username} />
 {isDesktop && <Container className='bg-light justify-content-center text-center mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
@@ -62,16 +62,21 @@ console.log(props.abonneInfo)
       
     </Row>
     <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Nom: <b className='text-dark'>{props.abonneInfo.infoAbonne.nom_expediteur}</b></p>
-        <p className='text-light'>Postnom: <b className='text-dark'>{props.abonneInfo.infoAbonne.postnom_expediteur}</b></p>
-        <p className='text-light'>Prénom: <b className='text-dark'>{props.abonneInfo.infoAbonne.prenom_expediteur}</b> </p>
-        <p className='text-light'>Email: <b className='text-dark'>{props.abonneInfo.infoAbonne.email_expediteur}</b> </p>
-        <p className='text-light'>Téléphone: <b className='text-dark'>{props.abonneInfo.infoAbonne.numero_expediteur}</b> </p>
-        <p className='text-light'>Pays: <b className='text-dark'> {props.abonneInfo.infoAbonne.pays_expediteur}</b></p>
-        <p className='text-light'>Code Abonné: <b className='text-dark'>{props.abonneInfo.infoAbonne.code_abonne}</b> </p>
+        <Col xs={6} className ="text-start">
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.abonneInfo.infoAbonne.nom_expediteur}</b></p>
+        <p className='text-dark'>Postnom: <b className='text-dark'>{props.abonneInfo.infoAbonne.postnom_expediteur}</b></p>
+        <p className='text-dark'>Prénom: <b className='text-dark'>{props.abonneInfo.infoAbonne.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Email: <b className='text-dark'>{props.abonneInfo.infoAbonne.email_expediteur}</b> </p>  
         </Col>
-        <Col xs={6}>
+
+        <Col xs={6} className ="text-start">
+        <p className='text-dark'>Téléphone: <b className='text-dark'>{props.abonneInfo.infoAbonne.numero_expediteur}</b> </p>
+        <p className='text-dark'>Adresse: <b className='text-dark'> {props.abonneInfo.infoAbonne.adresse_expediteur}</b></p>
+        <p className='text-dark'>Code Abonné: <b className='text-dark'>{props.abonneInfo.infoAbonne.code_abonne}</b> </p>
+        </Col>
+    </Row>
+    <Row>
+    <Col xs={6} className ="text-center">
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
         Fermer
@@ -100,15 +105,18 @@ console.log(props.abonneInfo)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Nom: <b className='text-dark'>{props.abonneInfo.infoAbonne.nom_expediteur}</b></p>
-        <p className='text-light'>Postnom: <b className='text-dark'>{props.abonneInfo.infoAbonne.postnom_expediteur}</b></p>
-        <p className='text-light'>Prénom: <b className='text-dark'>{props.abonneInfo.infoAbonne.prenom_expediteur}</b> </p>
-        <p className='text-light'>Email: <b className='text-dark'>{props.abonneInfo.infoAbonne.email_expediteur}</b> </p>
-        <p className='text-light'>Téléphone: <b className='text-dark'>{props.abonneInfo.infoAbonne.numero_expediteur}</b> </p>
-        <p className='text-light'>Pays: <b className='text-dark'> {props.abonneInfo.infoAbonne.pays_expediteur}</b></p>
-        <p className='text-light'>Code Abonné: <b className='text-dark'>{props.abonneInfo.infoAbonne.code_abonne}</b> </p>
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.abonneInfo.infoAbonne.nom_expediteur}</b></p>
+        <p className='text-dark'>Postnom: <b className='text-dark'>{props.abonneInfo.infoAbonne.postnom_expediteur}</b></p>
+        <p className='text-dark'>Prénom: <b className='text-dark'>{props.abonneInfo.infoAbonne.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Email: <b className='text-dark'>{props.abonneInfo.infoAbonne.email_expediteur}</b> </p>
+        <p className='text-dark'>Téléphone: <b className='text-dark'>{props.abonneInfo.infoAbonne.numero_expediteur}</b> </p>
+        <p className='text-dark'>Adresse: <b className='text-dark'> {props.abonneInfo.infoAbonne.adresse_expediteur}</b></p>
+        <p className='text-dark'>Code Abonné: <b className='text-dark'>{props.abonneInfo.infoAbonne.code_abonne}</b> </p>
         </Col>
-        <Col xs={6}>
+    </Row>
+
+    <Row>
+    <Col xs={6} className ="text-center">
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
         Fermer
@@ -116,8 +124,6 @@ console.log(props.abonneInfo)
         </Link>
         </Col>
     </Row>
-
-    
 
 </Container>}
 <Row className="mt-5">

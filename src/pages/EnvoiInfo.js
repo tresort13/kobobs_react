@@ -99,57 +99,58 @@ console.log(props.envoie.infoEnvoie)
         
         <>
         <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
+{isDesktop && <Container className='bg-light justify-content-center text-center  mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
-        <p className='couleur2'><i><b>{message}</b></i></p>
+        <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
+      <p className='couleur2'><b><u>Motant Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie.infoEnvoie.postnom_expediteur}</b>  </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-light'>Adresse : <b className='couleur2'>{props.envoie.infoEnvoie.adresse_expediteur}</b> </p>
-        <p className='text-light'>Email Adresse : <b className='couleur2'>{props.envoie.infoEnvoie.email_expediteur}</b> </p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'> {props.envoie.infoEnvoie.numero_expediteur} </b></p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'> {props.envoie.infoEnvoie.pays_expediteur}</b></p>
+        <Col xs={12} className="text-start">
+        <p className='text-dark'>Montant Total à payer: <b className='text-dark bg-danger'>{Number(props.envoie.infoEnvoie.montant_pour_payer).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Montant à recevoir par le Bénéficiare: <b className='text-dark'>{Number(props.envoie.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
+        <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie.infoEnvoie.type_service}</b> </p>
+        <p className='text-dark'>Mobile Money: <b className='text-dark'>{props.envoie.infoEnvoie.numero_transfer}</b> </p>
+       
+        </Col>
+    </Row>
+    <Row className='justify-content-center pb-3'>
+      <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'><b><u>Expediteur Informations</u></b> </p>
+    </Row>
+    <Row className='justify-content-center pb-3' >
+        <Col xs={12} className="text-start">
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
+        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie.infoEnvoie.postnom_expediteur}</b>  </p>
+        <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Adresse: <b className='text-dark'>{props.envoie.infoEnvoie.adresse_expediteur}</b> </p>
+        <p className='text-dark'>Email: <b className='text-dark'>{props.envoie.infoEnvoie.email_expediteur}</b> </p>
+        <p className='text-dark'>Téléphone: <b className='text-dark'> {props.envoie.infoEnvoie.numero_expediteur} </b></p>
+        <p className='text-dark'>Pays: <b className='text-dark'> {props.envoie.infoEnvoie.pays_expediteur}</b></p>
         </Col>
     </Row>
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mozui (Bénéficiare Informations)</u></b> </p>
+      <p className='couleur2'><b><u>Bénéficiare Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie.infoEnvoie.postnom_beneficiaire}</b> </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie.infoEnvoie.prenom_beneficiaire} </b> </p>
-        <p className='text-light'>Adresse : <b className='couleur2'> {props.envoie.infoEnvoie.adresse_beneficiaire}</b></p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'>{props.envoie.infoEnvoie.numero_beneficiaire}</b>  </p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'>{props.envoie.infoEnvoie.pays_beneficiaire}</b> </p>
+        <Col xs={12} className="text-start">
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
+        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie.infoEnvoie.postnom_beneficiaire}</b> </p>
+        <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie.infoEnvoie.prenom_beneficiaire} </b> </p>
+        <p className='text-dark'>Adresse: <b className='text-dark'> {props.envoie.infoEnvoie.adresse_beneficiaire}</b></p>
+        <p className='text-dark'>Numéro Tél: <b className='text-dark'>{props.envoie.infoEnvoie.numero_beneficiaire}</b>  </p>
+        <p className='text-dark'>Pays: <b className='text-dark'>{props.envoie.infoEnvoie.pays_beneficiaire}</b> </p>
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mbongo (Motant Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Mbongo ya kozwa epayi ya Mozui(Montant à recevoir chez le Bénéficiare): <b className='couleur2'>{Number(props.envoie.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie.infoEnvoie.type_service}</b> </p>
-        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='couleur2'>{props.envoie.infoEnvoie.numero_transfer}</b> </p>
-        <p className='text-light'>Mbongo Yako Futa Pona ko Tinda(Montant Total à payer): <b className='bg-warning text-dark'>{Number(props.envoie.infoEnvoie.montant_pour_payer).toFixed(2)} £</b> </p>
-        
-        </Col>
-    </Row>
+   
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
@@ -176,57 +177,58 @@ console.log(props.envoie.infoEnvoie)
 </Container>
 }
 
-{isMobileOrTablet &&  <Container className='bg-dark justify-content-center text-center bordure mx-auto my-auto'  >
+{isMobileOrTablet &&  <Container className='bg-light justify-content-center text-center  mx-auto my-auto'  >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={12}>
-        <p className='couleur2'><i><b>{message}</b></i></p>
+        <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
+      <p className='couleur2'><b><u>Motant Informations</u></b> </p>
     </Row>
-    <Row className='justify-content-start pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie.infoEnvoie.postnom_expediteur}</b>  </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-light'>Adresse : <b className='couleur2'>{props.envoie.infoEnvoie.adresse_expediteur}</b> </p>
-        <p className='text-light'>Email Adresse : <b className='couleur2'>{props.envoie.infoEnvoie.email_expediteur}</b> </p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'> {props.envoie.infoEnvoie.numero_expediteur} </b></p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'> {props.envoie.infoEnvoie.pays_expediteur}</b></p>
+    <Row className='justify-content-center pb-3' >
+        <Col xs={12} className="text-start">
+        <p className='text-dark'>Montant Total à payer: <b className='text-dark bg-danger'>{Number(props.envoie.infoEnvoie.montant_pour_payer).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Montant à recevoir par le Bénéficiare: <b className='text-dark'>{Number(props.envoie.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
+        <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie.infoEnvoie.type_service}</b> </p>
+        <p className='text-dark'>Mobile Money: <b className='text-dark'>{props.envoie.infoEnvoie.numero_transfer}</b> </p>
+       
+        </Col>
+    </Row>
+    <Row className='justify-content-center pb-3'>
+      <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'><b><u>Expediteur Informations</u></b> </p>
+    </Row>
+    <Row className='justify-content-center pb-3' >
+        <Col xs={12} className="text-start">
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
+        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie.infoEnvoie.postnom_expediteur}</b>  </p>
+        <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Adresse: <b className='text-dark'>{props.envoie.infoEnvoie.adresse_expediteur}</b> </p>
+        <p className='text-dark'>Email: <b className='text-dark'>{props.envoie.infoEnvoie.email_expediteur}</b> </p>
+        <p className='text-dark'>Téléphone: <b className='text-dark'> {props.envoie.infoEnvoie.numero_expediteur} </b></p>
+        <p className='text-dark'>Pays: <b className='text-dark'> {props.envoie.infoEnvoie.pays_expediteur}</b></p>
         </Col>
     </Row>
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mozui (Bénéficiare Informations)</u></b> </p>
+      <p className='couleur2'><b><u>Bénéficiare Informations</u></b> </p>
     </Row>
-    <Row className='justify-content-start pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie.infoEnvoie.postnom_beneficiaire}</b> </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie.infoEnvoie.prenom_beneficiaire} </b> </p>
-        <p className='text-light'>Adresse : <b className='couleur2'> {props.envoie.infoEnvoie.adresse_beneficiaire}</b></p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'>{props.envoie.infoEnvoie.numero_beneficiaire}</b>  </p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'>{props.envoie.infoEnvoie.pays_beneficiaire}</b> </p>
+    <Row className='justify-content-center pb-3' >
+        <Col xs={12} className="text-start">
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
+        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie.infoEnvoie.postnom_beneficiaire}</b> </p>
+        <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie.infoEnvoie.prenom_beneficiaire} </b> </p>
+        <p className='text-dark'>Adresse: <b className='text-dark'> {props.envoie.infoEnvoie.adresse_beneficiaire}</b></p>
+        <p className='text-dark'>Numéro Tél: <b className='text-dark'>{props.envoie.infoEnvoie.numero_beneficiaire}</b>  </p>
+        <p className='text-dark'>Pays: <b className='text-dark'>{props.envoie.infoEnvoie.pays_beneficiaire}</b> </p>
         </Col>
     </Row>
 
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mbongo (Motant Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-start pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Mbongo ya kozwa epayi ya Mozui(Montant à recevoir chez le Bénéficiare): <b className='couleur2'>{Number(props.envoie.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie.infoEnvoie.type_service}</b> </p>
-        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='couleur2'>{props.envoie.infoEnvoie.numero_transfer}</b> </p>
-        <p className='text-light'>Mbongo Yako Futa Pona ko Tinda(Montant Total à payer): <b className='bg-warning text-dark'>{Number(props.envoie.infoEnvoie.montant_pour_payer).toFixed(2)} £</b> </p>
-        
-        </Col>
-    </Row>
+   
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
@@ -248,7 +250,7 @@ console.log(props.envoie.infoEnvoie)
         
     </Row>
     
-    
+
 
 </Container>}
 <Row className="mt-5">
