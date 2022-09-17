@@ -52,10 +52,10 @@ function Header(props)
      <div>
     {isDesktop && <Container fluid className="bg-dark mx-auto">
     <Row>
-        <Col xs={1} className="my-auto mx-auto text-start">
+        <Col xs={4} className="my-auto mx-auto text-start">
         {[false].map((expand) => (
-        <Navbar key={expand} bg="warning" expand={expand} className="mb-3">
-          <Container fluid>
+        <Navbar key={expand} bg="dark" expand={expand} className="mb-3">
+          <Container variant="warning">
             <Navbar.Toggle  aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -100,9 +100,9 @@ function Header(props)
         </Navbar>
       ))}
         </Col>
-        <Col xs={7} className="my-auto mx-auto text-center">
+        <Col xs={4} className="my-auto mx-auto text-center">
           <Link to="/home" style={{textDecoration:"none"}}>
-          <Image  src={require('./kobo_logo.JPG')}  className='rounded ' style={{width:200}}></Image>
+          <Image  src={require('./kobo_logo.JPG')}  className='rounded-pill ' style={{width:150}}></Image>
           </Link>
         </Col>
         <Col xs={4} className="my-auto mx-auto text-end ">

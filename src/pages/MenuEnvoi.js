@@ -24,7 +24,7 @@ function MenuEnvoi(props)
     return (
 <>
 <Header username={props.username} />
-{isDesktop && <Container className='bg-light' style={{width:400}}>
+{isDesktop && <Container>
    
     <Row className='justify-content-center pb-3 pt-5 mt-5'>
         <Col xs = {"auto"}>
