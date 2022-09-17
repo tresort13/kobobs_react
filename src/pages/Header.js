@@ -69,7 +69,7 @@ function Header(props)
               placement="start" style={{height:550}} >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Menu
+                  <pre className="display-6">Menu</pre>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
@@ -83,7 +83,7 @@ function Header(props)
                   <NavDropdown.Divider />
                   <Nav.Link href="/menu_gestion_abonne"><b>Gestion Client</b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_gestion_operation"><b>Gestion Operation</b>s</Nav.Link>
+                  <Nav.Link href="/menu_gestion_operation"><b>Gestion Operations</b></Nav.Link>
                   <NavDropdown.Divider />
                   <Nav.Link href="/menu_gestion_recettes"><b>Gestion Recettes</b></Nav.Link>
                   <NavDropdown.Divider />
@@ -130,14 +130,48 @@ function Header(props)
 
     <Row className="mt-2">
         <Col xs={"auto"} className=" mx-auto my-auto text-start ">
-         <div>
-         <Button variant="warning" className="btn-lg rounded zoom " onClick={handleShow}><b className="text-dark navbar-toggler"> Menu</b></Button>
-        </div>  
+        {[false].map((expand) => (
+        <Navbar key={expand} bg="dark" expand={expand} className="mb-1">
+          <Container>
+            <Navbar.Toggle className="bg-secondary"   aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="start" style={{height:550}} >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                  <pre className="display-6">Menu</pre>
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-end flex-grow-1 pe-3">
+                <NavDropdown.Divider />
+                  <Nav.Link href="/home"><b>Home</b></Nav.Link>
+                  <NavDropdown.Divider />
+                  <Nav.Link href="/menu_envoie"><b>Envoi Argent</b></Nav.Link>
+                  <NavDropdown.Divider />
+                  <Nav.Link href="/form_retrait"><b>Retrait Argent</b></Nav.Link>
+                  <NavDropdown.Divider />
+                  <Nav.Link href="/menu_gestion_abonne"><b>Gestion Client</b></Nav.Link>
+                  <NavDropdown.Divider />
+                  <Nav.Link href="/menu_gestion_operation"><b>Gestion Operations</b></Nav.Link>
+                  <NavDropdown.Divider />
+                  <Nav.Link href="/menu_gestion_recettes"><b>Gestion Recettes</b></Nav.Link>
+                  <NavDropdown.Divider />
+                  <Nav.Link href="/menu_users"><b>Gestion Utilisateurs</b></Nav.Link>
+                  <NavDropdown.Divider />
+                </Nav>
+               
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      ))}
         </Col>
 
         <Col xs={"auto"} className=" mx-auto my-auto text-end">
          <div>
-           <pre className="text-dark display-6 text-end" style={{fontSize: 20}}><span ><i className="couleur2">{props.username}</i> </span><span className="separateur couleur2"></span><a href="" style={{textDecoration:"none"}}><span className="text-danger"><i onClick={logout}> Logout </i> </span></a></pre>
+           <pre className="text-dark display-6 text-end" style={{fontSize: 20}}><span ><i className="couleur2">{props.username}</i> </span><span className="separateur couleur2"></span></pre>
            <i><pre className="couleur2 display-6  text-end" style={{fontSize: 15}}>{theTime}</pre></i>
         </div>  
         </Col>  
