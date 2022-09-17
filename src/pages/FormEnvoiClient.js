@@ -38,7 +38,7 @@ function FormEnvoiClient(props)
     }})
 
     const [validated, setValidated] = useState(false);
-    const [message,setMessage] = useState("Formulaire d'Envoi Client")
+    const [message,setMessage] = useState("Formulaire Envoi Client")
     const [couleur,setCouleur] = useState("text-dark")
 
     const isDesktop = useMediaQuery({
@@ -214,7 +214,7 @@ function FormEnvoiClient(props)
     <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='text-dark'><span className="text-danger">*</span> Adresse</Form.Label>
-        <Form.Control name="adresse_beneficiaire" value={envoie.infoEnvoie.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
+        <Form.Control name="adresse_beneficiaire" value={envoie.infoEnvoie.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Adresse'  required/>
        
          </Form.Group>
         </Col>
@@ -265,7 +265,7 @@ function FormEnvoiClient(props)
 
         {envoie.infoEnvoie.type_service == "Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)" ? <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='text-dark'><span variant="danger">*</span> Numero de tranfer</Form.Label>
+        <Form.Label className='text-dark'><span variant="danger">*</span> Numero de tranfert</Form.Label>
         <Form.Control name="numero_transfer"   onChange={e=>inputChanged(e)} type="text" placeholder='Numero de tranfer'  required/>
        
          </Form.Group>
@@ -292,7 +292,7 @@ function FormEnvoiClient(props)
 </Container>
 }
 
-{isMobileOrTablet && <Container className='bg-light justify-content-center text-center bordure mx-auto my-auto'>
+{isMobileOrTablet && <Container className='bg-light justify-content-center text-center mx-auto my-auto'>
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
         <p className='display-6 couleur2'><i><b>{message}</b></i></p>
@@ -408,7 +408,7 @@ function FormEnvoiClient(props)
     <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
         <Form.Label className='text-dark'><span className="text-danger">*</span> Adresse</Form.Label>
-        <Form.Control name="adresse_beneficiaire" value={envoie.infoEnvoie.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Kombo ya Mukristu'  required/>
+        <Form.Control name="adresse_beneficiaire" value={envoie.infoEnvoie.adresse_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Adresse'  required/>
        
          </Form.Group>
         </Col>
@@ -459,7 +459,7 @@ function FormEnvoiClient(props)
 
         {envoie.infoEnvoie.type_service == "Kozua na nzela ya tshombo(Mpesa,Orange Money,Airtel Money)" ? <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='text-dark'><span variant="danger">*</span> Numero de tranfer</Form.Label>
+        <Form.Label className='text-dark'><span variant="danger">*</span> Numero de tranfert</Form.Label>
         <Form.Control name="numero_transfer"   onChange={e=>inputChanged(e)} type="text" placeholder='Numero de tranfer'  required/>
        
          </Form.Group>
