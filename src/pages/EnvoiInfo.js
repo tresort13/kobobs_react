@@ -101,7 +101,7 @@ console.log(props.envoie.infoEnvoie)
         <Header username={props.username} />
 {isDesktop && <Container className='bg-light justify-content-center text-center  mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
@@ -111,9 +111,14 @@ console.log(props.envoie.infoEnvoie)
       <p className='couleur2'><b><u>Motant Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
-        <Col xs={12} className="text-start">
+        <Col xs={6} className="text-start">
         <p className='text-dark'>Montant Total à payer: <b className='text-dark bg-danger'>{Number(props.envoie.infoEnvoie.montant_pour_payer).toFixed(2)} £</b> </p>
         <p className='text-dark'>Montant à recevoir par le Bénéficiare: <b className='text-dark'>{Number(props.envoie.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
+        
+       
+        </Col>
+
+        <Col xs={6} className="text-start">
         <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie.infoEnvoie.type_service}</b> </p>
         <p className='text-dark'>Mobile Money: <b className='text-dark'>{props.envoie.infoEnvoie.numero_transfer}</b> </p>
        
@@ -124,11 +129,14 @@ console.log(props.envoie.infoEnvoie)
       <p className='couleur2'><b><u>Expediteur Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
-        <Col xs={12} className="text-start">
+        <Col xs={6} className="text-start">
         <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
         <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie.infoEnvoie.postnom_expediteur}</b>  </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-dark'>Adresse: <b className='text-dark'>{props.envoie.infoEnvoie.adresse_expediteur}</b> </p>
+        <p className='text-dark'>Adresse: <b className='text-dark'>{props.envoie.infoEnvoie.adresse_expediteur}</b> </p> 
+        </Col>
+
+        <Col xs={6} className="text-start">
         <p className='text-dark'>Email: <b className='text-dark'>{props.envoie.infoEnvoie.email_expediteur}</b> </p>
         <p className='text-dark'>Téléphone: <b className='text-dark'> {props.envoie.infoEnvoie.numero_expediteur} </b></p>
         <p className='text-dark'>Pays: <b className='text-dark'> {props.envoie.infoEnvoie.pays_expediteur}</b></p>
@@ -140,17 +148,18 @@ console.log(props.envoie.infoEnvoie)
       <p className='couleur2'><b><u>Bénéficiare Informations</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
-        <Col xs={12} className="text-start">
+        <Col xs={6} className="text-start">
         <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
         <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie.infoEnvoie.postnom_beneficiaire}</b> </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie.infoEnvoie.prenom_beneficiaire} </b> </p>
+        </Col>
+
+        <Col xs={6} className="text-start">
         <p className='text-dark'>Adresse: <b className='text-dark'> {props.envoie.infoEnvoie.adresse_beneficiaire}</b></p>
         <p className='text-dark'>Numéro Tél: <b className='text-dark'>{props.envoie.infoEnvoie.numero_beneficiaire}</b>  </p>
         <p className='text-dark'>Pays: <b className='text-dark'>{props.envoie.infoEnvoie.pays_beneficiaire}</b> </p>
         </Col>
     </Row>
-
-   
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
@@ -270,7 +279,7 @@ function MyVerticallyCenteredModal(props) {
   return (
     <Modal
       {...props}
-      size="md"
+      size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >

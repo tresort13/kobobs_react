@@ -163,11 +163,10 @@ function AbonneFormNonValideInfo(props)
     </Col>
 
     <Col className='justify-content-start text-start'  xs={6}>
-      
+    <p className='text-dark'>Montant à payer: <b className='text-dark bg-danger'>{Number(value.montant_total).toFixed(2)} £</b> </p>
+    <p className='text-dark'>Montant à Recuperer: <b className='text-dark'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-dark'>Email Expediteur: <b className='text-dark'> {value.email_expediteur}</b></p>
         <p className='text-dark'>Pays Beneficiare: <b className='text-dark'> {value.pays_beneficiaire}</b></p>
-        <p className='text-dark'>Montant à Recuperer: <b className='text-dark'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-dark'>Montant à payer: <b className='text-dark bg-danger'>{Number(value.montant_total).toFixed(2)} £</b> </p>
         <p className='text-dark'>Type de retrait: <b className='text-dark '>{value.type_service}</b> </p>
         <p className='text-dark'>date et heure : <b className='text-dark'> {value.date_heure_operation}</b></p> 
     </Col>
@@ -216,15 +215,14 @@ function AbonneFormNonValideInfo(props)
         <Row className='justify-content-start pb-3' >
         <Col xs={12}>
         <p className='text-dark'>Code Retrait : <b className='text-dark bg-danger'>{value.code_retrait}</b> </p>
-        <p className='text-dark'>Status Retrait : <b className='text-dark bg-danger'>{value.status_retrait}</b> </p>
-        <p className='text-dark'>Noms complets Expediteur: <b className='text-dark '>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
-        <p className='text-dark'>Noms complets Beneficiare: <b className='text-dark'>{value.nom_beneficiaire} {value.postnom_beneficiaire} {value.prenom_beneficiaire}</b> </p>
-        <p className='text-dark'>Pays Expediteur: <b className='couleur2'> {value.pays_expediteur}</b></p>
+        <p className='text-dark'>Montant à payer: <b className='text-dark bg-danger'>{Number(value.montant_total).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Montant à Recuperer: <b className='text-dark '>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
+        <p className='text-dark'>Status Retrait : <b className='text-dark'>{value.status_retrait}</b> </p>
+        <p className='text-dark'>Noms Expediteur: <b className='text-dark '>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
         <p className='text-dark'>Numéro Expediteur: <b className='text-dark'> {value.numero_expediteur}</b></p>
         <p className='text-dark'>Email Expediteur: <b className='text-dark'> {value.email_expediteur}</b></p>
+        <p className='text-dark'>Noms  Beneficiare: <b className='text-dark'>{value.nom_beneficiaire} {value.postnom_beneficiaire} {value.prenom_beneficiaire}</b> </p> 
         <p className='text-dark'>Pays Beneficiare: <b className='text-dark'> {value.pays_beneficiaire}</b></p>
-        <p className='text-dark'>Montant à Recuperer: <b className='text-dark '>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-dark'>Montant à payer: <b className='text-dark bg-danger'>{Number(value.montant_total).toFixed(2)} £</b> </p>
         <p className='text-dark'>Type de retrait: <b className='text-dark'>{value.type_service}</b> </p>
         <p className='text-dark'>date et heure : <b className='text-dark'> {value.date_heure_operation}</b></p> 
         </Col>

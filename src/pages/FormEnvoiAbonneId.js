@@ -81,10 +81,10 @@ function FormEnvoiAbonneId(props)
         
         <>
         <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:100,width:750}} >
+{isDesktop && <Container className='bg-light justify-content-center text-center mb-5' style={{marginTop:100,width:750}} >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
-        <p className='couleur2'><i><b>{message}</b></i></p>
+        <Col xs={12}>
+        <p className='text-dark'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
@@ -96,7 +96,6 @@ function FormEnvoiAbonneId(props)
     <Row className='justify-content-center'>
         <Col xs = {6}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Code Abonné</Form.Label>
         <Form.Control name="code_abonne" value={codeAbonne.infoCodeAbonne.code_abonne} onChange={e=>inputChanged(e)} type="text" placeholder='Veuillez entrer le code abonné' autoFocus  required/>
          </Form.Group>
         </Col>
@@ -114,10 +113,10 @@ function FormEnvoiAbonneId(props)
 </Container>
 }
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5'>
+{isMobileOrTablet && <Container className='bg-light justify-content-center text-center  mx-auto mt-5'>
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={12}>
-        <p className='couleur2'><i><b>{message}</b></i></p>
+        <p className='text-dark'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
@@ -129,7 +128,7 @@ function FormEnvoiAbonneId(props)
     <Row className='justify-content-center'>
         <Col xs = {12}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='couleur2'>Code Abonné</Form.Label>
+       
         <Form.Control name="code_abonne" value={codeAbonne.infoCodeAbonne.code_abonne} onChange={e=>inputChanged(e)} type="text" placeholder='Veuillez entrer le code abonné' autoFocus  required/>
          </Form.Group>
         </Col>
@@ -162,7 +161,7 @@ function MyVerticallyCenteredModal(props) {
     return (
       <Modal
         {...props}
-        size="md"
+        size="sm"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
@@ -172,7 +171,7 @@ function MyVerticallyCenteredModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Message : </h4>
+
           <p className='text-danger'><b>Désolé ce code abonné ou téléphone n'existe pas !!!</b>   
           </p>
         </Modal.Body>

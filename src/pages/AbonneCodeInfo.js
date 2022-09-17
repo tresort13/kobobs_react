@@ -75,8 +75,10 @@ console.log(props.abonneInfo)
         <p className='text-dark'>Code Abonné: <b className='text-dark'>{props.abonneInfo.infoAbonne.code_abonne}</b> </p>
         </Col>
     </Row>
+
     <Row>
-    <Col xs={6} className ="text-center">
+    <hr style={{color:"darkorange"}}></hr>
+    <Col xs={12} className ="text-center pt-5">
         <Link to="/home" style={{color:'white',textDecorationLine:'none'}}>
         <Button variant="warning" type="submit">
         Fermer

@@ -72,10 +72,10 @@ return (
     <>
     <Header username={props.username}/>
 
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure' style={{marginTop:100,width:750}} >
+{isDesktop && <Container className='bg-light justify-content-center text-center ' style={{marginTop:100,width:750}} >
 <Row className='justify-content-center mb-3 pt-5' >
         <Col xs={6}>
-        <p className="couleur2"><i><b>{message}</b></i></p>
+        <p className="text-dark"><i><b>{message}</b></i></p>
         </Col>
     </Row>
     
@@ -100,10 +100,10 @@ return (
 </Form>
 </Container>}
 
-{isMobileOrTablet &&<Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5' >
+{isMobileOrTablet &&<Container className='bg-light justify-content-center text-center mx-auto mt-5' >
 <Row className='justify-content-center mb-3 pt-5' >
         <Col xs={12}>
-        <p className="couleur2"><i><b>{message}</b></i></p>
+        <p className="text-dark"><i><b>{message}</b></i></p>
         </Col>
     </Row>
     
@@ -138,7 +138,7 @@ function MyVerticallyCenteredModal(props) {
     return (
       <Modal
         {...props}
-        size="md"
+        size="sm"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
@@ -148,7 +148,7 @@ function MyVerticallyCenteredModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Message : </h4>
+
           <p className='text-danger'><b>Désolé veuillez selectionner la date  !!!</b>   
           </p>
         </Modal.Body>

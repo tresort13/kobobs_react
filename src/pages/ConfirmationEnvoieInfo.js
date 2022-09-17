@@ -39,7 +39,7 @@ function ConfirmationEnvoieInfo(props)
         <Header username={props.username} />
 {isDesktop && <Container className='bg-light justify-content-center text-center  mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
@@ -84,7 +84,7 @@ function ConfirmationEnvoieInfo(props)
 
 {isMobileOrTablet && <Container className='bg-light justify-content-center text-center mx-auto my-auto'>
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
@@ -148,7 +148,6 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Message : </h4>
         <p className='text-success'><b>Votre formulaire a été envoyé avec succès</b>   
         </p>
       </Modal.Body>

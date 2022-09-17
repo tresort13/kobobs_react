@@ -32,7 +32,7 @@ console.log(props.userInfo)
         <>
             <Header username={props.username}/>
             <div>
-{isDesktop && <Container fluid className='bg-dark justify-content-center text-center borders mb-5' style={{marginTop:20}} >
+{isDesktop && <Container fluid className='bg-light justify-content-center text-center borders mb-5' style={{marginTop:20}} >
 
 
 
@@ -44,9 +44,9 @@ console.log(props.userInfo)
         <h6 ><u><b><i className='couleur2'>Informations Utilisateur(s)</i></b></u></h6>
         </div>
         <div>
-        <Table striped bordered hover variant="dark">
+        <Table striped bordered hover variant="light">
       <thead>
-        <tr className='text-light' style={{border:"2px solid white"}}>
+        <tr className='text-dark' style={{border:"2px solid white"}}>
           <th>Nom Utilisateur</th>
           <th>email</th>
           <th>Administrateur</th>
@@ -58,11 +58,11 @@ console.log(props.userInfo)
         {props.userInfo.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}} >
-             <td><i><b className="couleur2">{value.username}</b></i></td>
-             <td><i><b className="couleur2">{value.email}</b></i></td>
-             <td><i><b className="couleur2">{JSON.stringify(value.is_superuser)}</b></i></td>
-             <td><i><b className="couleur2">{value.last_login}</b></i></td>
-             <td><i><b className="couleur2">{value.date_joined}</b></i></td>
+             <td><i><b className="text-dark">{value.username}</b></i></td>
+             <td><i><b className="text-dark">{value.email}</b></i></td>
+             <td><i><b className="text-dark">{JSON.stringify(value.is_superuser)}</b></i></td>
+             <td><i><b className="text-dark">{value.last_login}</b></i></td>
+             <td><i><b className="text-dark">{value.date_joined}</b></i></td>
             </tr>     
         }) 
         }
@@ -95,7 +95,7 @@ console.log(props.userInfo)
 
 </Container>}
 
-{isMobileOrTablet && <Container fluid className='bg-dark justify-content-center text-center borders mx-auto my-auto' >
+{isMobileOrTablet && <Container fluid className='bg-light justify-content-center text-center borders mx-auto my-auto' >
 
 
 
@@ -107,9 +107,9 @@ console.log(props.userInfo)
         <h6 ><u><b><i className='couleur2'>Informations Utilisateur(s)</i></b></u></h6>
         </div>
         <div>
-        <Table striped bordered hover variant="dark">
+        <Table striped bordered hover variant="light">
       <thead>
-        <tr className='text-light' style={{border:"2px solid white"}}>
+        <tr className='text-dark' style={{border:"2px solid white"}}>
           <th>Nom Utilisateur</th>
           <th>email</th>
           <th>Administrateur</th>
@@ -121,11 +121,11 @@ console.log(props.userInfo)
         {props.userInfo.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}} >
-             <td><i><b className="couleur2">{value.username}</b></i></td>
-             <td><i><b className="couleur2">{value.email}</b></i></td>
-             <td><i><b className="couleur2">{JSON.stringify(value.is_superuser)}</b></i></td>
-             <td><i><b className="couleur2">{value.last_login}</b></i></td>
-             <td><i><b className="couleur2">{value.date_joined}</b></i></td>
+             <td><i><b className="text-dark">{value.username}</b></i></td>
+             <td><i><b className="text-dark">{value.email}</b></i></td>
+             <td><i><b className="text-dark">{JSON.stringify(value.is_superuser)}</b></i></td>
+             <td><i><b className="text-dark">{value.last_login}</b></i></td>
+             <td><i><b className="text-dark">{value.date_joined}</b></i></td>
             </tr>     
         }) 
         }

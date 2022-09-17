@@ -94,9 +94,9 @@ function DailyRapportInfoRetrait(props)
         
         <>
         <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
+{isDesktop && <Container className='bg-light justify-content-center text-center  mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2'><i><b>{message}</b></i></p>
         </Col>
     </Row>
@@ -108,21 +108,20 @@ function DailyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
-        <p className='text-light'>Date : <b className='couleur2'>{props.dateInfo}</b>  </p>
+        <p className='text-dark'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
+        <p className='text-dark'>Date : <b className='couleur2'>{props.dateInfo}</b>  </p>
         
         </Col>
     </Row>
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Rapport</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6}>
-        <p className='text-light'>Nombres des retraits payés : <b className='couleur2'> {nombre_retrait_paye}</b> </p>
-        <p className='text-light'>Nombres des retraits validés : <b className='couleur2'> {nombre_retrait_valide}</b> </p>
-        <p className='text-light'>Nombres des retraits non validés : <b className='couleur2'> {nombre_retrait_nonvalide}</b></p>
+        <p className='text-dark'>Nombres des retraits payés : <b className='couleur2'> {nombre_retrait_paye}</b> </p>
+        <p className='text-dark'>Nombres des retraits validés : <b className='couleur2'> {nombre_retrait_valide}</b> </p>
+        <p className='text-dark'>Nombres des retraits non validés : <b className='couleur2'> {nombre_retrait_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>
@@ -152,7 +151,7 @@ function DailyRapportInfoRetrait(props)
 </Container>
 }
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto my-auto'>
+{isMobileOrTablet && <Container className='bg-light justify-content-center text-center mx-auto my-auto'>
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={12}>
         <p className='couleur2'><i><b>{message}</b></i></p>
@@ -166,21 +165,20 @@ function DailyRapportInfoRetrait(props)
     </Row>
     <Row className='justify-content-start pb-3' >
         <Col xs={12}>
-        <p className='text-light'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
-        <p className='text-light'>Date : <b className='couleur2'>{props.dateInfo}</b>  </p>
+        <p className='text-dark'>Type de Rapport: <b className='couleur2'>Journalier</b> </p>
+        <p className='text-dark'>Date : <b className='couleur2'>{props.dateInfo}</b>  </p>
         
         </Col>
     </Row>
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Rapport</u></b> </p>
     </Row>
     <Row className='justify-content-start pb-3' >
         <Col xs={6}>
-        <p className='text-light'>etraits payés: <b className='couleur2'> {nombre_retrait_paye}</b> </p>
-        <p className='text-light'>retraits validés: <b className='couleur2'> {nombre_retrait_valide}</b> </p>
-        <p className='text-light'>retraits non validés: <b className='couleur2'> {nombre_retrait_nonvalide}</b></p>
+        <p className='text-dark'>etraits payés: <b className='couleur2'> {nombre_retrait_paye}</b> </p>
+        <p className='text-dark'>retraits validés: <b className='couleur2'> {nombre_retrait_valide}</b> </p>
+        <p className='text-dark'>retraits non validés: <b className='couleur2'> {nombre_retrait_nonvalide}</b></p>
         </Col>
 
         <Col xs={6}>

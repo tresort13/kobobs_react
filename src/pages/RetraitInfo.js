@@ -82,66 +82,66 @@ const navigate = useNavigate()
         
         <>
         <Header username={props.username} />
-{isDesktop && <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
+{isDesktop && <Container className='bg-light justify-content-center text-center  mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>
-        <p className='couleur2'><i><b>{message}</b></i></p>
+        <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
-
-
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_expediteur}</b> </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie2.infoEnvoie.postnom_expediteur}</b>  </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-light'>Email Adresse : <b className='couleur2'>{props.envoie2.infoEnvoie.email_expediteur}</b> </p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'> {props.envoie2.infoEnvoie.numero_expediteur} </b></p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
-        </Col>
-    </Row>
-
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mozui (Bénéficiare Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_beneficiaire}</b>  </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie2.infoEnvoie.postnom_beneficiaire}</b> </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie2.infoEnvoie.prenom_beneficiaire} </b> </p>
-        <p className='text-light'>Email Adresse : <b className='couleur2'> {props.envoie2.infoEnvoie.adresse_beneficiaire}</b></p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'>{props.envoie2.infoEnvoie.numero_beneficiaire}</b>  </p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'>{props.envoie2.infoEnvoie.pays_beneficiaire}</b> </p>
-        </Col>
-    </Row>
-
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mbongo (Motant Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Mbongo yako zwa epayi ya Mozui(Montant): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
-        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='bg-warning text-dark'>{props.envoie2.infoEnvoie.numero_transfer}</b> </p>
-        </Col>
-    </Row>
-
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Retrait Status</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        {props.envoie2.infoEnvoie.status_retrait === 'Code Retrait Valide' ?  <p className='text-light'>Status Retrait : <b className='text-light bg-success'>{props.envoie2.infoEnvoie.status_retrait}</b> </p> : <p className='text-light'>Status Retrait : <b className='text-light bg-danger'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>}
+        {props.envoie2.infoEnvoie.status_retrait === 'Code Retrait Valide' ?  <p className='text-text-dark'>Status Retrait : <b className='text-light bg-success'>{props.envoie2.infoEnvoie.status_retrait}</b> </p> : <p className='text-text-dark'>Status Retrait : <b className='text-dark bg-danger'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>}
         </Col>
     </Row>
 
+
+    <Row className='justify-content-center pb-3'>
+      <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'><b><u>Expediteur Informations</u></b> </p>
+    </Row>
+    <Row className='justify-content-center pb-3' >
+        <Col xs={12}>
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_expediteur}</b> </p>
+        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_expediteur}</b>  </p>
+        <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Email: <b className='text-dark'>{props.envoie2.infoEnvoie.email_expediteur}</b> </p>
+        <p className='text-dark'>Numéro Téléphone: <b className='text-dark'> {props.envoie2.infoEnvoie.numero_expediteur} </b></p>
+        <p className='text-dark'>Pays: <b className='text-dark'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center pb-3'>
+      <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'><b><u>Bénéficiare Informations</u></b> </p>
+    </Row>
+    <Row className='justify-content-center pb-3' >
+        <Col xs={12}>
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_beneficiaire}</b>  </p>
+        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_beneficiaire}</b> </p>
+        <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie2.infoEnvoie.prenom_beneficiaire} </b> </p>
+        <p className='text-dark'>Email Adresse: <b className='text-dark'> {props.envoie2.infoEnvoie.adresse_beneficiaire}</b></p>
+        <p className='text-dark'>Numéro Téléphone: <b className='text-dark'>{props.envoie2.infoEnvoie.numero_beneficiaire}</b>  </p>
+        <p className='text-dark'>Pays: <b className='text-dark'>{props.envoie2.infoEnvoie.pays_beneficiaire}</b> </p>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center pb-3'>
+      <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'><b><u>Motant Informations</u></b> </p>
+    </Row>
+    <Row className='justify-content-center pb-3' >
+        <Col xs={12}>
+        <p className='text-dark'>Montant: <b className='text-dark'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
+        <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie2.infoEnvoie.type_service}</b> </p>
+        <p className='text-dark'>Numéro à transferer de l'argent: <b className='text-dark'>{props.envoie2.infoEnvoie.numero_transfer}</b> </p>
+        </Col>
+    </Row>
+
+   
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
     </Row>
@@ -166,66 +166,66 @@ const navigate = useNavigate()
 </Container>
 }
 
-{isMobileOrTablet && <Container className='bg-dark justify-content-center text-center bordure mx-auto mt-5' >
+{isMobileOrTablet && <Container className='bg-light justify-content-center text-center bordure mx-auto mt-5' >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={12}>
-        <p className='couleur2'><i><b>{message}</b></i></p>
+        <Col xs={6}>
+        <p className='couleur2 display-6'><i><b>{message}</b></i></p>
         </Col>
     </Row>
-
-
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Motindi (Expediteur Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_expediteur}</b> </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie2.infoEnvoie.postnom_expediteur}</b>  </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
-        <p className='text-light'>Email Adresse : <b className='couleur2'>{props.envoie2.infoEnvoie.email_expediteur}</b> </p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'> {props.envoie2.infoEnvoie.numero_expediteur} </b></p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
-        </Col>
-    </Row>
-
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mozui (Bénéficiare Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Kombo Ya Libota (Nom): <b className='couleur2'>{props.envoie2.infoEnvoie.nom_beneficiaire}</b>  </p>
-        <p className='text-light'>Kombo Ya Authenticité (Postnom): <b className='couleur2'>{props.envoie2.infoEnvoie.postnom_beneficiaire}</b> </p>
-        <p className='text-light'>Kombo Ya Mukristu (Prénom) : <b className='couleur2'>{props.envoie2.infoEnvoie.prenom_beneficiaire} </b> </p>
-        <p className='text-light'>Email Adresse : <b className='couleur2'> {props.envoie2.infoEnvoie.adresse_beneficiaire}</b></p>
-        <p className='text-light'>Numéro Ya Tshombo (Numéro Tél) : <b className='couleur2'>{props.envoie2.infoEnvoie.numero_beneficiaire}</b>  </p>
-        <p className='text-light'>Ekolo (Pays) : <b className='couleur2'>{props.envoie2.infoEnvoie.pays_beneficiaire}</b> </p>
-        </Col>
-    </Row>
-
-    <Row className='justify-content-center pb-3'>
-      <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Mbongo (Motant Informations)</u></b> </p>
-    </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
-        <p className='text-light'>Mbongo yako zwa epayi ya Mozui(Montant): <b className='couleur2'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='couleur2'>{props.envoie2.infoEnvoie.type_service}</b> </p>
-        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='bg-warning text-dark'>{props.envoie2.infoEnvoie.numero_transfer}</b> </p>
-        </Col>
-    </Row>
-
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
       <p className='couleur2'><b><u>Retrait Status</u></b> </p>
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        {props.envoie2.infoEnvoie.status_retrait === 'Code Retrait Valide' ?  <p className='text-light'>Status Retrait : <b className='text-light bg-success'>{props.envoie2.infoEnvoie.status_retrait}</b> </p> : <p className='text-light'>Status Retrait : <b className='text-light bg-danger'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>}
+        {props.envoie2.infoEnvoie.status_retrait === 'Code Retrait Valide' ?  <p className='text-text-dark'>Status Retrait : <b className='text-light bg-success'>{props.envoie2.infoEnvoie.status_retrait}</b> </p> : <p className='text-text-dark'>Status Retrait : <b className='text-dark bg-danger'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>}
         </Col>
     </Row>
 
+
+    <Row className='justify-content-center pb-3'>
+      <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'><b><u>Expediteur Informations</u></b> </p>
+    </Row>
+    <Row className='justify-content-center pb-3' >
+        <Col xs={12}>
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_expediteur}</b> </p>
+        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_expediteur}</b>  </p>
+        <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Email: <b className='text-dark'>{props.envoie2.infoEnvoie.email_expediteur}</b> </p>
+        <p className='text-dark'>Numéro Téléphone: <b className='text-dark'> {props.envoie2.infoEnvoie.numero_expediteur} </b></p>
+        <p className='text-dark'>Pays: <b className='text-dark'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center pb-3'>
+      <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'><b><u>Bénéficiare Informations</u></b> </p>
+    </Row>
+    <Row className='justify-content-center pb-3' >
+        <Col xs={12}>
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_beneficiaire}</b>  </p>
+        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_beneficiaire}</b> </p>
+        <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie2.infoEnvoie.prenom_beneficiaire} </b> </p>
+        <p className='text-dark'>Email Adresse: <b className='text-dark'> {props.envoie2.infoEnvoie.adresse_beneficiaire}</b></p>
+        <p className='text-dark'>Numéro Téléphone: <b className='text-dark'>{props.envoie2.infoEnvoie.numero_beneficiaire}</b>  </p>
+        <p className='text-dark'>Pays: <b className='text-dark'>{props.envoie2.infoEnvoie.pays_beneficiaire}</b> </p>
+        </Col>
+    </Row>
+
+    <Row className='justify-content-center pb-3'>
+      <hr style={{color:"darkorange"}}></hr>
+      <p className='couleur2'><b><u>Motant Informations</u></b> </p>
+    </Row>
+    <Row className='justify-content-center pb-3' >
+        <Col xs={12}>
+        <p className='text-dark'>Montant: <b className='text-dark'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
+        <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie2.infoEnvoie.type_service}</b> </p>
+        <p className='text-dark'>Numéro à transferer de l'argent: <b className='text-dark'>{props.envoie2.infoEnvoie.numero_transfer}</b> </p>
+        </Col>
+    </Row>
+
+   
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
     </Row>
@@ -246,7 +246,6 @@ const navigate = useNavigate()
     </Row>
     
 
-
 </Container> }
 <Row className="mt-5">
           <Col md={12}>
@@ -265,7 +264,7 @@ function MyVerticallyCenteredModal(props) {
   return (
     <Modal
       {...props}
-      size="md"
+      size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
@@ -275,7 +274,7 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Status Code Retrait : </h4>
+
         <p className='text-danger'><b>Ce code de retrait n'est pas encore validé !!!</b>   
         </p>
       </Modal.Body>
@@ -290,7 +289,7 @@ function MyVerticallyCenteredModal2(props) {
   return (
     <Modal
       {...props}
-      size="md"
+      size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
@@ -300,7 +299,6 @@ function MyVerticallyCenteredModal2(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Status Code Retrait : </h4>
         <p className='text-danger'><b>Désolé ce code de retrait a déjà été utilisé (status : Code Retrait Payé)!!!</b>   
         </p>
       </Modal.Body>

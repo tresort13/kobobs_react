@@ -56,32 +56,37 @@ function DetailsEnvoieInfo(props)
         <Header username={props.username} />
 {isDesktop && props.detailEnvoieTotal.map((value)=>
     {
-    return <Container className='bg-dark justify-content-center text-center bordure mb-5' style={{marginTop:50,width:1000}} >
+    return <Container className='bg-light justify-content-center text-center mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
-        <Col xs={6}>
+        <Col xs={12}>
         <p className='couleur2'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 
     <Row className='justify-content-center pb-3'>
       <hr style={{color:"darkorange"}}></hr>
-      <p className='couleur2'><b><u>Informations générales </u></b> </p>
+     
     </Row>
-    <Row className='justify-content-center pb-3' >
-    <Col xs={12}>
-        <p className='text-light'>Kombo Mobimba ya Motindi (Noms complets Expediteur): <b className='text-dark bg-warning'>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
-        <p className='text-light'>Kombo Mobimba ya Mozui (Noms complets Beneficiare): <b className='couleur2'>{value.nom_beneficiaire} {value.postnom_beneficiaire} {value.prenom_beneficiaire}</b> </p>
-        <p className='text-light'>Ekolo Motindi (Pays Expediteur) : <b className='couleur2'> {value.pays_expediteur}</b></p>
-        <p className='text-light'>Numéro ya Motindi (Numéro Expediteur) : <b className='text-dark bg-warning'> {value.numero_expediteur}</b></p>
-        <p className='text-light'>Email ya Motindi (Numéro Expediteur) : <b className='couleur2'> {value.email_expediteur}</b></p>
-        <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='couleur2'> {value.pays_beneficiaire}</b></p>
-        <p className='text-light'>Mbongo yako zwa (Montant à Recuperer): <b className='text-dark bg-warning'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
-        <p className='text-light'>Mbongo yako futa (Montant à payer): <b className='text-dark bg-warning'>{Number(value.montant_total).toFixed(2)} £</b> </p>
-        <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='text-dark bg-warning'>{value.type_service}</b> </p>
-        <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='couleur2'>{value.numero_transfer}</b> </p>
-        <p className='text-light'>Code Retrait : <b className='text-dark bg-warning'>{value.code_retrait}</b> </p>
-        <p className='text-light'>Status Retrait : <b className='text-dark bg-warning'>{value.status_retrait}</b> </p>
-        <p className='text-light'>date et heure : <b className='couleur2'> {value.date_heure_operation}</b></p> 
+    <Row className='justify-content-center pb-3 mb-3' >
+    <Col xs={6}>
+        <p className='text-dark'>Noms Expediteur: <b className='text-dark'>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Noms Beneficiare: <b className='text-dark '>{value.nom_beneficiaire} {value.postnom_beneficiaire} {value.prenom_beneficiaire}</b> </p>
+        <p className='text-dark'>Pays Expediteur: <b className='text-dark '> {value.pays_expediteur}</b></p>
+        <p className='text-dark'>Numéro Expediteur: <b className='text-dark'> {value.numero_expediteur}</b></p>
+        <p className='text-dark'>Email Expediteur: <b className='text-dark '> {value.email_expediteur}</b></p>
+        <p className='text-dark'>Pays Beneficiare: <b className='text-dark '> {value.pays_beneficiaire}</b></p>
+        <p className='text-dark'>Montant à Recuperer: <b className='text-dark'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
+        
+    </Col>
+
+    <Col xs={6}>
+       
+        <p className='text-dark'>Montant à payer: <b className='text-dark'>{Number(value.montant_total).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Type de retrait: <b className='text-dark'>{value.type_service}</b> </p>
+        <p className='text-dark'>Mobile Money: <b className='text-dark'>{value.numero_transfer}</b> </p>
+        <p className='text-dark'>Code Retrait : <b className='text-dark'>{value.code_retrait}</b> </p>
+        <p className='text-dark'>Status Retrait : <b className='text-dark'>{value.status_retrait}</b> </p>
+        <p className='text-dark'>date et heure : <b className='text-dark'> {value.date_heure_operation}</b></p> 
     </Col>
     </Row>
 
@@ -103,7 +108,7 @@ function DetailsEnvoieInfo(props)
 
 {isMobileOrTablet && props.detailEnvoieTotal.map((value)=>
     {
-    return<Container className='bg-dark justify-content-center text-center bordure mx-auto my-auto'>
+    return<Container className='bg-light justify-content-center text-center mx-auto my-auto'>
     <Row className='justify-content-center mb-3 pt-3' >
             <Col xs={12}>
             <p className='couleur2'><i><b>{message}</b></i></p>
@@ -112,24 +117,24 @@ function DetailsEnvoieInfo(props)
     
         <Row className='justify-content-center pb-3'>
           <hr style={{color:"darkorange"}}></hr>
-          <p className='couleur2'><b><u>Informations générales </u></b> </p>
+          
         </Row>
         <Row className='justify-content-start pb-3' >
         <Col xs={12}>
-            <p className='text-light'>Kombo Mobimba ya Motindi (Noms complets Expediteur): <b className='text-dark bg-warning'>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
-            <p className='text-light'>Kombo Mobimba ya Mozui (Noms complets Beneficiare): <b className='couleur2'>{value.nom_beneficiaire} {value.postnom_beneficiaire} {value.prenom_beneficiaire}</b> </p>
-            <p className='text-light'>Ekolo Motindi (Pays Expediteur) : <b className='couleur2'> {value.pays_expediteur}</b></p>
-            <p className='text-light'>Numéro ya Motindi (Numéro Expediteur) : <b className='text-dark bg-warning'> {value.numero_expediteur}</b></p>
-            <p className='text-light'>Email ya Motindi (Numéro Expediteur) : <b className='couleur2'> {value.email_expediteur}</b></p>
-            <p className='text-light'>Ekolo Mozui(Pays Beneficiare) : <b className='couleur2'> {value.pays_beneficiaire}</b></p>
-            <p className='text-light'>Mbongo yako zwa (Montant à Recuperer): <b className='text-dark bg-warning'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>
-            <p className='text-light'>Mbongo yako futa (Montant à payer): <b className='text-dark bg-warning'>{Number(value.montant_total).toFixed(2)} £</b> </p>
-            <p className='text-light'>Nzela yako zwa Mbongo (Type de retrait): <b className='text-dark bg-warning'>{value.type_service}</b> </p>
-            <p className='text-light'>Numéro ya transfer(Numéro à transferer de l'argent): <b className='couleur2'>{value.numero_transfer}</b> </p>
-            <p className='text-light'>Code Retrait : <b className='text-dark bg-warning'>{value.code_retrait}</b> </p>
-            <p className='text-light'>Status Retrait : <b className='text-dark bg-warning'>{value.status_retrait}</b> </p>
-            <p className='text-light'>date et heure : <b className='couleur2'> {value.date_heure_operation}</b></p> 
-        </Col>
+        <p className='text-dark'>Noms Expediteur: <b className='text-dark'>{value.nom_expediteur} {value.postnom_expediteur} {value.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Noms Beneficiare: <b className='text-dark '>{value.nom_beneficiaire} {value.postnom_beneficiaire} {value.prenom_beneficiaire}</b> </p>
+        <p className='text-dark'>Pays Expediteur: <b className='text-dark '> {value.pays_expediteur}</b></p>
+        <p className='text-dark'>Numéro Expediteur: <b className='text-dark'> {value.numero_expediteur}</b></p>
+        <p className='text-dark'>Email Expediteur: <b className='text-dark '> {value.email_expediteur}</b></p>
+        <p className='text-dark'>Pays Beneficiare: <b className='text-dark '> {value.pays_beneficiaire}</b></p>
+        <p className='text-dark'>Montant à Recuperer: <b className='text-dark'>{Number(value.montant_beneficiaire).toFixed(2)} $</b> </p>    
+        <p className='text-dark'>Montant à payer: <b className='text-dark'>{Number(value.montant_total).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Type de retrait: <b className='text-dark'>{value.type_service}</b> </p>
+        <p className='text-dark'>Mobile Money: <b className='text-dark'>{value.numero_transfer}</b> </p>
+        <p className='text-dark'>Code Retrait : <b className='text-dark'>{value.code_retrait}</b> </p>
+        <p className='text-dark'>Status Retrait : <b className='text-dark'>{value.status_retrait}</b> </p>
+        <p className='text-dark'>date et heure : <b className='text-dark'> {value.date_heure_operation}</b></p> 
+    </Col>
         </Row>
     
         <Row className='justify-content-center pb-3'>

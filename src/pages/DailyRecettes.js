@@ -56,7 +56,7 @@ const total_montant = props.dailyRapport.reduce((total,value)=>
         <>
             <Header username={props.username}/>
             <div>
-{isDesktop && <Container fluid className='bg-dark justify-content-center text-center borders mb-5' style={{marginTop:20}} >
+{isDesktop && <Container fluid className='bg-light justify-content-center text-center borders mb-5' style={{marginTop:20}} >
 
 
 
@@ -68,9 +68,9 @@ const total_montant = props.dailyRapport.reduce((total,value)=>
         <h6 ><u><b><i className='couleur2'>Table des Recettes Journalières</i></b></u></h6>
         </div>
         <div>
-        <Table striped bordered hover variant="dark">
+        <Table striped bordered hover variant="light">
       <thead>
-        <tr className='text-light' style={{border:"2px solid white"}}>
+        <tr className='text-dark' style={{border:"2px solid white"}}>
           <th>Date</th>
           <th>Montant Beneficiaire ($)</th>
           <th>Frais Envoie (£)</th>
@@ -83,19 +83,19 @@ const total_montant = props.dailyRapport.reduce((total,value)=>
         {
           return  <tr style={{border:"2px solid white"}} >
              <td><i ><b>{props.dateInfo}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.montant_beneficiaire).toFixed(2)) }</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.frais_envoie).toFixed(2))}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.frais_tva).toFixed(2))}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.montant_total).toFixed(2))}</b></i></td>
+             <td><i><b className="text-dark">{new Intl.NumberFormat().format(Number(value.montant_beneficiaire).toFixed(2)) }</b></i></td>
+             <td><i><b className="text-dark">{new Intl.NumberFormat().format(Number(value.frais_envoie).toFixed(2))}</b></i></td>
+             <td><i><b className="text-dark">{new Intl.NumberFormat().format(Number(value.frais_tva).toFixed(2))}</b></i></td>
+             <td><i><b className="text-dark">{new Intl.NumberFormat().format(Number(value.montant_total).toFixed(2))}</b></i></td>
             </tr>     
         }) 
         }
        <tr style={{border:"2px solid white"}}>
          <td><i><b>TOTAL</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_montant_beneficiaire).toFixed(2))}</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_frais_envoie).toFixed(2))}</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_frais_tva).toFixed(2))}</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_montant).toFixed(2))}</b></i></td>
+         <td><i className='couleur2'><b>{new Intl.NumberFormat().format(Number(total_montant_beneficiaire).toFixed(2))}</b></i></td>
+         <td><i className='couleur2'><b>{new Intl.NumberFormat().format(Number(total_frais_envoie).toFixed(2))}</b></i></td>
+         <td><i className='couleur2'><b>{new Intl.NumberFormat().format(Number(total_frais_tva).toFixed(2))}</b></i></td>
+         <td><i className='couleur2'><b>{new Intl.NumberFormat().format(Number(total_montant).toFixed(2))}</b></i></td>
        </tr>
          
       </tbody>
@@ -125,7 +125,7 @@ const total_montant = props.dailyRapport.reduce((total,value)=>
 
 </Container>}
 
-{isMobileOrTablet && <Container fluid className='bg-dark justify-content-center text-center borders mx-auto my-auto' >
+{isMobileOrTablet && <Container fluid className='bg-light justify-content-center text-center borders mx-auto my-auto' >
 
 
 
@@ -137,9 +137,9 @@ const total_montant = props.dailyRapport.reduce((total,value)=>
         <h6 ><u><b><i className='couleur2'>Table des Recettes Journalières</i></b></u></h6>
         </div>
         <div>
-        <Table striped bordered hover variant="dark">
+        <Table striped bordered hover variant="light">
       <thead>
-        <tr className='text-light' style={{border:"2px solid white"}}>
+        <tr className='text-dark' style={{border:"2px solid white"}}>
           <th>Date</th>
           <th>Montant Beneficiaire ($)</th>
           <th>Frais Envoie (£)</th>
@@ -151,20 +151,20 @@ const total_montant = props.dailyRapport.reduce((total,value)=>
         {props.dailyRapport.map((value)=>
         {
           return  <tr style={{border:"2px solid white"}} >
-             <td><i ><b>{props.dateInfo}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.montant_beneficiaire).toFixed(2)) }</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.frais_envoie).toFixed(2))}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.frais_tva).toFixed(2))}</b></i></td>
-             <td><i><b className="couleur2">{new Intl.NumberFormat().format(Number(value.montant_total).toFixed(2))}</b></i></td>
+              <td><i ><b>{props.dateInfo}</b></i></td>
+             <td><i><b className="text-dark">{new Intl.NumberFormat().format(Number(value.montant_beneficiaire).toFixed(2)) }</b></i></td>
+             <td><i><b className="text-dark">{new Intl.NumberFormat().format(Number(value.frais_envoie).toFixed(2))}</b></i></td>
+             <td><i><b className="text-dark">{new Intl.NumberFormat().format(Number(value.frais_tva).toFixed(2))}</b></i></td>
+             <td><i><b className="text-dark">{new Intl.NumberFormat().format(Number(value.montant_total).toFixed(2))}</b></i></td>
             </tr>     
         }) 
         }
        <tr style={{border:"2px solid white"}}>
          <td><i><b>TOTAL</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_montant_beneficiaire).toFixed(2))}</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_frais_envoie).toFixed(2))}</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_frais_tva).toFixed(2))}</b></i></td>
-         <td><i className='text-dark bg-warning'><b>{new Intl.NumberFormat().format(Number(total_montant).toFixed(2))}</b></i></td>
+         <td><i className='couleur2'><b>{new Intl.NumberFormat().format(Number(total_montant_beneficiaire).toFixed(2))}</b></i></td>
+         <td><i className='couleur2'><b>{new Intl.NumberFormat().format(Number(total_frais_envoie).toFixed(2))}</b></i></td>
+         <td><i className='couleur2'><b>{new Intl.NumberFormat().format(Number(total_frais_tva).toFixed(2))}</b></i></td>
+         <td><i className='couleur2'><b>{new Intl.NumberFormat().format(Number(total_montant).toFixed(2))}</b></i></td>
        </tr>
          
       </tbody>
