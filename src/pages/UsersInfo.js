@@ -111,7 +111,6 @@ console.log(props.userInfo)
       <thead>
         <tr className='text-dark' style={{border:"2px solid white"}}>
           <th>Nom Utilisateur</th>
-          <th>email</th>
           <th>Administrateur</th>
         </tr>
       </thead>
@@ -120,7 +119,6 @@ console.log(props.userInfo)
         {
           return  <tr style={{border:"2px solid white"}} >
              <td><i><b className="text-dark">{value.username}</b></i></td>
-             <td><i><b className="text-dark">{value.email}</b></i></td>
              <td><i><b className="text-dark">{JSON.stringify(value.is_superuser)}</b></i></td>
             </tr>     
         }) 

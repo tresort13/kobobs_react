@@ -203,7 +203,7 @@ function FormEnvoiClient(props)
 
         <Col xs = {4}>
         <Form.Group className="mb-3" controlId="formBasicText" >
-        <Form.Label className='text-dark'><span variant="text-danger">*</span> Prénom</Form.Label>
+        <Form.Label className='text-dark'><span className="text-danger">*</span> Prénom</Form.Label>
         <Form.Control name="prenom_beneficiaire" value={envoie.infoEnvoie.prenom_beneficiaire} onChange={e=>inputChanged(e)} type="text" placeholder='Prénom'  required/>
        
          </Form.Group>

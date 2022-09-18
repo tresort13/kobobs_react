@@ -39,6 +39,8 @@ function Homepage(props)
         setModalShow(true)
       }
 
+    
+
     return (
     <>
     <Header username={props.username}/>

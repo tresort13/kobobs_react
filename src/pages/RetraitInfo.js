@@ -25,7 +25,7 @@ function RetraitInfo(props)
     const [couleur,setCouleur] = useState("text-dark")
     const [modalShow,setModalShow] = React.useState(false);
     const [modalShow2,setModalShow2] = React.useState(false);
-    const [modalShow3,setModalShow3] = React.useState(false);
+
 
     const isDesktop = useMediaQuery({
         query: "(min-width: 1224px)"
@@ -42,7 +42,7 @@ const navigate = useNavigate()
     const validerRetrait = (e)=>
     { 
       e.preventDefault() 
-      setModalShow3(true)    
+      
       fetch('https://kobobsapi.herokuapp.com/api/getRetraitInfo/'+props.envoie2.infoEnvoie.code_retrait+'/', {
               method:'GET',
                headers: {'Content-Type': 'application/json'},
@@ -94,7 +94,7 @@ const navigate = useNavigate()
     </Row>
     <Row className='justify-content-start pb-3' >
         <Col xs={12}>
-        {props.envoie2.infoEnvoie.status_retrait === 'Code Retrait Valide' ?  <p className='text-text-dark'>Status Retrait : <b className='text-light bg-success'>{props.envoie2.infoEnvoie.status_retrait}</b> </p> : <p className='text-text-dark'>Status Retrait : <b className='text-dark bg-danger'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>}
+        {props.envoie2.infoEnvoie.status_retrait === 'Code Retrait Valide' ?  <p className='text-dark'>Status Retrait : <b className='text-success'>{props.envoie2.infoEnvoie.status_retrait}</b> </p> : <p className='text-dark'>Status Retrait : <b className='text-danger'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>}
         </Col>
     </Row>
 
@@ -188,7 +188,7 @@ const navigate = useNavigate()
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        {props.envoie2.infoEnvoie.status_retrait === 'Code Retrait Valide' ?  <p className='text-text-dark'>Status Retrait : <b className='text-light bg-success'>{props.envoie2.infoEnvoie.status_retrait}</b> </p> : <p className='text-text-dark'>Status Retrait : <b className='text-dark bg-danger'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>}
+        {props.envoie2.infoEnvoie.status_retrait === 'Code Retrait Valide' ?  <p className='text-dark'>Status Retrait : <b className='text-success'>{props.envoie2.infoEnvoie.status_retrait}</b> </p> : <p className='text-dark'>Status Retrait : <b className='text-danger'>{props.envoie2.infoEnvoie.status_retrait}</b> </p>}
         </Col>
     </Row>
 
@@ -319,27 +319,7 @@ function MyVerticallyCenteredModal2(props) {
   );
 }
 
-function MyVerticallyCenteredModal3(props) {
-  return (
-    <Modal
-      {...props}
-      size="sm"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Veuillez Patienter...
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-      <ClipLoader color={"#ff8c00"} loading={true} size={150} /> 
-      </Modal.Body>
-      <Modal.Footer>
-      </Modal.Footer>
-    </Modal>
-  );
-}
+
 
 
 
