@@ -50,8 +50,8 @@ function ConfirmationEnvoieInfo(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6} className="text-start">
-        <p className='text-dark'>Code Retrait : <b className='text-dark bg-danger'> {props.envoie3.infoEnvoie.code_retrait} </b></p>
-        <p className='text-dark'>Code Abonné : <b className='text-dark bg-danger'> {props.envoie3.infoEnvoie.code_abonne} (à retenir)</b></p>
+        <p className='text-dark'>Code Retrait : <b className='text-danger'> {props.envoie3.infoEnvoie.code_retrait} </b></p>
+        <p className='text-dark'>Code Abonné : <b className='text-danger'> {props.envoie3.infoEnvoie.code_abonne} (à retenir)</b></p>
         <p className='text-dark'>Montant à récupérer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-dark'>Montant à payer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_total).toFixed(2)} £</b> </p>
         <p className='text-dark'>Noms Expediteur: <b className='text-dark'>{props.envoie3.infoEnvoie.nom_expediteur} {props.envoie3.infoEnvoie.postnom_expediteur} {props.envoie3.infoEnvoie.prenom_expediteur}</b> </p>
@@ -95,8 +95,8 @@ function ConfirmationEnvoieInfo(props)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12}>
-        <p className='text-dark'>Code Retrait : <b className='text-dark bg-danger'> {props.envoie3.infoEnvoie.code_retrait} </b></p>
-        <p className='text-dark'>Code Abonné : <b className='text-dark bg-danger'> {props.envoie3.infoEnvoie.code_abonne} (à retenir)</b></p>
+        <p className='text-dark'>Code Retrait : <b className='text-danger'> {props.envoie3.infoEnvoie.code_retrait} </b></p>
+        <p className='text-dark'>Code Abonné : <b className='text-danger'> {props.envoie3.infoEnvoie.code_abonne} (à retenir)</b></p>
         <p className='text-dark'>Montant à récupérer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-dark'>Montant à payer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_total).toFixed(2)} £</b> </p>
         <p className='text-dark'>Noms Expediteur: <b className='text-dark'>{props.envoie3.infoEnvoie.nom_expediteur} {props.envoie3.infoEnvoie.postnom_expediteur} {props.envoie3.infoEnvoie.prenom_expediteur}</b> </p>

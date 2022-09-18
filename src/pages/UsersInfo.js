@@ -113,8 +113,6 @@ console.log(props.userInfo)
           <th>Nom Utilisateur</th>
           <th>email</th>
           <th>Administrateur</th>
-          <th>Dernière Connexion</th>
-          <th>Date de Creation</th>
         </tr>
       </thead>
       <tbody>
@@ -124,8 +122,6 @@ console.log(props.userInfo)
              <td><i><b className="text-dark">{value.username}</b></i></td>
              <td><i><b className="text-dark">{value.email}</b></i></td>
              <td><i><b className="text-dark">{JSON.stringify(value.is_superuser)}</b></i></td>
-             <td><i><b className="text-dark">{value.last_login}</b></i></td>
-             <td><i><b className="text-dark">{value.date_joined}</b></i></td>
             </tr>     
         }) 
         }
