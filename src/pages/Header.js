@@ -87,7 +87,7 @@ function Header(props)
                   <NavDropdown.Divider />
                   <Nav.Link href="/menu_gestion_recettes"><b>Gestion Recettes</b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_users"><b>Gestion Utilisateurs</b></Nav.Link>
+                  <Nav.Link href="/menu_users"><b>Deconnexion</b></Nav.Link>
                   <NavDropdown.Divider />
 
 

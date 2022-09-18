@@ -140,7 +140,7 @@ const total_montant = props.monthlyRapport.reduce((total,value)=>
       <thead>
         <tr className='text-dark' style={{border:"2px solid white"}}>
           <th>Periode</th>
-          <th>Montant Beneficiaire ($)</th>
+          <th>Montant ($)</th>
           <th>Frais Envoie (£)</th>
           <th>Frais TVA (£)</th>
           <th>Total (£)</th>

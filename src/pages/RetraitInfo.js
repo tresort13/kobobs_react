@@ -103,7 +103,7 @@ const navigate = useNavigate()
       <hr style={{color:"darkorange"}}></hr>
       <p className='text-dark'><b><u>Expediteur Informations</u></b> </p>
     </Row>
-    <Row className='justify-content-center pb-3' >
+    <Row className='justify-content-start pb-3' >
         <Col xs={6}>
         <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_expediteur}</b> </p>
         <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_expediteur}</b>  </p>
@@ -121,14 +121,14 @@ const navigate = useNavigate()
       <hr style={{color:"darkorange"}}></hr>
       <p className='text-dark'><b><u>Bénéficiare Informations</u></b> </p>
     </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
+    <Row className='justify-content-start pb-3' >
+        <Col xs={6}>
         <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_beneficiaire}</b>  </p>
         <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_beneficiaire}</b> </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie2.infoEnvoie.prenom_beneficiaire} </b> </p>
         </Col>
 
-        <Col xs={12}>
+        <Col xs={6}>
         <p className='text-dark'>Email Adresse: <b className='text-dark'> {props.envoie2.infoEnvoie.adresse_beneficiaire}</b></p>
         <p className='text-dark'>Numéro Téléphone: <b className='text-dark'>{props.envoie2.infoEnvoie.numero_beneficiaire}</b>  </p>
         <p className='text-dark'>Pays: <b className='text-dark'>{props.envoie2.infoEnvoie.pays_beneficiaire}</b> </p>
@@ -139,7 +139,7 @@ const navigate = useNavigate()
       <hr style={{color:"darkorange"}}></hr>
       <p className='text-dark'><b><u>Motant Informations</u></b> </p>
     </Row>
-    <Row className='justify-content-center pb-3' >
+    <Row className='justify-content-start pb-3' >
         <Col xs={6}>
         <p className='text-dark'>Montant: <b className='text-dark'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie2.infoEnvoie.type_service}</b> </p>
@@ -197,11 +197,14 @@ const navigate = useNavigate()
       <hr style={{color:"darkorange"}}></hr>
       <p className='text-dark'><b><u>Expediteur Informations</u></b> </p>
     </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
+    <Row className='justify-content-start pb-3' >
+        <Col xs={6}>
         <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_expediteur}</b> </p>
         <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_expediteur}</b>  </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
+        </Col>
+
+        <Col xs={6}>
         <p className='text-dark'>Email: <b className='text-dark'>{props.envoie2.infoEnvoie.email_expediteur}</b> </p>
         <p className='text-dark'>Numéro Téléphone: <b className='text-dark'> {props.envoie2.infoEnvoie.numero_expediteur} </b></p>
         <p className='text-dark'>Pays: <b className='text-dark'> {props.envoie2.infoEnvoie.pays_expediteur}</b></p>
@@ -212,11 +215,14 @@ const navigate = useNavigate()
       <hr style={{color:"darkorange"}}></hr>
       <p className='text-dark'><b><u>Bénéficiare Informations</u></b> </p>
     </Row>
-    <Row className='justify-content-center pb-3' >
-        <Col xs={12}>
+    <Row className='justify-content-start pb-3' >
+        <Col xs={6}>
         <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_beneficiaire}</b>  </p>
         <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_beneficiaire}</b> </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie2.infoEnvoie.prenom_beneficiaire} </b> </p>
+        </Col>
+
+        <Col xs={6}>
         <p className='text-dark'>Email Adresse: <b className='text-dark'> {props.envoie2.infoEnvoie.adresse_beneficiaire}</b></p>
         <p className='text-dark'>Numéro Téléphone: <b className='text-dark'>{props.envoie2.infoEnvoie.numero_beneficiaire}</b>  </p>
         <p className='text-dark'>Pays: <b className='text-dark'>{props.envoie2.infoEnvoie.pays_beneficiaire}</b> </p>
@@ -227,7 +233,7 @@ const navigate = useNavigate()
       <hr style={{color:"darkorange"}}></hr>
       <p className='text-dark'><b><u>Motant Informations</u></b> </p>
     </Row>
-    <Row className='justify-content-center pb-3' >
+    <Row className='justify-content-start pb-3' >
         <Col xs={12}>
         <p className='text-dark'>Montant: <b className='text-dark'>{Number(props.envoie2.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie2.infoEnvoie.type_service}</b> </p>
