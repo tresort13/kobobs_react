@@ -11,6 +11,9 @@ import Header from './Header';
 import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
 import Button from "react-bootstrap/Button";
+import Nav from 'react-bootstrap/Nav';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import {useEffect,useState} from 'react';
 
 
 function Homepage(props)
