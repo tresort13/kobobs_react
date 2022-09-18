@@ -1,5 +1,5 @@
 import Container from "react-bootstrap/esm/Container";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.css';

@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from "react-bootstrap/esm/Container";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
@@ -23,6 +23,13 @@ function Homepage(props)
         query: "(max-width: 1224px)"
       });
       const [modalShow, setModalShow] = React.useState(false);
+
+      const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const navigate = useNavigate();
 
       const access = ()=>
       {
@@ -150,13 +157,31 @@ function Homepage(props)
        <Row className="text-center justify-content-center">
             <Col md={12} className="my-auto text-center">
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:350,height:300}} className='btn-lg rounded-pill zoom'>
-            <i className="text-secondary"><b>MENU</b></i>
+            <Button variant="secondary" style={{width:350,height:300}} className='btn-lg rounded-pill zoom' onClick={handleShow}>
+            <i className="couleur2"><b>MENU</b></i>
             </Button>
             </Link>    
             </Col>
 
            </Row>
+
+           <Offcanvas show={show} onHide={handleClose} className="bordure " style={{height:550}}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title className="text-end mx-auto"><i className="display-6 text-secondary text-end"><b><u>Menu</u></b></i> </Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+        <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column">
+        <Nav.Link href="/menu_envoie"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Envoi Argent</i></Button></Nav.Link>
+        <Nav.Link href="/form_retrait"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Retrait Argent</i></Button></Nav.Link>
+        <Nav.Link href="/menu_gestion_abonne"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Service Clients</i></Button></Nav.Link>
+        <Nav.Link href="/menu_gestion_operation"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion Operations</i></Button></Nav.Link>
+        <Nav.Link href="/menu_gestion_recettes"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion Recettes</i></Button></Nav.Link>
+        <Nav.Link href="/menu_users"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion Utilisateurs</i></Button></Nav.Link> 
+      </Nav>
+
+        </Offcanvas.Body>
+      </Offcanvas>
+    
        </Container>}
    <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
     <Footer />
