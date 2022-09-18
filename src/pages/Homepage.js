@@ -144,7 +144,7 @@ function Homepage(props)
 
        </Container>}
 
-       {isMobileOrTablet && <Container className=" mb-5 mt-5">
+       {isMobileOrTablet && <Container className=" mb-5 mt-5 pt-5">
        <Row className="text-center justify-content-center">
             <Col md={12} className="my-auto text-center">
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
