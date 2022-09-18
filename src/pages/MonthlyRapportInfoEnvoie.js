@@ -148,7 +148,7 @@ function MonthlyRapportInfoEnvoie(props)
 {isMobileOrTablet && <Container className='bg-light justify-content-center text-center  mx-auto my-auto'>
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={12}>
-        <p className='couleur2'><i><b>{message}</b></i></p>
+        <p className='text-dark'><i><b>{message}</b></i></p>
         </Col>
     </Row>
 

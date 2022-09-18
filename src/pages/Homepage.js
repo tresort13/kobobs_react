@@ -162,7 +162,7 @@ function Homepage(props)
        <Row className="text-center justify-content-center">
             <Col md={12} className="my-auto text-center">
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="secondary" style={{width:350,height:300}} className='btn-lg rounded-pill zoom' onClick={handleShow}>
+            <Button variant="dark" style={{width:350,height:300}} className='btn-lg rounded-pill zoom' onClick={handleShow}>
             <i className="couleur2"><b>MENU</b></i>
             </Button>
             </Link>    
