@@ -170,7 +170,7 @@ function Homepage(props)
 
            </Row>
 
-           <Offcanvas show={show} onHide={handleClose} className="bordure " style={{height:550}}>
+           <Offcanvas show={show} onHide={handleClose}  style={{height:550}}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="text-end mx-auto"><i className="display-6 text-secondary text-end"><b><u>Menu</u></b></i> </Offcanvas.Title>
         </Offcanvas.Header>
