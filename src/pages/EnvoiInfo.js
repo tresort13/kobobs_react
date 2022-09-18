@@ -112,7 +112,7 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6} className="text-start">
-        <p className='text-dark'>Montant Total à payer: <b className='text-dark bg-danger'>{Number(props.envoie.infoEnvoie.montant_pour_payer).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Montant Total à payer: <b className='text-danger'>{Number(props.envoie.infoEnvoie.montant_pour_payer).toFixed(2)} £</b> </p>
         <p className='text-dark'>Montant à recevoir par le Bénéficiare: <b className='text-dark'>{Number(props.envoie.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         
        
@@ -199,7 +199,7 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12} className="text-start">
-        <p className='text-dark'>Montant Total à payer: <b className='text-dark bg-danger'>{Number(props.envoie.infoEnvoie.montant_pour_payer).toFixed(2)} £</b> </p>
+        <p className='text-dark'>Montant Total à payer: <b className='text-danger'>{Number(props.envoie.infoEnvoie.montant_pour_payer).toFixed(2)} £</b> </p>
         <p className='text-dark'>Montant à recevoir par le Bénéficiare: <b className='text-dark'>{Number(props.envoie.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie.infoEnvoie.type_service}</b> </p>
         <p className='text-dark'>Mobile Money: <b className='text-dark'>{props.envoie.infoEnvoie.numero_transfer}</b> </p>

@@ -65,6 +65,27 @@ function Homepage(props)
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
+              <Link to="/menu_gestion_operation">
+              <Image src={require('./kobo_operation.png')}  className='rounded-pill' style={{width:200}}></Image>
+              </Link>
+              </div>
+
+              <div>
+              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Operations</i></p>
+              </div>
+             </div>   
+            </Col>
+
+
+           
+        </Row>
+
+        <Row className="text-center justify-content-center mt-3 ">
+       
+
+            <Col md={4} className="my-auto text-center">
+             <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
+              <div>
               {props.username == "makabagisele@" ? <Link to="/menu_gestion_abonne">
               <Image src={require('./kobo_client.jpg')}  className='rounded-pill' style={{width:200}}></Image>
               </Link> : <Link to="">
@@ -77,25 +98,6 @@ function Homepage(props)
               </div>
              </div>
               
-            </Col>
-
-
-           
-        </Row>
-
-        <Row className="text-center justify-content-center mt-3 ">
-        <Col md={4} className="my-auto text-center">
-             <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
-              <div>
-              <Link to="/menu_gestion_operation">
-              <Image src={require('./kobo_operation.png')}  className='rounded-pill' style={{width:200}}></Image>
-              </Link>
-              </div>
-
-              <div>
-              <p className="display-6 text-dark text-center"  style={{fontSize:20}}><i>Gestions Operations</i></p>
-              </div>
-             </div>   
             </Col>
 
 
@@ -148,7 +150,7 @@ function Homepage(props)
        <Row className="text-center justify-content-center">
             <Col md={12} className="my-auto text-center">
             <Link to="" style={{color:'white',textDecorationLine:'none'}}>
-            <Button variant="warning" style={{width:400,height:300}} className='btn-lg rounded-pill zoom'>
+            <Button variant="warning" style={{width:350,height:300}} className='btn-lg rounded-pill zoom'>
             <i className="text-secondary"><b>MENU</b></i>
             </Button>
             </Link>    
