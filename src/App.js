@@ -61,6 +61,17 @@ function App() {
     window.localStorage.setItem("username", JSON.stringify(username))
   }, [username])
 
+  const [isAdmin,setIsadmin] = useState(()=>
+  {
+    const localData = localStorage.getItem('isAdmin');
+    return localData ? JSON.parse(localData) : false;
+  });
+  
+  
+  useEffect(() => {
+    window.localStorage.setItem("isAdmin", JSON.stringify(isAdmin))
+  }, [isAdmin])
+
   const [dateInfo,setDate] = useState(()=>
   {
     const localData = localStorage.getItem('dateInfo');
@@ -502,7 +513,7 @@ function App() {
     <BrowserRouter>
       <Routes>
 
-        <Route path="/" element={<Login setUsername={setUsername} />}>
+        <Route path="/" element={<Login setUsername={setUsername} setIsadmin={setIsadmin}/>}>
         </Route>
 
 

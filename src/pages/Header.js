@@ -46,6 +46,7 @@ function Header(props)
     const logout = ()=>
     {
       window.localStorage.setItem("username", JSON.stringify(""))
+      window.localStorage.setItem("isAdmin", JSON.stringify(false))
       navigate('/')
     }
     return (

@@ -62,6 +62,7 @@ yn
               {
 
                 props.setUsername(data.username)
+                props.setIsadmin(data.is_superuser)
                 setState({credentials:{username :data.username}})
                  
                 navigate('/home')
