@@ -22,7 +22,7 @@ function SessionOut()
  
  return (
      <div>
-     <idleTimer ref={idleTimerRef} timeout={ 10 * 1000 } onIdle={logout} ></idleTimer>
+     <idleTimer ref={idleTimerRef} timeout={ 10 * 1000 } onIdle={logout} />
      </div>
 
      

@@ -14,6 +14,8 @@ import Button from "react-bootstrap/Button";
 import Nav from 'react-bootstrap/Nav';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import {useEffect,useState} from 'react';
+import SessionOut from './pages/SessionOut';
+
 
 
 function Homepage(props)
@@ -43,6 +45,7 @@ function Homepage(props)
 
     return (
     <>
+    <SessionOut />
     <Header username={props.username}/>
        {isDesktop && <Container className="mt-4 mb-5">
         <Row className="text-center justify-content-center">

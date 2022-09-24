@@ -510,7 +510,7 @@ function App() {
   return ( 
     
     <BrowserRouter>
-    <SessionOut ></SessionOut>
+    <SessionOut />
       <Routes>
 
         <Route path="/" element={<Login setUsername={setUsername} setIsadmin={setIsadmin}/>}>
