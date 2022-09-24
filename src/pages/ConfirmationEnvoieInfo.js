@@ -1,11 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Form from 'react-bootstrap/Form';
 import Button from "react-bootstrap/Button";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
 import {Link} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
@@ -54,16 +52,16 @@ function ConfirmationEnvoieInfo(props)
         <p className='text-dark'>Code Abonné : <b className='text-danger'> {props.envoie3.infoEnvoie.code_abonne} (à retenir)</b></p>
         <p className='text-dark'>Montant à récupérer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-dark'>Montant à payer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_total).toFixed(2)} £</b> </p>
-        <p className='text-dark'>Noms Expediteur: <b className='text-dark'>{props.envoie3.infoEnvoie.nom_expediteur} {props.envoie3.infoEnvoie.postnom_expediteur} {props.envoie3.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Noms Expediteur: <b className='text-dark'>{props.envoie3.infoEnvoie.prenom_expediteur} {props.envoie3.infoEnvoie.nom_expediteur} </b> </p>
         <p className='text-dark'>Pays Expediteur: <b className='text-dark'> {props.envoie3.infoEnvoie.pays_expediteur}</b></p>
         </Col>
 
         <Col xs={6} className="text-start">
-        <p className='text-dark'>Noms Beneficiare: <b className='text-dark'>{props.envoie3.infoEnvoie.nom_beneficiaire} {props.envoie3.infoEnvoie.postnom_beneficiaire} {props.envoie3.infoEnvoie.prenom_beneficiaire}</b> </p>   
+        <p className='text-dark'>Noms Beneficiare: <b className='text-dark'>{props.envoie3.infoEnvoie.prenom_beneficiaire} {props.envoie3.infoEnvoie.nom_beneficiaire}  </b> </p>   
         <p className='text-dark'>Pays Beneficiare: <b className='text-dark'> {props.envoie3.infoEnvoie.pays_beneficiaire}</b></p>
         <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie3.infoEnvoie.type_service}</b> </p>
-        <p className='text-dark'>Mobile money : <b className='text-dark'>{props.envoie3.infoEnvoie.numero_transfer}</b> </p>
-        <p className='text-dark'>date et heure : <b className='text-dark'> {JSON.stringify(props.envoie3.infoEnvoie.date_heure_operation)}</b></p>
+        <p className='text-dark'>Mobile money Numéro: <b className='text-dark'>{props.envoie3.infoEnvoie.numero_transfer}</b> </p>
+        <p className='text-dark'>date : <b className='text-dark'> {JSON.stringify(props.envoie3.infoEnvoie.data_operation)}</b></p>
         </Col>
     </Row>
     
@@ -99,13 +97,13 @@ function ConfirmationEnvoieInfo(props)
         <p className='text-dark'>Code Abonné : <b className='text-danger'> {props.envoie3.infoEnvoie.code_abonne} (à retenir)</b></p>
         <p className='text-dark'>Montant à récupérer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_beneficiaire).toFixed(2)} $</b> </p>
         <p className='text-dark'>Montant à payer: <b className='text-dark'>{Number(props.envoie3.infoEnvoie.montant_total).toFixed(2)} £</b> </p>
-        <p className='text-dark'>Noms Expediteur: <b className='text-dark'>{props.envoie3.infoEnvoie.nom_expediteur} {props.envoie3.infoEnvoie.postnom_expediteur} {props.envoie3.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Noms Expediteur: <b className='text-dark'> {props.envoie3.infoEnvoie.prenom_expediteur} {props.envoie3.infoEnvoie.nom_expediteur}</b> </p>
         <p className='text-dark'>Pays Expediteur: <b className='text-dark'> {props.envoie3.infoEnvoie.pays_expediteur}</b></p>
-        <p className='text-dark'>Noms Beneficiare: <b className='text-dark'>{props.envoie3.infoEnvoie.nom_beneficiaire} {props.envoie3.infoEnvoie.postnom_beneficiaire} {props.envoie3.infoEnvoie.prenom_beneficiaire}</b> </p>   
+        <p className='text-dark'>Noms Beneficiare: <b className='text-dark'>{props.envoie3.infoEnvoie.prenom_beneficiaire} {props.envoie3.infoEnvoie.nom_beneficiaire}</b> </p>   
         <p className='text-dark'>Pays Beneficiare: <b className='text-dark'> {props.envoie3.infoEnvoie.pays_beneficiaire}</b></p>
         <p className='text-dark'>Type de retrait: <b className='text-dark'>{props.envoie3.infoEnvoie.type_service}</b> </p>
         <p className='text-dark'>Mobile money : <b className='text-dark'>{props.envoie3.infoEnvoie.numero_transfer}</b> </p>
-        <p className='text-dark'>date et heure : <b className='text-dark'> {JSON.stringify(props.envoie3.infoEnvoie.date_heure_operation)}</b></p>
+        <p className='text-dark'>date : <b className='text-dark'> {JSON.stringify(props.envoie3.infoEnvoie.data_operation)}</b></p>
         </Col>
     </Row>
     
@@ -127,7 +125,7 @@ function ConfirmationEnvoieInfo(props)
             <p></p>
           </Col>
         </Row>
-  <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+  <MyVerticallyCenteredModal envoie3 = {props.envoie3} show={modalShow} onHide={() => setModalShow(false)} />
 <Footer />
         </>
        
@@ -138,21 +136,20 @@ function MyVerticallyCenteredModal(props) {
   return (
     <Modal
       {...props}
-      size="md"
+      size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-        Envoi Réussi
+        <p >code retrait : <b className='text-danger'>{props.envoie3.infoEnvoie.code_retrait}</b></p>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p className='text-success'><b>Votre formulaire a été envoyé avec succès</b>   
-        </p>
+      <p >code abonné : <b className='text-success'>{props.envoie3.infoEnvoie.code_abonne}</b></p>    
       </Modal.Body>
       <Modal.Footer>
-        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+        <Button variant='warning' onClick={props.onHide}>ok j'ai rétenu</Button>
       </Modal.Footer>
     </Modal>
   );

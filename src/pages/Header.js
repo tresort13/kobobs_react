@@ -69,25 +69,25 @@ function Header(props)
               placement="start" style={{height:550}} >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  <pre className="display-6">Menu</pre>
+                  <pre className="display-6"><b>Menu</b></pre>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                 <NavDropdown.Divider />
-                  <Nav.Link href="/home"><b>Home</b></Nav.Link>
+                  <Nav.Link href="/home"><b><pre>Home</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_envoie"><b>Envoi Argent</b></Nav.Link>
+                  <Nav.Link href="/menu_envoie"><b><pre>Envoi Argent</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/form_retrait"><b>Retrait Argent</b></Nav.Link>
+                  <Nav.Link href="/form_retrait"><b><pre>Retrait Argent</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_gestion_abonne"><b>Gestion Client</b></Nav.Link>
+                  <Nav.Link href="/menu_gestion_abonne"><b><pre>Gestion Client</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_gestion_operation"><b>Gestion Operations</b></Nav.Link>
+                  <Nav.Link href="/menu_gestion_operation"><b><pre>Gestion Operations</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_gestion_recettes"><b>Gestion Recettes</b></Nav.Link>
+                  <Nav.Link href="/menu_gestion_recettes"><b><pre>Gestion Recettes</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_users"><b>Gestion Utilisateurs</b></Nav.Link>
+                  <Nav.Link href="/menu_users"><b><pre>Gestion Utilisateurs</pre></b></Nav.Link>
                   <NavDropdown.Divider />
 
 
@@ -141,25 +141,25 @@ function Header(props)
               placement="start" style={{height:550}} >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  <pre className="display-6">Menu</pre>
+                  <pre className="display-6"><b>Menu</b></pre>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                 <NavDropdown.Divider />
-                  <Nav.Link href="/home"><b>Home</b></Nav.Link>
+                <Nav.Link href="/home"><b><pre>Home</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_envoie"><b>Envoi Argent</b></Nav.Link>
+                  <Nav.Link href="/menu_envoie"><b><pre>Envoi Argent</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/form_retrait"><b>Retrait Argent</b></Nav.Link>
+                  <Nav.Link href="/form_retrait"><b><pre>Retrait Argent</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_gestion_abonne"><b>Gestion Client</b></Nav.Link>
+                  <Nav.Link href="/menu_gestion_abonne"><b><pre>Gestion Client</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_gestion_operation"><b>Gestion Operations</b></Nav.Link>
+                  <Nav.Link href="/menu_gestion_operation"><b><pre>Gestion Operations</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_gestion_recettes"><b>Gestion Recettes</b></Nav.Link>
+                  <Nav.Link href="/menu_gestion_recettes"><b><pre>Gestion Recettes</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_users"><b>Gestion Utilisateurs</b></Nav.Link>
+                  <Nav.Link href="/menu_users"><b><pre>Gestion Utilisateurs</pre></b></Nav.Link>
                   <NavDropdown.Divider />
                   <br></br>
                   <Nav.Link href="#" className="text-danger mt-2" onClick={logout}><b>Deconnexion</b></Nav.Link>

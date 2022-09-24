@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
 import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
@@ -33,6 +32,7 @@ function EnvoiInfo(props)
       const navigate = useNavigate()
       const [modalShow, setModalShow] = React.useState(false);
       const [modalShow2, setModalShow2] = React.useState(false);
+      const [modalShow4, setModalShow4] = React.useState(false);
     
 console.log(props.envoie.infoEnvoie)
 
@@ -49,34 +49,31 @@ console.log(props.envoie.infoEnvoie)
               .then(
                 res => { 
                   
-                 props.dataEnvoie3(res)
-                 console.log(res)
-                 props.setEnvoie({infoEnvoie:{
-                  nom_expediteur : '',
-                  postnom_expediteur : '',
-                  prenom_expediteur : '',
-                  adresse_expediteur : '',
-                  email_expediteur : '',
-                  numero_expediteur: '',
-                  pays_expediteur : 'Angleterre',
-                  nom_beneficiaire : '',
-                  postnom_beneficiaire : '',
-                  prenom_beneficiaire : '',
-                  adresse_beneficiaire : '',
-                  numero_beneficiaire : '',
-                  pays_beneficiaire : 'RD Congo',
-                  montant_envoie_sans_frais : '',
-                  montant_beneficiaire : '',
-                  type_service : 'Kozua na maboko (kozua na nzela ya agence)',
-                  frais_envoie : '',
-                  frais_tva : '',
-                  montant_total : '',
-                  code_retrait : '',
-                  data_operation : '',
-                  date_heure_operation : '',
-                  code_abonne : '',
-                  status_retrait : '',
-                  numero_transfer: '**********'
+                  props.dataEnvoie3(res)
+                  console.log(res)
+                  props.envoie3.infoEnvoie.code_retrait == "" ? setModalShow4(true) : 
+                  props.setEnvoie({infoEnvoie:{
+                   nom_expediteur : '',
+                   prenom_expediteur : '',
+                   adresse_expediteur : '',
+                   email_expediteur : '',
+                   numero_expediteur: '',
+                   pays_expediteur : 'UK',
+                   nom_beneficiaire : '',
+                   prenom_beneficiaire : '',
+                   pays_beneficiaire : 'RD Congo',
+                   montant_envoie_sans_frais : '',
+                   montant_beneficiaire : '',
+                   type_service : 'Kozua na maboko (kozua na nzela ya agence)',
+                   frais_envoie : '',
+                   frais_tva : '',
+                   montant_total : '',
+                   code_retrait : '',
+                   data_operation : '',
+                   date_heure_operation : '',
+                   code_abonne : '',
+                   status_retrait : '',
+                   numero_transfer: '**********'
                  }})
                  navigate('/confirmation_envoie_info')
                  
@@ -131,9 +128,10 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6} className="text-start">
-        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
-        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie.infoEnvoie.postnom_expediteur}</b>  </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
+
+
         <p className='text-dark'>Adresse: <b className='text-dark'>{props.envoie.infoEnvoie.adresse_expediteur}</b> </p> 
         </Col>
 
@@ -150,14 +148,14 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={6} className="text-start">
-        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
-        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie.infoEnvoie.postnom_beneficiaire}</b> </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie.infoEnvoie.prenom_beneficiaire} </b> </p>
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
+
+
         </Col>
 
         <Col xs={6} className="text-start">
-        <p className='text-dark'>Adresse: <b className='text-dark'> {props.envoie.infoEnvoie.adresse_beneficiaire}</b></p>
-        <p className='text-dark'>Numéro Tél: <b className='text-dark'>{props.envoie.infoEnvoie.numero_beneficiaire}</b>  </p>
+
         <p className='text-dark'>Pays: <b className='text-dark'>{props.envoie.infoEnvoie.pays_beneficiaire}</b> </p>
         </Col>
     </Row>
@@ -173,8 +171,8 @@ console.log(props.envoie.infoEnvoie)
         </Col>
 
         <Col xs={6}>
-        <Link to="/form_envoie_client">
-         <Button variant="outline-warning" type="submit">
+        <Link to="/form_envoie_client_french">
+         <Button variant="secondary" type="submit">
         modifier
         </Button>
         </Link>
@@ -213,9 +211,10 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12} className="text-start">
-        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
-        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie.infoEnvoie.postnom_expediteur}</b>  </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie.infoEnvoie.prenom_expediteur}</b> </p>
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_expediteur}</b> </p>
+
+        
         <p className='text-dark'>Adresse: <b className='text-dark'>{props.envoie.infoEnvoie.adresse_expediteur}</b> </p>
         <p className='text-dark'>Email: <b className='text-dark'>{props.envoie.infoEnvoie.email_expediteur}</b> </p>
         <p className='text-dark'>Téléphone: <b className='text-dark'> {props.envoie.infoEnvoie.numero_expediteur} </b></p>
@@ -229,11 +228,10 @@ console.log(props.envoie.infoEnvoie)
     </Row>
     <Row className='justify-content-center pb-3' >
         <Col xs={12} className="text-start">
-        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
-        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie.infoEnvoie.postnom_beneficiaire}</b> </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie.infoEnvoie.prenom_beneficiaire} </b> </p>
-        <p className='text-dark'>Adresse: <b className='text-dark'> {props.envoie.infoEnvoie.adresse_beneficiaire}</b></p>
-        <p className='text-dark'>Numéro Tél: <b className='text-dark'>{props.envoie.infoEnvoie.numero_beneficiaire}</b>  </p>
+        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie.infoEnvoie.nom_beneficiaire}</b>  </p>
+
+
         <p className='text-dark'>Pays: <b className='text-dark'>{props.envoie.infoEnvoie.pays_beneficiaire}</b> </p>
         </Col>
     </Row>
@@ -251,7 +249,7 @@ console.log(props.envoie.infoEnvoie)
         </Col>
 
         <Col xs={6}>
-        <Link to="/form_envoie_client">
+        <Link to="/form_envoie_client_french">
          <Button variant="secondary" type="submit">
         modifier
         </Button>
@@ -270,6 +268,7 @@ console.log(props.envoie.infoEnvoie)
         </Row>
   <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
   <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
+  <MyVerticallyCenteredModal4 show={modalShow4} onHide={() => setModalShow4(false)} />
 <Footer />
         </>
        
@@ -318,6 +317,31 @@ function MyVerticallyCenteredModal2(props) {
       <ClipLoader color={"#ff8c00"} loading={true} size={150} /> 
       </Modal.Body>
       <Modal.Footer>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+function MyVerticallyCenteredModal4(props) {
+  return (
+    <Modal
+      {...props}
+      size="sm"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Echec d'envoi
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Message : </h4>
+        <p className='text-danger'><b>Désolé veuillez verifier que vous avez renseigner tous les champs !!!</b>   
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
       </Modal.Footer>
     </Modal>
   );
