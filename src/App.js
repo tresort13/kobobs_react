@@ -508,8 +508,7 @@ function App() {
   
 
   return ( 
-    <div>
-    <SessionOut ></SessionOut>
+    
     <BrowserRouter>
       <Routes>
 
@@ -628,9 +627,8 @@ function App() {
         </Route>
 
       </Routes>
-    </BrowserRouter>
-    </div>
-    
+      <SessionOut ></SessionOut>
+    </BrowserRouter>    
   );
 }
 
