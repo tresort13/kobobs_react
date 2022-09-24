@@ -512,6 +512,8 @@ function App() {
     <BrowserRouter>
       <Routes>
 
+      <SessionOut ></SessionOut>
+      
         <Route path="/" element={<Login setUsername={setUsername} setIsadmin={setIsadmin}/>}>
         </Route>
 
@@ -626,8 +628,10 @@ function App() {
         <Route path="/users_info" element={username == "" ? <Navigate to='/' /> : <UsersInfo username={username} userInfo={userInfo} />}>
         </Route>
 
+
+
       </Routes>
-      <SessionOut ></SessionOut>
+     
     </BrowserRouter>    
   );
 }

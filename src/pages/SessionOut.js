@@ -11,6 +11,7 @@ function SessionOut()
  
  const logout = ()=>
  {
+   console.log("you out boy")
    window.localStorage.setItem("username", JSON.stringify("")) 
    window.localStorage.setItem("isAdmin", JSON.stringify(false))  
    navigate('/')
@@ -21,7 +22,7 @@ function SessionOut()
  
  return (
      <div>
-     <idleTimer ref={idleTimerRef} timeout={ 10 * 1000 } onIdle={logout} />
+     <idleTimer ref={idleTimerRef} timeout={ 10 * 1000 } onIdle={logout} ></idleTimer>
      </div>
 
      
