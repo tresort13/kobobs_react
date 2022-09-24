@@ -1,9 +1,15 @@
 import React , {useRef} from 'react';
-import { useIdleTimer } from 'react-idle-timer'
+import { useIdleTimer }  from 'react-idle-timer'
+import { useNavigate} from "react-router-dom";
+
+
+
 
 function SessionOut()
 {
  const idleTimerRef = useRef(null)
+ const navigate = useNavigate()
+ 
  const logout = ()=>
  {
    window.localStorage.setItem("username", JSON.stringify("")) 
@@ -11,10 +17,16 @@ function SessionOut()
    navigate('/')
  }
 
+ 
+ const idleTimer = useIdleTimer({
+    crossTab: true,
+    timeout: 5 * 1000,
+    ref: idleTimerRef,
+    onIdle:logout
+  })
+ 
  return (
-     <>
-     <IdleTimer ref={idleTimerRef} timeout={5000} onIdle={logout} />
-     </>
+     <idleTimer ref={idleTimerRef} timeout={5 * 1000} onIdle={logout}></idleTimer>
      
  )
 }
