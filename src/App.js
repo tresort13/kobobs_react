@@ -41,6 +41,7 @@ import MonthlyRecettes from './pages/MonthlyRecettes';
 import DailyRecettes from './pages/DailyRecettes';
 import MenuGestionRecettes from './pages/MenuGestionRecettes';
 import UsersInfo from './pages/UsersInfo';
+import SessionOut from './pages/SessionOut';
 
 
 
@@ -495,133 +496,128 @@ function App() {
   
 
   return ( 
+    <>
+    <SessionOut></SessionOut>
     <BrowserRouter>
-      <Routes >
-        
-         <Route path="/"  element={<Login  setUsername = {setUsername} />} >
+      <Routes>
+
+        <Route path="/" element={<Login setUsername={setUsername} />}>
         </Route>
 
-        
 
-        <Route path="/home"  element={username == "" ? <Navigate to ='/' /> : <Homepage username = {username} setUsername = {setUsername}/>} >
-        </Route>
-
-        
-
-        <Route path="/menu_envoie" element={username == "" ? <Navigate to ='/' /> :<MenuEnvoi username = {username}/>} >
-        </Route>
-
-        <Route path="/menu_retrait" element={username == "" ? <Navigate to ='/' /> :<MenuRetrait username = {username}/>} >
-        </Route>
-
-        <Route path="/menu_gestion_operation" element={username == "" ? <Navigate to ='/' /> :<MenuGestionOperations username = {username}/>} >
-        </Route>
-
-        <Route path="/menu_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MenuRapportEnvoie username = {username}/>} >
-        </Route>
-
-        <Route path="/menu_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MenuRapportRetrait username = {username}/>} >
-        </Route>
-
-        <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to ='/' /> :<MenuAbonne username = {username}/>} >
-        </Route>
-
-        <Route path="/menu_gestion_recettes" element={username == "" ? <Navigate to ='/' /> :<MenuGestionRecettes username = {username}/>} >
-        </Route>
-
-        <Route path="/menu_users" element={username == "" ? <Navigate to ='/' /> :<MenuUsers username = {username} dataUserInfo={dataUserInfo} envoie={envoie}/>} >
-        </Route>
-
-        <Route path="/form_envoie_client" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiClient username = {username} dataEnvoie={dataEnvoie} envoie={envoie} setTaux={setTaux}/>}>
-        </Route>
-
-        <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonneId username = {username} dataAbonne={dataAbonne} />} >
-        </Route>
-        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to ='/' /> :<FormEnvoiAbonne username = {username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne} envoie={envoie} setTaux={setTaux}/>} >
-        </Route>
-
-        <Route path="/select_date_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormEnvoie username = {username} dataDailyRapport={dataDailyRapport} setDate={setDate}/>} >
-        </Route>
-
-        <Route path="/select_date_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectDateFormRetrait username = {username} dataDailyRapport={dataDailyRapport} setDate={setDate}/>} >
-        </Route>
-
-        <Route path="/select_mois_form_envoie" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormEnvoie username = {username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois}/>} >
-        </Route>
-
-        <Route path="/select_mois_form_retrait" element={username == "" ? <Navigate to ='/' /> :<SelectMoisFormRetrait username = {username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois}/>} >
-        </Route>
-
-        <Route path="/select_date_recettes" element={username == "" ? <Navigate to ='/' /> :<SelectDateRecettes username = {username} dataDailyRapport={dataDailyRapport} setDate={setDate}/>} >
-        </Route>
-
-        <Route path="/select_mois_recettes" element={username == "" ? <Navigate to ='/' /> :<SelectMonthRecettes username = {username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois}/>} >
-        </Route>
-
-        
-        <Route path="/envoi_info" element={username == "" ? <Navigate to ='/' /> :<EnvoiInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie} setEnvoie={setEnvoie}/>} >
-        </Route>
-
-        <Route path="/envoi_abonne_info" element={username == "" ? <Navigate to ='/' /> :<EnvoieAbonneInfo username = {username} dataEnvoie3={dataEnvoie3} envoie={envoie} setEnvoie={setEnvoie}/>} >
-        </Route>
-
-        <Route path="/form_retrait" element={username == "" ? <Navigate to ='/' /> :<FormRetrait username = {username} dataEnvoie2={dataEnvoie2} />} >
-        </Route>
-
-        <Route path="/retrait_info" element={username == "" ? <Navigate to ='/' /> :<RetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} />} >
-        </Route>
-        
-        <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to ='/' /> :<AbonneFormNonValideInfo username = {username} setCodeRetraitStatus={setCodeRetraitStatus} codeRetraitStatus={codeRetraitStatus}/>} >
-        </Route>
-
-        <Route path="/form_retrouver_abonne" element={username == "" ? <Navigate to ='/' /> :<FormRetrouverCodeAbonne username = {username} dataAbonneInfo={dataAbonneInfo}/>} >
-        </Route>
-
-        <Route path="/abonne_code_info" element={username == "" ? <Navigate to ='/' /> :<AbonneCodeInfo username = {username} abonneInfo={abonneInfo}/>} >
-        </Route>
-
-        <Route path="/confirmation_envoie_info" element={username == "" ? <Navigate to ='/' /> :<ConfirmationEnvoieInfo username = {username} envoie3={envoie3}/>} >
-        </Route>
-
-        <Route path="/confirmation_retrait_info" element={username == "" ? <Navigate to ='/' /> :<ConfirmationRetraitInfo username = {username} envoie2={envoie2} dataEnvoie2={dataEnvoie2}/>} >
-        </Route>
-
-        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoEnvoie username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} dateInfo={dateInfo}/>} >
-        </Route>
-
-        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<DailyRapportInfoRetrait username = {username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} dateInfo={dateInfo}/>} >
-        </Route>
- 
-        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoEnvoie username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} moisInfo={moisInfo}/>} >
-        </Route>
-
-        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to ='/' /> :<MonthlyRapportInfoRetrait username = {username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} moisInfo={moisInfo}/>} >
-        </Route>
-
-        <Route path="/details_envoie_info" element={username == "" ? <Navigate to ='/' /> :<DetailsEnvoieInfo username = {username} detailEnvoieTotal={detailEnvoieTotal}/>} >
-        </Route>
-
-        <Route path="/details_retrait_info" element={username == "" ? <Navigate to ='/' /> :<DetailsRetraitInfo username = {username} detailEnvoieTotal={detailEnvoieTotal}/>} >
-        </Route>
-
-        <Route path="/monthly_recettes_info" element={username == "" ? <Navigate to ='/' /> :<MonthlyRecettes username = {username} monthlyRapport={monthlyRapport} moisInfo={moisInfo}/>} >
-        </Route>
-
-        <Route path="/daily_recettes_info" element={username == "" ? <Navigate to ='/' /> :<DailyRecettes username = {username} dailyRapport={dailyRapport} dateInfo={dateInfo}/>} >
-        </Route>
-
-        <Route path="/users_info" element={username == "" ? <Navigate to ='/' /> :<UsersInfo username = {username} userInfo={userInfo}/>} >
+        <Route path="/home" element={username == "" ? <Navigate to='/' /> : <Homepage username={username} setUsername={setUsername} />}>
         </Route>
 
 
 
+        <Route path="/menu_envoie" element={username == "" ? <Navigate to='/' /> : <MenuEnvoi username={username} />}>
+        </Route>
+
+        <Route path="/menu_retrait" element={username == "" ? <Navigate to='/' /> : <MenuRetrait username={username} />}>
+        </Route>
+
+        <Route path="/menu_gestion_operation" element={username == "" ? <Navigate to='/' /> : <MenuGestionOperations username={username} />}>
+        </Route>
+
+        <Route path="/menu_rapport_envoie" element={username == "" ? <Navigate to='/' /> : <MenuRapportEnvoie username={username} />}>
+        </Route>
+
+        <Route path="/menu_rapport_retrait" element={username == "" ? <Navigate to='/' /> : <MenuRapportRetrait username={username} />}>
+        </Route>
+
+        <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to='/' /> : <MenuAbonne username={username} />}>
+        </Route>
+
+        <Route path="/menu_gestion_recettes" element={username == "" ? <Navigate to='/' /> : <MenuGestionRecettes username={username} />}>
+        </Route>
+
+        <Route path="/menu_users" element={username == "" ? <Navigate to='/' /> : <MenuUsers username={username} dataUserInfo={dataUserInfo} envoie={envoie} />}>
+        </Route>
+
+        <Route path="/form_envoie_client" element={username == "" ? <Navigate to='/' /> : <FormEnvoiClient username={username} dataEnvoie={dataEnvoie} envoie={envoie} setTaux={setTaux} />}>
+        </Route>
+
+        <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to='/' /> : <FormEnvoiAbonneId username={username} dataAbonne={dataAbonne} />}>
+        </Route>
+        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to='/' /> : <FormEnvoiAbonne username={username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne} envoie={envoie} setTaux={setTaux} />}>
+        </Route>
+
+        <Route path="/select_date_form_envoie" element={username == "" ? <Navigate to='/' /> : <SelectDateFormEnvoie username={username} dataDailyRapport={dataDailyRapport} setDate={setDate} />}>
+        </Route>
+
+        <Route path="/select_date_form_retrait" element={username == "" ? <Navigate to='/' /> : <SelectDateFormRetrait username={username} dataDailyRapport={dataDailyRapport} setDate={setDate} />}>
+        </Route>
+
+        <Route path="/select_mois_form_envoie" element={username == "" ? <Navigate to='/' /> : <SelectMoisFormEnvoie username={username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois} />}>
+        </Route>
+
+        <Route path="/select_mois_form_retrait" element={username == "" ? <Navigate to='/' /> : <SelectMoisFormRetrait username={username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois} />}>
+        </Route>
+
+        <Route path="/select_date_recettes" element={username == "" ? <Navigate to='/' /> : <SelectDateRecettes username={username} dataDailyRapport={dataDailyRapport} setDate={setDate} />}>
+        </Route>
+
+        <Route path="/select_mois_recettes" element={username == "" ? <Navigate to='/' /> : <SelectMonthRecettes username={username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois} />}>
+        </Route>
 
 
+        <Route path="/envoi_info" element={username == "" ? <Navigate to='/' /> : <EnvoiInfo username={username} dataEnvoie3={dataEnvoie3} envoie={envoie} setEnvoie={setEnvoie} />}>
+        </Route>
 
-        
+        <Route path="/envoi_abonne_info" element={username == "" ? <Navigate to='/' /> : <EnvoieAbonneInfo username={username} dataEnvoie3={dataEnvoie3} envoie={envoie} setEnvoie={setEnvoie} />}>
+        </Route>
 
-      </Routes >
+        <Route path="/form_retrait" element={username == "" ? <Navigate to='/' /> : <FormRetrait username={username} dataEnvoie2={dataEnvoie2} />}>
+        </Route>
+
+        <Route path="/retrait_info" element={username == "" ? <Navigate to='/' /> : <RetraitInfo username={username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} />}>
+        </Route>
+
+        <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to='/' /> : <AbonneFormNonValideInfo username={username} setCodeRetraitStatus={setCodeRetraitStatus} codeRetraitStatus={codeRetraitStatus} />}>
+        </Route>
+
+        <Route path="/form_retrouver_abonne" element={username == "" ? <Navigate to='/' /> : <FormRetrouverCodeAbonne username={username} dataAbonneInfo={dataAbonneInfo} />}>
+        </Route>
+
+        <Route path="/abonne_code_info" element={username == "" ? <Navigate to='/' /> : <AbonneCodeInfo username={username} abonneInfo={abonneInfo} />}>
+        </Route>
+
+        <Route path="/confirmation_envoie_info" element={username == "" ? <Navigate to='/' /> : <ConfirmationEnvoieInfo username={username} envoie3={envoie3} />}>
+        </Route>
+
+        <Route path="/confirmation_retrait_info" element={username == "" ? <Navigate to='/' /> : <ConfirmationRetraitInfo username={username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} />}>
+        </Route>
+
+        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to='/' /> : <DailyRapportInfoEnvoie username={username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} dateInfo={dateInfo} />}>
+        </Route>
+
+        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to='/' /> : <DailyRapportInfoRetrait username={username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} dateInfo={dateInfo} />}>
+        </Route>
+
+        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to='/' /> : <MonthlyRapportInfoEnvoie username={username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} moisInfo={moisInfo} />}>
+        </Route>
+
+        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to='/' /> : <MonthlyRapportInfoRetrait username={username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} moisInfo={moisInfo} />}>
+        </Route>
+
+        <Route path="/details_envoie_info" element={username == "" ? <Navigate to='/' /> : <DetailsEnvoieInfo username={username} detailEnvoieTotal={detailEnvoieTotal} />}>
+        </Route>
+
+        <Route path="/details_retrait_info" element={username == "" ? <Navigate to='/' /> : <DetailsRetraitInfo username={username} detailEnvoieTotal={detailEnvoieTotal} />}>
+        </Route>
+
+        <Route path="/monthly_recettes_info" element={username == "" ? <Navigate to='/' /> : <MonthlyRecettes username={username} monthlyRapport={monthlyRapport} moisInfo={moisInfo} />}>
+        </Route>
+
+        <Route path="/daily_recettes_info" element={username == "" ? <Navigate to='/' /> : <DailyRecettes username={username} dailyRapport={dailyRapport} dateInfo={dateInfo} />}>
+        </Route>
+
+        <Route path="/users_info" element={username == "" ? <Navigate to='/' /> : <UsersInfo username={username} userInfo={userInfo} />}>
+        </Route>
+
+      </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
