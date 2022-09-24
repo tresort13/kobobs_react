@@ -64,7 +64,7 @@ function App() {
   const [isAdmin,setIsadmin] = useState(()=>
   {
     const localData = localStorage.getItem('isAdmin');
-    return localData ? JSON.parse(localData) : false;
+    return localData ? localData : false;
   });
   
   
@@ -508,9 +508,9 @@ function App() {
   
 
   return ( 
-    
+    <div>
+    <SessionOut ></SessionOut>
     <BrowserRouter>
-    <SessionOut />
       <Routes>
 
         <Route path="/" element={<Login setUsername={setUsername} setIsadmin={setIsadmin}/>}>
@@ -629,6 +629,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </div>
     
   );
 }
