@@ -26,7 +26,7 @@ function SessionOut()
   })
  
  return (
-     <idleTimer ref={idleTimerRef} timeout={5 * 1000} onIdle={logout}></idleTimer>
+     <idleTimer ref={idleTimerRef} timeout={5 * 1000} onIdle={logout} />
      
  )
 }

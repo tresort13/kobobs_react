@@ -508,9 +508,9 @@ function App() {
   
 
   return ( 
-    <>
-    <SessionOut></SessionOut>
+    
     <BrowserRouter>
+    <SessionOut />
       <Routes>
 
         <Route path="/" element={<Login setUsername={setUsername} setIsadmin={setIsadmin}/>}>
@@ -629,7 +629,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
-    </>
+    
   );
 }
 
