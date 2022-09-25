@@ -11,6 +11,16 @@ function SessionOut(props)
  const navigate = useNavigate()
  const [modalShow, setModalShow] = React.useState(false);
 
+ const open = ()=>
+ {
+  setModalShow(true)
+ }
+
+ const close = ()=>
+ {
+  setModalShow(false)
+ }
+
  const logout = ()=>
  {
    console.log("you out boy")
@@ -19,12 +29,12 @@ function SessionOut(props)
    navigate('/')
  }
 
- const idleTimer = useIdleTimer({
+const idleTimer = useIdleTimer({
 promptTimeout : 10 * 1000,
-onPrompt : setModalShow(true),
+onPrompt : open,
 timeout : 10 * 1000,
 onIdle : logout,
-onActive : setModalShow(false)
+onActive : close
  })
 
  return (

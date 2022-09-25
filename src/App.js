@@ -507,7 +507,7 @@ function App() {
         </Route>
 
 
-        <Route path="/home" element={username == "" ? <Navigate to='/' /> : <Homepage username={username} setUsername={setUsername} setIsadmin={setIsadmin}/>}>
+        <Route path="/home" element={username == "" ? <Navigate to='/' /> : <Homepage username={username} setUsername={setUsername} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
 
