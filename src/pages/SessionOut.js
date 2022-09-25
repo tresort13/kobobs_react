@@ -1,10 +1,11 @@
 import React , {useRef} from 'react';
 import { useNavigate} from "react-router-dom";
-import {useIdleTimer} from 'react-idle-timer'
+import {useIdleTimer} from 'react-idle-timer';
+import Modal from 'react-bootstrap/Modal';
 
 
 
-function SessionOut()
+function SessionOut(props)
 {
  const navigate = useNavigate()
  const [modalShow, setModalShow] = React.useState(false);
@@ -13,7 +14,7 @@ function SessionOut()
  {
    console.log("you out boy")
    window.localStorage.setItem("username", JSON.stringify("")) 
-   props.setisAdmin(false)
+   props.setIsadmin(false)
    navigate('/')
  }
 
