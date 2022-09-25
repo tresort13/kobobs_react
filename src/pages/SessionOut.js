@@ -1,33 +1,26 @@
 import React , {useRef} from 'react';
 import { useNavigate} from "react-router-dom";
-
+import {useIdleTimer} from 'react-idle-timer'
 
 
 
 function SessionOut()
 {
- const idleTimerRef = useRef(null)
  const navigate = useNavigate()
  
  const logout = ()=>
  {
    console.log("you out boy")
    window.localStorage.setItem("username", JSON.stringify("")) 
-   window.localStorage.setItem("isAdmin", JSON.stringify(false))  
+   window.localStorage.setItem("isAdmin",false)  
    navigate('/')
  }
 
- 
- 
- 
- return (
-     <div>
-     <IdleTimer ref={idleTimerRef} timeout={ 10 * 1000 } onIdle={logout} />
-     </div>
-     
-
-     
- )
+ const idleTimer = useIdleTimer({
+ timeout : 5 * 1000,
+ onIdle : logout
+ })
 }
+
 
 export default SessionOut

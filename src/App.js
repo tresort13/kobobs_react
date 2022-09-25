@@ -68,7 +68,7 @@ function App() {
   
   
   useEffect(() => {
-    window.localStorage.setItem("isAdmin", JSON.stringify(isAdmin))
+    window.localStorage.setItem("isAdmin", isAdmin)
   }, [isAdmin])
 
   const [dateInfo,setDate] = useState(()=>

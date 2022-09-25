@@ -46,10 +46,12 @@ yn
           
    const navigate = useNavigate()
    const [modalShow, setModalShow] = React.useState(false);
+   const [modalShow2, setModalShow2] = React.useState(false);
    
 
     const connection = (e)=>
     {
+      setModalShow2(true)
         fetch('https://kobobsapi.herokuapp.com/api/login/', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -70,7 +72,7 @@ yn
               } 
               else
               {
-               
+                setModalShow2(false)
                 setModalShow(true)
                navigate('/')
               }
@@ -191,6 +193,7 @@ yn
 </Form>
 </Container> }
 <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+<MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
 <Footer />
 </>
 
@@ -217,6 +220,28 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button variant='warning' onClick={props.onHide}>ok</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+function MyVerticallyCenteredModal2(props) {
+  return (
+    <Modal
+      {...props}
+      size="sm"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Veuillez Patienter...
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+      <ClipLoader color={"#ff8c00"} loading={true} size={150} /> 
+      </Modal.Body>
+      <Modal.Footer>
       </Modal.Footer>
     </Modal>
   );
