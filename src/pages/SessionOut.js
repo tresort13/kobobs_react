@@ -20,6 +20,7 @@ function SessionOut(props)
 
  const close = ()=>
  {
+   idleTimer.reset()
   setModalShow(false)
  }
 
@@ -36,7 +37,8 @@ promptTimeout : 10 * 1000,
 onPrompt : open,
 timeout : 10 * 1000,
 onIdle : logout,
-onActive : close
+onActive : close,
+
  })
 
  return (
@@ -63,16 +65,8 @@ function MyVerticallyCenteredModal(props) {
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Row>
-          <Col xs={6} className="text-start">
           <Button variant='danger' onClick={props.logout}>Deconnecter moi</Button>
-          </Col>
-          <Col xs={6} className="text-end">
           <Button variant='success' onClick={props.close}>Rester</Button>
-          </Col>
-        </Row>
-      
-      
       </Modal.Footer>
     </Modal>
   );
