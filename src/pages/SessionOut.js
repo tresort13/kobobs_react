@@ -4,6 +4,7 @@ import {useIdleTimer} from 'react-idle-timer';
 import Modal from 'react-bootstrap/Modal';
 import Button from "react-bootstrap/Button";
 import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/Col';
 
 
 
@@ -67,7 +68,7 @@ function MyVerticallyCenteredModal(props) {
           <Button variant='danger' onClick={props.logout}>Deconnecter moi</Button>
           </Col>
           <Col xs={6} className="text-end">
-          <Button variant='success' onClick={close}>Rester</Button>
+          <Button variant='success' onClick={props.close}>Rester</Button>
           </Col>
         </Row>
       
