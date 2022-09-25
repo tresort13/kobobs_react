@@ -11,6 +11,7 @@ import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
+import SessionOut from 'SessionOut';
 
 
 
@@ -157,6 +158,7 @@ function DetailsEnvoieInfo(props)
             <p></p>
           </Col>
         </Row>
+<SessionOut setIsadmin={props.setIsadmin}/>
 <Footer />
         </>
        

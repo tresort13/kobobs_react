@@ -9,6 +9,7 @@ import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
+import SessionOut from 'SessionOut';
 
 
 
@@ -126,6 +127,7 @@ function ConfirmationEnvoieInfo(props)
           </Col>
         </Row>
   <MyVerticallyCenteredModal envoie3 = {props.envoie3} show={modalShow} onHide={() => setModalShow(false)} />
+  <SessionOut setIsadmin={props.setIsadmin}/>
 <Footer />
         </>
        

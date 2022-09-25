@@ -9,7 +9,7 @@ import Header from './Header';
 import Footer from './Footer';
 import './Header.css'
 import { useMediaQuery } from 'react-responsive';
-
+import SessionOut from 'SessionOut';
 
 
 function MenuRapportEnvoie(props)
@@ -77,6 +77,7 @@ function MenuRapportEnvoie(props)
   
 
 </Container> }
+<SessionOut setIsadmin={props.setIsadmin}/>
 <Footer />
 </>
     )

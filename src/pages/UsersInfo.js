@@ -9,6 +9,7 @@ import Header from './Header';
 import { useMediaQuery } from 'react-responsive';
 import Footer from './Footer';
 import Table from 'react-bootstrap/Table';
+import SessionOut from 'SessionOut';
 
 
 
@@ -145,8 +146,6 @@ console.log(props.userInfo)
         </Col>
     </Row>
   
-
-
 </div>
 
 
@@ -159,6 +158,7 @@ console.log(props.userInfo)
           </Col>
         </Row>
 </div>
+<SessionOut setIsadmin={props.setIsadmin}/>
 <Footer />
         </>
     )

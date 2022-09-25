@@ -10,6 +10,7 @@ import {Link,useNavigate} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
+import SessionOut from 'SessionOut';
 
 
 
@@ -212,6 +213,7 @@ function MonthlyRapportInfoRetrait(props)
             <p></p>
           </Col>
         </Row>
+        <SessionOut setIsadmin={props.setIsadmin}/>
 <Footer />
         </>
        

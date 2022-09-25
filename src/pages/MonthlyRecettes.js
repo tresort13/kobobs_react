@@ -9,6 +9,7 @@ import Header from './Header';
 import { useMediaQuery } from 'react-responsive';
 import Footer from './Footer';
 import Table from 'react-bootstrap/Table';
+import SessionOut from 'SessionOut';
 
 
 
@@ -200,6 +201,7 @@ const total_montant = props.monthlyRapport.reduce((total,value)=>
           </Col>
         </Row>
 </div>
+<SessionOut setIsadmin={props.setIsadmin}/>
 <Footer />
         </>
     )

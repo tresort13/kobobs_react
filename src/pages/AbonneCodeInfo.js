@@ -10,7 +10,7 @@ import {Link} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
-import InputGroup from 'react-bootstrap/InputGroup';
+import SessionOut from 'SessionOut';
 
 
 
@@ -134,6 +134,7 @@ console.log(props.abonneInfo)
             <p></p>
           </Col>
         </Row>
+<SessionOut setIsadmin={props.setIsadmin}/>
 <Footer />
         </>
        

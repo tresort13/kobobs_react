@@ -13,6 +13,7 @@ import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
 import ClipLoader from "react-spinners/ClipLoader";
 import  './Header.css';
+import SessionOut from 'SessionOut';
 
 
 
@@ -260,6 +261,7 @@ function AbonneFormNonValideInfo(props)
 <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
 <MyVerticallyCenteredModal3 show={modalShow3} onHide={() => setModalShow3(false)} />
+<SessionOut setIsadmin={props.setIsadmin}/>
 <Footer />
         </>
        

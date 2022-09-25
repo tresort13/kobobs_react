@@ -13,6 +13,7 @@ import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
 import ClipLoader from "react-spinners/ClipLoader";
 import  './Header.css';
+import SessionOut from 'SessionOut';
 
 
 
@@ -151,6 +152,7 @@ function FormEnvoiAbonneId(props)
         </Row>
 <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
 <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
+<SessionOut setIsadmin={props.setIsadmin}/>
 <Footer />
         </>
        

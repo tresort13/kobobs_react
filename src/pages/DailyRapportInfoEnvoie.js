@@ -11,6 +11,7 @@ import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
 import InputGroup from 'react-bootstrap/InputGroup';
+import SessionOut from 'SessionOut';
 
 
 
@@ -208,7 +209,8 @@ function DailyRapportInfoEnvoie(props)
             <p></p>
           </Col>
         </Row>
-<Footer />
+        <SessionOut setIsadmin={props.setIsadmin}/>
+       <Footer />
         </>
        
     )

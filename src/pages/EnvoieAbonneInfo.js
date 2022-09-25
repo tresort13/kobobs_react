@@ -12,6 +12,7 @@ import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
 import ClipLoader from "react-spinners/ClipLoader";
 import  './Header.css';
+import SessionOut from 'SessionOut';
 
 
 
@@ -264,6 +265,7 @@ console.log(props.envoie.infoEnvoie)
    <MyVerticallyCenteredModal2 show={modalShow2} onHide={() => setModalShow2(false)} />
    <MyVerticallyCenteredModal3 show={modalShow3} onHide={() => setModalShow3(false)} />
    <MyVerticallyCenteredModal4 show={modalShow4} onHide={() => setModalShow4(false)} />
+   <SessionOut setIsadmin={props.setIsadmin}/>
 <Footer />
         </>
        

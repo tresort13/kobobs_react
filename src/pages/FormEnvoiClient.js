@@ -11,6 +11,7 @@ import { useMediaQuery } from 'react-responsive';
 import Footer from './Footer';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Header from './Header';
+import SessionOut from 'SessionOut';
 
 
 
@@ -451,6 +452,7 @@ function FormEnvoiClient(props)
             <p></p>
           </Col>
         </Row>
+        <SessionOut setIsadmin={props.setIsadmin}/>
 <Footer />
         </>
        
