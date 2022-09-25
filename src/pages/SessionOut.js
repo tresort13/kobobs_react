@@ -3,9 +3,6 @@ import { useNavigate} from "react-router-dom";
 import {useIdleTimer} from 'react-idle-timer';
 import Modal from 'react-bootstrap/Modal';
 import Button from "react-bootstrap/Button";
-import Row from 'react-bootstrap/esm/Row';
-import Col from 'react-bootstrap/Col';
-
 
 
 function SessionOut(props)
@@ -61,7 +58,7 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body>
         
-        <p className='text-danger'><b> Vous serez deconnecter automatiquement, pour continuer appuyez sur rester</b>   
+        <p className='text-dark'><b> Vous serez deconnecter automatiquement, pour continuer appuyez sur <span className='text-success'>"Rester"</span></b>   
         </p>
       </Modal.Body>
       <Modal.Footer>
