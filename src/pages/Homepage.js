@@ -189,7 +189,7 @@ function Homepage(props)
     
        </Container>}
    <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
-   <SessionOut />
+   <SessionOut setIsadmin={props.setIsadmin}/>
     <Footer />
     </>
 
