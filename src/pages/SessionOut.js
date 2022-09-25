@@ -3,6 +3,7 @@ import { useNavigate} from "react-router-dom";
 import {useIdleTimer} from 'react-idle-timer';
 import Modal from 'react-bootstrap/Modal';
 import Button from "react-bootstrap/Button";
+import Row from 'react-bootstrap/esm/Row';
 
 
 
@@ -38,7 +39,7 @@ onActive : close
  })
 
  return (
-  <MyVerticallyCenteredModal logout = {logout} show={modalShow} onHide={() => setModalShow(false)} />
+  <MyVerticallyCenteredModal close={close} logout = {logout} show={modalShow} onHide={() => setModalShow(false)} />
  )
 }
 
@@ -57,12 +58,20 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body>
         
-        <p className='text-danger'><b> Vous serez deconnecter automatiquent, pour continuer appuyez sur rester</b>   
+        <p className='text-danger'><b> Vous serez deconnecter automatiquement, pour continuer appuyez sur rester</b>   
         </p>
       </Modal.Body>
       <Modal.Footer>
-      <Button variant='danger' onClick={props.logout}>Deconnecter moi</Button>
-        <Button variant='success' onClick={props.onHide}>Rester</Button>
+        <Row>
+          <Col xs={6} className="text-start">
+          <Button variant='danger' onClick={props.logout}>Deconnecter moi</Button>
+          </Col>
+          <Col xs={6} className="text-end">
+          <Button variant='success' onClick={close}>Rester</Button>
+          </Col>
+        </Row>
+      
+      
       </Modal.Footer>
     </Modal>
   );
