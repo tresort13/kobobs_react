@@ -41,7 +41,6 @@ import MonthlyRecettes from './pages/MonthlyRecettes';
 import DailyRecettes from './pages/DailyRecettes';
 import MenuGestionRecettes from './pages/MenuGestionRecettes';
 import UsersInfo from './pages/UsersInfo';
-import SessionOut from './pages/SessionOut';
 
 
 
@@ -510,10 +509,10 @@ function App() {
   return ( 
     
     <BrowserRouter>
-    <SessionOut />
+    
       <Routes>
 
-        <Route path="/" element={<Login setUsername={setUsername} setIsadmin={setIsadmin}/>}>
+        <Route path="/" element={<Login  setUsername={setUsername} setIsadmin={setIsadmin}/>}>
         </Route>
 
 

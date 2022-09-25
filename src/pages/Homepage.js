@@ -14,7 +14,7 @@ import Button from "react-bootstrap/Button";
 import Nav from 'react-bootstrap/Nav';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import {useEffect,useState} from 'react';
-import SessionOut from './pages/SessionOut';
+import {useIdleTimer} from 'react-idle-timer'
 
 
 
@@ -27,6 +27,7 @@ function Homepage(props)
       const isMobileOrTablet = useMediaQuery({
         query: "(max-width: 1224px)"
       });
+      console.log(props.isAdmin)
       const [modalShow, setModalShow] = React.useState(false);
 
       const [show, setShow] = useState(false);
@@ -35,17 +36,26 @@ function Homepage(props)
     const handleShow = () => setShow(true);
 
     const navigate = useNavigate();
+  
+    const access = ()=>
+    {
+      setModalShow(true)
+    }
 
-      const access = ()=>
-      {
-        setModalShow(true)
-      }
-
-    
-
+  const logout = ()=>
+ {
+   console.log("you out boy")
+   window.localStorage.setItem("username", JSON.stringify("")) 
+   window.localStorage.setItem("isAdmin", JSON.stringify(false))  
+   navigate('/')
+ }
+ const idleTimer = useIdleTimer({
+  timeout : 5 * 1000,
+  onIdle : logout
+  })
+ 
     return (
     <>
-    <SessionOut />
     <Header username={props.username}/>
        {isDesktop && <Container className="mt-4 mb-5">
         <Row className="text-center justify-content-center">
@@ -101,7 +111,7 @@ function Homepage(props)
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
-              {props.isAdmin == true  ? <Link to="/menu_gestion_abonne">
+              {props.isAdmin ? <Link to="/menu_gestion_abonne">
               <Image src={require('./kobo_client.jpg')}  className='rounded-pill' style={{width:200}}></Image>
               </Link> : <Link to="">
               <Image src={require('./kobo_client.jpg')}  className='rounded-pill' style={{width:200}} onClick={access}></Image>
@@ -120,7 +130,7 @@ function Homepage(props)
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom pt-1 bordure2" style={{width:300}}>
               <div>
-              {props.isAdmin == true ? <Link to="/menu_gestion_recettes">
+              {props.isAdmin ? <Link to="/menu_gestion_recettes">
               <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link> : <Link to="">
               <Image src={require('./kobo_autres.png')}  className='rounded-pill' style={{width:200}} onClick={access}></Image>
@@ -137,7 +147,7 @@ function Homepage(props)
             <Col md={4} className="my-auto text-center">
              <div className="d-grid bg-white text-center justify-content-center rounded-pill zoom bordure2" style={{width:300}}>
               <div>
-              {props.isAdmin == true  ? <Link to="/menu_users">
+              {props.isAdmin  ? <Link to="/menu_users">
               <Image src={require('./user_kobo.png')}  className='rounded-pill' style={{width:200}}></Image>
               </Link> : <Link to="">
               <Image src={require('./user_kobo.png')}  className='rounded-pill' style={{width:200}} onClick={access}></Image>
@@ -181,7 +191,7 @@ function Homepage(props)
         <Nav justify menuVariant="dark"  className="navbar justify-content-end flex-grow-1 pe-3 flex-column">
         <Nav.Link href="/menu_envoie"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Envoi Argent</i></Button></Nav.Link>
         <Nav.Link href="/form_retrait"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Retrait Argent</i></Button></Nav.Link>
-        {props.isAdmin == true  ? <Nav.Link href="/menu_gestion_abonne"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Service Clients</i></Button></Nav.Link> :<Nav.Link href=""><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning' onClick={access}><i>Service Clients</i></Button></Nav.Link> }
+        {props.isAdmin  ? <Nav.Link href="/menu_gestion_abonne"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Service Clients</i></Button></Nav.Link> :<Nav.Link href=""><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning' onClick={access}><i>Service Clients</i></Button></Nav.Link> }
         <Nav.Link href="/menu_gestion_operation"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion Operations</i></Button></Nav.Link>
         {props.isAdmin == true  ?  <Nav.Link href="/menu_gestion_recettes"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion Recettes</i></Button></Nav.Link> : <Nav.Link href=""><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning' onClick={access}><i>Gestion Recettes</i></Button></Nav.Link>}
         {props.isAdmin == true  ? <Nav.Link href="/menu_users"><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning'><i>Gestion Utilisateurs</i></Button></Nav.Link> : <Nav.Link href=""><Button style={{width:300,height:50}} className='btn-lg rounded-pill zoom btn-warning' onClick={access}><i>Gestion Utilisateurs</i></Button></Nav.Link>}
