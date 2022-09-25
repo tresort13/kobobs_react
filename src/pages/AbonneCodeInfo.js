@@ -10,7 +10,7 @@ import {Link} from  'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
-import SessionOut from 'SessionOut';
+import SessionOut from './SessionOut';
 
 
 

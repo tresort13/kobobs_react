@@ -9,7 +9,7 @@ import Header from './Header';
 import { useMediaQuery } from 'react-responsive';
 import Footer from './Footer';
 import Table from 'react-bootstrap/Table';
-import SessionOut from 'SessionOut';
+import SessionOut from './SessionOut';
 
 
 

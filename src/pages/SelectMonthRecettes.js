@@ -13,7 +13,7 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import ClipLoader from "react-spinners/ClipLoader";
 import  './Header.css';
-import SessionOut from 'SessionOut';
+import SessionOut from './SessionOut';
 
 const useState = React.useState
 

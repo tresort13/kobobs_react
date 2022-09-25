@@ -12,7 +12,7 @@ import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
 import ClipLoader from "react-spinners/ClipLoader";
 import  './Header.css';
-import SessionOut from 'SessionOut';
+import SessionOut from './SessionOut';
 
 
 

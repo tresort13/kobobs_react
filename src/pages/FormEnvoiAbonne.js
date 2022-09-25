@@ -10,7 +10,7 @@ import { useMediaQuery } from 'react-responsive';
 import Header from './Header';
 import Footer from './Footer';
 import InputGroup from 'react-bootstrap/InputGroup';
-import SessionOut from 'SessionOut';
+import SessionOut from './SessionOut';
 
 
 
