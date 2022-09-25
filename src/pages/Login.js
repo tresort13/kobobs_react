@@ -11,6 +11,7 @@ import { useMediaQuery } from 'react-responsive';
 import HeaderHome from './HeaderHome';
 import Footer from './Footer';
 import Modal from 'react-bootstrap/Modal';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 

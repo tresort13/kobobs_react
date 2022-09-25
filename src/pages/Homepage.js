@@ -14,9 +14,7 @@ import Button from "react-bootstrap/Button";
 import Nav from 'react-bootstrap/Nav';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import {useEffect,useState} from 'react';
-import {useIdleTimer} from 'react-idle-timer'
-
-
+import SessionOut from './SessionOut';
 
 function Homepage(props)
 {
@@ -42,17 +40,6 @@ function Homepage(props)
       setModalShow(true)
     }
 
-  const logout = ()=>
- {
-   console.log("you out boy")
-   window.localStorage.setItem("username", JSON.stringify("")) 
-   window.localStorage.setItem("isAdmin", JSON.stringify(false))  
-   navigate('/')
- }
- const idleTimer = useIdleTimer({
-  timeout : 5 * 1000,
-  onIdle : logout
-  })
  
     return (
     <>
@@ -202,6 +189,7 @@ function Homepage(props)
     
        </Container>}
    <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+   <SessionOut />
     <Footer />
     </>
 
@@ -214,7 +202,7 @@ function MyVerticallyCenteredModal(props) {
   return (
     <Modal
       {...props}
-      size="md"
+      size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
