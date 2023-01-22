@@ -30,7 +30,7 @@ function SessionOut(props)
  }
 
 const idleTimer = useIdleTimer({
-promptTimeout : 10 * 1000,
+promptTimeout : 600 * 1000,
 onPrompt : open,
 timeout : 10 * 1000,
 onIdle : logout,
