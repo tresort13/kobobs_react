@@ -82,7 +82,7 @@ function Header(props)
                   <NavDropdown.Divider />
                   <Nav.Link href="/form_retrait"><b><pre>Retrait Argent</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_gestion_abonne"><b><pre>Gestion Client</pre></b></Nav.Link>
+                  <Nav.Link href="/menu_gestion_abonne"><b><pre>Gestion Clients</pre></b></Nav.Link>
                   <NavDropdown.Divider />
                   <Nav.Link href="/menu_gestion_operation"><b><pre>Gestion Operations</pre></b></Nav.Link>
                   <NavDropdown.Divider />
@@ -154,7 +154,7 @@ function Header(props)
                   <NavDropdown.Divider />
                   <Nav.Link href="/form_retrait"><b><pre>Retrait Argent</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_gestion_abonne"><b><pre>Gestion Client</pre></b></Nav.Link>
+                  <Nav.Link href="/menu_gestion_abonne"><b><pre>Gestion Clients</pre></b></Nav.Link>
                   <NavDropdown.Divider />
                   <Nav.Link href="/menu_gestion_operation"><b><pre>Gestion Operations</pre></b></Nav.Link>
                   <NavDropdown.Divider />

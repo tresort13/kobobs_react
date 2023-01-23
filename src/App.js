@@ -60,7 +60,16 @@ function App() {
     window.localStorage.setItem("username", JSON.stringify(username))
   }, [username])
 
-  const [isAdmin,setIsadmin] = useState(false)
+  const [isAdmin,setIsadmin] = useState(()=>
+  {
+    const localData = localStorage.getItem('username');
+    return localData ? JSON.parse(localData) : false;
+  });
+  
+  
+  useEffect(() => {
+    window.localStorage.setItem("isAdmin", JSON.stringify(isAdmin))
+  }, [isAdmin])
 
   const [dateInfo,setDate] = useState(()=>
   {
