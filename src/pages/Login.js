@@ -103,7 +103,7 @@ yn
 
 <>
 <HeaderHome />
-{isDesktop && <Container className='bg-dark justify-content-center text-center pt-2 bordure' style={{marginTop:70,backgroundColor:'grey',width:650}} >
+{isDesktop && <Container className='bg-dark justify-content-center text-center pt-2 bordure' style={{marginTop:50,backgroundColor:'grey',width:650}} >
 
     <Row className='justify-content-center mb-5 pt-3' >
         <Col>

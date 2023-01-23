@@ -18,12 +18,12 @@ return (
 <div className="footer container-fluid bg-dark ">
     {isDesktop && <Container>
         <div className=" py-2 text-center ">
-         <p className="text-secondary" style={{textAlign:'center'}}>&copy; 2022 Powered by FAKALU SARL  <span style={{width:5}}>Ltd</span>, Inc. All rights reserved.</p>
+         <p className="text-secondary" style={{textAlign:'center'}}>&copy; 2023 Powered by FAKALU SARL  <span style={{width:5}}>Ltd</span>, Inc. All rights reserved.</p>
        </div>
     </Container>}
     {isMobileOrTablet && <Container>
         <div className=" py-2 text-center ">
-         <p className="text-secondary" style={{textAlign:'center'}}>&copy; 2022 Powered by FAKALU SARL  <span style={{width:5}}>Ltd</span>, Inc.</p>
+         <p className="text-secondary" style={{textAlign:'center'}}>&copy; 2023 Powered by FAKALU SARL  <span style={{width:5}}>Ltd</span>, Inc.</p>
        </div>
     </Container>}
  </div>
