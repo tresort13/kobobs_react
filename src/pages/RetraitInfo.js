@@ -106,8 +106,7 @@ const navigate = useNavigate()
     </Row>
     <Row className='justify-content-start pb-3' >
         <Col xs={6}>
-        <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_expediteur}</b> </p>
-        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_expediteur}</b>  </p>
+        <p className='text-dark'>Nom : <b className='text-dark'>{props.envoie2.infoEnvoie.nom_expediteur}</b> </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie2.infoEnvoie.prenom_expediteur}</b> </p>
         </Col>
 
@@ -125,13 +124,10 @@ const navigate = useNavigate()
     <Row className='justify-content-start pb-3' >
         <Col xs={6}>
         <p className='text-dark'>Nom: <b className='text-dark'>{props.envoie2.infoEnvoie.nom_beneficiaire}</b>  </p>
-        <p className='text-dark'>Postnom: <b className='text-dark'>{props.envoie2.infoEnvoie.postnom_beneficiaire}</b> </p>
         <p className='text-dark'>Prénom: <b className='text-dark'>{props.envoie2.infoEnvoie.prenom_beneficiaire} </b> </p>
         </Col>
 
         <Col xs={6}>
-        <p className='text-dark'>Email Adresse: <b className='text-dark'> {props.envoie2.infoEnvoie.adresse_beneficiaire}</b></p>
-        <p className='text-dark'>Numéro Téléphone: <b className='text-dark'>{props.envoie2.infoEnvoie.numero_beneficiaire}</b>  </p>
         <p className='text-dark'>Pays: <b className='text-dark'>{props.envoie2.infoEnvoie.pays_beneficiaire}</b> </p>
         </Col>
     </Row>
@@ -149,6 +145,7 @@ const navigate = useNavigate()
 
         <Col xs={6}>
         <p className='text-dark'>Mobile Money: <b className='text-dark'>{props.envoie2.infoEnvoie.numero_transfer}</b> </p>
+        <p className='text-dark'>date de transfert: <b className='text-dark'>{props.envoie2.infoEnvoie.data_operation}</b> </p>
         </Col>
     </Row>
 
