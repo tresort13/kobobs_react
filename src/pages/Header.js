@@ -96,7 +96,7 @@ function Header(props)
                   <NavDropdown.Divider />
                   {props.isAdmin ? <Nav.Link href="/menu_gestion_recettes"><b><pre>Gestion Recettes</pre></b></Nav.Link> : <Nav.Link href=""><b><pre onClick={access}>Gestion Recettes</pre></b></Nav.Link>}
                   <NavDropdown.Divider />
-                  {props.isAdmin ? <Nav.Link href="/menu_users"><b><pre>Gestion Utilisateurs</pre></b></Nav.Link> : <Nav.Link href="/menu_users"><b><pre onClick={access}>Gestion Utilisateurs</pre></b></Nav.Link>}
+                  {props.isAdmin ? <Nav.Link href="/menu_users"><b><pre>Gestion Utilisateurs</pre></b></Nav.Link> : <Nav.Link href=""><b><pre onClick={access}>Gestion Utilisateurs</pre></b></Nav.Link>}
                   <NavDropdown.Divider />
 
 
@@ -168,7 +168,7 @@ function Header(props)
                   <NavDropdown.Divider />
                   {props.isAdmin ? <Nav.Link href="/menu_gestion_recettes"><b><pre>Gestion Recettes</pre></b></Nav.Link> : <Nav.Link href=""><b><pre onClick={access}>Gestion Recettes</pre></b></Nav.Link>}
                   <NavDropdown.Divider />
-                  {props.isAdmin ? <Nav.Link href="/menu_users"><b><pre>Gestion Utilisateurs</pre></b></Nav.Link> : <Nav.Link href="/menu_users"><b><pre onClick={access}>Gestion Utilisateurs</pre></b></Nav.Link>}
+                  {props.isAdmin ? <Nav.Link href="/menu_users"><b><pre>Gestion Utilisateurs</pre></b></Nav.Link> : <Nav.Link href=""><b><pre onClick={access}>Gestion Utilisateurs</pre></b></Nav.Link>}
                   <NavDropdown.Divider />
                   <br></br>
                   <Nav.Link href="#" className="text-danger mt-2" onClick={logout}><b>Deconnexion</b></Nav.Link>
