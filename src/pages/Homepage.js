@@ -43,7 +43,7 @@ function Homepage(props)
  
     return (
     <>
-    <Header username={props.username}/>
+    <Header username={props.username} isAdmin={props.isAdmin}/>
        {isDesktop && <Container className="mt-4 mb-5">
         <Row className="text-center justify-content-center">
             <Col md={4} className="my-auto text-center">

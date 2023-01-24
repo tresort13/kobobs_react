@@ -13,6 +13,7 @@ import Button from "react-bootstrap/Button";
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -35,6 +36,12 @@ function Header(props)
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [modalShow, setModalShow] = React.useState(false);
+
+    const access = ()=>
+    {
+      setModalShow(true)
+    }
 
 
     useEffect(() => {
@@ -82,7 +89,7 @@ function Header(props)
                   <NavDropdown.Divider />
                   <Nav.Link href="/form_retrait"><b><pre>Retrait Argent</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_gestion_abonne"><b><pre>Gestion Clients</pre></b></Nav.Link>
+                  {props.isAdmin ? <Nav.Link href="/menu_gestion_abonne"><b><pre>Gestion Clients</pre></b></Nav.Link> : <Nav.Link href=""><b><pre onClick={access}>Gestion Clients</pre></b></Nav.Link> }
                   <NavDropdown.Divider />
                   <Nav.Link href="/menu_gestion_operation"><b><pre>Gestion Operations</pre></b></Nav.Link>
                   <NavDropdown.Divider />
@@ -154,7 +161,7 @@ function Header(props)
                   <NavDropdown.Divider />
                   <Nav.Link href="/form_retrait"><b><pre>Retrait Argent</pre></b></Nav.Link>
                   <NavDropdown.Divider />
-                  <Nav.Link href="/menu_gestion_abonne"><b><pre>Gestion Clients</pre></b></Nav.Link>
+                  {props.isAdmin ? <Nav.Link href="/menu_gestion_abonne"><b><pre>Gestion Clients</pre></b></Nav.Link> : <Nav.Link href=""><b><pre onClick={access}>Gestion Clients</pre></b></Nav.Link> }
                   <NavDropdown.Divider />
                   <Nav.Link href="/menu_gestion_operation"><b><pre>Gestion Operations</pre></b></Nav.Link>
                   <NavDropdown.Divider />
@@ -199,9 +206,35 @@ function Header(props)
       </Offcanvas>
     
    </Container>}
+   <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
    </div>
 
     )
+}
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="sm"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        
+        <p className='text-danger'><b>Accès Refusé !!!</b>   
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant='warning' onClick={props.onHide}>Fermer</Button>
+      </Modal.Footer>
+    </Modal>
+  );
 }
 
 export default Header;
