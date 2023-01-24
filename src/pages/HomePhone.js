@@ -21,7 +21,7 @@ function HomePhone(props)
       });
     return (
     <>
-     <Header username={props.username}/>
+     <Header username={props.username} isAdmin={props.isAdmin}/>
        {isMobileOrTablet && <Container className=" mb-5 mt-5">
        <Row className="text-center justify-content-center">
             <Col md={12} className="my-auto text-center">

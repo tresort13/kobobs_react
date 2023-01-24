@@ -521,109 +521,109 @@ function App() {
 
 
 
-        <Route path="/menu_envoie" element={username == "" ? <Navigate to='/' /> : <MenuEnvoi username={username} setIsadmin={setIsadmin}/>}>
+        <Route path="/menu_envoie" element={username == "" ? <Navigate to='/' /> : <MenuEnvoi username={username} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/menu_retrait" element={username == "" ? <Navigate to='/' /> : <MenuRetrait username={username} setIsadmin={setIsadmin}/>}>
+        <Route path="/menu_retrait" element={username == "" ? <Navigate to='/' /> : <MenuRetrait username={username} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/menu_gestion_operation" element={username == "" ? <Navigate to='/' /> : <MenuGestionOperations username={username} setIsadmin={setIsadmin}/>}>
+        <Route path="/menu_gestion_operation" element={username == "" ? <Navigate to='/' /> : <MenuGestionOperations username={username} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/menu_rapport_envoie" element={username == "" ? <Navigate to='/' /> : <MenuRapportEnvoie username={username} setIsadmin={setIsadmin}/>}>
+        <Route path="/menu_rapport_envoie" element={username == "" ? <Navigate to='/' /> : <MenuRapportEnvoie username={username} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/menu_rapport_retrait" element={username == "" ? <Navigate to='/' /> : <MenuRapportRetrait username={username} setIsadmin={setIsadmin}/>}>
+        <Route path="/menu_rapport_retrait" element={username == "" ? <Navigate to='/' /> : <MenuRapportRetrait username={username} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to='/' /> : <MenuAbonne username={username} setIsadmin={setIsadmin}/>}>
+        <Route path="/menu_gestion_abonne" element={username == "" ? <Navigate to='/' /> : <MenuAbonne username={username} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/menu_gestion_recettes" element={username == "" ? <Navigate to='/' /> : <MenuGestionRecettes username={username} setIsadmin={setIsadmin}/>}>
+        <Route path="/menu_gestion_recettes" element={username == "" ? <Navigate to='/' /> : <MenuGestionRecettes username={username} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/menu_users" element={username == "" ? <Navigate to='/' /> : <MenuUsers username={username} dataUserInfo={dataUserInfo} envoie={envoie} setIsadmin={setIsadmin}/>}>
+        <Route path="/menu_users" element={username == "" ? <Navigate to='/' /> : <MenuUsers username={username} dataUserInfo={dataUserInfo} envoie={envoie} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/form_envoie_client" element={username == "" ? <Navigate to='/' /> : <FormEnvoiClient username={username} dataEnvoie={dataEnvoie} envoie={envoie} setTaux={setTaux} setIsadmin={setIsadmin}/>}>
+        <Route path="/form_envoie_client" element={username == "" ? <Navigate to='/' /> : <FormEnvoiClient username={username} dataEnvoie={dataEnvoie} envoie={envoie} setTaux={setTaux} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to='/' /> : <FormEnvoiAbonneId username={username} dataAbonne={dataAbonne} setIsadmin={setIsadmin}/>}>
+        <Route path="/form_envoie_abonne_id" element={username == "" ? <Navigate to='/' /> : <FormEnvoiAbonneId username={username} dataAbonne={dataAbonne} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
-        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to='/' /> : <FormEnvoiAbonne username={username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne} envoie={envoie} setTaux={setTaux} setIsadmin={setIsadmin}/>}>
-        </Route>
-
-        <Route path="/select_date_form_envoie" element={username == "" ? <Navigate to='/' /> : <SelectDateFormEnvoie username={username} dataDailyRapport={dataDailyRapport} setDate={setDate} setIsadmin={setIsadmin}/>}>
+        <Route path="/form_envoie_abonne" element={username == "" ? <Navigate to='/' /> : <FormEnvoiAbonne username={username} abonne={abonne} dataEnvoieAbonne={dataEnvoieAbonne} envoie={envoie} setTaux={setTaux} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/select_date_form_retrait" element={username == "" ? <Navigate to='/' /> : <SelectDateFormRetrait username={username} dataDailyRapport={dataDailyRapport} setDate={setDate} setIsadmin={setIsadmin}/>}>
+        <Route path="/select_date_form_envoie" element={username == "" ? <Navigate to='/' /> : <SelectDateFormEnvoie username={username} dataDailyRapport={dataDailyRapport} setDate={setDate} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/select_mois_form_envoie" element={username == "" ? <Navigate to='/' /> : <SelectMoisFormEnvoie username={username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois} setIsadmin={setIsadmin}/>}>
+        <Route path="/select_date_form_retrait" element={username == "" ? <Navigate to='/' /> : <SelectDateFormRetrait username={username} dataDailyRapport={dataDailyRapport} setDate={setDate} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/select_mois_form_retrait" element={username == "" ? <Navigate to='/' /> : <SelectMoisFormRetrait username={username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois} setIsadmin={setIsadmin}/>}>
+        <Route path="/select_mois_form_envoie" element={username == "" ? <Navigate to='/' /> : <SelectMoisFormEnvoie username={username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/select_date_recettes" element={username == "" ? <Navigate to='/' /> : <SelectDateRecettes username={username} dataDailyRapport={dataDailyRapport} setDate={setDate} setIsadmin={setIsadmin}/>}>
+        <Route path="/select_mois_form_retrait" element={username == "" ? <Navigate to='/' /> : <SelectMoisFormRetrait username={username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/select_mois_recettes" element={username == "" ? <Navigate to='/' /> : <SelectMonthRecettes username={username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois} setIsadmin={setIsadmin}/>}>
+        <Route path="/select_date_recettes" element={username == "" ? <Navigate to='/' /> : <SelectDateRecettes username={username} dataDailyRapport={dataDailyRapport} setDate={setDate} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
+        </Route>
+
+        <Route path="/select_mois_recettes" element={username == "" ? <Navigate to='/' /> : <SelectMonthRecettes username={username} dataMonthlyRapport={dataMonthlyRapport} setMois={setMois} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
 
-        <Route path="/envoi_info" element={username == "" ? <Navigate to='/' /> : <EnvoiInfo username={username} dataEnvoie3={dataEnvoie3} envoie={envoie} setEnvoie={setEnvoie} setIsadmin={setIsadmin}/>}>
+        <Route path="/envoi_info" element={username == "" ? <Navigate to='/' /> : <EnvoiInfo username={username} dataEnvoie3={dataEnvoie3} envoie={envoie} setEnvoie={setEnvoie} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/envoi_abonne_info" element={username == "" ? <Navigate to='/' /> : <EnvoieAbonneInfo username={username} dataEnvoie3={dataEnvoie3} envoie={envoie} setEnvoie={setEnvoie} setIsadmin={setIsadmin}/>}>
+        <Route path="/envoi_abonne_info" element={username == "" ? <Navigate to='/' /> : <EnvoieAbonneInfo username={username} dataEnvoie3={dataEnvoie3} envoie={envoie} setEnvoie={setEnvoie} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/form_retrait" element={username == "" ? <Navigate to='/' /> : <FormRetrait username={username} dataEnvoie2={dataEnvoie2} setIsadmin={setIsadmin}/>}>
+        <Route path="/form_retrait" element={username == "" ? <Navigate to='/' /> : <FormRetrait username={username} dataEnvoie2={dataEnvoie2} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/retrait_info" element={username == "" ? <Navigate to='/' /> : <RetraitInfo username={username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} setIsadmin={setIsadmin}/>}>
+        <Route path="/retrait_info" element={username == "" ? <Navigate to='/' /> : <RetraitInfo username={username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to='/' /> : <AbonneFormNonValideInfo username={username} setCodeRetraitStatus={setCodeRetraitStatus} codeRetraitStatus={codeRetraitStatus} setIsadmin={setIsadmin}/>}>
+        <Route path="/form_abonne_non_valide" element={username == "" ? <Navigate to='/' /> : <AbonneFormNonValideInfo username={username} setCodeRetraitStatus={setCodeRetraitStatus} codeRetraitStatus={codeRetraitStatus} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/form_retrouver_abonne" element={username == "" ? <Navigate to='/' /> : <FormRetrouverCodeAbonne username={username} dataAbonneInfo={dataAbonneInfo} setIsadmin={setIsadmin}/>}>
+        <Route path="/form_retrouver_abonne" element={username == "" ? <Navigate to='/' /> : <FormRetrouverCodeAbonne username={username} dataAbonneInfo={dataAbonneInfo} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/abonne_code_info" element={username == "" ? <Navigate to='/' /> : <AbonneCodeInfo username={username} abonneInfo={abonneInfo} setIsadmin={setIsadmin}/>}>
+        <Route path="/abonne_code_info" element={username == "" ? <Navigate to='/' /> : <AbonneCodeInfo username={username} abonneInfo={abonneInfo} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/confirmation_envoie_info" element={username == "" ? <Navigate to='/' /> : <ConfirmationEnvoieInfo username={username} envoie3={envoie3} setIsadmin={setIsadmin}/>}>
+        <Route path="/confirmation_envoie_info" element={username == "" ? <Navigate to='/' /> : <ConfirmationEnvoieInfo username={username} envoie3={envoie3} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/confirmation_retrait_info" element={username == "" ? <Navigate to='/' /> : <ConfirmationRetraitInfo username={username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} setIsadmin={setIsadmin}/>}>
+        <Route path="/confirmation_retrait_info" element={username == "" ? <Navigate to='/' /> : <ConfirmationRetraitInfo username={username} envoie2={envoie2} dataEnvoie2={dataEnvoie2} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to='/' /> : <DailyRapportInfoEnvoie username={username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} dateInfo={dateInfo} setIsadmin={setIsadmin}/>}>
+        <Route path="/daily_rapport_envoie" element={username == "" ? <Navigate to='/' /> : <DailyRapportInfoEnvoie username={username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} dateInfo={dateInfo} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to='/' /> : <DailyRapportInfoRetrait username={username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} dateInfo={dateInfo} setIsadmin={setIsadmin}/>}>
+        <Route path="/daily_rapport_retrait" element={username == "" ? <Navigate to='/' /> : <DailyRapportInfoRetrait username={username} dailyRapport={dailyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} dateInfo={dateInfo} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to='/' /> : <MonthlyRapportInfoEnvoie username={username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} moisInfo={moisInfo} setIsadmin={setIsadmin}/>}>
+        <Route path="/monthly_rapport_envoie" element={username == "" ? <Navigate to='/' /> : <MonthlyRapportInfoEnvoie username={username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} moisInfo={moisInfo} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to='/' /> : <MonthlyRapportInfoRetrait username={username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} moisInfo={moisInfo} setIsadmin={setIsadmin}/>}>
+        <Route path="/monthly_rapport_retrait" element={username == "" ? <Navigate to='/' /> : <MonthlyRapportInfoRetrait username={username} monthlyRapport={monthlyRapport} dataDetailEnvoieTotal={dataDetailEnvoieTotal} moisInfo={moisInfo} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/details_envoie_info" element={username == "" ? <Navigate to='/' /> : <DetailsEnvoieInfo username={username} detailEnvoieTotal={detailEnvoieTotal} setIsadmin={setIsadmin}/>}>
+        <Route path="/details_envoie_info" element={username == "" ? <Navigate to='/' /> : <DetailsEnvoieInfo username={username} detailEnvoieTotal={detailEnvoieTotal} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/details_retrait_info" element={username == "" ? <Navigate to='/' /> : <DetailsRetraitInfo username={username} detailEnvoieTotal={detailEnvoieTotal} setIsadmin={setIsadmin}/>}>
+        <Route path="/details_retrait_info" element={username == "" ? <Navigate to='/' /> : <DetailsRetraitInfo username={username} detailEnvoieTotal={detailEnvoieTotal} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/monthly_recettes_info" element={username == "" ? <Navigate to='/' /> : <MonthlyRecettes username={username} monthlyRapport={monthlyRapport} moisInfo={moisInfo} setIsadmin={setIsadmin}/>}>
+        <Route path="/monthly_recettes_info" element={username == "" ? <Navigate to='/' /> : <MonthlyRecettes username={username} monthlyRapport={monthlyRapport} moisInfo={moisInfo} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/daily_recettes_info" element={username == "" ? <Navigate to='/' /> : <DailyRecettes username={username} dailyRapport={dailyRapport} dateInfo={dateInfo} setIsadmin={setIsadmin}/>}>
+        <Route path="/daily_recettes_info" element={username == "" ? <Navigate to='/' /> : <DailyRecettes username={username} dailyRapport={dailyRapport} dateInfo={dateInfo} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
-        <Route path="/users_info" element={username == "" ? <Navigate to='/' /> : <UsersInfo username={username} userInfo={userInfo} setIsadmin={setIsadmin}/>}>
+        <Route path="/users_info" element={username == "" ? <Navigate to='/' /> : <UsersInfo username={username} userInfo={userInfo} setIsadmin={setIsadmin} isAdmin={isAdmin}/>}>
         </Route>
 
 

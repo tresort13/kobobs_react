@@ -55,7 +55,7 @@ const total_montant = props.dailyRapport.reduce((total,value)=>
   
     return (
         <>
-            <Header username={props.username}/>
+            <Header username={props.username} isAdmin={props.isAdmin}/>
             <div>
 {isDesktop && <Container fluid className='bg-light justify-content-center text-center borders mb-5' style={{marginTop:20}} >
 

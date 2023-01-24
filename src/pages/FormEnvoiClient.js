@@ -94,7 +94,7 @@ function FormEnvoiClient(props)
     return (
         
         <>
-        <Header username={props.username} />
+        <Header username={props.username} isAdmin={props.isAdmin}/>
 {isDesktop && <Container className='bg-light justify-content-center text-center mb-5' style={{marginTop:50,width:1000}} >
 <Row className='justify-content-center mb-3 pt-3' >
         <Col xs={6}>

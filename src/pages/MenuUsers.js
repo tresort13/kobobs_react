@@ -49,7 +49,7 @@ function MenuUsers(props)
 
     return (
 <>
-<Header username={props.username} />
+<Header username={props.username} isAdmin={props.isAdmin}/>
 {isDesktop && <Container >
     
     <Row className='justify-content-center pb-3 pt-5 mt-5'>

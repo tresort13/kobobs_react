@@ -136,7 +136,7 @@ function AbonneFormNonValideInfo(props)
     return (
         
         <>
-        <Header username={props.username} />
+        <Header username={props.username} isAdmin={props.isAdmin}/>
 {isDesktop && envoie4.map((value)=>
     {
     return <Container className='bg-light justify-content-center text-center mb-5' style={{marginTop:50,width:1000}} >
