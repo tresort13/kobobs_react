@@ -62,7 +62,7 @@ function App() {
 
   const [isAdmin,setIsadmin] = useState(()=>
   {
-    const localData = localStorage.getItem('username');
+    const localData = localStorage.getItem('isAdmin');
     return localData ? JSON.parse(localData) : false;
   });
   
